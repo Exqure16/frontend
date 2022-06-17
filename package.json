@@ -2,7 +2,7 @@
   "name": "exqure",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Exqure16.github.io/Exqure",
+  "homepage": "https://Exqure16.github.io/exqure-frontend",
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
