@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Exqure/static/css/main.8fcf5d53.css",
+    "main.js": "/Exqure/static/js/main.db430d2e.js",
+    "static/media/bgimage.jpeg": "/Exqure/static/media/bgimage.f2d8969998e9ca6dc142.jpeg",
+    "index.html": "/Exqure/index.html",
+    "main.8fcf5d53.css.map": "/Exqure/static/css/main.8fcf5d53.css.map",
+    "main.db430d2e.js.map": "/Exqure/static/js/main.db430d2e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8fcf5d53.css",
+    "static/js/main.db430d2e.js"
+  ]
+}
