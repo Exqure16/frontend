@@ -38,7 +38,7 @@ export const Comingsoon = () => {
       </form>
       <section className='socials'>
         <a
-          href='https://www.instagram.com/p/CeqySNvtEuJ/'
+          href='https://www.instagram.com/exqure_escrow?igshid=YmMyMTA2M2Y'
           target='_blank'
           rel='noopener noreferrer'
         >
@@ -59,7 +59,7 @@ export const Comingsoon = () => {
           <img src={Linkdeln} alt='Linkedl' />
         </a>
         <a
-          href='https://www.instagram.com/p/CeqySNvtEuJ/'
+          href='https://www.facebook.com/Exqure-escrow-107535181993990/'
           target='_blank'
           rel='noopener noreferrer'
         >
