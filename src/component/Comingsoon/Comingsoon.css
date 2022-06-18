@@ -1,14 +1,13 @@
-*{
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-
 .ComingSoon {
   text-align: center;
-  background:url(./bgimage.jpeg)no-repeat center center/cover;
-  background-color: #d6d6d6 ;
+  background: url('../images/bgimage.jpeg') no-repeat center center/cover;
+  background-color: #d6d6d6;
   position: relative;
   align-items: center;
   justify-content: space-between;
@@ -18,26 +17,25 @@
   width: 100vw;
 }
 
-
-a{
+a {
   font-size: 2rem;
   cursor: pointer;
 }
 
-.content{
+.content {
   padding-top: 3.5rem;
   font-size: 2rem;
 }
 
-.content .ComingSoonText{
+.content .ComingSoonText {
   font-family: 'Montserrat', sans-serif;
-  color: #4CAFE3;
+  color: #4cafe3;
   font-size: 5rem;
-  text-transform: uppercase; 
+  text-transform: uppercase;
   padding: 1.5rem 0;
-} 
+}
 
-.content .ComingSoonParag{
+.content .ComingSoonParag {
   font-family: 'Montserrat', sans-serif;
   color: black;
   font-size: 1.5rem;
@@ -46,13 +44,14 @@ a{
   width: 500px;
 }
 
-.newsletter{
+.newsletter {
   display: flex;
   flex-direction: column;
   margin: auto;
 }
 
-.ComingSoonInput{ /* Input */
+.ComingSoonInput {
+  /* Input */
   font-size: 1rem;
   padding: 15px;
   width: 600px;
@@ -61,7 +60,8 @@ a{
   border-radius: 10px;
 }
 
-.ComingSoonEmail{ /*Button*/  
+.ComingSoonEmail {
+  /*Button*/
   margin: 1.2rem 0;
   font-size: 1.5rem;
   width: 200px;
@@ -74,13 +74,13 @@ a{
   text-align: center;
   text-decoration: none;
   display: inline-block;
-} 
+}
 
-.ComingSoonEmail:hover{
+.ComingSoonEmail:hover {
   transform: scale(1.2);
 }
 
-.socials{
+.socials {
   display: flex;
   flex-direction: row;
   gap: 2rem;
@@ -90,76 +90,76 @@ a{
 }
 
 @media (min-width: 360px) and (max-width: 414px) {
-
-  .content .ComingSoonText{
-    font-size: 3rem; 
+  .content .ComingSoonText {
+    font-size: 3rem;
     padding: 1rem 0;
-  } 
+  }
 
-  .content .ComingSoonParag{
+  .content .ComingSoonParag {
     font-size: 1.2rem;
     width: 90%;
   }
 
-  .ComingSoonInput{ /* Input */
+  .ComingSoonInput {
+    /* Input */
     font-size: 1rem;
     width: 350px;
     margin-left: 1rem;
   }
 
-  .ComingSoonEmail{ /*Button*/  
+  .ComingSoonEmail {
+    /*Button*/
     margin: 1rem;
     font-size: 1.2rem;
     width: 200px;
     padding: 12px;
-  } 
+  }
 
-  .socials{
+  .socials {
     margin-bottom: 1.2rem;
   }
 }
 
 @media (max-width: 915px) {
-  .ComingSoonImage{
+  .ComingSoonImage {
     margin-top: -2.5rem;
   }
 
-  .content .ComingSoonText{
-    font-size: 3.2rem; 
-    padding: .5rem 0;
-  } 
+  .content .ComingSoonText {
+    font-size: 3.2rem;
+    padding: 0.5rem 0;
+  }
 
-  .content .ComingSoonParag{
+  .content .ComingSoonParag {
     font-size: 1rem;
     width: 90%;
   }
 
-  .newsletter{
+  .newsletter {
     display: flex;
     flex-direction: row;
     margin-top: -1rem;
     margin-bottom: -1.3rem;
   }
 
-  .ComingSoonInput{ /* Input */
+  .ComingSoonInput {
+    /* Input */
     font-size: 1rem;
     width: 90%;
   }
 
-  .ComingSoonEmail{  
+  .ComingSoonEmail {
     margin-left: 1rem;
     font-size: 1.2rem;
     width: 30%px;
-  } 
+  }
 
-  .socials{
+  .socials {
     top: 0;
     margin-top: -0;
   }
-  
-  .socials img{
+
+  .socials img {
     width: 80%;
   }
 }
-
-
