@@ -1,10 +1,10 @@
 import React from 'react';
-import { Comingsoon } from './component/Comingsoon/Comingsoon';
+import HomePage from './component/HomePage/HomePage';
 
 function App() {
   return (
     <div>
-      <Comingsoon />
+      <HomePage />
     </div>
   );
 }

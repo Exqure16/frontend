@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.homepage-main {
+    font-family: "Futura PT",
+}
+
+
+/* Section One */
+.section1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.writeup {
+    position: absolute;
+    width: 527.36px;
+    height: 244.11px;
+    left: 120px;
+    top: 298.41px;
+}
+
+.writeup > *{
+    margin-bottom: 1rem;
+}
+
+.writeup > .first-p-tag {
+    font-size: 1.25rem;
+}
+
+.writeup > .second-p-tag{
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+}
+
+.writeup > button {
+    padding: 0.75rem 2rem;
+    background: #239ED9;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    color: #fff;
+}
+
+.writeup > button:hover {
+    background: #1b7aa7;
+}
+
+.writeup-image {
+    position: absolute;
+    width: 486px;
+    height: 520px;
+    left: 834px;
+    top: 182px;
+}
+/* Section One End */
+
+
+/* Section Two */
+
+.section2 {
+    position: absolute;
+    width: 1440px;
+    height: 540.22px;
+    left: 0px;
+    top: 798px;
+    background: #D9D9D9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section2 > h3 {
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size:  1.5rem;
+    margin-top: 3rem;
+}
+
+.section2 > button {
+    padding: 0.75rem 2rem;
+    background: none;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid #239ED9;
+    color: #239ED9;;
+}
+
+.section2 > button:hover {
+    background: #239ED9;
+    color: white;
+}
+
+/* Section Two End */
