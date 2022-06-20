@@ -1,4 +1,6 @@
 import React from 'react';
+import Cards from './cards'
+import SingleCard from './singleCard'
 import './HomePageStyles.css';
 
 export default function HomePage() {
@@ -17,12 +19,24 @@ export default function HomePage() {
                 </p>
                 <button>Get Started</button>
             </div>
-            <div className="writeup-image"></div>
+            <div className="writeup-image"><img alt="side_image"/></div>
         </section>
+        
         <section className="section2">
             <h3>How Exqure Works</h3>
-            <div></div>
+            <Cards />
             <button>Learn More</button>
+        </section>
+
+        <section className="section3">
+            <h3>Experience 100% safety in Buying and Selling goods and service</h3>
+            <div className="card">
+                <SingleCard />
+                <SingleCard />
+                <SingleCard />
+            </div>
+            
+            <button>Get Started</button>
         </section>
     </div>
   )
