@@ -51,7 +51,7 @@ const [data, setData] = useState({});
     <div className='login-page'>
 
       <section className='left-box'>
-        <div className='logo-div'><img src= {logo} /></div>
+        <div className='logo-div'><img src= {logo}  alt="logo"/></div>
         <img src= {hands} className="hands" alt='shaking hands'/>
       </section>
       <section className='right-box'>

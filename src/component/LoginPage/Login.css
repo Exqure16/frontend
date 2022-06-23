@@ -6,6 +6,7 @@
 }
 .login-page{
     display: flex;
+    height: 100vh;
 }
 .left-box{
     /* width: 630px; */
@@ -140,6 +141,9 @@ width: 40%;
 }
 
 @media (max-width: 680px){
+  .login-page{
+        background-color: #F9FAFC;
+    }
    .left-box{
     display: none;
    }

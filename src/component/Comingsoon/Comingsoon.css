@@ -116,7 +116,7 @@ a {
   transform: scale(1.05);
 }
 
-.socials {
+.ComingSoon .socials {
   display: flex;
   flex-direction: row;
   gap: 2rem;
@@ -148,7 +148,7 @@ a {
     margin-top: 8%;
   }
 
-  .socials {
+  .ComingSoon .socials {
     padding-top: 13%;
   }
 }
@@ -178,12 +178,12 @@ a {
   }
 
 
-  .socials {
+  .ComingSoon .socials {
     top: 0;
     margin-top: -0;
   }
 
-  .socials img {
+  .ComingSoon .socials img {
     width: 80%;
   }
 }
