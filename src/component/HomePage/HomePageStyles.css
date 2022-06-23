@@ -1,0 +1,243 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.homepage-main {
+    font-family: "Futura PT",
+}
+
+
+/* Section One */
+.section1 {
+    margin-top: 12rem;
+    margin-left: 6rem;
+    display: flex;
+    width: 66rem;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.writeup {
+    width: 527.36px;
+    margin-bottom: 7rem;
+    height: 244.11px;
+}
+
+.writeup > .first-p-tag {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.writeup > .second-p-tag{
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+}
+
+.writeup > button {
+    padding: 0.75rem 2rem;
+    background: #239ED9;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    color: #fff;
+}
+
+.writeup > button:hover {
+    background: #1b7aa7;
+}
+/* Section One End */
+
+
+/* Section Two */
+
+.section2 {
+    width: 100%;
+    height: 100%;
+    background: #D9D9D9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 7.5rem;
+}
+
+.section2 > h3 {
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size:  1.5rem;
+}
+
+.section2 > button {
+    padding: 0.75rem 2rem;
+    background: none;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid #239ED9;
+    color: #239ED9;;
+}
+
+.section2 > button:hover {
+    background: #239ED9;
+    color: white;
+}
+
+/* Card Styles */
+
+.card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.card > * {
+    margin: 3rem;
+}
+
+.img-conatiner {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+.card-img {
+    cursor: pointer;
+    margin: 0;
+    display: block;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+}
+
+.card-title {
+    text-align: center;
+    font-weight: 700;
+}
+
+.card-text {
+    text-align: center;
+    margin-top: 6rem;
+}
+
+/* Section Two End */
+
+/* Section 3 */
+
+.section3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 95px 125px;
+    font-size: 1rem;
+}
+
+.section3 > h3 {
+    text-align: center;
+    width: 36.75rem;
+    font-size: 1.5rem;
+}
+
+.section3 > button {
+    padding: 0.75rem 2rem;
+    background: #239ED9;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    color: #fff;
+}
+
+.section3 > button:hover {
+    background: #1b7aa7;
+}
+
+/* Section 3 End*/
+
+/* Section 4 */
+
+.section4 {
+    width: 100%;
+    height: 100%;
+    background: #D9D9D9;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 7.5rem;
+}
+
+.section4 > h2 {
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+    grid-column: 1 / span 4;
+    text-align: center;
+}
+
+.section4 > .row-div {
+    display: flex;
+    margin-top: 5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.row-div > * {
+    margin-bottom: 1.5rem;
+}
+
+.row-div > button {
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    width: auto;
+}
+
+.socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.social-media {
+    cursor: pointer;
+    width: 20%;
+    height: 20%;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+.social-media > img {
+    cursor: pointer;
+    margin: 0;
+    display: block;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+}
+
+/* Section 4 End */
+
+footer {
+    background: #D9D9D9;
+    border-top: 1px solid black;
+    padding-top: 0.4rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 2rem;
+}
