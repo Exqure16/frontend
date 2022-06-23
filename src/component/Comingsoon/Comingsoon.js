@@ -14,6 +14,7 @@ export const Comingsoon = () => {
   }
   return (
     <div className='ComingSoon'>
+      <div className='allPage'>
       <section className='content'>
         <img src={logo} alt='My Logo' className='ComingSoonImage' />
         <div className='text'>
@@ -27,13 +28,13 @@ export const Comingsoon = () => {
         <input
           type='email'
           name='email'
-          placeholder='Enter your email'
+          placeholder='Your email'
           className='ComingSoonInput'
           value={email}
           onChange={(event) => setEmail(event.target.value)}
         />
         <button type='submit' className='ComingSoonEmail' id='newsletter'>
-          Notify Me!
+        Get Notified
         </button>
       </form>
       <section className='socials'>
@@ -66,6 +67,7 @@ export const Comingsoon = () => {
           <img src={Facebook} alt='Facebook' />
         </a>
       </section>
+      </div>
     </div>
   );
 };
