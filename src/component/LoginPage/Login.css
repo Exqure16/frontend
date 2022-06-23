@@ -28,17 +28,13 @@ width: 40%;
     width: 57%;
     display: flex;
     justify-content: center;
+    background-color: #F9FAFC;
     /* background-color: brown; */
 }
 .login-box{
     /* background-color: blueviolet; */
-    margin-top: 10%;
-    /* padding: 4%; */
-    
+    margin-top: 15%;
 }
-/* #check{
-    padding-right: 1%;
-} */
 .login-input{
     padding-left: 10%;
     width: 408px ;
@@ -51,7 +47,7 @@ width: 40%;
     font-size: 16px;
     font-family: 'Jost', sans-serif;
 }
-.box{
+.input-box{
     position: relative;
 }
 .icon{
@@ -99,10 +95,12 @@ width: 40%;
     font-size: 16px;
     font-family: 'Jost', sans-serif;
 }
-.check{
-    /* background-color: green; */
-    width: 140px;
+.login-btn:active{
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3)
 
+}
+.check{
+    width: 140px;
 }
 
 .check label{
@@ -115,8 +113,11 @@ width: 40%;
     text-align: center;
     margin-top: 4%;
 }
-#blue{
+#signUp, #forgotPassword{
     color:#4CAFE3;
+}
+#signUp, #forgotPassword, #rememberMe, .login-btn{
+    cursor: pointer;
 }
 
 
@@ -138,11 +139,21 @@ width: 40%;
 }
 }
 
-@media (max-width: 640px){
+@media (max-width: 680px){
    .left-box{
     display: none;
    }
    .right-box{
-    /* width: 100%; */
+    width: 100%;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+   }
+   .login-box{
+    width: 92%;
+    /* width: ; */
+   }
+   .login-input{
+    width: 100%;
    }
 }

@@ -8,8 +8,13 @@ import Login from './component/LoginPage/Login';
 function App() {
   return (
     <div>
-     {/* <Comingsoon/> */}
-   <Login/>
+      <BrowserRouter>
+         <Routes>
+          <Route path='/' element={<Comingsoon/>} />
+          <Route path='/login' element={<Login/>} />
+         </Routes>
+      </BrowserRouter>
+    
    
 
     </div>
