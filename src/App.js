@@ -1,24 +1,22 @@
 import React from 'react';
 
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import { Comingsoon } from './component/Comingsoon/Comingsoon';
 import Login from './component/LoginPage/Login';
 import HomePage from './component/HomePage/HomePage';
+import Footer from './component/Footer'
 
 
 function App() {
   return (
     <div>
-      <BrowserRouter>
-         <Routes>
-          <Route path='/' element={<Comingsoon/>} />
-          <Route path='/login' element={<Login/>} />
-          <Route path='/homepage' element={<HomePage />} />
-          
-         </Routes>
-      </BrowserRouter>
-    
+      <Routes>
+      <Route path='exqure-frontend/' element={<Comingsoon/>} />
+      <Route path='exqure-frontend/login' element={<Login/>} />
+      <Route path='exqure-frontend/homepage' element={<HomePage />} />          
+      </Routes>
+      <Footer />
     </div>
   );
 };

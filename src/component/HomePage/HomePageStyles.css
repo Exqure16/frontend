@@ -1,3 +1,13 @@
+@font-face {
+    font-family: Futura PT;
+    src: url('../../fonts/Futura\ Book\ font.ttf');
+}
+
+@font-face {
+    font-family: Montserrat Variable;
+    src: url('../../fonts/Montserrat-ExtraBold.ttf');
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,27 +18,44 @@
     font-family: "Futura PT",
 }
 
+.hero {
+    width: 1440px;
+    height: 655px;
+}
 
 /* Section One */
 .section1 {
-    margin-top: 12rem;
+    margin-top: 7rem;
     margin-left: 6rem;
     display: flex;
-    width: 66rem;
+    width: fit-content;
     flex-direction: row;
     justify-content: space-between;
     gap: 0.5rem;
 }
 
 .writeup {
+    position: relative;
+    top: 7rem;
     width: 527.36px;
     margin-bottom: 7rem;
     height: 244.11px;
 }
 
+.writeup > h2 {
+    font-family: Montserrat Variable, sans-serif;
+    font-size: 1.9rem;
+}
+
+.writeup > h2 > span {
+    color: #239ED9;
+}
+
 .writeup > .first-p-tag {
+    font-family: Futura PT;
     margin-bottom: 1rem;
     font-size: 1.25rem;
+    letter-spacing: 0.3rem;
 }
 
 .writeup > .second-p-tag{
@@ -37,6 +64,7 @@
     font-size: 1rem;
     font-weight: 400;
     letter-spacing: 0.03em;
+    font-family: Futura PT;
 }
 
 .writeup > button {
@@ -44,12 +72,47 @@
     background: #239ED9;
     border-radius: 4px;
     outline: none;
-    border: none;
+    border: 0.1rem solid #239ED9;
     color: #fff;
+    margin-right: 0.7rem;
+    font-family: Futura PT;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.writeup > button ~ button {
+    padding: 0.75rem 2rem;
+    background: white;
+    border-radius: 4px;
+    outline: none;
+    border: 0.1rem solid #239ED9;
+    color: #239ED9;
+    margin-right: 0.7rem;
+    font-family: Futura PT;
+    font-size: 1rem;
+}
+
+.writeup > button > span {
+    margin-left: 0.5rem;
 }
 
 .writeup > button:hover {
     background: #1b7aa7;
+}
+.writeup > button ~ button:hover {
+    background: #1b7aa7;
+    border: 0.1rem solid #1b7aa7;
+    color: white;
+}
+
+.writeup-image {
+    position: relative;
+    bottom: 5.5rem;
+    left: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 /* Section One End */
 
@@ -59,7 +122,7 @@
 .section2 {
     width: 100%;
     height: 100%;
-    background: #D9D9D9;
+    background: #E2F3FC;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -74,12 +137,16 @@
 }
 
 .section2 > button {
+    font-family: Futura PT;
     padding: 0.75rem 2rem;
     background: none;
     border-radius: 4px;
     outline: none;
     border: 1px solid #239ED9;
-    color: #239ED9;;
+    color: #239ED9;
+    transition: all 1s;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
 .section2 > button:hover {
@@ -94,39 +161,35 @@
     height: 100%;
     display: flex;
     flex-direction: row;
+    font-family: Futura PT;
 }
 
 .card > * {
-    margin: 3rem;
-}
-
-.img-conatiner {
-    cursor: pointer;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
+    margin: 1.5rem;
 }
 
 .card-img {
-    cursor: pointer;
     margin: 0;
     display: block;
-    min-width: 100%;
-    max-width: 100%;
-    min-height: 100%;
-    max-height: 100%;
+    min-width: 10rem;
+    max-width: 10rem;
+    min-height: 10rem;
+    max-height: 10rem;
+    object-fit: fill;
+    padding-left: 1rem;
 }
 
-.card-title {
+.card-tag {
     text-align: center;
     font-weight: 700;
 }
 
 .card-text {
+    width: 100%;
+    height: 100%;
+    margin-top: 1.5rem;
+    font-size: 1rem;
     text-align: center;
-    margin-top: 6rem;
 }
 
 /* Section Two End */
@@ -161,19 +224,69 @@
     background: #1b7aa7;
 }
 
+.single-cardbody {
+    font-family: Futura PT, sans-serif;
+    display: flex;
+    flex-direction: row;
+}
+
+.single-cardbody > .text-container{
+    margin: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+}
+
+.single-cardbody > .text-container > *{
+    margin: 0.5rem 0;
+}
+
+.single-cardbody > .text-container > .single-card-header{
+    font-family: Montserrat Variable, sans-serif;
+    font-weight: 700;
+}
+
+.single-cardbody > .text-container > button {
+    padding: 0.75rem 2rem;
+    background: #239ED9;
+    border-radius: 4px;
+    outline: none;
+    border: 0.1rem solid #239ED9;
+    color: #fff;
+    margin-right: 0.7rem;
+    font-family: Futura PT;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 1s;
+    width: fit-content;
+}
+
+.single-cardbody > .text-container > button:hover {
+    background: #1b7aa7;
+    border: 0.1rem solid #1b7aa7;
+}
+
+.single-card-tag {
+    border-radius: 1rem;
+    color: #239ED9;
+    background: #E2F3FC;
+    width: fit-content;
+}
 /* Section 3 End*/
 
 /* Section 4 */
 
 .section4 {
     width: 100%;
+    color: white;
     height: 100%;
-    background: #D9D9D9;
+    background: #131622;
     display: grid;
     grid-template-columns: repeat(4, auto);
     align-items: center;
     justify-content: space-between;
-    padding: 3rem 7.5rem;
+    padding: 3rem 9.5rem;
 }
 
 .section4 > h2 {
@@ -187,9 +300,6 @@
     display: flex;
     margin-top: 5rem;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
 }
 
 .row-div > * {
@@ -202,38 +312,40 @@
     outline: none;
     background-color: rgba(255, 255, 255, 0);
     border: none;
+    color: white;
     width: auto;
+    text-align: left;
+}
+
+.logodiv > button {
+    text-align: center;
+}
+
+.row-div > .exqureLogo {
+    margin-top: -1rem;
+}
+
+.logodiv {
+    align-items: center;
+    justify-content: center;
 }
 
 .socials {
+    width: 80%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.social-media {
+.socials > * {
     cursor: pointer;
-    width: 20%;
-    height: 20%;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-}
-
-.social-media > img {
-    cursor: pointer;
-    margin: 0;
-    display: block;
-    min-width: 100%;
-    max-width: 100%;
-    min-height: 100%;
-    max-height: 100%;
 }
 
 /* Section 4 End */
 
 footer {
-    background: #D9D9D9;
+    color: white;
+    background: #131622;
     border-top: 1px solid black;
     padding-top: 0.4rem;
     align-items: center;
