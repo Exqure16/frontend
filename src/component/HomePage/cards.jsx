@@ -19,13 +19,9 @@ export default function Cards() {
       <div className="img-container">
         <img className="card-img" alt="description" src={card.image}/>
       </div>
-      <div className="card-text">{card.text}</div>
+      <div className='card-text'>{card.text}</div>
     </div>
-  ))
+  ));
 
-  return (
-    <div className="card">
-      {CardMap}
-    </div>
-  )
+  return <div className='card'>{CardMap}</div>;
 }

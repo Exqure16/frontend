@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Route, Routes } from 'react-router-dom';
 
-import { Comingsoon } from './component/Comingsoon/Comingsoon';
+import Comingsoon from './component/Comingsoon/Comingsoon';
 import Login from './component/LoginPage/Login';
 import HomePage from './component/HomePage/HomePage';
 import Footer from './component/Footer'
@@ -19,6 +19,6 @@ function App() {
       <Footer />
     </div>
   );
-};
+}
 
 export default App;
