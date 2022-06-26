@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/exqure-frontend/static/css/main.e9dc194c.css",
-    "main.js": "/exqure-frontend/static/js/main.1717e5f5.js",
+    "main.js": "/exqure-frontend/static/js/main.4f7df4e9.js",
     "static/media/bgimage.jpeg": "/exqure-frontend/static/media/bgimage.f2d8969998e9ca6dc142.jpeg",
     "static/media/Hands.png": "/exqure-frontend/static/media/Hands.a1bfbcfee5cec78affce.png",
     "index.html": "/exqure-frontend/index.html",
     "main.e9dc194c.css.map": "/exqure-frontend/static/css/main.e9dc194c.css.map",
-    "main.1717e5f5.js.map": "/exqure-frontend/static/js/main.1717e5f5.js.map"
+    "main.4f7df4e9.js.map": "/exqure-frontend/static/js/main.4f7df4e9.js.map"
   },
   "entrypoints": [
     "static/css/main.e9dc194c.css",
-    "static/js/main.1717e5f5.js"
+    "static/js/main.4f7df4e9.js"
   ]
 }
