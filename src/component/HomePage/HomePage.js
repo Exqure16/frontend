@@ -130,11 +130,19 @@ export default function HomePage() {
                 <button>Cryptocurrency</button>
                 <button>Others</button>
             </div>
-            <div className='social-media'>
-              <img alt='social-media' src={linkedIn} />
+            <div className='row-div'>
+                <h3>Support</h3>
+                <button>Fraud Prevention</button>
+                <button>Security</button>
+                <button>Payment Options</button>
+                <button>FAQs</button>
             </div>
-            <div className='social-media'>
-              <img alt='social-media' src={facebook} />
+            <div className='row-div'>
+                <h3>Company</h3>
+                <button>About us</button>
+                <button>Contacts</button>
+                <button>Blog</button>
+                <button>Join our team</button>
             </div>
         </section>
     </div>
