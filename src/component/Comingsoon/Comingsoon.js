@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 // import { Container, Row, Col } from 'react-bootstrap';
 import './Comingsoon.css';
-import logo from '../images/logo.png';
+
 import Instagram from '../images/instagram.png';
 import Twitter from '../images/twitter.png';
 import Linkdeln from '../images/linkdln.png';
 import Facebook from '../images/facebook.png';
-// import CustomForm from './CustomForm';
+
 
 const Comingsoon = (status, message, onValidated) => {
   const [email, setEmail] = useState('');
@@ -31,7 +31,6 @@ const Comingsoon = (status, message, onValidated) => {
     <div className='ComingSoon'>
       <div className='allPage'>
         <section className='content'>
-          <img src={logo} alt='My Logo' className='ComingSoonImage' />
           <div className='text'>
             <h1 className='ComingSoonText'>Coming Soon</h1>
             <p className='ComingSoonParag'>
