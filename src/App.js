@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Route, Routes } from 'react-router-dom';
 
+import Header from './component/Header/Header';
 import Comingsoon from './component/Comingsoon/Comingsoon';
 import Header from './component/Header/Header';
 import Login from './component/LoginPage/Login';
