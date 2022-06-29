@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Comingsoon.css';
-import { Row, Col } from 'react-bootstrap';
+import InputField from './InputField';
 
 const CustomForm = ({ status, message, onValidated }) => {
   const [email, setEmail] = useState('');
@@ -24,44 +24,46 @@ const CustomForm = ({ status, message, onValidated }) => {
   return (
     <div>
       <form className='newsletter' onSubmit={(e) => handleSubmit(e)}>
-        <Row>
-          <Col>
-            {status === 'sending' && (
-              <div style={{ color: 'blue' }}>sending...</div>
-            )}
-            {status === 'error' && (
-              <div
-                style={{ color: 'red' }}
-                dangerouslySetInnerHTML={{ __html: message }}
-              />
-            )}
-            {status === 'success' && (
-              <div
-                style={{ color: 'green' }}
-                dangerouslySetInnerHTML={{ __html: message }}
-              />
-            )}
-            <input
-              type='email'
-              name='email'
-              placeholder='your@email.com'
-              className='ComingSoonInput'
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-            />
-          </Col>
-          <Col className=''>
-            <button
-              type='submit'
-              className='ComingSoonEmail'
-              id='newsletter'
-              formValue={[email]}
-              // onClick={(e) => handleSubmit(e)}
-            >
-              Notify Me!
-            </button>
-          </Col>
-        </Row>
+        {status === 'sending' && (
+          <div className='alert sending'>sending...</div>
+        )}
+        {status === 'error' && (
+          <div
+            className='alert error'
+            dangerouslySetInnerHTML={{ __html: message }}
+          />
+        )}
+        {status === 'success' && (
+          <div
+            className='alert success'
+            dangerouslySetInnerHTML={{ __html: message }}
+          />
+        )}
+
+        <InputField
+          label=''
+          onChangeHandler={setEmail}
+          type='email'
+          value={email}
+          placeholder='your@email.com'
+          isRequired
+          name='email'
+        />
+        <InputField label='Get Verified' type='submit' formValues={[email]} />
+        {/* <input
+          type='email'
+          name='email'
+          placeholder='Your email'
+          className='ComingSoonInput'
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
+        />
+        <input
+          type='submit'
+          value={'Get Verified'}
+          className='ComingSoonEmail'
+          id='newsletter'
+        /> */}
       </form>
     </div>
   );

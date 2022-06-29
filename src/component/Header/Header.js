@@ -17,32 +17,53 @@ const Header = () => {
     <div>
       <Navbar bg='light' expand='lg'>
         <Container className='my-0'>
-          <Navbar.Brand className='brand' href='#'>
-            <img src={logo} alt='' />
+          <Navbar.Brand as={Link} to={'exqure-frontend/'} href='#'>
+            <img className='brand' src={logo} alt='' />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbarScroll' />
           <Navbar.Collapse id='navbarScroll'>
             <Nav
-              className='me-auto my-2 my-lg-0'
+              className='me-auto my-1 my-lg-0'
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <Nav.Link className='nav-item' as={Link} to={'exqure-frontend/'}>
-                Coming Soon
+              <Nav.Link
+                style={{
+                  color: 'black',
+                  fontSize: '20px',
+                }}
+                className='mx-lg-2'
+                as={Link}
+                to={'exqure-frontend/'}
+              >
+                Services
               </Nav.Link>
               <Nav.Link
-                className='nav-item'
+                style={{
+                  color: 'black',
+                  fontSize: '20px',
+                }}
+                className='mx-lg-2'
+                as={Link}
+                to={'exqure-frontend/'}
+              >
+                About Us
+              </Nav.Link>
+              <Nav.Link
+                style={{ color: 'black', fontSize: '20px' }}
+                className='mx-lg-2'
                 as={Link}
                 to={'exqure-frontend/homepage'}
               >
-                Home
+                Blog
               </Nav.Link>
               <Nav.Link
-                className='nav-item'
+                style={{ color: 'black', fontSize: '20px' }}
                 as={Link}
                 to={'exqure-frontend/login'}
+                className='mx-lg-2'
               >
-                Login
+                Contact Us
               </Nav.Link>
             </Nav>
             <Nav>
@@ -50,7 +71,7 @@ const Header = () => {
                 <Button variant='outline-primary'>Login</Button>
               </Nav.Link>
               <Nav.Link as={Link} to={'exqure-frontend/login'}>
-                <Button variant='outline-success'>Signup</Button>
+                <Button variant='outline-primary'>Signup</Button>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
