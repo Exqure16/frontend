@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;1,200;1,400&family=Montserrat:ital,wght@0,100;0,400;0,500;0,800;1,100;1,300;1,400;1,500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.login-page{
+    display: flex;
+    height: 100vh;
+}
+.left-box{
+    /* width: 630px; */
+    width: 43%;
+    height: 100vh;
+    background-color: #E2F3FC;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.logo-div{
+    /* background-color: yellow; */
+    text-align: center;
+    margin-top: 19%;
+}
+.logo-div img{
+width: 40%;
+}
+.right-box{
+    width: 57%;
+    display: flex;
+    justify-content: center;
+    background-color: #F9FAFC;
+    /* background-color: brown; */
+}
+.login-box{
+    /* background-color: blueviolet; */
+    margin-top: 15%;
+}
+.login-input{
+    padding-left: 10%;
+    width: 408px ;
+    height: 40px;
+    margin-top: 8px;
+    border: 1px solid #B2B2B2;
+    border-radius: 4px;
+    background-color: #FDFEFF;
+    outline: none;
+    font-size: 16px;
+    font-family: 'Jost', sans-serif;
+}
+.input-box{
+    position: relative;
+}
+.icon{
+    position: absolute;
+    left: 4%;
+    top: 20px;
+    /* width: 6%; */
+}
+.login-box label{
+    margin-top: 15px;
+    font-size: 16px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 500px;
+}
+.login-box form{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+}
+.login-box p{
+    margin-bottom: 5%;
+    font-size: 16px;
+    font-family: 'Jost', sans-serif;
+}
+.login-box h2{
+    margin-bottom: 4%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+}
+.settings{
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+    font-size: 16px;
+}
+.login-btn{
+    height: 46px;
+    background-color: #239ED9;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-top: 6%;
+    font-size: 16px;
+    font-family: 'Jost', sans-serif;
+}
+.login-btn:active{
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3)
+
+}
+.check{
+    width: 140px;
+}
+
+.check label{
+    /* background-color: aquamarine; */
+    padding-left: 5%;
+
+}
+.end{
+    /* background-color: yellow; */
+    text-align: center;
+    margin-top: 4%;
+}
+#signUp, #forgotPassword{
+    color:#4CAFE3;
+}
+#signUp, #forgotPassword, #rememberMe, .login-btn{
+    cursor: pointer;
+}
+
+
+
+/* media query */
+@media (max-width: 768px){
+.right-box{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    /* background-color: brown; */
+}
+.left-box{
+    width: 40%;
+}
+.login-box{
+   width: 90%;
+    
+}
+}
+
+@media (max-width: 680px){
+  .login-page{
+        background-color: #F9FAFC;
+    }
+   .left-box{
+    display: none;
+   }
+   .right-box{
+    width: 100%;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+   }
+   .login-box{
+    width: 92%;
+    /* width: ; */
+   }
+   .login-input{
+    width: 100%;
+   }
+}
