@@ -18,17 +18,14 @@
     }
 }
 
-@keyframes slideside {
-    from {
-        margin-right: 100%;
-        opacity: 0;
-        width: 300%;
+@keyframes fade-side {
+    0% {
+      transform: translateX(-100px);
+      opacity: 0;
     }
-
-    to {
-        margin-right: 0%;
-        opacity: 1;
-        width: 100%;
+    100% {
+      transform: translateX(0);
+      opacity: 1;
     }
 }
 
@@ -213,7 +210,7 @@
     flex-direction: row;
     font-family: Futura PT;
     animation-duration: 3s;
-    animation-name: slideside;
+    animation-name: fade-side;
 }
 
 .card > * {
