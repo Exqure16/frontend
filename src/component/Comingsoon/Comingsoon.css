@@ -112,7 +112,10 @@ a {
   display: inline-block;
 }
 
-.ComingSoonEmail:hover {
+.ComingSoonEmail:active {
+  background-color:#239ED9;
+}
+.ComingSoonEmail:active {
   transform: scale(1.05);
 }
 
