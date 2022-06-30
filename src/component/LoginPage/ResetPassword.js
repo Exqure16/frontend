@@ -18,6 +18,8 @@ const ResetPassword = () => {
     password2: '',
   });
 
+ 
+
   useEffect(() => {
     if (form.password1 !== '' && form.password2 !== '' ) {
       setFormValid(true);
@@ -26,7 +28,7 @@ const ResetPassword = () => {
     }
   }, [form]);
 
-  const [data, setData] = useState({});
+  
 
   const handleChange = (e) => {
     setForm({
@@ -35,15 +37,16 @@ const ResetPassword = () => {
       
     });
   };
+  
 
   const submitForm = (e) => {
     e.preventDefault();
     if (formValid === true) {
       if(form.password1 === form.password2){
-        setData({
-        ...form,
-      });
-      console.log(data);
+        
+      console.log(form);
+      window.location = "/exqure-frontend/login" ;
+
 
       }
       else{

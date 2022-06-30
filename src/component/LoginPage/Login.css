@@ -192,6 +192,10 @@ margin-block: 2%;
 font-size: 16px;
 /* font-weight: 600; */
 }
+#social-icon{
+/* color: red; */
+height: 1.7em;
+}
 .social-buttons{
     margin-top: 3% ;
     display: flex;

@@ -31,7 +31,7 @@ const Login = () => {
     }
   }, [form]);
 
-  const [data, setData] = useState({});
+  
 
   const handleChange = (e) => {
     setForm({
@@ -43,10 +43,8 @@ const Login = () => {
   const submitForm = (e) => {
     e.preventDefault();
     if (formValid === true) {
-      setData({
-        ...form,
-      });
-      console.log(data);
+      
+      console.log(form);
       // window.location = "" ;
     }
   };
@@ -90,6 +88,7 @@ const Login = () => {
                 onChange={handleChange}
               ></input>
             </div>
+            {form.password}
 
             <div className='settings'>
               <div className='check'>
@@ -113,7 +112,7 @@ const Login = () => {
           <b>LOGIN WITH</b>
           <div className='social-buttons'>
             <button> <FcGoogle id='social-icon'/></button>
-            <button> <FaFacebookF id='social-icon'/></button>
+            <button> <FaFacebookF id='social-icon' color={'#395185'}/></button>
             <button> <BsApple id='social-icon'/></button>
           </div>
         </div>
@@ -121,7 +120,7 @@ const Login = () => {
         
       </section>
       {/* <Routes>
-      <Route path='exqure-frontend/forgot' element={<ForgotPassword />} />
+      <Route path='exqure-frontend/forgot/*' element={<ForgotPassword />} />
 
       </Routes> */}
 

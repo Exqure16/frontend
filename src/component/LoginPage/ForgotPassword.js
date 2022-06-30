@@ -25,7 +25,7 @@ const ForgotPassword = () => {
     }
   }, [form]);
 
-  const [data, setData] = useState({});
+  
 
   const handleChange = (e) => {
     setForm({
@@ -37,10 +37,8 @@ const ForgotPassword = () => {
   const submitForm = (e) => {
     e.preventDefault();
     if (formValid === true) {
-      setData({
-        ...form,
-      });
-      console.log(data);
+     
+      console.log(form);
       window.location = '/exqure-frontend/reset' ;
     }
   };
