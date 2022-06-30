@@ -5,8 +5,17 @@ import logo from '../images/logo.png';
 import { IoMailOutline } from 'react-icons/io5';
 import { VscLock } from 'react-icons/vsc';
 import { useState, useEffect } from 'react';
+import { FcGoogle } from "react-icons/fc";
+import { FaFacebookF } from "react-icons/fa";
+import { BsApple } from "react-icons/bs";
+import { BrowserRouter, Link } from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
+import ForgotPassword from './ForgotPassword';
+
+
 
 const Login = () => {
+
   const [formValid, setFormValid] = useState(false);
 
   const [form, setForm] = useState({
@@ -43,7 +52,9 @@ const Login = () => {
   };
 
   return (
+    
     <div className='login-page'>
+
       <section className='left-box'>
         <div className='logo-div'>
           <img src={logo} alt='logo' />
@@ -83,10 +94,13 @@ const Login = () => {
             <div className='settings'>
               <div className='check'>
                 <input type='checkbox' id='rememberMe'></input>
-                <label>Remember Me</label>
+                <p>Remember me</p>
               </div>
+          
+              <Link style ={{textDecoration: 'none'}}  to = '/exqure-frontend/forgot'>
+              <div><p id='forgotPassword'>Forgot Password?</p> </div>
+              </Link>
 
-              <p id='forgotPassword'>Forgot Password?</p>
             </div>
 
             <button className='login-btn'>Login</button>
@@ -94,10 +108,25 @@ const Login = () => {
               Not registered? <span id='signUp'>Sign Up</span>
             </p>
           </form>
+          <div className='alternate-login'>
+          <p><span>OR</span></p>
+          <b>LOGIN WITH</b>
+          <div className='social-buttons'>
+            <button> <FcGoogle id='social-icon'/></button>
+            <button> <FaFacebookF id='social-icon'/></button>
+            <button> <BsApple id='social-icon'/></button>
+          </div>
         </div>
+        </div>
+        
       </section>
+      {/* <Routes>
+      <Route path='exqure-frontend/forgot' element={<ForgotPassword />} />
+
+      </Routes> */}
+
     </div>
-  );
+  ); 
 };
 
 export default Login;
