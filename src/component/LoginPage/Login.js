@@ -88,7 +88,7 @@ const Login = () => {
                 onChange={handleChange}
               ></input>
             </div>
-            {form.password}
+            
 
             <div className='settings'>
               <div className='check'>
