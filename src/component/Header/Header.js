@@ -70,7 +70,7 @@ const Header = () => {
               <Nav.Link as={Link} to={'exqure-frontend/login'}>
                 <Button variant='outline-primary'>Login</Button>
               </Nav.Link>
-              <Nav.Link as={Link} to={'exqure-frontend/login'}>
+              <Nav.Link as={Link} to={'exqure-frontend/signup'}>
                 <Button variant='outline-primary'>Signup</Button>
               </Nav.Link>
             </Nav>

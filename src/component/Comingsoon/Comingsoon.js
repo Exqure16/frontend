@@ -4,7 +4,7 @@ import Instagram from '../images/instagram.png';
 import Twitter from '../images/twitter.png';
 import Linkdeln from '../images/linkdln.png';
 import Facebook from '../images/facebook.png';
-import CustomForm from './CustomForm';
+import MailchimpFormContainer from './MailchimpFormContainer';
 
 const Comingsoon = () => {
   return (
@@ -18,7 +18,7 @@ const Comingsoon = () => {
             </p>
           </div>
         </section>
-        <CustomForm />
+        <MailchimpFormContainer />
         <section className='socials'>
           <a
             href='https://www.instagram.com/exqure_escrow?igshid=YmMyMTA2M2Y'
