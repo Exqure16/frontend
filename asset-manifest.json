@@ -1,27 +1,14 @@
 {
   "files": {
-    "main.css": "/exqure-frontend/static/css/main.8fca4fcf.css",
-    "main.js": "/exqure-frontend/static/js/main.1be6b5e1.js",
+    "main.css": "/exqure-frontend/static/css/main.c2e9aa1f.css",
+    "main.js": "/exqure-frontend/static/js/main.2a41fb3c.js",
     "static/media/bgimage.jpeg": "/exqure-frontend/static/media/bgimage.f2d8969998e9ca6dc142.jpeg",
-    "static/media/delivery.svg": "/exqure-frontend/static/media/delivery.241fbb79233aeda26369347fb42b003b.svg",
-    "static/media/Montserrat-ExtraBold.ttf": "/exqure-frontend/static/media/Montserrat-ExtraBold.5daafc620ecc802516f9.ttf",
-    "static/media/cameras.svg": "/exqure-frontend/static/media/cameras.110e4778cf12aa3864b4b90c1682998e.svg",
-    "static/media/crypto.svg": "/exqure-frontend/static/media/crypto.812669136a6efa37829a10fa1e690899.svg",
-    "static/media/Hands.png": "/exqure-frontend/static/media/Hands.a1bfbcfee5cec78affce.png",
-    "static/media/fashion.svg": "/exqure-frontend/static/media/fashion.d651c9a8986e72976e3a9c19cec6f978.svg",
-    "static/media/mobile.svg": "/exqure-frontend/static/media/mobile.ba2d8842ca6249b5f5330a14f2decd46.svg",
-    "static/media/terms.svg": "/exqure-frontend/static/media/terms.5615ec4ade9ccc4d7f055c3d80f115a9.svg",
-    "static/media/banknote.svg": "/exqure-frontend/static/media/banknote.8f12b4b8a3ba21aed2336c95f3c2c2fd.svg",
-    "static/media/computerlogin.svg": "/exqure-frontend/static/media/computerlogin.65183883cb96ee5ddfa4a2bc9c5df038.svg",
-    "static/media/Futura Book font.ttf": "/exqure-frontend/static/media/Futura Book font.ed19af444f0976dbaf41.ttf",
-    "static/media/rafiki.png": "/exqure-frontend/static/media/rafiki.731278a03e54b14a3852.png",
-    "static/media/logo2.svg": "/exqure-frontend/static/media/logo2.1eeb74882ff2d0a9884ff53661224f5b.svg",
     "index.html": "/exqure-frontend/index.html",
-    "main.8fca4fcf.css.map": "/exqure-frontend/static/css/main.8fca4fcf.css.map",
-    "main.1be6b5e1.js.map": "/exqure-frontend/static/js/main.1be6b5e1.js.map"
+    "main.c2e9aa1f.css.map": "/exqure-frontend/static/css/main.c2e9aa1f.css.map",
+    "main.2a41fb3c.js.map": "/exqure-frontend/static/js/main.2a41fb3c.js.map"
   },
   "entrypoints": [
-    "static/css/main.8fca4fcf.css",
-    "static/js/main.1be6b5e1.js"
+    "static/css/main.c2e9aa1f.css",
+    "static/js/main.2a41fb3c.js"
   ]
 }
