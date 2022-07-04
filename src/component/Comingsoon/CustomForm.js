@@ -1,70 +1,63 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import './Comingsoon.css';
-import { Row, Col } from 'react-bootstrap';
 
-const CustomForm = ({ status, message, onValidated }) => {
-  const [email, setEmail] = useState('');
+const CustomForm = ({ showNotification, configureNotification }) => {
+  const [state, setState] = useState({
+    email: '',
+  });
 
-  useEffect(() => {
-    if (status === 'success') clearFields();
-  }, [status]);
-
-  const clearFields = () => {
-    setEmail('');
+  const handleChange = (e) => {
+    setState({ email: e.target.value.trim() });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    email &&
-      email.indexOf('@') > -1 &&
-      onValidated({
-        EMAIL: email.value,
-      });
+
+    if (state.email) {
+      fetch(`/api/memberadd?emai=${this.state.email}`)
+        .then((res) =>
+          res.json().then((data) => ({ status: res.status, body: data }))
+        )
+        .then((obj) => {
+          configureNotification(obj);
+          showNotification();
+        })
+        .catch((err) => console.log(err));
+
+      setState({ email: '' });
+    }
+    // email &&
+    //   email.indexOf('@') > -1 &&
+    //   onValidated({
+    //     EMAIL: email.value,
+    // });
   };
   return (
     <div>
-      <form className='newsletter' onSubmit={(e) => handleSubmit(e)}>
-        <Row>
-          <Col>
-            {status === 'sending' && (
-              <div style={{ color: 'blue' }}>sending...</div>
-            )}
-            {status === 'error' && (
-              <div
-                style={{ color: 'red' }}
-                dangerouslySetInnerHTML={{ __html: message }}
-              />
-            )}
-            {status === 'success' && (
-              <div
-                style={{ color: 'green' }}
-                dangerouslySetInnerHTML={{ __html: message }}
-              />
-            )}
-            <input
-              type='email'
-              name='email'
-              placeholder='your@email.com'
-              className='ComingSoonInput'
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-            />
-          </Col>
-          <Col className=''>
-            <button
-              type='submit'
-              className='ComingSoonEmail'
-              id='newsletter'
-              formValue={[email]}
-              // onClick={(e) => handleSubmit(e)}
-            >
-              Notify Me!
-            </button>
-          </Col>
-        </Row>
+      <form className='newsletter' onSubmit={handleSubmit}>
+        <input
+          type='email'
+          name='email'
+          placeholder='Your email'
+          className='ComingSoonInput'
+          value={state.email}
+          onChange={handleChange}
+        />
+        <input
+          type='submit'
+          value={'Get Verified'}
+          className='ComingSoonEmail'
+          id='newsletter'
+        />
       </form>
     </div>
   );
+};
+
+CustomForm.propTypes = {
+  configureNotification: PropTypes.func.isRequired,
+  showNotification: PropTypes.func.isRequired,
 };
 
 export default CustomForm;

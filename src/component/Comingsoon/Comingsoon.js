@@ -1,32 +1,12 @@
-import React, { useState, useEffect } from 'react';
-// import { Container, Row, Col } from 'react-bootstrap';
 import './Comingsoon.css';
 
 import Instagram from '../images/instagram.png';
 import Twitter from '../images/twitter.png';
 import Linkdeln from '../images/linkdln.png';
 import Facebook from '../images/facebook.png';
+import MailchimpFormContainer from './MailchimpFormContainer';
 
-
-const Comingsoon = (status, message, onValidated) => {
-  const [email, setEmail] = useState('');
-
-  useEffect(() => {
-    if (status === 'success') clearFields();
-  }, [status]);
-
-  const clearFields = () => {
-    setEmail('');
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    email &&
-      email.indexOf('@') > -1 &&
-      onValidated({
-        EMAIL: email.value,
-      });
-  };
+const Comingsoon = () => {
   return (
     <div className='ComingSoon'>
       <div className='allPage'>
@@ -38,19 +18,7 @@ const Comingsoon = (status, message, onValidated) => {
             </p>
           </div>
         </section>
-        <form className='newsletter' onSubmit={(e) => handleSubmit(e)}>
-          <input
-            type='email'
-            name='email'
-            placeholder='Your email'
-            className='ComingSoonInput'
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-          />
-          <button type='submit' className='ComingSoonEmail' id='newsletter'>
-            Get Notified
-          </button>
-        </form>
+        <MailchimpFormContainer />
         <section className='socials'>
           <a
             href='https://www.instagram.com/exqure_escrow?igshid=YmMyMTA2M2Y'

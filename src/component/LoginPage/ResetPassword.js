@@ -7,6 +7,9 @@ import { VscLock } from 'react-icons/vsc';
 import { useState, useEffect } from 'react';
 import { IoLogoGoogle } from 'react-icons/io5';
 import { IoLogoGooglePlaystore } from 'react-icons/io5';
+import lock from '../images/lock.svg';
+import personIcon from '../images/personicon.svg';
+import sms from '../images/sms.svg';
 import { Link } from 'react-router-dom';
 
 const ResetPassword = () => {
@@ -76,7 +79,8 @@ const ResetPassword = () => {
           <label>New password</label>
             <div className='input-box'>
               {' '}
-              <VscLock className='icon' />{' '}
+              {/* <VscLock className='icon' />{' '} */}
+                 <img src={lock} alt='logo' className='icon'/>
               <input
                 type='password'
                 name='password1'
@@ -89,7 +93,8 @@ const ResetPassword = () => {
             <label>Confirm password</label>
             <div className='input-box'>
               {' '}
-              <VscLock className='icon' />{' '}
+              {/* <VscLock className='icon' />{' '} */}
+              <img src={lock} alt='logo' className='icon'/>
               <input
                 type='password'
                 name='password2'

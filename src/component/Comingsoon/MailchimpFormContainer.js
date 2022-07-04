@@ -1,28 +1,23 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import MailChimp from 'react-mailchimp-form';
 import './Comingsoon.css';
-import MailchimpSubscribe from 'react-mailchimp-subscribe';
-import CustomForm from './CustomForm';
 
-const MailchimpFormContainer = (props) => {
-  const posturl =
-    'https://gmail.us13.list-manage.com/subscribe/post?u=c5d9a93b3fa374fb078c5f179&amp;id=cd968e9778';
+const MailchimpFormContainer = ({ props }) => {
   return (
-    <div>
-      <Container>
-        <MailchimpSubscribe
-          url={posturl}
-          render={({ subscribe, status, message }) => (
-            <CustomForm
-              status={status}
-              message={message}
-              onValidated={(formData) => subscribe(formData)}
-            />
-          )}
-        />
-      </Container>
-    </div>
+    <MailChimp
+      className='newsletter'
+      action='https://gmail.us12.list-manage.com/subscribe/post?u=874b2555389d9846b510b1fc4&amp;id=c58fcf8079'
+      fields={[
+        {
+          name: 'EMAIL',
+          placeholder: 'Your Email',
+          type: 'text',
+          required: true,
+          validate: true,
+          className: 'ComingSoonInput',
+        },
+      ]}
+    />
   );
 };
-
 export default MailchimpFormContainer;

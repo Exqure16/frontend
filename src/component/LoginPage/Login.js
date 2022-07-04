@@ -8,6 +8,9 @@ import { useState, useEffect } from 'react';
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF } from "react-icons/fa";
 import { BsApple } from "react-icons/bs";
+import lock from '../images/lock.svg';
+import personIcon from '../images/personicon.svg';
+import sms from '../images/sms.svg';
 import { BrowserRouter, Link } from 'react-router-dom';
 import {Routes, Route} from 'react-router-dom';
 import ForgotPassword from './ForgotPassword';
@@ -67,7 +70,8 @@ const Login = () => {
             <label>Email</label>
             <div className='input-box'>
               {' '}
-              <IoMailOutline className='icon' />
+              {/* <IoMailOutline className='icon' /> */}
+             <img src={sms} alt='logo' className='icon'/>
               <input
                 type='email'
                 name='email'
@@ -79,7 +83,9 @@ const Login = () => {
             <label>Password</label>
             <div className='input-box'>
               {' '}
-              <VscLock className='icon' />{' '}
+              {/* <VscLock className='icon' />{' '} */}
+             <img src={lock} alt='logo' className='icon'/>
+
               <input
                 type='password'
                 name='password'
@@ -104,7 +110,9 @@ const Login = () => {
 
             <button className='login-btn'>Login</button>
             <p className='end'>
-              Not registered? <span id='signUp'>Sign Up</span>
+              Not registered?
+              <Link style ={{textDecoration: 'none'}}  to = '/exqure-frontend/signup'>
+              <span id='signUp'>Sign Up</span></Link> 
             </p>
           </form>
           <div className='alternate-login'>

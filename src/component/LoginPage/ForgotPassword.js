@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react';
 import { IoLogoGoogle } from 'react-icons/io5';
 import { IoLogoGooglePlaystore } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
+import sms from '../images/sms.svg';
 
 const ForgotPassword = () => {
   const [formValid, setFormValid] = useState(false);
@@ -59,7 +60,8 @@ const ForgotPassword = () => {
             <label>Email</label>
             <div className='input-box'>
               {' '}
-              <IoMailOutline className='icon' />
+              {/* <IoMailOutline className='icon' /> */}
+              <img src={sms} alt='logo' className='icon'/>
               <input
                 type='email'
                 name='email'
