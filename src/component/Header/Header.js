@@ -17,7 +17,7 @@ const Header = () => {
     <div>
       <Navbar bg='light' expand='lg'>
         <Container className='my-0'>
-          <Navbar.Brand as={Link} to={'exqure-frontend/'} href='#'>
+          <Navbar.Brand as={Link} to={'frontend/'} href='#'>
             <img className='brand' src={logo} alt='' />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbarScroll' />
@@ -34,7 +34,7 @@ const Header = () => {
                 }}
                 className='mx-lg-2'
                 as={Link}
-                to={'exqure-frontend/'}
+                to={'frontend/'}
               >
                 Services
               </Nav.Link>
@@ -53,24 +53,24 @@ const Header = () => {
                 style={{ color: 'black', fontSize: '20px' }}
                 className='mx-lg-2'
                 as={Link}
-                to={'exqure-frontend/homepage'}
+                to={'frontend/'}
               >
                 Blog
               </Nav.Link>
               <Nav.Link
                 style={{ color: 'black', fontSize: '20px' }}
                 as={Link}
-                to={'exqure-frontend/login'}
+                to={'frontend/'}
                 className='mx-lg-2'
               >
                 Contact Us
               </Nav.Link>
             </Nav>
             <Nav>
-              <Nav.Link as={Link} to={'exqure-frontend/login'}>
+              <Nav.Link as={Link} to={'frontend/login'}>
                 <Button variant='outline-primary'>Login</Button>
               </Nav.Link>
-              <Nav.Link as={Link} to={'exqure-frontend/signup'}>
+              <Nav.Link as={Link} to={'frontend/signup'}>
                 <Button variant='outline-primary'>Signup</Button>
               </Nav.Link>
             </Nav>
