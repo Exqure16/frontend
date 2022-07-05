@@ -104,7 +104,10 @@ a {
   cursor: pointer;
 }
 
-.ComingSoonEmail:hover {
+.ComingSoonEmail:active {
+  background-color:#239ED9;
+}
+.ComingSoonEmail:active {
   transform: scale(1.05);
 }
 
