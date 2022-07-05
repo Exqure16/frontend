@@ -1,14 +1,29 @@
 {
   "files": {
-    "main.css": "/exqure-frontend/static/css/main.5e6fb8e6.css",
-    "main.js": "/exqure-frontend/static/js/main.2a41fb3c.js",
-    "static/media/bgimage.jpeg": "/exqure-frontend/static/media/bgimage.f2d8969998e9ca6dc142.jpeg",
-    "index.html": "/exqure-frontend/index.html",
-    "main.5e6fb8e6.css.map": "/exqure-frontend/static/css/main.5e6fb8e6.css.map",
-    "main.2a41fb3c.js.map": "/exqure-frontend/static/js/main.2a41fb3c.js.map"
+    "main.css": "/frontend/static/css/main.8930c0ec.css",
+    "main.js": "/frontend/static/js/main.47a882ac.js",
+    "static/media/delivery.svg": "/frontend/static/media/delivery.241fbb79233aeda26369347fb42b003b.svg",
+    "static/media/Montserrat-ExtraBold.ttf": "/frontend/static/media/Montserrat-ExtraBold.5daafc620ecc802516f9.ttf",
+    "static/media/cameras.svg": "/frontend/static/media/cameras.110e4778cf12aa3864b4b90c1682998e.svg",
+    "static/media/crypto.svg": "/frontend/static/media/crypto.812669136a6efa37829a10fa1e690899.svg",
+    "static/media/Hands.png": "/frontend/static/media/Hands.a1bfbcfee5cec78affce.png",
+    "static/media/fashion.svg": "/frontend/static/media/fashion.d651c9a8986e72976e3a9c19cec6f978.svg",
+    "static/media/mobile.svg": "/frontend/static/media/mobile.ba2d8842ca6249b5f5330a14f2decd46.svg",
+    "static/media/terms.svg": "/frontend/static/media/terms.5615ec4ade9ccc4d7f055c3d80f115a9.svg",
+    "static/media/banknote.svg": "/frontend/static/media/banknote.8f12b4b8a3ba21aed2336c95f3c2c2fd.svg",
+    "static/media/computerlogin.svg": "/frontend/static/media/computerlogin.65183883cb96ee5ddfa4a2bc9c5df038.svg",
+    "static/media/Futura Book font.ttf": "/frontend/static/media/Futura Book font.ed19af444f0976dbaf41.ttf",
+    "static/media/rafiki.png": "/frontend/static/media/rafiki.731278a03e54b14a3852.png",
+    "static/media/logo2.svg": "/frontend/static/media/logo2.1eeb74882ff2d0a9884ff53661224f5b.svg",
+    "static/media/lock.svg": "/frontend/static/media/lock.e46f64238a14ea3a929a6b9e4fa31431.svg",
+    "static/media/personicon.svg": "/frontend/static/media/personicon.c051467508a4f9a9b1a2917f4f89033a.svg",
+    "index.html": "/frontend/index.html",
+    "static/media/sms.svg": "/frontend/static/media/sms.a5afb1be3dafc4af5f9a42a40075e992.svg",
+    "main.8930c0ec.css.map": "/frontend/static/css/main.8930c0ec.css.map",
+    "main.47a882ac.js.map": "/frontend/static/js/main.47a882ac.js.map"
   },
   "entrypoints": [
-    "static/css/main.5e6fb8e6.css",
-    "static/js/main.2a41fb3c.js"
+    "static/css/main.8930c0ec.css",
+    "static/js/main.47a882ac.js"
   ]
 }
