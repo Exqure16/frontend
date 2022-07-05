@@ -40,7 +40,7 @@ const ForgotPassword = () => {
     if (formValid === true) {
      
       console.log(form);
-      window.location = '/exqure-frontend/reset' ;
+      window.location = '/frontend/reset' ;
     }
   };
 

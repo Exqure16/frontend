@@ -102,10 +102,7 @@ const Login = () => {
             <button className='login-btn'>Login</button>
             <p className='end'>
               Not registered?
-              <Link
-                style={{ textDecoration: 'none' }}
-                to='/exqure-frontend/signup'
-              >
+              <Link style={{ textDecoration: 'none' }} to='/frontend/signup'>
                 <span id='signUp'>Sign Up</span>
               </Link>
             </p>
