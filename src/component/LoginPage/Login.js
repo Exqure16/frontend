@@ -104,7 +104,7 @@ const Login = () => {
               Not registered?
               <Link
                 style={{ textDecoration: 'none' }}
-                to='/exqure-frontend/signup'
+                to='/frontend/signup'
               >
                 <span id='signUp'>Sign Up</span>
               </Link>
