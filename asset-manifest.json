@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/frontend/static/css/main.8930c0ec.css",
-    "main.js": "/frontend/static/js/main.47a882ac.js",
+    "main.css": "/frontend/static/css/main.e61e636d.css",
+    "main.js": "/frontend/static/js/main.b1461598.js",
     "static/media/delivery.svg": "/frontend/static/media/delivery.241fbb79233aeda26369347fb42b003b.svg",
     "static/media/Montserrat-ExtraBold.ttf": "/frontend/static/media/Montserrat-ExtraBold.5daafc620ecc802516f9.ttf",
     "static/media/cameras.svg": "/frontend/static/media/cameras.110e4778cf12aa3864b4b90c1682998e.svg",
@@ -14,16 +14,26 @@
     "static/media/computerlogin.svg": "/frontend/static/media/computerlogin.65183883cb96ee5ddfa4a2bc9c5df038.svg",
     "static/media/Futura Book font.ttf": "/frontend/static/media/Futura Book font.ed19af444f0976dbaf41.ttf",
     "static/media/rafiki.png": "/frontend/static/media/rafiki.731278a03e54b14a3852.png",
+    "static/media/welcome.svg": "/frontend/static/media/welcome.088dc629f6c8d0a13df9c6fc2bfc150a.svg",
+    "static/media/rafikibg.png": "/frontend/static/media/rafikibg.7fdd8be6283c8ea0dde1.png",
     "static/media/logo2.svg": "/frontend/static/media/logo2.1eeb74882ff2d0a9884ff53661224f5b.svg",
     "static/media/lock.svg": "/frontend/static/media/lock.e46f64238a14ea3a929a6b9e4fa31431.svg",
+    "static/media/google.svg": "/frontend/static/media/google.ed6ec607984309e9e31e6222f5f9c1b1.svg",
+    "static/media/apple.svg": "/frontend/static/media/apple.84d809907702f98b6435b0dcb07c365b.svg",
+    "static/media/facebook.svg": "/frontend/static/media/facebook.9708f1aa1f4a5e65b0a9eb5b9ecf6722.svg",
+    "static/media/caution.svg": "/frontend/static/media/caution.d812b51c9c689c5d50a9c020983db046.svg",
     "static/media/personicon.svg": "/frontend/static/media/personicon.c051467508a4f9a9b1a2917f4f89033a.svg",
     "index.html": "/frontend/index.html",
+    "static/media/or.svg": "/frontend/static/media/or.07fa50e3cd609f83272f87dca241a978.svg",
     "static/media/sms.svg": "/frontend/static/media/sms.a5afb1be3dafc4af5f9a42a40075e992.svg",
-    "main.8930c0ec.css.map": "/frontend/static/css/main.8930c0ec.css.map",
-    "main.47a882ac.js.map": "/frontend/static/js/main.47a882ac.js.map"
+    "static/media/good.svg": "/frontend/static/media/good.e4c266542fcf70cdd15aaaa4f2d6fe8c.svg",
+    "static/media/shortline.svg": "/frontend/static/media/shortline.ad16ad68cc11dbb3be59ac277c99d3e9.svg",
+    "static/media/line.svg": "/frontend/static/media/line.e6ec7e94737c3e133d42ada4a6b6bfe8.svg",
+    "main.e61e636d.css.map": "/frontend/static/css/main.e61e636d.css.map",
+    "main.b1461598.js.map": "/frontend/static/js/main.b1461598.js.map"
   },
   "entrypoints": [
-    "static/css/main.8930c0ec.css",
-    "static/js/main.47a882ac.js"
+    "static/css/main.e61e636d.css",
+    "static/js/main.b1461598.js"
   ]
 }
