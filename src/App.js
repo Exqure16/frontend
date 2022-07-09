@@ -9,6 +9,10 @@ import Signup from './component/Signup/Signup';
 import ForgotPassword from './component/LoginPage/ForgotPassword';
 import ResetPassword from './component/LoginPage/ResetPassword';
 import CreateTransaction from './component/CreateTransaction/CreateTransaction';
+import Personal from './component/Profile/Personal';
+import NoTransactions from './component/TransactionPages/NoTransaction';
+import WithTransaction from './component/TransactionPages/WithTransaction';
+
 
 function App() {
   return (
@@ -21,6 +25,10 @@ function App() {
         <Route path='frontend/reset' element={<ResetPassword />} />
         <Route path='frontend/signup' element={<Signup />} />
         <Route path='frontend/create' element={<CreateTransaction />} />
+        <Route path='frontend/profile' element={<Personal />} />
+        <Route path='frontend/transaction' element={<NoTransactions />} />
+        <Route path='frontend/transactions' element={<WithTransaction />} />
+
       </Routes>
       <Footer />
     </div>

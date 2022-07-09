@@ -61,17 +61,17 @@ const CreateTransaction = () => {
                        
                        <div>
                          <label>aaa</label>
-                         <select
-                          
+                         <input
+                          type='text'
                            name='item attribute'
                            placeholder='item attribute'
                            // className='login-input'
                            // onChange={handleChange}
                          >
-                          <option>okay</option>
-                          <option>okay</option>
-                         </select>
+                         
+                         </input>
                          </div>
+                         
                      
                      <div>
                       <label>aaa</label>
@@ -89,7 +89,7 @@ const CreateTransaction = () => {
                       
                        </div>
 
-                       <div className='second-div'>
+                       <div className='textarea-div'>
                        
                        <div>
                          <label>aaa</label>
@@ -101,6 +101,8 @@ const CreateTransaction = () => {
                            // onChange={handleChange}
                          ></textarea>
                          </div>
+
+                         <button id='uploadImages'>Upload images</button>
                      
                      
                       

@@ -1,12 +1,12 @@
 .contents{
     display: flex;
     flex-direction: column;
-    background-color: green;
+    /* background-color: green; */
     justify-content: center;
     align-items: center;
 }
 .role-buttons{
-    background-color: rgb(105, 157, 202);
+    /* background-color: rgb(105, 157, 202); */
     width: 600px;
     display: flex;
     justify-content: space-around;
@@ -20,7 +20,7 @@
     margin-top: 8%;
     padding: 0;
     width:500px;
-    background-color:purple;
+    /* background-color:purple; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,9 +38,11 @@
 box-shadow: 0px 0px 6px rgba(47, 73, 86, 0.2);
 border-radius: 16px;
 }
-.second-div select{
+.second-div select, .second-div input{
+    border-radius: 4px;
 width: 100%;
 height: 40px;
+outline: none;
 }
 
 .second-div{
@@ -51,10 +53,19 @@ height: 40px;
 .second-div div{
     margin-top: 4%;
     width: 242px;
-    background-color: blue;
+    /* background-color: blue; */
     /* border: 1px solid black; */
 }
 .textarea-div textarea{
 width: 100%;
-/* height: 40px; */
+height: 100px;
+border-radius: 4px;
+outline: none;
+}
+.textarea-div{
+    position: relative;
+}
+.textarea-div #uploadImages{
+    position: absolute;
+    right: 0;
 }
