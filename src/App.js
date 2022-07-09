@@ -8,6 +8,7 @@ import Footer from './component/Footer';
 import Signup from './component/Signup/Signup';
 import ForgotPassword from './component/LoginPage/ForgotPassword';
 import ResetPassword from './component/LoginPage/ResetPassword';
+import NoTransaction from './component/HpageTransaction/NoTransaction';
 
 function App() {
   return (
