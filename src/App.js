@@ -8,6 +8,7 @@ import Footer from './component/Footer';
 import Signup from './component/Signup/Signup';
 import ForgotPassword from './component/LoginPage/ForgotPassword';
 import ResetPassword from './component/LoginPage/ResetPassword';
+import CreateTransaction from './component/CreateTransaction/CreateTransaction';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path='frontend/forgot' element={<ForgotPassword />} />
         <Route path='frontend/reset' element={<ResetPassword />} />
         <Route path='frontend/signup' element={<Signup />} />
+        <Route path='frontend/create' element={<CreateTransaction />} />
       </Routes>
       <Footer />
     </div>

@@ -1,0 +1,60 @@
+.contents{
+    display: flex;
+    flex-direction: column;
+    background-color: green;
+    justify-content: center;
+    align-items: center;
+}
+.role-buttons{
+    background-color: rgb(105, 157, 202);
+    width: 600px;
+    display: flex;
+    justify-content: space-around;
+}
+.role-buttons button{
+    width: 282px;
+    height: 160px;
+    /* border: none; */
+}
+.transaction-form form{
+    margin-top: 8%;
+    padding: 0;
+    width:500px;
+    background-color:purple;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+}
+.transaction-form form .login-input{
+    width: 100%;
+}
+.transaction-form{
+    margin-top: 2%;
+    width: 660px;
+    display: flex;
+    justify-content: center;
+    background: #FDFEFF;
+box-shadow: 0px 0px 6px rgba(47, 73, 86, 0.2);
+border-radius: 16px;
+}
+.second-div select{
+width: 100%;
+height: 40px;
+}
+
+.second-div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.second-div div{
+    margin-top: 4%;
+    width: 242px;
+    background-color: blue;
+    /* border: 1px solid black; */
+}
+.textarea-div textarea{
+width: 100%;
+/* height: 40px; */
+}
