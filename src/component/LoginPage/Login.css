@@ -99,15 +99,18 @@
   font-size: 16px;
 }
 .login-box p {
-  margin-bottom: 5%;
-  font-size: 16px;
-  font-family: "Jost", sans-serif;
+  margin-bottom: 5% !important; 
+  font-size: 16px  !important;
+  font-family: "Jost", sans-serif  !important;
+  font-weight: 500 !important;
   /* font-family: 'Futura PT'; */
 }
 .login-box h2 {
-  margin-bottom: 4%;
-  font-family: "Montserrat";
-  font-weight: 800;
+  margin-left: 0;
+  /* background-color: yellow; */
+  margin-bottom: 4%  !important;
+  font-family: "Montserrat"  !important;
+  font-weight: 800  !important;
 }
 .settings {
   /* background-color: yellow; */

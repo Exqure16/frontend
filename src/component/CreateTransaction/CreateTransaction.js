@@ -1,6 +1,8 @@
 import React from 'react';
 import './CreateTransaction.css';
 import sms from '../images/sms.svg';
+import personIcon from '../images/personicon.svg';
+
 
 
 
@@ -8,7 +10,7 @@ const CreateTransaction = () => {
 
     return(
         <div>
-           <h2>Create Transaction</h2>
+           <h2 id='h2'>Create Transaction</h2>
            <h3>Select role</h3>
            <div className='contents'>
             <div className="role-buttons">
@@ -21,7 +23,7 @@ const CreateTransaction = () => {
                     <div className='input-box'>
                     {' '}
                     
-                    <img src={sms} alt='logo' className='icon' />
+                    <img src={personIcon} alt='logo' className='icon' />
                     <input
                         type='text'
                         name='transaction-title'
@@ -34,18 +36,23 @@ const CreateTransaction = () => {
                      <div className='second-div'>
                        
                     <div>
-                      <label>aaa</label>
+                      <label>item attribute</label>
                       <select
                         
                         name='item attribute'
                         placeholder='item attribute'
+                        className='item-category'
+
                         // className='login-input'
                         // onChange={handleChange}
-                      ></select>
+                      >
+                        <option>General merchandise</option>
+                          <option>Crypto</option>
+                      </select>
                       </div>
                   
                   <div>
-                   <label>aaa</label>
+                   <label>Item category</label>
                     <select
                         
                         name='item category'
@@ -60,11 +67,13 @@ const CreateTransaction = () => {
                     <div className='second-div'>
                        
                        <div>
-                         <label>aaa</label>
+                         <label>Item name</label>
                          <input
                           type='text'
                            name='item attribute'
-                           placeholder='item attribute'
+                           placeholder='Enter item name'
+                        className='item-category'
+
                            // className='login-input'
                            // onChange={handleChange}
                          >
@@ -74,7 +83,7 @@ const CreateTransaction = () => {
                          
                      
                      <div>
-                      <label>aaa</label>
+                      <label>Price</label>
                        <select
                            
                            name='item category'
@@ -107,8 +116,49 @@ const CreateTransaction = () => {
                      
                       
                        </div>
+                       <div className='shipping'>
+                          <p>Shipping fee paid by</p>
+                            <div className='shippingfee'>
+                               <div>
+                                  <input type='radio' name='shippingfee' value='seller'></input>
+                                 <label>Seller</label>
+                                </div>
+                                <div>
+                                <input type='radio' name='shippingfee' value='buyer'></input>
+                                <label>Buyer</label>
+                                </div>
+                                
+                              </div>
+                              <div className='drop'>
+                            <label>Shipping method</label>
+                            <select
+                                
+                                name='item category'
+                                placeholder='item category'
+                                className='item-category'
+                                // onChange={handleChange}
+                              >
+                                <option>choose item</option>
+                                <option>okay</option>
+                              </select>
+                              </div>
+
+                             <div className='inspection'>
+                            <label>Inspection period (days)</label>
+                            <input
+                                type='text'
+                                name='item category'
+                                placeholder='item category'
+                                className='item-category'
+                                // onChange={handleChange}
+                              >
+                              </input>
+                              </div>
+                        
+                      
+                       </div>
                    
-                 
+                 <button id='submit'>Submit</button>
                 </form>
             </div>
            </div>

@@ -1,0 +1,85 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+
+.wrapper{
+    width: 100%;
+    max-width: 100%;
+}
+
+h1{
+    font-size: 32px;
+}
+
+
+
+.notifications .msgBox{
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid rgb(163, 161, 161);
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.msgBox .grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-bottom: 2px solid rgb(209, 207, 207);
+    border-left: 1px solid rgb(243, 241, 241);
+    margin-top: 4px;
+    
+}
+
+.grid > .div{
+    padding: 3px;
+}
+
+.grid > .time{
+text-align: right;
+}
+
+.grid > .body{
+ text-align:left;
+ font-size: 14px;
+ font-weight: 200;
+ color: rgb(51, 51, 51);
+
+}
+
+.grid > .head{
+  text-align: left;
+  font-weight: 600;
+}
+
+.noMsg{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-weight: 500;
+    background: rgb(231, 229, 229);
+    padding: 0px 0px 10px 0px;
+    border-radius: 3px;
+}
+
+@media screen and (max-width:560px){
+    .notifications .msgBox{
+        overflow-x: scroll;
+    }
+
+    .grid > .body{
+        font-size: 10px;
+       
+       }
+       
+       .grid > .head{
+        font-size: 12px;
+       }
+
+       .grid > .time{
+        font-size: 10px;
+    }
+}
