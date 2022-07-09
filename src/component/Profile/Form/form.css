@@ -1,0 +1,115 @@
+
+@font-face {
+    font-family: Futura PT;
+    src: url('../../../fonts/Futura\ Book\ font.ttf');
+}
+
+@font-face {
+    font-family: Montserrat Variable;
+    src: url('../../../fonts/Montserrat-ExtraBold.ttf');
+}
+*{
+    margin: 0;
+}
+p{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight:bolder;
+    font-size: 16px;
+    line-height: 142%;
+    text-align:left;
+    /* identical to box height, or 23px */
+
+    
+    letter-spacing: 0.03em;
+
+    /* Extra/Black */
+
+    color: #1B1C1E;
+
+}
+.countryDiv{
+    display:flex;
+    justify-content:space-between;
+}
+.innerCountryDiv label{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    /* or 22px */
+    
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+.innerCountryDiv{
+    display:flex;
+    flex-direction: column;
+    
+}
+/*
+.PhoneInputCountryIcon--border{
+    width: 1rem;
+}
+
+.PhoneInputCountryIconImg{
+    width: 2rem;
+    position: absolute;
+    margin-left: 0;
+    margin-top: -1.5rem;
+    z-index: 1;
+    
+}
+
+.PhoneInputCountry{
+    position: absolute;
+    margin-left: 1rem;
+}
+
+.PhoneInputInput:focus{
+    outline: none !important;
+    border:1px solid #8bb7cc;
+    box-shadow: 0 0 10px #8bb7cc;
+}
+
+.PhoneInputInput{
+    position: relative;
+    width: 15vw;
+    height: 2.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    margin-left: 0rem;
+    border:1px solid #ced4da;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    font-size: 1rem;
+    font-weight: 400;
+    z-index: 0;
+    padding-left: 4.5rem;
+    border-radius: 0.25rem;
+    
+}
+
+.PhoneInputCountrySelectArrow{
+    display:none;
+    position: absolute;
+    margin-left: 2rem;
+}
+.PhoneInputCountryIcon--border{
+    position:absolute;
+    margin:0;
+}
+.PhoneInputCountrySelect{
+    position: relative;
+    margin-left: 2.5rem;
+    margin-top: 0.6rem;
+    width: 4%;
+    border-color: none;
+    border: none;
+    background-color: transparent;
+    z-index: 2;
+}
+*/

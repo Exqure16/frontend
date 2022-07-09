@@ -8,7 +8,13 @@ import Footer from './component/Footer';
 import Signup from './component/Signup/Signup';
 import ForgotPassword from './component/LoginPage/ForgotPassword';
 import ResetPassword from './component/LoginPage/ResetPassword';
+<<<<<<< HEAD
 import NoTransaction from './component/HpageTransaction/NoTransaction';
+=======
+import Personal from './component/Profile/Personal';
+import NoTransactions from './component/TransactionPages/NoTransaction';
+import WithTransaction from './component/TransactionPages/WithTransaction';
+>>>>>>> 3c749f602246721af9bad7e5a60ea1cf160eeb8b
 
 function App() {
   return (
@@ -20,6 +26,9 @@ function App() {
         <Route path='frontend/forgot' element={<ForgotPassword />} />
         <Route path='frontend/reset' element={<ResetPassword />} />
         <Route path='frontend/signup' element={<Signup />} />
+        <Route path='frontend/profile' element={<Personal />} />
+        <Route path='frontend/transaction' element={<NoTransactions />} />
+        <Route path='frontend/transactions' element={<WithTransaction />} />
       </Routes>
       <Footer />
     </div>
