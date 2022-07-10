@@ -40,7 +40,8 @@ const CreateTransaction = () => {
                       <select
                         
                         name='item attribute'
-                        placeholder='item attribute'
+                        // placeholder='item attribute'
+                        id='item-attribute'
                         className='item-category'
 
                         // className='login-input'
@@ -101,11 +102,11 @@ const CreateTransaction = () => {
                        <div className='textarea-div'>
                        
                        <div>
-                         <label>aaa</label>
+                         <label>Item description</label>
                          <textarea
                            
-                           name='item attribute'
-                           placeholder='item attribute'
+                           name='item description'
+                           placeholder='item description'
                            // className='login-input'
                            // onChange={handleChange}
                          ></textarea>
