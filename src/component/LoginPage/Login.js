@@ -130,7 +130,9 @@ const Login = () => {
         </div>
       </section>
       {/* <Routes>
-      <Route path='exqure-frontend/forgot/*' element={<ForgotPassword />} />
+      <Route path='frontend/forgot/*' element={<ForgotPassword />} />
+        <Route path='frontend/forgot' element={<ForgotPassword />} />
+
 
       </Routes> */}
     </div>
