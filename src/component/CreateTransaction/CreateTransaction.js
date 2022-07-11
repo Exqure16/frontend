@@ -26,7 +26,7 @@ const CreateTransaction = () => {
 const handleChange = (e) => {
     setForm({
       ...form,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value, 
     });
   };
 
@@ -99,8 +99,9 @@ const handleChange = (e) => {
                           </div>
                    
                     </div>
-
+                  
                     <div className='second-div'>
+                      {/* {} */}
                        
                           <div>
                             <label>Item name</label>
