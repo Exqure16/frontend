@@ -30,7 +30,7 @@ const handleChange = (e) => {
     });
   };
 
-  const submitForm = (e) => {
+  const submitForm = (e) => { 
     e.preventDefault();
     // if (formValid === true) {
       console.log(form);
