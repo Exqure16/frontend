@@ -11,6 +11,7 @@ import { useState, useEffect } from 'react';
 const CreateTransaction = () => {
      
   const [formValid, setFormValid] = useState(false);
+const test='b';
 
   const [form, setForm] = useState({});
 
@@ -63,7 +64,7 @@ const handleChange = (e) => {
                      </div>
 
                      <div className='second-div'>
-                       
+          
                         <div>
                           <label>Item attribute</label>
                           <select
@@ -100,100 +101,155 @@ const handleChange = (e) => {
                    
                     </div>
                   
-                    <div className='second-div'>
-                      {/* {} */}
+                  {/* conditional rendering for the cryto and normal transaction page*/}
+                  
+
+                  {form.itemCategory=="Cryptocurrency" ? 
+                   <>
+                   <div className='second-div'>
+ 
+                   <div>
+                     <label>Select transaction coin</label>
+                     <select
                        
-                          <div>
-                            <label>Item name</label>
-                            <input
-                              type='text'
-                              name='itemName'
-                              placeholder='Enter item name'
-                                className='item-category'
-
-                              // className='login-input'
-                              onChange={handleChange}
-                            >
-                            
-                            </input>
-                          </div>
-                         
-                     
-                          <div>
-                            <label>Price</label>
-                            <select
-                                
-                                name='itemPrice'
-                                // placeholder='item category'
-                                className='item-category'
-                                onChange={handleChange}
-                              >
-                                <option>okay</option>
-                                <option>okay</option>
-                              </select>
-                              </div>
-                            
-                     </div>
-
-                       <div className='textarea-div'>
-                          
-                          <div>
-                            <label>Item description</label>
-                            <textarea
-                              
-                              name='itemDescription'
-                              placeholder='item description'
-                              // className='login-input'
-                              onChange={handleChange}
-                            ></textarea>
-                            </div>
-
-                         <button id='uploadImages'>Upload images</button>
-                     
-                     
+                       name='transactionCoin'
+                       className='item-category'
+                       onChange={handleChange}
+                     >
+                       <option>Bitcoin</option>
+                       <option>Eth</option>
+                       <option>Cake</option>
+                     </select>
+                   </div>
+ 
+ 
+                   <div>
+                     <label>Amount</label>
+                     <input
+ 
+                       name='coinAmount'
+                       className='item-category'
+                       onChange={handleChange}
+                     >
                       
+                     </input>
+                   </div>
+ 
+                 </div>
+
+                 <div className='second-div'>
+                 
+                   <div>
+                     <label>Price</label>
+                     <input
+                       type='text'
+                       name='coinPrice'
+                       placeholder='USD'
+                       className='item-category'
+                       onChange={handleChange}
+                     >
+ 
+                     </input>
+                   </div>
+ 
+                 </div>
+                 </>
+                  : 
+                   <>
+                   <div className='second-div'>
+                  
+                  <div>
+                    <label>Item name</label>
+                    <input
+                      type='text'
+                      name='itemName'
+                      placeholder='Enter item name'
+                      className='item-category'
+                      onChange={handleChange}
+                    >
+
+                    </input>
+                  </div>
+
+
+                  <div>
+                    <label>Price</label>
+                    <select
+
+                      name='itemPrice'
+                      // placeholder='item category'
+                      className='item-category'
+                      onChange={handleChange}
+                    >
+                      <option>okay</option>
+                      <option>okay</option>
+                    </select>
+                  </div>
+
+                </div>
+                <div className='textarea-div'>
+
+                    <div>
+                      <label>Item description</label>
+                      <textarea
+
+                        name='itemDescription'
+                        placeholder='item description'
+                        onChange={handleChange}
+                      ></textarea>
+                    </div>
+
+                    <button id='uploadImages'>Upload images</button>
+
+
+
+                  </div>
+                  <div className='shipping'>
+                    <p>Shipping fee paid by</p>
+                    <div className='shippingfee'>
+                      <div>
+                        <input type='radio' name='shippingfee' value='seller' onChange={handleChange}></input>
+                        <label>Seller</label>
                       </div>
-                       <div className='shipping'>
-                          <p>Shipping fee paid by</p>
-                            <div className='shippingfee'>
-                                  <div>
-                                      <input type='radio' name='shippingfee' value='seller' onChange={handleChange}  ></input>
-                                    <label>Seller</label>
-                                    </div>
-                                    <div>
-                                    <input type='radio' name='shippingfee' value='buyer'  onChange={handleChange}></input>
-                                    <label>Buyer</label>
-                                    </div>
-                                
-                              </div>
-                              <div className='drop'>
-                                <label>Shipping method</label>
-                                <select
-                                    
-                                    name='shippingMethod'
-                                    placeholder='item category'
-                                    className='item-category'
-                                    onChange={handleChange}
-                                  >
-                                    <option>choose item</option>
-                                    <option>okay</option>
-                                  </select>
-                              </div>
+                      <div>
+                        <input type='radio' name='shippingfee' value='buyer' onChange={handleChange}></input>
+                        <label>Buyer</label>
+                      </div>
 
-                             <div className='inspection'>
-                                <label>Inspection period (days)</label>
-                                <input
-                                    type='text'
-                                    name='inspectionPeriod'
-                                    placeholder='item category'
-                                    className='item-category'
-                                    onChange={handleChange}
-                                  >
-                                  </input>
-                              </div>
-                        
-                      
-                        </div>
+                    </div>
+                    <div className='drop'>
+                      <label>Shipping method</label>
+                      <select
+
+                        name='shippingMethod'
+                        placeholder='item category'
+                        className='item-category'
+                        onChange={handleChange}
+                      >
+                        <option>choose item</option>
+                        <option>okay</option>
+                      </select>
+                    </div>
+
+                    <div className='inspection'>
+                      <label>Inspection period (days)</label>
+                      <input
+                        type='text'
+                        name='inspectionPeriod'
+                        placeholder='item category'
+                        className='item-category'
+                        onChange={handleChange}
+                      >
+                      </input>
+                    </div>
+
+
+                  </div>
+                  </>
+                  
+                  }                  
+
+                   
                    
                  <button id='submit'>Submit</button>
                 </form>
