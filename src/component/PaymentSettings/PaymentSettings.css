@@ -1,0 +1,177 @@
+@font-face {
+  font-family: Futura PT;
+  src: url('../../fonts/Futura\ Book\ font.ttf');
+}
+
+@font-face {
+  font-family: Montserrat Variable;
+  src: url('../../fonts/Montserrat-ExtraBold.ttf');
+}
+
+h3 {
+  font-family: Montserrat Variable, sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+}
+.not-alert {
+  width: 560px;
+  height: 92px;
+  padding: 24px;
+  background-color: #e2f3fc;
+  border-radius: 8px;
+  display: flex;
+}
+
+hr {
+  width: 1900x;
+  color: #9fa2a5;
+}
+
+.paymentform {
+  width: 568px;
+  height: 516px;
+  border: 5px solid #fdfeff;
+  border-radius: 16px;
+  padding: 80px;
+  margin-top: 10px;
+  background-color: #fdfeff;
+  box-shadow: 0px 0px 6px rgba(47, 73, 86, 0.2);
+}
+
+.addbtn {
+  border: 1px solid #239ed9;
+  background-color: white;
+  color: #239ed9;
+  padding: 5px;
+  font-size: 16px;
+  width: 200px;
+  height: 40px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.save {
+  background-color: #239ed9;
+  border-radius: 4px;
+  border: 0;
+  width: 120px;
+  height: 40px;
+  color: white;
+  margin-bottom: 35px;
+}
+
+.debit-card {
+  border: 1px solid #9fa2a5;
+  border-radius: 6px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  display: flex;
+  height: 230px;
+}
+.carddata {
+  display: flex;
+  margin-top: 100px;
+}
+.carddata p {
+  margin-left: 25px;
+}
+
+.removebtn {
+  padding: 0px;
+  border: none;
+  margin-left: 390px;
+  margin-top: 70px;
+  height: none;
+  background: none;
+  background-color: none;
+  color: red;
+}
+
+.formcontrol {
+  margin-bottom: 15px;
+  display: grid;
+}
+
+.formcontrol input {
+  width: 408px;
+  height: 40px;
+  border-radius: 4px;
+  padding: 8px 12px;
+}
+
+.formcontrol label {
+  font-family: 'Futura PT';
+  font-weight: 450;
+  font-size: 16px;
+}
+
+.formlabel {
+  font-family: 'Futura PT';
+  font-weight: 450;
+}
+
+.popup {
+  padding: auto;
+}
+
+.formdiv {
+  display: flex;
+  gap: 30px;
+}
+
+.formdiv .formcontrol input {
+  width: 190px;
+}
+
+.savebutton {
+  width: 408px;
+  height: 40px;
+  border: none;
+  border-radius: 6px;
+  background-color: #239ed9;
+  color: #fdfeff;
+  margin-top: -10px;
+}
+
+.cancelbutton {
+  width: 408px;
+  height: 40px;
+  border: none;
+  border-radius: 6px;
+  background-color: #fdfeff;
+  color: #239ed9;
+  box-shadow: 0px 0px 6px rgba(47, 73, 86, 0.2);
+}
+
+.formcontrol img {
+  display: flex;
+}
+
+.cards {
+  display: inline-flex;
+  float: right;
+  margin-left: 240px;
+  margin-bottom: 5px;
+  gap: 2px;
+}
+
+.small-card {
+  margin-left: -12px;
+  margin-top: 35px;
+}
+
+.small-card p {
+  margin-left: 35px;
+}
+.small-card h3 {
+  font-weight: 400 lighter;
+  font-size: 10px;
+  line-height: 22.4px;
+  text-transform: uppercase;
+  letter-spacing: 3%;
+}
+
+.small-moda {
+  width: 200px;
+}

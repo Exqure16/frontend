@@ -11,6 +11,8 @@ import ResetPassword from './component/LoginPage/ResetPassword';
 import NoTransaction from './component/TransactionPages/NoTransaction';
 import WithTransaction from './component/TransactionPages/WithTransaction';
 import Personal from './component/Profile/Personal';
+import PaymentSettings from './component/PaymentSettings/PaymentSettings';
+import PsWithTransaction from './component/PaymentSettings/PsWithTransaction';
 
 function App() {
   return (
@@ -25,6 +27,11 @@ function App() {
         <Route path='frontend/profile' element={<Personal />} />
         <Route path='frontend/transaction' element={<NoTransaction />} />
         <Route path='frontend/transactions' element={<WithTransaction />} />
+        <Route path='frontend/paymentsettings' element={<PaymentSettings />} />
+        <Route
+          path='frontend/psWithTransaction'
+          element={<PsWithTransaction />}
+        />
       </Routes>
       <Footer />
     </div>
