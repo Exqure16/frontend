@@ -1,8 +1,8 @@
 import React from 'react'
 
-function ViewBtn({text, style}) {
+function ViewBtn({text, style, onClick}) {
   return (
-    <button style={style}>{text}</button>
+    <button onClick={onClick} style={style}>{text}</button>
   )
 }
 
