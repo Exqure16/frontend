@@ -1,8 +1,13 @@
 import React from 'react';
-import './CreateTransaction.css';
-import sms from '../images/sms.svg';
-import personIcon from '../images/personicon.svg';
+// import './CreateTransaction.css';
+import '../CreateTransaction/CreateTransaction.css';
+import sms from '../../images/sms.svg';
+import personIcon from '../../images/personicon.svg';
 import { useState, useEffect } from 'react';
+import { TbDownload } from 'react-icons/tb';
+import { TbUpload } from 'react-icons/tb';
+
+
 
 
 
@@ -46,8 +51,8 @@ const handleChange = (e) => {
            <h3>Select role</h3>
            <div className='contents'>
              <div className="role-buttons">
-              <button id='seller'></button>
-              <button id='buyer'></button>
+              <button id='seller'> <TbUpload/> <p>Seller</p></button>
+              <button id='buyer'> <TbDownload/> <p>Buyer</p></button>
              </div>
              <div className='transaction-form'>
                 <form onSubmit={submitForm}>
