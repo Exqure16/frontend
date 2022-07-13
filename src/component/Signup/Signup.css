@@ -1,6 +1,21 @@
 
-.container{
-    display: flex;
+@font-face {
+    font-family: Futura PT;
+    src: url('../../fonts/Futura\ Book\ font.ttf');
+}
+
+@font-face {
+    font-family: Montserrat Variable;
+    src: url('../../fonts/Montserrat-ExtraBold.ttf');
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container-fluid{
+    
+    width: 100%;
 }
 
 .container-fluid .row{
@@ -10,38 +25,69 @@
 .container-fluid .row .logocol{
     background-color: #E2F3FC;
     padding: 0px;
-    max-width: 40%;   
+    width: 45% ;
+    align-items: center;
 }
 
-.logocol1{
-    display: none;
-}
 
 .container-fluid .row .logocol .logo{
-    margin-top: 50%;
+    margin-top: 70%;
     margin-left: 20%;
     margin-right: 20%;
-    max-width: 60%;
+    width: 60%;
+
 }
 
 .container-fluid .row .logocol .hands{
     width: 100%;
     margin-left:0;
 }
-
+.tagline{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.03em;
+    opacity: 0.7;
+    color:black;
+}
+.header{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 30px;
+    line-height: 142%;
+}
 .Signupbtn{
     width: 100%;
     margin-top: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    gap: 8px;
+    height: 46px;
+    border-color: transparent;
+    background: #239ED9;
+    border-radius: 4px;
+    color:white;
 }
 
+.container-fluid .row .formcol label{
+
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 16px;
+    line-height: 142%;
+    letter-spacing: 0.03em;
+}
 .container-fluid .row .formcol div{
     position: relative;
     display: flex;
     width: 100%;
-}
-
-.container-fluid .row .formcol .form-label{
-    font-family: 'Futura PT';
 }
 
 .container-fluid .row .formcol .input-group div .form-control:focus{   
@@ -55,9 +101,9 @@
 }
 
 .container-fluid .row .formcol .form .input-group div .icon{
-    margin-left: 0.75rem;
     position: absolute;
-    margin-top: 0.45rem;
+    margin-left: 0rem;
+    margin-top: -0.4rem;
 
 }
 
@@ -67,6 +113,8 @@
 
 .container-fluid .row .formcol{
     padding: 10%;
+    width: 55%;
+    display: none;
 }
 
 .container-fluid .row .formcol .footer1 a{
@@ -80,15 +128,24 @@
 }
 
 .container-fluid .row .formcol .footer1{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bolder;
     font-size: 13px;
-    font-weight: 400px;
-}
+    line-height: 140%;
+    /* or 18px */
 
+    text-align: center;
+}
 .container-fluid .row .formcol .footer2{
     font-size: 16px;
-    font-weight: 450;
+    font-weight: bolder;
+    text-align:center;
+    font-family: 'Futura PT';
+    font-style: normal;
+    line-height: 140%;
+    letter-spacing: 0.03em;    
 }
-
 .container-fluid .row .formcol .footDiv{
     max-width: 100%;
     text-align: center;
@@ -156,17 +213,103 @@
     background-color: transparent;
     z-index: 1;
 }
+.orDiv{
+    width:100%;
+    position: absolute;
+    height: 22px;
+    margin-top:1rem;
+}
+.orDivImg{
+    max-width:100%;
+    margin:auto;
+}
+.logoLink{
+    width: 60%;
+    
+    margin-top:2rem;
+    margin:auto;
+    align-items:center;
+    justify-content: space-between;
+}
+/*.logoLink .fb{
+    margin:;
+}*/
+.lastLogoDiv p{
+    margin-top: 2rem;
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    letter-spacing: 0.03em;
+        
+}
+.lastLogoDiv{
+    display: flex;
+    flex-direction: column;
+}
+.signupCol{
+    width: 55%;
+    background-color:aqua;
+    padding-left:3rem;
+    padding-right:3rem;
+    padding-top: 20%;
+}
+.successfulDiv p{
+    margin-top: 1rem;
+    margin-left: 0.25rem;
 
+}
+.successfulDiv{
+    padding: 0.5rem;
+    background: rgba(63, 181, 93, 0.2);
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin:auto;
+}
+.welcomeDiv img{
+    max-width:284px;
+    margin-top:2rem;
+    
+}
+.welcomeDiv{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items:center;
+
+}
+.welcomeDiv h1{
+    text-align: center;
+    font-size: 24px;
+}
+footer{
+    display: none;
+}
 @media (max-width:767px) {
     
     .container-fluid{
         
+        display: block;
         width: 100%;
     }
+    
+    .container-fluid .row{
+        width: 100% ;
+        
+    }
+
     .container-fluid .row .logocol1{
         margin-top: 4rem;
         margin-left: 2rem;
-        display: block;
+        
         position: absolute;
     }
     .logocol{
@@ -184,7 +327,7 @@
     }
     .container-fluid .row .formcol .form {
         position: absolute;
-        width: 90%;
+        width:90%;
         margin-top: 0;
     }
     .container-fluid .row .formcol h1 {
@@ -207,7 +350,7 @@
         text-align: left;
         font-size: 2rem;
     }
-    .form-label{
+    .label{
         display: none;
     }
     .input-group{
@@ -235,5 +378,21 @@
         position: absolute;
         margin-top: 28rem;
         width: 90%;
+
+    }
+    button:disabled{
+        cursor: not-allowed;
+        pointer-events: all !important;
+    }
+    .lastLogoDiv{
+        display: none;
+    }
+    .welcomeDiv img{
+        margin-left:1rem;
+        margin-right:1rem;
+    }
+    .orDiv{
+        margin-left: 0;
+        width:90%;
     }
 }

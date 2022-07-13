@@ -1,0 +1,126 @@
+
+@font-face {
+    font-family: Futura PT;
+    src: url('../../fonts/Futura\ Book\ font.ttf');
+}
+
+@font-face {
+    font-family: Montserrat Variable;
+    src: url('../../fonts/Montserrat-ExtraBold.ttf');
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h2{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 142%;
+    margin-left: 2rem;
+    margin-top: 3rem;
+}
+h3{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 142%;
+    margin-left: 2rem;
+}
+.headDiv{
+    display: flex;
+    padding-left:4rem;
+    padding-right:4rem;
+    margin: auto;
+    max-width:100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    justify-content: space-between;
+}
+.headDiv div span{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 140%;
+    /* identical to box height, or 28px */
+
+    letter-spacing: 0.03em;
+}
+.headDiv div{
+    display:flex;
+    flex-direction: column;
+    
+}
+.errorDiv span{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 16px;
+    line-height: 140%;
+    /* or 22px */
+
+    letter-spacing: 0.03em;
+
+    /* Extra/Black */
+
+    color: #1B1C1E;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+}
+.errorDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    gap: 8px;
+    margin:auto;
+    margin-top:2rem;
+    width: 718px;
+    height: 72px;
+    
+    background: rgba(208, 9, 9, 0.2);
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.formDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px;
+    gap: 32px;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 568px;
+    height: 1028px;
+
+    /* Extra/White */
+
+    background: #FDFEFF;
+    box-shadow: 0px 0px 6px rgba(47, 73, 86, 0.2);
+    border-radius: 16px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
