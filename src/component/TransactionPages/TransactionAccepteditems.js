@@ -1,16 +1,15 @@
-
 import React from 'react'
-import accept from '../images/accepted.png'
+import acceptitem from '../images/cuate2.png'
 import '../TransactionPages/CreateTransaction/CreateTransaction.css'
 
-const TransactionAccepted = () => {
+const TransactionAccepteditems = () => {
   return (
     <div className='TransactionAccepted'>
         <h2>Transaction accepted</h2>
         
             <div className='accepted-section'>
-        <div><img src={accept} alt='accepted image'/></div> 
-        <p>You have accepted transaction terms & conditions. Please proceed with your transaction</p>
+        <div><img src={acceptitem} alt='accepted image'/></div> 
+        <p>You have accepted transaction items. Please proceed with your transaction</p>
         <div className='abutton'><button>Proceed</button></div>
             </div>
      
@@ -18,4 +17,4 @@ const TransactionAccepted = () => {
   )
 }
 
-export default TransactionAccepted
+export default TransactionAccepteditems

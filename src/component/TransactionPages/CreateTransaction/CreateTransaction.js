@@ -16,7 +16,7 @@ import { TbUpload } from 'react-icons/tb';
 const CreateTransaction = () => {
      
   const [formValid, setFormValid] = useState(false);
-const test='b';
+
 
   const [form, setForm] = useState({});
 
@@ -109,7 +109,7 @@ const handleChange = (e) => {
                   {/* conditional rendering for the cryto and normal transaction page*/}
                   
 
-                  {form.itemCategory=="Cryptocurrency" ? 
+                  {form.itemCategory==="Cryptocurrency" ? 
                    <>
                    <div className='second-div'>
  
