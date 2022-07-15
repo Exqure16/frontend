@@ -20,7 +20,7 @@ function App() {
     <div>
       <Header />
       <Routes>
-        <Route path='frontend/' element={<HomePage />} />
+        <Route path='/frontend' element={<HomePage />} />
         <Route path='frontend/login' element={<Login />} />
         <Route path='frontend/forgot' element={<ForgotPassword />} />
         <Route path='frontend/reset' element={<ResetPassword />} />

@@ -3,6 +3,7 @@ import { IoIosNotifications } from 'react-icons/io';
 import './PaymentSettings.css';
 import debitCard from '../images/Debit Card.png';
 import { useState } from 'react';
+import React from 'react';
 
 const PaymentSettings = () => {
   const [show, setShow] = useState(false);
