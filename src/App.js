@@ -8,12 +8,19 @@ import Footer from './component/Footer';
 import Signup from './component/Signup/Signup';
 import ForgotPassword from './component/LoginPage/ForgotPassword';
 import ResetPassword from './component/LoginPage/ResetPassword';
-import NoTransaction from './component/TransactionPages/NoTransaction';
-import WithTransaction from './component/TransactionPages/WithTransaction';
+import CreateTransaction from './component/TransactionPages/CreateTransaction/CreateTransaction';
 import Personal from './component/Profile/Personal';
-import PaymentSettings from './component/PaymentSettings/PaymentSettings';
+import NoTransactions from './component/TransactionPages/NoTransaction';
+import WithTransaction from './component/TransactionPages/WithTransaction';
+import Notifications from './component/notifications/Notifications';
+import TransactionAccepted from './component/TransactionPages/TransactionAccepted';
 import PsWithTransaction from './component/PaymentSettings/PsWithTransaction';
-import CreateTransaction from './component/CreateTransaction/CreateTransaction';
+import PaymentSettings from './component/PaymentSettings/PaymentSettings';
+import TransactionAccepteditems from './component/TransactionPages/TransactionAccepteditems';
+import TransactionDeclined from './component/TransactionPages/TransactionDeclined';
+
+
+
 
 function App() {
   return (
@@ -27,9 +34,13 @@ function App() {
         <Route path='frontend/signup' element={<Signup />} />
 
         <Route path='frontend/create' element={<CreateTransaction />} />
+        <Route path='frontend/acceptedterms' element={<TransactionAccepted />} />
+        <Route path='frontend/accepteditems' element={<TransactionAccepteditems />} />
+        <Route path='frontend/declined' element={<TransactionDeclined/>} />
         <Route path='frontend/profile' element={<Personal />} />
-        <Route path='frontend/transaction' element={<NoTransaction />} />
+        <Route path='frontend/transaction' element={<NoTransactions />} />
         <Route path='frontend/transactions' element={<WithTransaction />} />
+        <Route path='frontend/notifications' element={<Notifications />} />
         <Route path='frontend/paymentsettings' element={<PaymentSettings />} />
         <Route
           path='frontend/psWithTransaction'
