@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/frontend/static/css/main.e6f3e2d8.css",
-    "main.js": "/frontend/static/js/main.77323cb9.js",
+    "main.css": "/frontend/static/css/main.8001602a.css",
+    "main.js": "/frontend/static/js/main.22f0458d.js",
     "static/media/delivery.svg": "/frontend/static/media/delivery.241fbb79233aeda26369347fb42b003b.svg",
     "static/media/Montserrat-ExtraBold.ttf": "/frontend/static/media/Montserrat-ExtraBold.5daafc620ecc802516f9.ttf",
     "static/media/cameras.svg": "/frontend/static/media/cameras.110e4778cf12aa3864b4b90c1682998e.svg",
@@ -17,6 +17,8 @@
     "static/media/Debit Card.png": "/frontend/static/media/Debit Card.be73784ad6b7f377d954.png",
     "static/media/welcome.svg": "/frontend/static/media/welcome.088dc629f6c8d0a13df9c6fc2bfc150a.svg",
     "static/media/cuate.png": "/frontend/static/media/cuate.f40fbc605ddb65663d23.png",
+    "static/media/accepted.png": "/frontend/static/media/accepted.8e802107f2082df0b8b1.png",
+    "static/media/cuate2.png": "/frontend/static/media/cuate2.7495469d9e4474de85f7.png",
     "static/media/rafikibg.png": "/frontend/static/media/rafikibg.7fdd8be6283c8ea0dde1.png",
     "static/media/logo2.svg": "/frontend/static/media/logo2.1eeb74882ff2d0a9884ff53661224f5b.svg",
     "static/media/lock.svg": "/frontend/static/media/lock.e46f64238a14ea3a929a6b9e4fa31431.svg",
@@ -31,11 +33,11 @@
     "static/media/good.svg": "/frontend/static/media/good.e4c266542fcf70cdd15aaaa4f2d6fe8c.svg",
     "static/media/shortline.svg": "/frontend/static/media/shortline.ad16ad68cc11dbb3be59ac277c99d3e9.svg",
     "static/media/line.svg": "/frontend/static/media/line.e6ec7e94737c3e133d42ada4a6b6bfe8.svg",
-    "main.e6f3e2d8.css.map": "/frontend/static/css/main.e6f3e2d8.css.map",
-    "main.77323cb9.js.map": "/frontend/static/js/main.77323cb9.js.map"
+    "main.8001602a.css.map": "/frontend/static/css/main.8001602a.css.map",
+    "main.22f0458d.js.map": "/frontend/static/js/main.22f0458d.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6f3e2d8.css",
-    "static/js/main.77323cb9.js"
+    "static/css/main.8001602a.css",
+    "static/js/main.22f0458d.js"
   ]
 }
