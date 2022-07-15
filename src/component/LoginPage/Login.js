@@ -19,8 +19,8 @@ const Login = () => {
   const [formValid, setFormValid] = useState(false);
 
   const [form, setForm] = useState({
-    email: '',
-    password: '',
+    // email: '',
+    // password: '',
   });
 
   useEffect(() => {
