@@ -39,7 +39,7 @@ function NoTransaction() {
          )
         })}
       </table>
-      <BsPlusSquareFill style={{border: 'none', backgroundColor: 'transparent', color: '#239ED9', fontSize: '2.5rem', alignSelf: 'center', justifyContent: 'center', cursor:'pointer', marginBottom: '1.5rem'}} onClick={() => navigate('/new-transaction')} /> 
+      <BsPlusSquareFill style={{border: 'none', backgroundColor: 'transparent', color: '#239ED9', fontSize: '2.5rem', alignSelf: 'center', justifyContent: 'center', cursor:'pointer', marginBottom: '1.5rem'}} onClick={() => navigate('/frontend/create')} /> 
      </div>
       <ViewBtn style={{float:'left' ,margin:'2rem auto', backgroundColor: 'transparent', color: '#239ED9', border: '1px solid #239ED9', padding: '.5rem 1.2rem', fontWeight: 'bold', textAlign: 'left'}} text="View Transaction History"/>
     </Section>

@@ -19,8 +19,8 @@ const Login = () => {
   const [formValid, setFormValid] = useState(false);
 
   const [form, setForm] = useState({
-    email: '',
-    password: '',
+    // email: '',
+    // password: '',
   });
 
   useEffect(() => {
@@ -130,7 +130,9 @@ const Login = () => {
         </div>
       </section>
       {/* <Routes>
-      <Route path='exqure-frontend/forgot/*' element={<ForgotPassword />} />
+      <Route path='frontend/forgot/*' element={<ForgotPassword />} />
+        <Route path='frontend/forgot' element={<ForgotPassword />} />
+
 
       </Routes> */}
     </div>
