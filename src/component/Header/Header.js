@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  Navbar,
-  Nav,
-  Container,
-  // NavDropdown,
-  Form,
-  FormControl,
-  Button,
-} from 'react-bootstrap';
+import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../images/logo.png';
 import './Header.css';
@@ -15,7 +7,7 @@ import './Header.css';
 const Header = () => {
   return (
     <div>
-      <Navbar bg='light' expand='lg'>
+      <Navbar bg='white' expand='lg'>
         <Container className='my-0'>
           <Navbar.Brand as={Link} to={'frontend/'} href='#'>
             <img className='brand' src={logo} alt='' />
