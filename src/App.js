@@ -8,9 +8,9 @@ import Footer from './component/Footer';
 import Signup from './component/Signup/Signup';
 import ForgotPassword from './component/LoginPage/ForgotPassword';
 import ResetPassword from './component/LoginPage/ResetPassword';
-import Personal from './component/Profile/Personal';
 import NoTransactions from './component/TransactionPages/NoTransaction';
 import WithTransaction from './component/TransactionPages/WithTransaction';
+import Personal from './component/Profile/Personal';
 
 function App() {
   return (

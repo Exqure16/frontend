@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
 import './Signup.css';
-//import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   Container,
   Row,
@@ -43,10 +42,6 @@ function Signup() {
     setCountry(c);
     console.log(c+p);
   };
-  //value={phoneValue}
- 
-  //&& form.phoneNumber !==''
-  
 
   const [phoneValue, setPhoneValue] = useState('');
   const [display, setDisplay]= useState('block');
@@ -223,7 +218,6 @@ function Signup() {
           </div>
         </Col>
       </Row>
-    <Footer display = 'none'/>
     </Container>
   );
 }

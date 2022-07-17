@@ -11,74 +11,70 @@
 *{
     margin: 0;
 }
-p{
+label{
     font-family: 'Futura PT';
     font-style: normal;
     font-weight:bolder;
     font-size: 16px;
     line-height: 142%;
     text-align:left;
-    /* identical to box height, or 23px */
-
-    
+    margin-bottom:0.5rem;
     letter-spacing: 0.03em;
-
-    /* Extra/Black */
-
     color: #1B1C1E;
 
 }
-.countryDiv{
-    display:flex;
-    justify-content:space-between;
+input{
+    border: 1px solid #ced4da;
+    border-radius:4px;
+    padding: 0.4rem 0 0.4rem 0.5rem;
 }
-.innerCountryDiv label{
-    font-family: 'Futura PT';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 140%;
-    /* or 22px */
+input:focus{
     
-    text-align: center;
-    letter-spacing: 0.03em;
+    border: none;
+    border-color: #ced4da;
+    box-shadow: 0px 0px 5px 1px #239ED9;
 }
-.innerCountryDiv{
-    display:flex;
-    flex-direction: column;
-    
+.individualForm div .nameIcon{
+    position: absolute;
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
 }
-/*
-.PhoneInputCountryIcon--border{
+.individualForm div .nameInput{
+    padding-left: 3rem;
+
+    width: 100%;
+}
+.individualForm .PhoneInputCountryIcon--border{
     width: 1rem;
 }
 
-.PhoneInputCountryIconImg{
+.individualForm .PhoneInputCountryIconImg{
     width: 2rem;
     position: absolute;
     margin-left: 0;
-    margin-top: -1.5rem;
+    margin-top: 0.5rem;
     z-index: 1;
     
 }
 
-.PhoneInputCountry{
+.individualForm .PhoneInputCountry{
     position: absolute;
     margin-left: 1rem;
 }
 
-.PhoneInputInput:focus{
+.individualForm .PhoneInputInput:focus{
     outline: none !important;
     border:1px solid #8bb7cc;
     box-shadow: 0 0 10px #8bb7cc;
 }
 
-.PhoneInputInput{
-    position: relative;
-    width: 15vw;
+.individualForm .PhoneInputInput{
+    position: absolute;
+    width: 32.5%;
     height: 2.5rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    margin-bottom: 2rem;
 
     margin-left: 0rem;
     border:1px solid #ced4da;
@@ -93,23 +89,48 @@ p{
     
 }
 
-.PhoneInputCountrySelectArrow{
-    display:none;
+.individualForm .PhoneInputCountrySelectArrow{
+    display: none;
     position: absolute;
     margin-left: 2rem;
 }
-.PhoneInputCountryIcon--border{
-    position:absolute;
-    margin:0;
-}
-.PhoneInputCountrySelect{
-    position: relative;
+
+.individualForm .PhoneInputCountrySelect{
+    position: absolute;
     margin-left: 2.5rem;
     margin-top: 0.6rem;
     width: 4%;
     border-color: none;
     border: none;
     background-color: transparent;
-    z-index: 2;
+    z-index: 1;
 }
-*/
+.individualForm .profileChangeBtn{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #239ED9;
+    padding:0.5rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    background-color:white;
+    margin-top: 2rem;
+    
+    border: 2px solid #239ED9;
+    border-radius: 4px;
+}
+.individualForm div .saveChangesBtn{
+    margin: auto;
+    font-family: 'Futura PT';
+    border: 1px solid #239ED9;
+    margin-top: 2rem;
+    font-weight: bolder;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    color: #fff;
+    border-radius: 4px;
+    background-color: #239ED9;
+}
