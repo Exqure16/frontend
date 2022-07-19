@@ -1,6 +1,6 @@
 import React from 'react';
 // import './CreateTransaction.css';
-import '../CreateTransaction/CreateTransaction.css';
+import './CreateTransaction.css';
 import sms from '../../images/sms.svg';
 import personIcon from '../../images/personicon.svg';
 import { useState, useEffect } from 'react';

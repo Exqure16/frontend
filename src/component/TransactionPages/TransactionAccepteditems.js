@@ -1,6 +1,6 @@
 import React from 'react'
 import acceptitem from '../images/cuate2.png'
-import '../TransactionPages/CreateTransaction/CreateTransaction.css'
+import './CreateTransaction/CreateTransaction.css'
 
 const TransactionAccepteditems = () => {
   return (

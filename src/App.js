@@ -47,7 +47,7 @@ function App() {
           element={<PsWithTransaction />}
         />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

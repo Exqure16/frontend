@@ -5,6 +5,8 @@ import SideKick from '../images/rafiki.png'
 import Crypto from '../images/crypto.svg'
 import Fashion from '../images/fashion.svg'
 import Cameras from '../images/cameras.svg'
+import Footer from '../../component/Footer';
+
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -105,6 +107,9 @@ export default function HomePage() {
             </div>
 
         </section>
+
+      <Footer/>
+
     </div>
   );
 }
