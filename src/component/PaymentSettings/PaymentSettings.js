@@ -5,6 +5,7 @@ import cuate from '../images/cuate.png';
 import Visa from '../images/Visa.png';
 import Mastercard from '../images/Mastercard.png';
 import { useState } from 'react';
+import React from 'react';
 
 const PaymentSettings = () => {
   const [show, setShow] = useState(false);

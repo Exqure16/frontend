@@ -153,11 +153,11 @@
     display: block;
 }
 
-.PhoneInputCountryIcon--border{
+.form .PhoneInputCountryIcon--border{
     width: 1rem;
 }
 
-.PhoneInputCountryIconImg{
+.form .PhoneInputCountryIconImg{
     width: 2rem;
     position: absolute;
     margin-left: 0;
@@ -166,18 +166,18 @@
     
 }
 
-.PhoneInputCountry{
+.form .PhoneInputCountry{
     position: absolute;
     margin-left: 1rem;
 }
 
-.PhoneInputInput:focus{
+.form .PhoneInputInput:focus{
     outline: none !important;
     border:1px solid #8bb7cc;
     box-shadow: 0 0 10px #8bb7cc;
 }
 
-.PhoneInputInput{
+.form .PhoneInputInput{
     position: absolute;
     width: 100%;
     height: 2.5rem;
@@ -197,13 +197,13 @@
     
 }
 
-.PhoneInputCountrySelectArrow{
+.form .PhoneInputCountrySelectArrow{
     display: none;
     position: absolute;
     margin-left: 2rem;
 }
 
-.PhoneInputCountrySelect{
+.form .PhoneInputCountrySelect{
     position: absolute;
     margin-left: 2.5rem;
     margin-top: 0.6rem;
@@ -231,9 +231,7 @@
     align-items:center;
     justify-content: space-between;
 }
-/*.logoLink .fb{
-    margin:;
-}*/
+
 .lastLogoDiv p{
     margin-top: 2rem;
     font-family: 'Futura PT';
