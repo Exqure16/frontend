@@ -1,0 +1,19 @@
+.accountsetting {
+  display: flex;
+  gap: 300px;
+  margin-top: 50px;
+}
+
+.accountlink {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+
+.accountlink:hover {
+  color: #000;
+}
+
+.accountlink:active {
+  border-bottom: 3px solid #239ed9;
+}
