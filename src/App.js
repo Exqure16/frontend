@@ -19,6 +19,7 @@ import PsWithTransaction from './component/PaymentSettings/PsWithTransaction';
 import PaymentSettings from './component/PaymentSettings/PaymentSettings';
 import TransactionAccepteditems from './component/TransactionPages/TransactionAccepteditems';
 import TransactionDeclined from './component/TransactionPages/TransactionDeclined';
+import Accountsetting from './component/Accountsetting/Accountsetting';
 
 function App() {
   return (
@@ -41,15 +42,19 @@ function App() {
           element={<TransactionAccepteditems />}
         />
         <Route path='frontend/declined' element={<TransactionDeclined />} />
-        <Route path='frontend/profile' element={<Personal />} />
+
         <Route path='frontend/transaction' element={<NoTransactions />} />
         <Route path='frontend/transactions' element={<WithTransaction />} />
         <Route path='frontend/notifications' element={<Notifications />} />
-        <Route path='frontend/paymentsettings' element={<PaymentSettings />} />
+
         <Route
           path='frontend/psWithTransaction'
           element={<PsWithTransaction />}
         />
+        <Route path='frontend/accountsetting' element={<Accountsetting />}>
+          <Route path='paymentsettings' element={<PaymentSettings />} />
+          <Route path='profile' element={<Personal />} />
+        </Route>
       </Routes>
       {/* <Footer /> */}
     </div>
