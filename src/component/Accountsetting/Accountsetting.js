@@ -1,22 +1,38 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import './Accountsetting.css';
 
 const Accountsetting = () => {
+  let activeStyle = {
+    borderBottom: '#239ed9 3px solid',
+  };
+
   return (
     <Container>
       <h1>Account Setting</h1>
       <div className='accountsetting'>
-        <Link to={''} className='accountlink'>
+        <NavLink
+          style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          to={'profile'}
+          className='accountlink'
+        >
           PROFILE SETTINGS
-        </Link>
-        <Link to='paymentsettings' className='accountlink'>
+        </NavLink>
+        <NavLink
+          style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          to='paymentsettings'
+          className='accountlink'
+        >
           PAYMENT SETTINGS
-        </Link>
-        <Link to={''} className='accountlink'>
+        </NavLink>
+        <NavLink
+          style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          to={'#'}
+          className='accountlink'
+        >
           GENERAL SETTINGS
-        </Link>
+        </NavLink>
       </div>
       <Outlet />
     </Container>

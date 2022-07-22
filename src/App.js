@@ -42,7 +42,7 @@ function App() {
           element={<TransactionAccepteditems />}
         />
         <Route path='frontend/declined' element={<TransactionDeclined />} />
-        <Route path='frontend/profile' element={<Personal />} />
+
         <Route path='frontend/transaction' element={<NoTransactions />} />
         <Route path='frontend/transactions' element={<WithTransaction />} />
         <Route path='frontend/notifications' element={<Notifications />} />
@@ -53,6 +53,7 @@ function App() {
         />
         <Route path='frontend/accountsetting' element={<Accountsetting />}>
           <Route path='paymentsettings' element={<PaymentSettings />} />
+          <Route path='profile' element={<Personal />} />
         </Route>
       </Routes>
       {/* <Footer /> */}
