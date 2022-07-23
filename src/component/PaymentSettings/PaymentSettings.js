@@ -14,7 +14,7 @@ const PaymentSettings = () => {
   const handleShow = () => setShow(true);
   return (
     <Container>
-      <h3 className='mt-4'>Bank Details</h3>
+      <h3 className='mt-5'>Bank Details</h3>
       <hr />
       <div className='d-flex justify-content-center'>
         <Alert className='not-alert mx-auto shadow'>
@@ -30,8 +30,8 @@ const PaymentSettings = () => {
       <div className='d-flex justify-content-center'>
         <Form className='paymentform'>
           <Form.Group className='mb-3' controlId='formBasicNumber'>
-            <Form.Label className='formlabel'>BVN number</Form.Label>
-            <Form.Control type='email' placeholder='Enter BVN' />
+            <Form.Label>BVN number</Form.Label>
+            <Form.Control type='text' placeholder='Enter BVN' />
           </Form.Group>
 
           <Form.Group className='mb-3' controlId='formBasicText'>
@@ -78,7 +78,7 @@ const PaymentSettings = () => {
         <div className='formcontrol'>
           <input type='text' placeholder='Enter NIN number' />
         </div>
-        <div className='formcontrol'>
+        <div className='uploadnin'>
           <input type='file' name='Upload NIN' />
         </div>
       </form>

@@ -28,82 +28,26 @@ input{
     border-radius:4px;
     padding: 0.4rem 0 0.4rem 0.5rem;
 }
-input:focus{
-    
-    border: none;
-    border-color: #ced4da;
-    box-shadow: 0px 0px 5px 1px #239ED9;
-}
-.individualForm div .nameIcon{
-    position: absolute;
-    margin-left: 0.5rem;
-    margin-top: 0.5rem;
-}
-.individualForm div .nameInput{
-    padding-left: 3rem;
-
-    width: 100%;
-}
-.individualForm .PhoneInputCountryIcon--border{
-    width: 1rem;
-}
-
-.individualForm .PhoneInputCountryIconImg{
-    width: 2rem;
-    position: absolute;
-    margin-left: 0;
-    margin-top: 0.5rem;
-    z-index: 1;
-    
-}
-
-.individualForm .PhoneInputCountry{
-    position: absolute;
-    margin-left: 1rem;
-}
-
-.individualForm .PhoneInputInput:focus{
+input[type=text]:focus{  
     outline: none !important;
     border:1px solid #8bb7cc;
     box-shadow: 0 0 10px #8bb7cc;
 }
-
-.individualForm .PhoneInputInput{
-    position: absolute;
-    width: 32.5%;
-    height: 2.5rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    margin-bottom: 2rem;
-
-    margin-left: 0rem;
-    border:1px solid #ced4da;
-    color: #212529;
-    background-color: #fff;
-    background-clip: padding-box;
-    font-size: 1rem;
-    font-weight: 400;
-    z-index: 0;
-    padding-left: 4.5rem;
-    border-radius: 0.25rem;
-    
+input[type=number]:focus{  
+    outline: none !important;
+    border:1px solid #8bb7cc;
+    box-shadow: 0 0 10px #8bb7cc;
 }
-
-.individualForm .PhoneInputCountrySelectArrow{
-    display: none;
+.openPhone , .open , .openPhone1{
+    overflow-y:scroll;
+    border: 1px solid #ced4da;
+    box-shadow: 0px 0px 3px 0px #239ED9;
+    height:15rem;
+    width:14rem;
+    padding:0rem;
     position: absolute;
-    margin-left: 2rem;
-}
-
-.individualForm .PhoneInputCountrySelect{
-    position: absolute;
-    margin-left: 2.5rem;
-    margin-top: 0.6rem;
-    width: 4%;
-    border-color: none;
-    border: none;
-    background-color: transparent;
-    z-index: 1;
+    background-color:rgb(189, 207, 219);
+    z-index:1
 }
 .individualForm .profileChangeBtn{
     font-family: 'Futura PT';
