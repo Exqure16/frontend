@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Signup.css';
 import {
   Container,
@@ -9,7 +9,7 @@ import {
   FormControl,
   Form,
 } from 'react-bootstrap';
-import { Countries } from '../Countries'
+// import Footer from '../Footer';
 import logo from '../images/logo.png';
 import logo1 from '../images/logo2.svg';
 import lock from '../images/lock.svg';
@@ -57,50 +57,58 @@ function Signup() {
     }
     setPhoneNumber(p);
     setCountry(c);
+    console.log(c + p);
   };
-  const [display, setDisplay]= useState('block');
-  const [sdisplay, setSDisplay]= useState('none');
-  const [lDisplay, setLDisplay]= useState('none');
-  
-  useEffect(()=>{
-    if(window.innerWidth <=767){
+
+
+  const [phoneValue, setPhoneValue] = useState('');
+  const [display, setDisplay] = useState('block');
+  const [sdisplay, setSDisplay] = useState('none');
+  const [lDisplay, setLDisplay] = useState('none');
+
+  useEffect(() => {
+    if (window.innerWidth <= 767) {
       setLDisplay('block');
     }
-    function handleResize(){
-      if(window.innerWidth <=767){
+    function handleResize() {
+      if (window.innerWidth <= 767) {
         setLDisplay('block');
-        if(display=='none'){
+        if (display == 'none') {
           setLDisplay('none');
-        }else{
-          setLDisplay('block')
+        } else {
+          setLDisplay('block');
         }
-      }else{
-        setLDisplay('none')
+      } else {
+        setLDisplay('none');
       }
     }
-    window.addEventListener('resize',handleResize)
-    },[display])
+    window.addEventListener('resize', handleResize);
+  }, [display]);
 
   const [formIsValid, setFormIsValid] = useState(false);
-  const [form, setForm]= useState({
+  const [form, setForm] = useState({
     name: '',
     email: '',
     password: '',
     confirmPassword: '',
     //phoneNumber:''
-
-  })
-  useEffect(()=>{
-    if(form.name !==''&& form.email !==''&& form.password !==''&& form.confirmPassword !== '' ){
-      if(form.password === form.confirmPassword){
-        setFormIsValid(true)
-      }else{
-        setFormIsValid(false)
+  });
+  useEffect(() => {
+    if (
+      form.name !== '' &&
+      form.email !== '' &&
+      form.password !== '' &&
+      form.confirmPassword !== ''
+    ) {
+      if (form.password === form.confirmPassword) {
+        setFormIsValid(true);
+      } else {
+        setFormIsValid(false);
       }
-    }else{
-      setFormIsValid(false)
+    } else {
+      setFormIsValid(false);
     }
-  },[form]);
+  }, [form]);
   const handleChange = (e) => {
     setForm({
       ...form,
@@ -111,151 +119,141 @@ function Signup() {
   const submitForm = (e) => {
     e.preventDefault();
     if (formIsValid === true) {
-      setSDisplay ('block'); 
-      setDisplay('none'); 
-      setLDisplay('none')
-      
+      setSDisplay('block');
+      setDisplay('none');
+      setLDisplay('none');
     }
   };
 
   return (
     <Container fluid>
-      <Row >
-        
-        <Col className='logocol1' style ={{display:lDisplay}}>
-              <img src={logo1}></img>
+      <Row>
+        <Col className='logocol1' style={{ display: lDisplay }}>
+          <img src={logo1}></img>
         </Col>
         <Col className='logocol' md>
           <img className='logo' src={logo} alt='exqure logo' />
           <img className='hands' src={hands} alt='Shaking hands' />
         </Col>
-        <Col className='formcol' style ={{display:display}} md>
+        <Col className='formcol' style={{ display: display }} md>
           <h1 className='header'> Sign Up </h1>
           <p className='tagline'> Welcome! Register with Exqure here. </p>
-          <Form onSubmit ={submitForm} className='form'>
-            <label className = 'label'>Name</label>
+          <Form onSubmit={submitForm} className='form'>
+            <label className='label'>Name</label>
             <InputGroup className='mb-3'>
               <div>
                 <img src={personIcon} className='icon' color='#239ED9' />
                 <FormControl
                   placeholder='Enter name'
                   type='username'
-                  name ='name'
-                  onChange ={handleChange}
+                  name='name'
+                  onChange={handleChange}
                 />
               </div>
             </InputGroup>
 
-            <label className = 'label' htmlFor='basic-url'>Email</label>
+            <label className='label' htmlFor='basic-url'>
+              Email
+            </label>
             <InputGroup className='mb-3'>
               <div>
-                <img src={sms} className='icon' color='#239ED9' /> 
-                <FormControl 
-                  placeholder='Enter email' 
+                <img src={sms} className='icon' color='#239ED9' />
+                <FormControl
+                  placeholder='Enter email'
                   type='email'
-                  name ='email'
-                  onChange ={handleChange} 
+                  name='email'
+                  onChange={handleChange}
                 />
               </div>
             </InputGroup>
 
-            <label className = 'label' htmlFor='basic-url'>Password</label>
+            <label className='label' htmlFor='basic-url'>
+              Password
+            </label>
             <InputGroup className='mb-3'>
               <div>
                 <img src={lock} className='icon' color='#239ED9' />
-                <FormControl 
-                  placeholder='Enter password' 
+                <FormControl
+                  placeholder='Enter password'
                   type='password'
-                  name ='password'
-                  onChange ={handleChange} 
+                  name='password'
+                  onChange={handleChange}
                 />
               </div>
             </InputGroup>
 
-            <label className = 'label' htmlFor='basic-url'>Confirm password</label>
+            <label className='label' htmlFor='basic-url'>
+              Confirm password
+            </label>
             <InputGroup className='mb-3'>
               <div>
                 <img src={lock} className='icon' color='#239ED9' />
-                <FormControl 
-                  placeholder='Re-enter password' 
+                <FormControl
+                  placeholder='Re-enter password'
                   type='password'
-                  name ='confirmPassword' 
-                  onChange ={handleChange}
+                  name='confirmPassword'
+                  onChange={handleChange}
                 />
               </div>
             </InputGroup>
 
-            <label className = 'label' htmlFor='basic-url'>Phone</label>
-            <Input               
-              img1W= {'2rem'}
-              img1= { phoneFlagUrl2}
-              img1ML ={'1rem'}
-              img1MT ={'0.7rem'}
-              onClick2 ={()=>{
-                if(openPhone =='none'){
-                  setOpenPhone('inline-block');
-                }else if(openPhone =='inline-block'){
-                  setOpenPhone('none')
-                }
-              }}
-              sML={'3.5rem'}
-              sMT ={'0.5rem'}
-              img2W = {'1rem'}
-              img2ML= {'6rem'}
-              img2MT= { '0.7rem'}
-              img2 ={arrowDown}
-              sV ={dialCode}
-              inputPL ={'7.5rem'}
-                    inputW= {'100%'}
-                    placeholder= {'90 000 0000'}
-                    inputValue ={phoneNumber}
-                    onChange = {(e)=>{
-                        let p= '';
-                        p+= e.nativeEvent.data;
-                        setPhoneNumber(p)
-                    }}
-                    onFocus={() => setFocusInput('phoneNumber')}
-                    >
-            </Input>
-
-            <div className ='openPhone' style={{display:openPhone}}>
-              {getPhoneDetails?getPhoneDetails:''}
-            </div>
+            <label className='label' htmlFor='basic-url'>
+              Phone
+            </label>
+            <PhoneInput
+              international
+              countryCallingCodeEditable={false}
+              defaultCountry='NG'
+              placeholder='phone Number'
+              value={phoneValue}
+              onChange={handleChange1}
+              onFocus={() => setFocusInput('phoneNumber')}
+              name='phoneNumber'
+            />
           </Form>
 
-          <button className='Signupbtn' onClick ={submitForm}>Sign Up</button>
+          <button className='Signupbtn' onClick={submitForm}>
+            Sign Up
+          </button>
           <div className='footDiv'>
             <p className='footer1'>
               By signing up, I agree to <a href ='https://www.github.com'>Terms and Conditions</a> and{' '}
               <a href ='https://www.github.com'>Privacy Policy</a>
             </p>
             <p className='footer2'>
-              Have an account? <Link style ={{textDecoration:'none'}} to='/frontend/login'>Login</Link>
+              Have an account?{' '}
+              <Link style={{ textDecoration: 'none' }} to='/frontend/login'>
+                Login
+              </Link>
             </p>
           </div>
           <div className='lastLogoDiv'>
             <div className='orDiv'>
-              <img src={or} alt='or' className='orDivImg'></img>    
+              <img src={or} alt='or' className='orDivImg'></img>
             </div>
             <p>LOGIN WITH</p>
             <div className='logoLink'>
-              <img className = 'google' src={google} alt ='google icon'></img>
-              <img className = 'fb'  src={facebook} alt ='facebook icon'></img>
-              <img src={apple} alt ='apple icon'></img>
+              <img className='google' src={google} alt='google icon'></img>
+              <img className='fb' src={facebook} alt='facebook icon'></img>
+              <img src={apple} alt='apple icon'></img>
             </div>
           </div>
         </Col>
-        <Col className='signupCol' style ={{display:sdisplay}}>
+        <Col className='signupCol' style={{ display: sdisplay }}>
           <div className='successfulDiv'>
-            <img src ={good} alt = 'successsful'></img>
-            <p>Sign up successful. An activation mail has been sent to your email address.</p>
+            <img src={good} alt='successsful'></img>
+            <p>
+              Sign up successful. An activation mail has been sent to your email
+              address.
+            </p>
           </div>
           <div className='welcomeDiv'>
             <h1>Welcome</h1>
-            <img src={welcome} alt = 'Welcome'></img>
+            <img src={welcome} alt='Welcome'></img>
           </div>
         </Col>
       </Row>
+
     </Container>
   );
 }
