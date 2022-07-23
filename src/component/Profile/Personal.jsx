@@ -8,26 +8,15 @@ import FormCo from './Form/FormCo'
 
  const Personal = ()=>{
 
-    const [accountType, setAccountType] = useState('');
-    const[show, setShow] = useState('block');
-    const[show1, setShow1] = useState('none');
-    var check = document.getElementById('individual');
-    var check1 = document.getElementById('company');
     
-    const toggleCheck= (account)=>{
-        setAccountType(account);
-
-         if( accountType ==='individual' ){
-            setShow('block');
-            setShow1('none');
-            check.checked = true;
-            check1.checked = false;
-         }else if(accountType ==='company'){
-            setShow1('block');
-            setShow('none');
-            check1.checked = true;
-            check.checked =false;
-         }
+    const[show, setShow] = useState(true);
+    
+    const toggleCheck= (e)=>{
+        if (e.target.value === 'individual'){
+        setShow(true)
+        }else if(e.target.value === 'company'){
+        setShow(false)
+        }
      }
     return(
         <>
@@ -62,27 +51,29 @@ import FormCo from './Form/FormCo'
                     <div className ='countryDiv'>
                         <div className ='innerCountryDiv'>
                             <input 
-                            id='individual'
+                            className='individual'
+                            name = 'select-company'
                             defaultValue = 'individual'                      
                             type ='radio'
-                            onChange={ ()=>toggleCheck('individual')}
+                            onChange={(e)=>toggleCheck(e)}
                              />
                             <label>Individual</label>
                         </div>
                         <div className ='innerCountryDiv'>
                             <input 
-                            id='company'
+                            className='company'
+                            name = 'select-company'
                             defaultValue = 'company'
                             type ='radio'
-                            onChange={()=>toggleCheck('company')}
+                            onChange={(e)=>toggleCheck(e)}
                             />
                             <label>Company</label>
                         </div>
                     </div>
                         
                 </div>
-                <FormInd show1 ={show}/>
-                <FormCo show = {show1}/> 
+                {show?<FormInd />:<FormCo /> }
+                
             </div>
         </>
     )

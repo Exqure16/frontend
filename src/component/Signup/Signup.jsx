@@ -7,10 +7,9 @@ import {
   Col,
   InputGroup,
   FormControl,
-  
   Form,
 } from 'react-bootstrap';
-import Footer from '../Footer'
+import { Countries } from '../Countries'
 import logo from '../images/logo.png';
 import logo1 from '../images/logo2.svg';
 import lock from '../images/lock.svg';
@@ -22,14 +21,32 @@ import facebook from '../images/facebook.svg';
 import apple from '../images/apple.svg';
 import good from '../images/good.svg';
 import welcome from '../images/welcome.svg';
+import arrowDown from '../images/arrowDown.svg';
 import hands from '../images/Hands.png';
 import { parsePhoneNumber } from 'react-phone-number-input';
 import PhoneInput from 'react-phone-number-input';
-
+import CountrySelect from '../Profile/Form/CountrySelect';
+import Input from '../Profile/Form/Input';
 function Signup() {
   const [focusInput, setFocusInput] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
+  const [dialCode, setDialCode] = useState('+234');
+  const [openPhone, setOpenPhone] = useState('none');
+  const [phoneFlagUrl2, setPhoneFlagUrl2] = useState('https://flagcdn.com/ng.svg');
   const [country, setCountry] = useState('');
+  const onPhoneClick =()=>(valu)=>{
+    setDialCode(valu?.target?.childNodes[1]?.innerText)
+    setPhoneFlagUrl2(valu?.target?.childNodes[0]?.currentSrc)
+    setOpenPhone('none');
+  }
+  const getPhoneDetails = Countries?.map(
+    (country,index)=><CountrySelect 
+    key = {index}
+    onCountryClick = {onPhoneClick(country)}
+    countryCode = {country.code?.toLowerCase()}  
+    countryName ={country.name}
+    countryDialCode = {country.dial_code}
+    />);
   const handleChange1 = (value) => {
     let p,
       c = '';
@@ -40,10 +57,7 @@ function Signup() {
     }
     setPhoneNumber(p);
     setCountry(c);
-    console.log(c+p);
   };
-
-  const [phoneValue, setPhoneValue] = useState('');
   const [display, setDisplay]= useState('block');
   const [sdisplay, setSDisplay]= useState('none');
   const [lDisplay, setLDisplay]= useState('none');
@@ -172,24 +186,48 @@ function Signup() {
             </InputGroup>
 
             <label className = 'label' htmlFor='basic-url'>Phone</label>
-            <PhoneInput
-              international
-              countryCallingCodeEditable={false}
-              defaultCountry='NG'
-              placeholder='phone Number'
-              value = {phoneValue}
-              onChange ={handleChange1}
-              onFocus={() => setFocusInput('phoneNumber')}
-              name='phoneNumber'
-              
-            />
+            <Input               
+              img1W= {'2rem'}
+              img1= { phoneFlagUrl2}
+              img1ML ={'1rem'}
+              img1MT ={'0.7rem'}
+              onClick2 ={()=>{
+                if(openPhone =='none'){
+                  setOpenPhone('inline-block');
+                }else if(openPhone =='inline-block'){
+                  setOpenPhone('none')
+                }
+              }}
+              sML={'3.5rem'}
+              sMT ={'0.5rem'}
+              img2W = {'1rem'}
+              img2ML= {'6rem'}
+              img2MT= { '0.7rem'}
+              img2 ={arrowDown}
+              sV ={dialCode}
+              inputPL ={'7.5rem'}
+                    inputW= {'100%'}
+                    placeholder= {'90 000 0000'}
+                    inputValue ={phoneNumber}
+                    onChange = {(e)=>{
+                        let p= '';
+                        p+= e.nativeEvent.data;
+                        setPhoneNumber(p)
+                    }}
+                    onFocus={() => setFocusInput('phoneNumber')}
+                    >
+            </Input>
+
+            <div className ='openPhone' style={{display:openPhone}}>
+              {getPhoneDetails?getPhoneDetails:''}
+            </div>
           </Form>
 
           <button className='Signupbtn' onClick ={submitForm}>Sign Up</button>
           <div className='footDiv'>
             <p className='footer1'>
-              By signing up, I agree to <a>Terms and Conditions</a> and{' '}
-              <a>Privacy Policy</a>
+              By signing up, I agree to <a href ='https://www.github.com'>Terms and Conditions</a> and{' '}
+              <a href ='https://www.github.com'>Privacy Policy</a>
             </p>
             <p className='footer2'>
               Have an account? <Link style ={{textDecoration:'none'}} to='/frontend/login'>Login</Link>
