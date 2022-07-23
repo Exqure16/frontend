@@ -1,0 +1,74 @@
+
+.popUpDiv div{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+.popUpDiv{
+    top:2%;
+    left:30%;
+    right:30%;
+    margin: auto;
+    width:50%;
+    height:max-content;
+    position:fixed;
+    padding:4rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background: #FDFEFF;
+    box-shadow: 0px 0px 6px rgba(47, 73, 86, 0.2);
+    border-radius: 16px;
+    z-index: 2;
+}
+.popUpKey{
+    text-align: left; 
+    width:35%;    
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 1rem;
+    line-height: 140%;    
+    letter-spacing: 0.03em;
+
+}
+.popUpValue{
+    
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 65%;
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.03em;
+    color: #1B1C1E;
+}
+.popUpBtn1{
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    gap: 8px;
+    
+    margin-top: 1rem;
+    color:antiquewhite;
+    width: 100%;
+    font-weight: bold;
+    height: 46px;    
+    background: #239ED9;
+    border-radius: 4px;
+    border-color: transparent;
+}
+.popUpBtn2{
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    gap: 8px;
+    color:#239ED9;
+    width: 100%;
+    font-weight: bold;
+    height: 46px;    
+    background: transparent;
+    border-radius: 4px;
+    border-color: transparent;
+}

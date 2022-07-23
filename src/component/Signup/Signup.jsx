@@ -21,14 +21,32 @@ import facebook from '../images/facebook.svg';
 import apple from '../images/apple.svg';
 import good from '../images/good.svg';
 import welcome from '../images/welcome.svg';
+import arrowDown from '../images/arrowDown.svg';
 import hands from '../images/Hands.png';
 import { parsePhoneNumber } from 'react-phone-number-input';
 import PhoneInput from 'react-phone-number-input';
-
+import CountrySelect from '../Profile/Form/CountrySelect';
+import Input from '../Profile/Form/Input';
 function Signup() {
   const [focusInput, setFocusInput] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
+  const [dialCode, setDialCode] = useState('+234');
+  const [openPhone, setOpenPhone] = useState('none');
+  const [phoneFlagUrl2, setPhoneFlagUrl2] = useState('https://flagcdn.com/ng.svg');
   const [country, setCountry] = useState('');
+  const onPhoneClick =()=>(valu)=>{
+    setDialCode(valu?.target?.childNodes[1]?.innerText)
+    setPhoneFlagUrl2(valu?.target?.childNodes[0]?.currentSrc)
+    setOpenPhone('none');
+  }
+  const getPhoneDetails = Countries?.map(
+    (country,index)=><CountrySelect 
+    key = {index}
+    onCountryClick = {onPhoneClick(country)}
+    countryCode = {country.code?.toLowerCase()}  
+    countryName ={country.name}
+    countryDialCode = {country.dial_code}
+    />);
   const handleChange1 = (value) => {
     let p,
       c = '';
@@ -199,8 +217,8 @@ function Signup() {
           </button>
           <div className='footDiv'>
             <p className='footer1'>
-              By signing up, I agree to <a>Terms and Conditions</a> and{' '}
-              <a>Privacy Policy</a>
+              By signing up, I agree to <a href ='https://www.github.com'>Terms and Conditions</a> and{' '}
+              <a href ='https://www.github.com'>Privacy Policy</a>
             </p>
             <p className='footer2'>
               Have an account?{' '}
