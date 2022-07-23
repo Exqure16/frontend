@@ -39,7 +39,9 @@ function Signup() {
     }
     setPhoneNumber(p);
     setCountry(c);
-    console.log(c + p);
+    // console.log(c + p);
+    setPhoneValue(p);
+    form.phone= phoneValue;
   };
 
 
@@ -69,20 +71,21 @@ function Signup() {
 
   const [formIsValid, setFormIsValid] = useState(false);
   const [form, setForm] = useState({
-    name: '',
+    fullname: '',
     email: '',
     password: '',
-    confirmPassword: '',
-    //phoneNumber:''
+    confirmpassword: '',
+    phone:''
   });
   useEffect(() => {
     if (
-      form.name !== '' &&
+      form.fullname !== '' &&
       form.email !== '' &&
       form.password !== '' &&
-      form.confirmPassword !== ''
+      form.confirmpassword !== '' &&
+      form.phone !== ''
     ) {
-      if (form.password === form.confirmPassword) {
+      if (form.password === form.confirmpassword) {
         setFormIsValid(true);
       } else {
         setFormIsValid(false);
@@ -98,14 +101,41 @@ function Signup() {
     });
   };
 
-  const submitForm = (e) => {
+  // const submitForm = (e) => {
+  //   e.preventDefault();
+  //   if (formIsValid === true) {
+  //     setSDisplay('block');
+  //     setDisplay('none');
+  //     setLDisplay('none');
+  //   }
+  //   console.log(form);
+  // };
+
+  async function submitForm(e){
     e.preventDefault();
-    if (formIsValid === true) {
-      setSDisplay('block');
-      setDisplay('none');
-      setLDisplay('none');
+   
+    let result = await fetch('https://exqure.herokuapp.com/api/user/signup', {
+       method: "POST",
+       body:JSON.stringify(form),
+       headers: {
+         "Content-Type" : 'application/json' ,
+         "Accept" :'application/json'
+       }
+     })
+     result= await result.json()
+     console.log("result", result);
+    if(result.status === 'success'){
+      
+        setSDisplay('block');
+          setDisplay('none');
+          setLDisplay('none');
+        
+          console.log(result.msg);
     }
-  };
+    else{
+      console.log(result.msg);
+    };
+   }
 
   return (
     <Container fluid>
@@ -128,7 +158,7 @@ function Signup() {
                 <FormControl
                   placeholder='Enter name'
                   type='username'
-                  name='name'
+                  name='fullname'
                   onChange={handleChange}
                 />
               </div>
@@ -173,7 +203,7 @@ function Signup() {
                 <FormControl
                   placeholder='Re-enter password'
                   type='password'
-                  name='confirmPassword'
+                  name='confirmpassword'
                   onChange={handleChange}
                 />
               </div>
@@ -190,13 +220,14 @@ function Signup() {
               value={phoneValue}
               onChange={handleChange1}
               onFocus={() => setFocusInput('phoneNumber')}
-              name='phoneNumber'
+              name='phone'
             />
-          </Form>
-
-          <button className='Signupbtn' onClick={submitForm}>
+             <button className='Signupbtn' onClick={submitForm}>
             Sign Up
           </button>
+          </Form>
+
+         
           <div className='footDiv'>
             <p className='footer1'>
               By signing up, I agree to <a>Terms and Conditions</a> and{' '}
