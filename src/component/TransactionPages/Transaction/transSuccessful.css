@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+}
+.transContainer{
+    margin-left: 8rem;
+    margin-top: 3rem;
+    margin-bottom: 8rem;
+}
+.transContainer h1{
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 142%;
+}
+.transContainer p{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    margin-top: 1rem;
+}
+.transContainer .transHeader{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 142%;
+    margin-top: 2rem;
+}
+
+.transDetDiv{
+    margin-bottom: 0;
+}
+.transDetDiv div{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.transKey{
+    text-align: left;
+    
+    width:25%;
+    
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 140%;    
+    letter-spacing: 0.03em;
+
+}
+.transValue{
+    margin-top: 1.2rem;
+    width: 75%;
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.03em;
+    color: #1B1C1E;
+}
+.footInput{
+    padding-left:3rem;
+    width: 430px;
+    background-color:rgb(230, 223, 223);
+    border:none;
+    color:black;
+}
+.footBtn{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: 450;
+    font-size: 16px;
+    line-height: 140%;
+    background-color:  #239ED9;
+    text-align: center;
+    letter-spacing: 0.03em;
+    padding: 0.5rem 1rem;
+    border-color:transparent;
+    border-radius:4px;
+    color: #FDFEFF;
+}
