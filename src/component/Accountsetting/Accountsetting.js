@@ -6,6 +6,7 @@ import './Accountsetting.css';
 const Accountsetting = () => {
   let activeStyle = {
     borderBottom: '#239ed9 3px solid',
+    opacity:'1'
   };
 
   return (
