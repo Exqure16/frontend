@@ -12,6 +12,7 @@ const FormCo = (props)=>{
             <div style={{marginTop:'2rem'}}>
                 <label>Company name</label>
                 <Input
+                type= 'text'
                img1W= {'25px'}
                img1P ={'absolute'}
                img1= { personIcon}
@@ -25,6 +26,7 @@ const FormCo = (props)=>{
             <div style={{marginTop:'2rem'}}>
                 <label>Company Email</label>
                 <Input
+                type= 'text'
                img1W= {'25px'}
                img1P ={'absolute'}
                img1= { sms }
