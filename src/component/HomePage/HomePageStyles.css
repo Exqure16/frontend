@@ -1,242 +1,264 @@
 @font-face {
-  font-family: Futura PT;
-  src: url('../../fonts/Futura\ Book\ font.ttf');
+    font-family: Futura PT;
+    src: url('../../fonts/Futura\ Book\ font.ttf');
 }
 
 @font-face {
-  font-family: Montserrat Variable;
-  src: url('../../fonts/Montserrat-ExtraBold.ttf');
+    font-family: Montserrat Variable;
+    src: url('../../fonts/Montserrat-ExtraBold.ttf');
 }
 
 @keyframes slidedown {
-  from {
-    margin-top: -100%;
-  }
+    from {
+        margin-top: -100%;
+    }
 
-  to {
-    margin-top: 0%;
-  }
+    to {
+        margin-top: 0%;
+    }
 }
 
 @keyframes fade-side {
-  0% {
-    transform: translateX(-100px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
+    0% {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
 }
 
 @keyframes fadein {
-  from {
-    opacity: 0;
-  }
+    from {
+        opacity: 0;
+    }
 
-  to {
-    opacity: 1;
-  }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fade-bottom {
-  0% {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
+    0% {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
 }
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 .homepage-main {
-  font-family: 'Futura PT';
+    font-family: "Futura PT",
 }
 
 .hero {
-  width: 1440px;
-  height: 655px;
+    width: 100vw;
 }
 
 /* Section One */
 .section1 {
-  margin-top: 7rem;
-  margin-left: 6rem;
-  display: flex;
-  width: fit-content;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 1rem;
+    gap: 0.5rem;
 }
 
 .writeup {
-  position: relative;
-  top: 7rem;
-  width: 527.36px;
-  margin-bottom: 7rem;
-  height: 244.11px;
-  animation-duration: 5s;
-  animation-name: fade-bottom;
+    position: relative;
+    top: 4rem;
+    width: 450px;
+    height: 260px;
+    margin-bottom: 7rem;
+    height: 244.11px;
+    animation-duration: 5s;
+    animation-name: fade-bottom;
 }
 
-.writeup > h2 {
-  font-family: Montserrat Variable, sans-serif;
-  font-size: 1.9rem;
+.writeup > .h2 {
+    font-family: Montserrat Variable, sans-serif;
+    font-size: 1.9rem;
 }
 
-.writeup > h2 > span {
-  color: #239ed9;
+.writeup > .h2 > span {
+    color: #239ED9;
+    font-weight: bold;
 }
 
 .writeup > .first-p-tag {
-  font-family: Futura PT;
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
-  letter-spacing: 0.3rem;
+    font-family: Futura PT;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    letter-spacing: 0.3rem;
 }
 
-.writeup > .second-p-tag {
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-  font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: 0.03em;
-  font-family: Futura PT;
+.writeup > .second-p-tag{
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    font-family: Futura PT;
 }
 
-.writeup > button {
-  padding: 0.75rem 2rem;
-  background: #239ed9;
-  border-radius: 4px;
-  outline: none;
-  border: 0.1rem solid #239ed9;
-  color: #fff;
-  margin-right: 0.7rem;
-  font-family: Futura PT;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 1s;
+.writeup > .writeup-buttons > button {
+    padding: 0.75rem 2rem;
+    background: #239ED9;
+    border-radius: 4px;
+    outline: none;
+    border: 0.1rem solid #239ED9;
+    color: #fff;
+    margin-right: 0.7rem;
+    font-family: Futura PT;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 1s;
 }
 
-.writeup > button ~ button {
-  padding: 0.75rem 2rem;
-  background: white;
-  border-radius: 4px;
-  outline: none;
-  border: 0.1rem solid #239ed9;
-  color: #239ed9;
-  margin-right: 0.7rem;
-  font-family: Futura PT;
-  font-size: 1rem;
+.writeup > .writeup-buttons > button ~ button {
+    padding: 0.75rem 2rem;
+    background: white;
+    border-radius: 4px;
+    outline: none;
+    border: 0.1rem solid #239ED9;
+    color: #239ED9;
+    margin-right: 0.7rem;
+    font-family: Futura PT;
+    font-size: 1rem;
 }
 
-.writeup > button > span {
-  margin-left: 0.5rem;
+.writeup > .writeup-buttons > button > span {
+    margin-left: 0.5rem;
 }
 
-.writeup > button:hover {
-  background: #1b7aa7;
+.writeup > .writeup-buttons > button:hover {
+    background: #1b7aa7;
 }
-.writeup > button ~ button:hover {
-  background: #1b7aa7;
-  border: 0.1rem solid #1b7aa7;
-  color: white;
+.writeup > .writeup-buttons > button ~ button:hover {
+    background: #1b7aa7;
+    border: 0.1rem solid #1b7aa7;
+    color: white;
 }
 
 .writeup-image {
-  position: relative;
-  bottom: 5.5rem;
-  left: 3.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation-duration: 5s;
-  animation-name: fadein;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation-duration: 5s;
+    animation-name: fadein;
+    position: relative;
+    top: -1rem;
+    left: -1rem;
+    width: 25rem;
+    height: 23rem;
+}
+
+.writeup-image > img {
+    margin: 0;
+    display: block;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
 }
 /* Section One End */
+
 
 /* Section Two */
 
 .section2 {
-  width: 100%;
-  height: 100%;
-  background: #e2f3fc;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 3rem 7.5rem;
+    width: auto;
+    height: 100%;
+    background: #E2F3FC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 7.5rem;
 }
 
 .section2 > h3 {
-  font-family: 'Montserrat';
-  font-weight: 700;
-  font-size: 1.5rem;
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size:  1.5rem;
 }
 
 .section2 > button {
-  font-family: Futura PT;
-  padding: 0.75rem 2rem;
-  background: none;
-  border-radius: 4px;
-  outline: none;
-  border: 1px solid #239ed9;
-  color: #239ed9;
-  transition: all 1s;
-  font-size: 1rem;
-  cursor: pointer;
+    font-family: Futura PT;
+    padding: 0.75rem 2rem;
+    background: none;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid #239ED9;
+    color: #239ED9;
+    transition: all 1s;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
 .section2 > button:hover {
-  background: #239ed9;
-  color: white;
+    background: #239ED9;
+    color: white;
 }
 
 /* Card Styles */
 
 .card {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  font-family: Futura PT;
-  animation-duration: 3s;
-  animation-name: fade-side;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 50vh;
+    font-family: Futura PT;
+    animation-duration: 3s;
+    animation-name: fade-side;
+    background: none;
+    border: none;
 }
 
 .card > * {
-  margin: 1.5rem;
+    margin: 0 1.5rem;
+}
+
+.cardbody .img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card-img {
-  margin: 0;
-  display: block;
-  min-width: 10rem;
-  max-width: 10rem;
-  min-height: 10rem;
-  max-height: 10rem;
-  object-fit: fill;
-  padding-left: 1rem;
+    margin: 0;
+    display: block;
+    min-width: 5rem;
+    max-width: 5rem;
+    min-height: 5rem;
+    max-height: 5rem;
+    object-fit: fill;
+    padding-left: 1rem;
 }
 
+
 .card-tag {
-  text-align: center;
-  font-weight: 700;
+    text-align: center;
+    font-weight: 700;
 }
 
 .card-text {
-  width: 100%;
-  height: 100%;
-  margin-top: 1.5rem;
-  font-size: 1rem;
-  text-align: center;
+    width: 100%;
+    height: auto;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    text-align: center;
 }
 
 /* Section Two End */
@@ -244,159 +266,167 @@
 /* Section 3 */
 
 .section3 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 95px 125px;
-  font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 95px 125px;
+    font-size: 1rem;
 }
 
 .section3 > h3 {
-  text-align: center;
-  width: 36.75rem;
-  font-size: 1.5rem;
+    text-align: center;
+    width: 36.75rem;
+    font-size: 1.5rem;
 }
 
 .section3 > button {
-  padding: 0.75rem 2rem;
-  background: #239ed9;
-  border-radius: 4px;
-  outline: none;
-  border: none;
-  color: #fff;
+    padding: 0.75rem 2rem;
+    background: #239ED9;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    color: #fff;
 }
 
 .section3 > button:hover {
-  background: #1b7aa7;
+    background: #1b7aa7;
 }
 
 .single-cardbody {
-  font-family: Futura PT, sans-serif;
-  display: flex;
-  flex-direction: row;
+    font-family: Futura PT, sans-serif;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    padding: 1rem;
+    margin: 2rem 0;
 }
 
-.single-cardbody > .text-container {
-  margin: 0 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  justify-content: center;
+.single-cardbody > .text-container{
+    margin: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
 }
 
-.single-cardbody > .text-container > * {
-  margin: 0.5rem 0;
+.single-cardbody > .text-container > *{
+    margin: 0.5rem 0;
 }
 
-.single-cardbody > .text-container > .single-card-header {
-  font-family: Montserrat Variable, sans-serif;
-  font-weight: 700;
+.single-cardbody > .text-container > .single-card-header{
+    font-family: Montserrat Variable, sans-serif;
+    font-weight: 700;
 }
 
 .single-cardbody > .text-container > button {
-  padding: 0.75rem 2rem;
-  background: #239ed9;
-  border-radius: 4px;
-  outline: none;
-  border: 0.1rem solid #239ed9;
-  color: #fff;
-  margin-right: 0.7rem;
-  font-family: Futura PT;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 1s;
-  width: fit-content;
+    padding: 0.75rem 2rem;
+    background: #239ED9;
+    border-radius: 4px;
+    outline: none;
+    border: 0.1rem solid #239ED9;
+    color: #fff;
+    margin-right: 0.7rem;
+    font-family: Futura PT;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 1s;
+    width: fit-content;
 }
 
 .single-cardbody > .text-container > button:hover {
-  background: #1b7aa7;
-  border: 0.1rem solid #1b7aa7;
+    background: #1b7aa7;
+    border: 0.1rem solid #1b7aa7;
 }
 
 .single-card-tag {
-  border-radius: 1rem;
-  color: #239ed9;
-  background: #e2f3fc;
-  width: fit-content;
+    border-radius: 1rem;
+    color: #239ED9;
+    background: #E2F3FC;
+    width: fit-content;
 }
 /* Section 3 End*/
 
 /* Section 4 */
 
 .section4 {
-  width: 100%;
-  color: white;
-  height: 100%;
-  background: #131622;
-  display: grid;
-  grid-template-columns: repeat(4, auto);
-  align-items: center;
-  justify-content: space-between;
-  padding: 3rem 9.5rem;
+    width: 100vw;
+    color: white;
+    height: 100%;
+    background: #131622;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 2rem;
 }
 
 .section4 > h2 {
-  font-weight: 800;
-  font-family: 'Montserrat', sans-serif;
-  grid-column: 1 / span 4;
-  text-align: center;
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+    grid-column: 1 / span 4;
+    text-align: center;
+}
+
+.row-div > h3 {
+    position: relative;
+    left: -2rem;
 }
 
 .section4 > .row-div {
-  display: flex;
-  margin-top: 5rem;
-  flex-direction: column;
+    display: flex;
+    margin-top: 5rem;
+    flex-direction: column;
 }
 
 .row-div > * {
-  margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .row-div > button {
-  cursor: pointer;
-  text-decoration: none;
-  outline: none;
-  background-color: rgba(255, 255, 255, 0);
-  border: none;
-  color: white;
-  width: auto;
-  text-align: left;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    color: white;
+    width: auto;
+    text-align: left;
 }
 
 .logodiv > button {
-  text-align: center;
+    text-align: center;
 }
 
 .row-div > .exqureLogo {
-  margin-top: -1rem;
+    margin-top: -1rem;
 }
 
 .logodiv {
-  align-items: center;
-  justify-content: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .socials {
-  width: 80%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .socials > * {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 /* Section 4 End */
 
 footer {
-  color: white;
-  background: #131622;
-  border-top: 1px solid black;
-  padding-top: 0.4rem;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  height: 2rem;
+    color: white;
+    background: #131622;
+    border-top: 1px solid black;
+    padding-top: 0.4rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 2rem;
 }

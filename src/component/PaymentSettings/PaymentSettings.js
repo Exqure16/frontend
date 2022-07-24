@@ -31,13 +31,20 @@ const PaymentSettings = () => {
         <Form className='paymentform'>
           <Form.Group className='mb-3' controlId='formBasicNumber'>
             <Form.Label>BVN number</Form.Label>
-            <Form.Control type='text' placeholder='Enter BVN' />
+            <Form.Control
+              type='text'
+              placeholder='Enter BVN'
+              name='bvnNumber'
+            />
           </Form.Group>
 
           <Form.Group className='mb-3' controlId='formBasicText'>
             <Form.Label>Select bank</Form.Label>
             <Form.Select>
-              <option>Choose Bank</option>
+              <option>GTB</option>
+              <option>Ecobank </option>
+              <option>First bank </option>
+              <option> </option>
             </Form.Select>
           </Form.Group>
           <Form.Group className='mb-3' controlId='formBasicNumber'>

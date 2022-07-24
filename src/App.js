@@ -4,12 +4,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './component/Header/Header';
 import Login from './component/LoginPage/Login';
 import HomePage from './component/HomePage/HomePage';
-// import Footer from './component/Footer';
+import Footer from './component/Footer';
 import Signup from './component/Signup/Signup';
 import ForgotPassword from './component/LoginPage/ForgotPassword';
 import ResetPassword from './component/LoginPage/ResetPassword';
 
 import CreateTransaction from './component/TransactionPages/CreateTransaction/CreateTransaction';
+
+import TransBuyer from './component/TransactionPages/MyTransaction/MyTransaction_Buyer';
+import TransBuyerCrypto from './component/TransactionPages/MyTransaction/MyTransaction_Buyer-Crypto';
+
 import Personal from './component/Profile/Personal';
 import NoTransactions from './component/TransactionPages/NoTransaction';
 import WithTransaction from './component/TransactionPages/WithTransaction';
@@ -26,8 +30,11 @@ import Accountsetting from './component/Accountsetting/Accountsetting';
 function App() {
   return (
     <div>
-      <Header />
-      <Routes>
+      {/* <Header /> */}
+      <Blog />
+      <GeneralSettings />
+      <TransactionSeller />
+       <Routes>
         <Route path='/frontend' element={<HomePage />} />
         <Route path='frontend/login' element={<Login />} />
         <Route path='frontend/forgot' element={<ForgotPassword />} />
@@ -55,12 +62,10 @@ function App() {
           path='frontend/psWithTransaction'
           element={<PsWithTransaction />}
         />
-        <Route path='frontend/accountsetting' element={<Accountsetting />}>
-          <Route path='paymentsettings' element={<PaymentSettings />} />
-          <Route path='profile' element={<Personal />} />
-        </Route>
+        <Route path='frontend/mytransactions' element={<TransBuyer />} />
+        <Route path='frontend/mytransactions-crypto' element={<TransBuyerCrypto />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

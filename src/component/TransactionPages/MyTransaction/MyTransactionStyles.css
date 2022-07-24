@@ -1,0 +1,185 @@
+@font-face {
+    font-family: Futura PT;
+    src: url('../../../fonts/Futura\ Book\ font.ttf');
+}
+
+@font-face {
+    font-family: Montserrat Variable;
+    src: url('../../../fonts/Montserrat-ExtraBold.ttf');
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url('../../../fonts/Montserrat-Bold.ttf');
+}
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.trans-main > .h2 {
+    font-family: Montserrat, sans-serif;
+    font-weight: bold;
+    margin-bottom: 30px;
+} 
+
+.trans-main > h3 {
+    font-family: Montserrat, sans-serif;
+    margin-bottom: 16px;
+    margin-top: 16px;
+}
+
+#navbutton {
+    margin-left: 2rem;
+}
+
+.key-div > p {
+    font-family: Futura PT, sans-serif;
+    margin: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+}
+
+.trans-main > p {
+    font-family: Futura PT, sans-serif;
+    margin-left: 2rem;
+}
+
+.key-div > .marker {
+    margin-top: 24px;
+}
+
+.key-div > h3 {
+    margin: 0;
+}
+
+.pending-buttons {
+    display: flex;
+}
+
+.pending-buttons > button {
+    font-family: Futura PT, sans-serif;
+    width: 165px;
+    padding: 12px 59px;
+    outline: none;
+    border: none;
+    margin: .5rem 2rem;
+    border-radius: 4px;
+    color: white;
+}
+
+.pending-buttons > .accept {
+    background-color: #158943;
+}
+.pending-buttons > .accept:hover {
+    background-color: #12773b;
+}
+
+.pending-buttons > .paynow {
+    padding: 12px 24px;
+    background-color: #239ED9;
+}
+.pending-buttons > .paynow:hover {
+    background-color: #1f8dc0;
+}
+
+.pending-buttons > .decline {
+    background-color: #E03F1B;
+}
+.pending-buttons > .decline:hover {
+    background-color: #c73818;
+}
+
+.chevron {
+    color: #9FA2A5;
+    cursor: pointer;
+    outline: none;
+    width: 40px;
+    height: 40px;
+    border: 0.5px solid #9FA2A5;
+    border-radius: 15px;
+    background-color: transparent;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.chevron:hover {
+    color: #239ED9;
+    border: 0.5px solid #239ED9;
+}
+
+.green {
+    padding: 2px;
+    background-color: #F5E5D6;
+    color: green;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+.orange {
+    padding: 2px;
+    background-color: #F5E5D6;
+    color: orange;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+.slider {
+    border-radius: 5px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 600px);
+    /*overflow: hidden;*/
+}
+
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
+    .trans-main {
+        padding: 1rem;
+    }
+
+    .trans-main > h2 {
+        margin: 0;
+        padding: 0;
+    }
+
+    .trans-main > h3 {
+        margin: 0;
+        
+    }
+
+    .trans-main > p {
+        margin: 0;
+    }
+
+    #navbutton {
+        margin-left: 0;
+    }
+
+    .key-div > p {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pending-buttons > button {
+        margin-left: 0;
+    }
+
+    .slider {
+        padding: 0;
+    }
+
+    span {
+        margin: .5rem 0;
+    }
+
+    
+}
