@@ -42,7 +42,6 @@ function Signup() {
     console.log(c + p);
   };
 
-
   const [phoneValue, setPhoneValue] = useState('');
   const [display, setDisplay] = useState('block');
   const [sdisplay, setSDisplay] = useState('none');
@@ -235,7 +234,6 @@ function Signup() {
           </div>
         </Col>
       </Row>
-
     </Container>
   );
 }
