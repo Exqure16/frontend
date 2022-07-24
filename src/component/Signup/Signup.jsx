@@ -22,7 +22,8 @@ import good from '../images/good.svg';
 import welcome from '../images/welcome.svg';
 import arrowDown from '../images/arrowDown.svg';
 import hands from '../images/Hands.png';
-import { parsePhoneNumber } from 'react-phone-number-input';
+import hideP from '../images/hi.svg';
+import showP from '../images/showP.svg';
 import CountrySelect from '../Profile/Form/CountrySelect';
 import { Countries } from '../Countries';
 import Input from '../Profile/Form/Input';
@@ -55,10 +56,14 @@ function Signup() {
 
   const [formIsValid, setFormIsValid] = useState(false);
   const [nameIsValid, setNameIsValid] = useState(false);
-  const [emailIsValid, setEmailIsValid] = useState(false);
-  const [passwordIsValid, setPasswordIsValid] = useState(false);
-  const [confirmPasswordIsValid, setConfirmPasswordIsValid] = useState(false);
-  const [phoneNumberIsValid, setPhoneNumberIsValid] = useState(false);
+
+  const [emailIsValid, setEmailIsValid] = useState(false); 
+  const [passwordIsValid, setPasswordIsValid] = useState(false); 
+  const [confirmPasswordIsValid, setConfirmPasswordIsValid] = useState(false); 
+  const [phoneNumberIsValid, setPhoneNumberIsValid] = useState(false); 
+  const [passwordType, setPasswordType] = useState('password'); 
+  const [passwordType1, setPasswordType1] = useState('password'); 
+
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -234,13 +239,19 @@ function Signup() {
                 <img src={lock} className='icon' color='#239ED9' />
                 <FormControl
                   placeholder='Enter password'
-                  type='password'
+                  type={passwordType}
                   name='password'
                   onChange={(e) => {
                     handleChange(e);
                     handleChange2(e);
                   }}
-                />
+                  />
+                  <span style={{position:'absolute', right:'2rem'}}>
+                  
+                    {passwordType==='password'? 
+                    <img src={hideP} onClick ={()=>setPasswordType('text')} className='icon' color='#239ED9' />
+                    :<img src={showP} onClick ={()=>setPasswordType('password')}className='icon' color='#239ED9' />}
+                  </ span>
               </div>
               {!passwordIsValid ? (
                 <span className='error'>{passwordError}</span>
@@ -257,7 +268,7 @@ function Signup() {
                 <img src={lock} className='icon' color='#239ED9' />
                 <FormControl
                   placeholder='Re-enter password'
-                  type='password'
+                  type={passwordType1}
                   name='confirmPassword'
                   onChange={(e) => {
                     handleChange(e);
@@ -271,6 +282,11 @@ function Signup() {
                     }
                   }}
                 />
+                <span style={{position:'absolute',right:'2rem'}}>
+                  {passwordType1==='password'? 
+                  <img src={hideP} onClick ={()=>setPasswordType1('text')} className='icon' color='#239ED9' />
+                  :<img src={showP} onClick ={()=>setPasswordType1('password')}className='icon' color='#239ED9' />}
+                </span>
               </div>
               {!confirmPasswordIsValid ? (
                 <span className='error'>{confirmPasswordError}</span>
