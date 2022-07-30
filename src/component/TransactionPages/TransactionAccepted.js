@@ -1,7 +1,7 @@
 
 import React from 'react'
 import accept from '../images/accepted.png'
-import '../TransactionPages/CreateTransaction/CreateTransaction.css'
+import './CreateTransaction/CreateTransaction.css'
 
 const TransactionAccepted = () => {
   return (

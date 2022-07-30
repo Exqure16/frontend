@@ -38,13 +38,32 @@ const Login = () => {
     });
   };
 
-  const submitForm = (e) => {
-    e.preventDefault();
-    if (formValid === true) {
-      console.log(form);
-      // window.location = "" ;
-    }
-  };
+  async function signup(e){
+   e.preventDefault();
+   let result = await fetch('https://exqure.herokuapp.com/api/user/signin', {
+      method: "POST",
+      body:JSON.stringify(form),
+      headers: {
+        "Content-Type" : 'application/json' ,
+        "Accept" :'application/json'
+      }
+    })
+    result= await result.json()
+    console.log("result", result);
+    alert(result.msg);
+    localStorage.setItem("user-info", JSON.stringify(result));
+    
+  }
+
+  // const submitForm = (e) => {
+  //   e.preventDefault();
+  //   if (formValid === true) {
+  //     console.log(form);
+  //     // window.location = "" ;
+  //   }
+  // };
+
+  
 
   return (
     <div className='login-page'>
@@ -58,7 +77,7 @@ const Login = () => {
         <div className='login-box'>
           <h2>Login </h2>
           <p>Welcome back! please enter your login details</p>
-          <form onSubmit={submitForm}>
+          <form onSubmit={signup}>
             <label>Email</label>
             <div className='input-box'>
               {' '}

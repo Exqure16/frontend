@@ -1,6 +1,6 @@
 import React from 'react';
 // import './CreateTransaction.css';
-import '../CreateTransaction/CreateTransaction.css';
+import './CreateTransaction.css';
 import sms from '../../images/sms.svg';
 import personIcon from '../../images/personicon.svg';
 import { useState, useEffect } from 'react';
@@ -36,6 +36,19 @@ const handleChange = (e) => {
     });
   };
 
+  const changeBtn =(e) =>{
+    if(e.target.className != "active"){
+      // e.target.className= "active";
+      // e.getItemAttribute(e.querySelector , 'button').style.backgroundColor="yellow";
+      e.target.style.backgroundColor= "green";
+    }
+    else if(e.target.className === "active"){
+      e.target.className='';
+      e.target.style.backgroundColor= "yellow";
+
+    }
+  }
+
   const submitForm = (e) => { 
     e.preventDefault();
     // if (formValid === true) {
@@ -50,9 +63,9 @@ const handleChange = (e) => {
            <h2 id='h2'>Create Transaction</h2>
            <h3>Select role</h3>
            <div className='contents'>
-             <div className="role-buttons">
-              <button id='seller'> <TbUpload/> <p>Seller</p></button>
-              <button id='buyer'> <TbDownload/> <p>Buyer</p></button>
+             <div className="role-buttons" >
+              <button id='seller' onClick={changeBtn} > <TbUpload/> <p >Seller</p></button>
+              <button id='buyer' onClick={changeBtn} > <TbDownload/> <p>Buyer</p></button>
              </div>
              <div className='transaction-form'>
                 <form onSubmit={submitForm}>
