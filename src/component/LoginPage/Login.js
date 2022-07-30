@@ -50,7 +50,9 @@ const Login = () => {
     })
     result= await result.json()
     console.log("result", result);
+    alert(result.msg);
     localStorage.setItem("user-info", JSON.stringify(result));
+    
   }
 
   // const submitForm = (e) => {

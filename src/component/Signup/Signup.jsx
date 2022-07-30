@@ -11,7 +11,6 @@ import {
 } from 'react-bootstrap';
 // import Footer from '../Footer';
 import logo from '../images/logo.png';
-import logo1 from '../images/logo2.svg';
 import lock from '../images/lock.svg';
 import personIcon from '../images/personicon.svg';
 import sms from '../images/sms.svg';
@@ -24,12 +23,12 @@ import welcome from '../images/welcome.svg';
 import arrowDown from '../images/arrowDown.svg';
 import hands from '../images/Hands.png';
 import { parsePhoneNumber } from 'react-phone-number-input';
-import PhoneInput from 'react-phone-number-input';
 import CountrySelect from '../Profile/Form/CountrySelect';
+import {Countries} from '../Countries'
 import Input from '../Profile/Form/Input';
 function Signup() {
-  const [focusInput, setFocusInput] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
+  
+  const [phonee, setPhonee] = useState('');
   const [dialCode, setDialCode] = useState('+234');
   const [openPhone, setOpenPhone] = useState('none');
   const [phoneFlagUrl2, setPhoneFlagUrl2] = useState('https://flagcdn.com/ng.svg');
@@ -47,71 +46,85 @@ function Signup() {
     countryName ={country.name}
     countryDialCode = {country.dial_code}
     />);
-  const handleChange1 = (value) => {
-    let p,
-      c = '';
-    const parsedValue = parsePhoneNumber(value ? value : '', 'NG');
-    if (parsedValue) {
-      p = parsedValue.nationalNumber;
-      c = parsedValue.countryCallingCode;
-    }
-    setPhoneNumber(p);
-    setCountry(c);
-    // console.log(c + p);
-    setPhoneValue(p);
-    form.phone= phoneValue;
-  };
-
-
-  const [phoneValue, setPhoneValue] = useState('');
+  
   const [display, setDisplay] = useState('block');
   const [sdisplay, setSDisplay] = useState('none');
-  const [lDisplay, setLDisplay] = useState('none');
-
-  useEffect(() => {
-    if (window.innerWidth <= 767) {
-      setLDisplay('block');
-    }
-    function handleResize() {
-      if (window.innerWidth <= 767) {
-        setLDisplay('block');
-        if (display == 'none') {
-          setLDisplay('none');
-        } else {
-          setLDisplay('block');
-        }
-      } else {
-        setLDisplay('none');
-      }
-    }
-    window.addEventListener('resize', handleResize);
-  }, [display]);
-
+ 
+ // const data = fetch('http://exqure.herokuapp.com/api/user/signup');
+  
   const [formIsValid, setFormIsValid] = useState(false);
+  const [nameIsValid, setNameIsValid] = useState(false);
+  const [emailIsValid, setEmailIsValid] = useState(false); 
+  const [passwordIsValid, setPasswordIsValid] = useState(false); 
+  const [confirmPasswordIsValid, setConfirmPasswordIsValid] = useState(false); 
+  const [phoneNumberIsValid, setPhoneNumberIsValid] = useState(false); 
   const [form, setForm] = useState({
     fullname: '',
     email: '',
     password: '',
     confirmpassword: '',
     phone:''
+    
   });
-  useEffect(() => {
-    if (
-      form.fullname !== '' &&
-      form.email !== '' &&
-      form.password !== '' &&
-      form.confirmpassword !== '' &&
-      form.phone !== ''
-    ) {
-      if (form.password === form.confirmpassword) {
-        setFormIsValid(true);
-      } else {
-        setFormIsValid(false);
+
+  /*
+  useEffect(()=>{
+    fetch('http://exqure.herokuapp.com/api/user/signup',{
+      method: 'POST',
+      body: JSON.stringify({
+        form
+      }),
+      headers:{
+        'Content-type' : 'application/json: charset =UTF-8'
       }
-    } else {
-      setFormIsValid(false);
-    }
-  }, [form]);
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
+  }
+  
+  ,[formIsValid])*/
+  const [nameError, setNameError] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+  const [confirmPasswordError, setConfirmPasswordError] = useState('');
+  const [phoneNumberError, setPhoneNumberError] = useState('');
+  
+  const handleChange2 = (e)=>{
+     const uppercaseRegExp = /(?=.*?[A-Z])/;
+     const lowercaseRegExp = /(?=.*?[a-z])/;
+     const digitsRegExp = /(?=.*[0-9])/;
+     const specialCharRegExp = /(?=.*?[#?!@$%^&*-.,])/;
+    const uppercasePassword = uppercaseRegExp.test(e.target.value.trim());
+    const lowercasePassword = lowercaseRegExp.test(e.target.value.trim());
+    const digitsPassword = digitsRegExp.test(e.target.value.trim());
+    const specialCharPassword = specialCharRegExp.test(e.target.value);
+    const minLengthPassword = form.password.length >= 8;
+    if(form.password.length === 0){
+      setPasswordError('Password is empty')
+    }else if(!uppercasePassword){
+      setPasswordError('Password should have at least one Uppercase')
+    }else if(!lowercasePassword){
+      setPasswordError('Password should have at least one Lowercase')
+    }else if(!digitsPassword){
+      setPasswordError('Password should have at least one digit')
+    }else if(!specialCharPassword){
+      setPasswordError('Password should have at least one special character')
+    }else if(!minLengthPassword){
+      setPasswordError('Password should have at least 8 characters')
+    }  
+    if(uppercasePassword &&
+        lowercasePassword &&
+        digitsPassword &&
+        specialCharPassword &&
+        minLengthPassword
+      ){
+        setPasswordIsValid(true)
+      }else{
+        setPasswordIsValid(false)
+      }  
+  }
+  
   const handleChange = (e) => {
     setForm({
       ...form,
@@ -121,17 +134,31 @@ function Signup() {
 
   // const submitForm = (e) => {
   //   e.preventDefault();
-  //   if (formIsValid === true) {
-  //     setSDisplay('block');
-  //     setDisplay('none');
-  //     setLDisplay('none');
-  //   }
-  //   console.log(form);
+
+    
   // };
 
-  async function submitForm(e){
+  async function signup(e){
     e.preventDefault();
-   
+    // console.log(form);
+    
+    if(nameIsValid &&
+      emailIsValid &&
+      passwordIsValid &&
+      confirmPasswordIsValid &&
+      phoneNumberIsValid
+      ){
+        setFormIsValid(true)
+      }else{
+        setFormIsValid(false)
+      }
+
+    if (formIsValid === true) {
+      setSDisplay('block');
+      setDisplay('none');
+      console.log(form)
+    }
+
     let result = await fetch('https://exqure.herokuapp.com/api/user/signup', {
        method: "POST",
        body:JSON.stringify(form),
@@ -142,25 +169,14 @@ function Signup() {
      })
      result= await result.json()
      console.log("result", result);
-    if(result.status === 'success'){
-      
-        setSDisplay('block');
-          setDisplay('none');
-          setLDisplay('none');
-        
-          console.log(result.msg);
-    }
-    else{
-      console.log(result.msg);
-    };
+    alert(result.msg);
+     localStorage.setItem("user-info", JSON.stringify(result));
    }
 
   return (
     <Container fluid>
       <Row>
-        <Col className='logocol1' style={{ display: lDisplay }}>
-          <img src={logo1}></img>
-        </Col>
+        
         <Col className='logocol' md>
           <img className='logo' src={logo} alt='exqure logo' />
           <img className='hands' src={hands} alt='Shaking hands' />
@@ -168,18 +184,31 @@ function Signup() {
         <Col className='formcol' style={{ display: display }} md>
           <h1 className='header'> Sign Up </h1>
           <p className='tagline'> Welcome! Register with Exqure here. </p>
-          <Form onSubmit={submitForm} className='form'>
+          <Form onSubmit={signup} className='form'>
             <label className='label'>Name</label>
             <InputGroup className='mb-3'>
               <div>
                 <img src={personIcon} className='icon' color='#239ED9' />
                 <FormControl
-                  placeholder='Enter name'
+                  placeholder='Enter full name'
                   type='username'
                   name='fullname'
-                  onChange={handleChange}
+                  //value = {value}
+                  onChange={(e)=>{handleChange(e);
+                    if(form.fullname.length >= 4 &&
+                      form.fullname !== '' && 
+                      e.target.value.trim().match(/[a-zA-Z][a-zA-Z ]+/)
+                      ){
+                        setNameIsValid(true);
+                        
+                      }else{
+                        setNameIsValid(false);
+                        setNameError('name should contain only letters and must be greater than five letters');
+                      }
+                  }}
                 />
               </div>
+              { !nameIsValid? <span className ='error'>{nameError}</span>:''}
             </InputGroup>
 
             <label className='label' htmlFor='basic-url'>
@@ -192,9 +221,20 @@ function Signup() {
                   placeholder='Enter email'
                   type='email'
                   name='email'
-                  onChange={handleChange}
+                  onChange={(e)=>{handleChange(e);
+                    if(form.email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i) &&
+                          form.email !== '' 
+                        ){
+                          setEmailIsValid(true);
+                        }else{
+                          setEmailIsValid(false);
+                          setEmailError('email should be similar to - example@gmail.com');
+                        }
+  
+                  }}
                 />
               </div>
+              { !emailIsValid? <span className ='error'>{emailError}</span>:''}
             </InputGroup>
 
             <label className='label' htmlFor='basic-url'>
@@ -207,9 +247,12 @@ function Signup() {
                   placeholder='Enter password'
                   type='password'
                   name='password'
-                  onChange={handleChange}
+                  onChange={(e)=>{handleChange(e);
+                    handleChange2(e)
+                  }}
                 />
               </div>
+              { !passwordIsValid? <span className ='error'>{passwordError}</span>:''}
             </InputGroup>
 
             <label className='label' htmlFor='basic-url'>
@@ -222,30 +265,91 @@ function Signup() {
                   placeholder='Re-enter password'
                   type='password'
                   name='confirmpassword'
-                  onChange={handleChange}
+                  onChange={(e)=>{handleChange(e);
+                    if(form.confirmpassword === form.password){
+                        setConfirmPasswordIsValid(true);
+                      }else{
+                        setPasswordIsValid(false);
+                        setConfirmPasswordError('This input does not match password')
+                      }
+                  }}
                 />
               </div>
+              { !confirmPasswordIsValid? <span className ='error'>{confirmPasswordError}</span>:''}
             </InputGroup>
 
             <label className='label' htmlFor='basic-url'>
               Phone
             </label>
-            <PhoneInput
-              international
-              countryCallingCodeEditable={false}
-              defaultCountry='NG'
-              placeholder='phone Number'
-              value={phoneValue}
-              onChange={handleChange1}
-              onFocus={() => setFocusInput('phoneNumber')}
-              name='phone'
-            />
-             <button className='Signupbtn' onClick={submitForm}>
-            Sign Up
-          </button>
+            <Input            
+                    type= 'text'   
+                    img1W= {'2rem'}
+                    img1= { phoneFlagUrl2}
+                    img1ML ={'1rem'}
+                    img1MT ={'0.7rem'}
+                    onClick2 ={()=>{
+                        if(openPhone =='none'){
+                            setOpenPhone('inline-block');
+                        }else if(openPhone =='inline-block'){
+                            setOpenPhone('none')
+                        }
+                    }}
+                    sML={'3.5rem'}
+                    sMT ={'0.5rem'}
+                    img2W = {'1rem'}
+                    img2ML= {'6rem'}
+                    img2MT= { '0.7rem'}
+                    img2 ={arrowDown}
+                    sV ={dialCode}
+                    inputPL ={'7.5rem'}
+                    inputW= {'100%'}
+                    placeholder= {'90 000 0000'}
+                    inputValue ={phonee}
+                    name= "phone"
+                    onChange = {(e)=>{
+                        let p= dialCode;
+                        // p+= e.nativeEvent.data;
+                        p+= e.target.value;
+                        // e.target.name = phone;
+                        setPhonee(p);
+                        setForm({
+                          ...form,
+                         phone: p,
+                        });
+                        
+                        
+                        
+                        if(!e.target.value.match(/(?=.*?[0-9])/)){
+                          setPhoneNumberError('This field should contain only numbers 0-9');
+                        }else if(!e.target.value>=8){
+                          setPhoneNumberError('This field should contain at least 8 numbers');
+                        }
+                        if (e.target.value.match(/(?=.*?[0-9])/) &&
+                          e.target.value >= 8
+                        ){
+                          setPhoneNumberIsValid(true)
+                        }else{
+                          setPhoneNumberIsValid(false)
+                        }
+                    }}
+                    
+                    />
+                    {form.undefined}
+                    {/* {phone} */}
+
+                
+                  { !phoneNumberIsValid? <span className ='error'>{phoneNumberError}</span>:''}
+                    <div className ='openPhone' style={{display:openPhone}}>
+                        {getPhoneDetails?getPhoneDetails:''}
+                    </div>
+                    <button className='Signupbtn'  onClick={signup}>
+                      Sign Up
+                    </button>
+
+                    
           </Form>
 
-         
+          
           <div className='footDiv'>
             <p className='footer1'>
               By signing up, I agree to <a href ='https://www.github.com'>Terms and Conditions</a> and{' '}

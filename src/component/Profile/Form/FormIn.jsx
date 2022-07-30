@@ -4,11 +4,6 @@ import personIcon from '../../images/personicon.svg'
 import calendarIcon from '../../images/calendar.svg'
 import arrowDown from '../../images/arrowDown.svg'
 import { Countries} from '../../Countries'
-<<<<<<< HEAD
-
-// import countryList from 'react-select-country-list'
-=======
->>>>>>> b2535bf6ae84a0d0e1ab8f4b30f8eef588e17778
 import CountrySelect from './CountrySelect'
 import Input from './Input'
 
