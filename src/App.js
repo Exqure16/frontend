@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './component/Header/Header';
+import Blog from './component/Blog/Blog'
 import Login from './component/LoginPage/Login';
 import HomePage from './component/HomePage/HomePage';
 import Footer from './component/Footer';
@@ -11,8 +12,10 @@ import ResetPassword from './component/LoginPage/ResetPassword';
 
 import CreateTransaction from './component/TransactionPages/CreateTransaction/CreateTransaction';
 
-// import TransBuyer from './component/TransactionPages/MyTransaction/MyTransaction_Buyer';
-// import TransBuyerCrypto from './component/TransactionPages/MyTransaction/MyTransaction_Buyer-Crypto';
+
+import TransBuyer from './component/TransactionPages/MyTransaction/MyTransaction_Buyer';
+import TransBuyerCrypto from './component/TransactionPages/MyTransaction/MyTransaction_Buyer-Crypto';
+
 
 import Personal from './component/Profile/Personal';
 import NoTransactions from './component/TransactionPages/NoTransaction';
@@ -30,9 +33,9 @@ import Accountsetting from './component/Accountsetting/Accountsetting';
 function App() {
   return (
     <div>
+
       <Header />
-      {/* <Blog /> */}
-      {/* <GeneralSettings/> */}
+      {/* <GeneralSettings /> */}
       {/* <TransactionSeller /> */}
        <Routes>
         <Route path='/frontend' element={<HomePage />} />
@@ -40,6 +43,8 @@ function App() {
         <Route path='frontend/forgot' element={<ForgotPassword />} />
         <Route path='frontend/reset' element={<ResetPassword />} />
         <Route path='frontend/signup' element={<Signup />} />
+        <Route path='frontend/blog' element={<Blog/>} />
+
 
         <Route path='frontend/create' element={<CreateTransaction />} />
         <Route
@@ -62,8 +67,10 @@ function App() {
           path='frontend/psWithTransaction'
           element={<PsWithTransaction />}
         />
-        {/* <Route path='frontend/mytransactions' element={<TransBuyer />} /> */}
-        {/* <Route path='frontend/mytransactions-crypto' element={<TransBuyerCrypto />} /> */}
+
+        <Route path='frontend/mytransactions' element={<TransBuyer />} />
+        <Route path='frontend/mytransactions-crypto' element={<TransBuyerCrypto />} />
+
       </Routes>
       <Footer />
     </div>
