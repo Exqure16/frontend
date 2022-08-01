@@ -22,12 +22,19 @@ import good from '../images/good.svg';
 import welcome from '../images/welcome.svg';
 import arrowDown from '../images/arrowDown.svg';
 import hands from '../images/Hands.png';
-import { parsePhoneNumber } from 'react-phone-number-input';
+import hideP from '../images/hi.svg';
+import showP from '../images/showP.svg';
 import CountrySelect from '../Profile/Form/CountrySelect';
 import { Countries } from '../Countries';
 import Input from '../Profile/Form/Input';
+import { parsePhoneNumber } from 'react-phone-number-input';
 function Signup() {
-  const [phoneNumber, setPhoneNumber] = useState('');
+
+  
+  const [phonee, setPhonee] = useState('');
+
+  // const [phoneNumber, setPhoneNumber] = useState('');
+
   const [dialCode, setDialCode] = useState('+234');
   const [openPhone, setOpenPhone] = useState('none');
   const [phoneFlagUrl2, setPhoneFlagUrl2] = useState(
@@ -42,7 +49,7 @@ function Signup() {
       p = parsedValue.nationalNumber;
       c = parsedValue.countryCallingCode;
     }
-    setPhoneNumber(p);
+    setPhonee(p);
     setCountry(c);
     console.log(c + p);
   };
@@ -55,16 +62,22 @@ function Signup() {
 
   const [formIsValid, setFormIsValid] = useState(false);
   const [nameIsValid, setNameIsValid] = useState(false);
-  const [emailIsValid, setEmailIsValid] = useState(false);
-  const [passwordIsValid, setPasswordIsValid] = useState(false);
-  const [confirmPasswordIsValid, setConfirmPasswordIsValid] = useState(false);
-  const [phoneNumberIsValid, setPhoneNumberIsValid] = useState(false);
+
+  const [emailIsValid, setEmailIsValid] = useState(false); 
+  const [passwordIsValid, setPasswordIsValid] = useState(false); 
+  const [confirmPasswordIsValid, setConfirmPasswordIsValid] = useState(false); 
+  const [phoneNumberIsValid, setPhoneNumberIsValid] = useState(false); 
+  const [passwordType, setPasswordType] = useState('password'); 
+  const [passwordType1, setPasswordType1] = useState('password'); 
+
   const [form, setForm] = useState({
-    name: '',
+    fullname: '',
     email: '',
     password: '',
-    confirmPassword: '',
-    phoneNumber: '',
+    confirmpassword: '',
+    phone:''
+    
+
   });
 
   /*
@@ -133,8 +146,18 @@ function Signup() {
     });
   };
 
-  const submitForm = (e) => {
+  // const submitForm = (e) => {
+  //   e.preventDefault();
+
+
+    
+  // };
+
+  async function signup(e){
     e.preventDefault();
+    // console.log(form);
+    
+    
 
     if (
       nameIsValid &&
@@ -153,7 +176,20 @@ function Signup() {
       setDisplay('none');
       console.log(form);
     }
-  };
+
+    let result = await fetch('https://exqure.herokuapp.com/api/user/signup', {
+       method: "POST",
+       body:JSON.stringify(form),
+       headers: {
+         "Content-Type" : 'application/json' ,
+         "Accept" :'application/json'
+       }
+     })
+     result= await result.json()
+     console.log("result", result);
+    alert(result.msg);
+     localStorage.setItem("user-info", JSON.stringify(result));
+   }
 
   return (
     <Container fluid>
@@ -165,7 +201,7 @@ function Signup() {
         <Col className='formcol' style={{ display: display }} md>
           <h1 className='header'> Sign Up </h1>
           <p className='tagline'> Welcome! Register with Exqure here. </p>
-          <Form onSubmit={submitForm} className='form'>
+          <Form onSubmit={signup} className='form'>
             <label className='label'>Name</label>
             <InputGroup className='mb-3'>
               <div>
@@ -173,13 +209,13 @@ function Signup() {
                 <FormControl
                   placeholder='Enter full name'
                   type='username'
-                  name='name'
+                  name='fullname'
                   //value = {value}
-                  onChange={(e) => {
-                    handleChange(e);
-                    if (
-                      form.name.length >= 5 &&
-                      form.name !== '' &&
+
+                  onChange={(e)=>{handleChange(e);
+                    if(form.fullname.length >= 3 &&
+                      form.fullname !== '' && 
+
                       e.target.value.trim().match(/[a-zA-Z][a-zA-Z ]+/)
                     ) {
                       setNameIsValid(true);
@@ -234,13 +270,19 @@ function Signup() {
                 <img src={lock} className='icon' color='#239ED9' />
                 <FormControl
                   placeholder='Enter password'
-                  type='password'
+                  type={passwordType}
                   name='password'
                   onChange={(e) => {
                     handleChange(e);
                     handleChange2(e);
                   }}
-                />
+                  />
+                  <span style={{position:'absolute', right:'2rem'}}>
+                  
+                    {passwordType==='password'? 
+                    <img src={hideP} onClick ={()=>setPasswordType('text')} className='icon' color='#239ED9' />
+                    :<img src={showP} onClick ={()=>setPasswordType('password')}className='icon' color='#239ED9' />}
+                  </ span>
               </div>
               {!passwordIsValid ? (
                 <span className='error'>{passwordError}</span>
@@ -257,11 +299,12 @@ function Signup() {
                 <img src={lock} className='icon' color='#239ED9' />
                 <FormControl
                   placeholder='Re-enter password'
-                  type='password'
-                  name='confirmPassword'
+
+                  type={passwordType1}
+                  name='confirmpassword'
                   onChange={(e) => {
                     handleChange(e);
-                    if (form.confirmPassword === form.password) {
+                    if (form.password === form.confirmpassword) {
                       setConfirmPasswordIsValid(true);
                     } else {
                       setPasswordIsValid(false);
@@ -271,6 +314,11 @@ function Signup() {
                     }
                   }}
                 />
+                <span style={{position:'absolute',right:'2rem'}}>
+                  {passwordType1==='password'? 
+                  <img src={hideP} onClick ={()=>setPasswordType1('text')} className='icon' color='#239ED9' />
+                  :<img src={showP} onClick ={()=>setPasswordType1('password')}className='icon' color='#239ED9' />}
+                </span>
               </div>
               {!confirmPasswordIsValid ? (
                 <span className='error'>{confirmPasswordError}</span>
@@ -282,6 +330,7 @@ function Signup() {
             <label className='label' htmlFor='basic-url'>
               Phone
             </label>
+
             <Input
               type='text'
               img1W={'2rem'}
@@ -305,11 +354,19 @@ function Signup() {
               inputPL={'7.5rem'}
               inputW={'100%'}
               placeholder={'90 000 0000'}
-              inputValue={phoneNumber}
-              onChange={(e) => {
-                let p = dialCode;
-                p += e.nativeEvent.data;
-                setPhoneNumber(p);
+              inputValue ={phonee}
+                    name= "phone"
+                    onChange = {(e)=>{
+                        let p= dialCode;
+                        // p+= e.nativeEvent.data;
+                        p+= e.target.value;
+                        // e.target.name = phone;
+                        setPhonee(p);
+                        setForm({
+                          ...form,
+                         phone: p,
+                        });
+                
                 if (!e.target.value.match(/(?=.*?[0-9])/)) {
                   setPhoneNumberError(
                     'This field should contain only numbers 0-9'
@@ -336,13 +393,14 @@ function Signup() {
               ''
             )}
             <div className='openPhone' style={{ display: openPhone }}>
-              {getPhoneDetails ? getPhoneDetails : ''}
+              {/* {getPhoneDetails ? getPhoneDetails : ''} */}
             </div>
           </Form>
 
-          <button className='Signupbtn' onClick={submitForm}>
+          <button className='Signupbtn' onClick={signup}>
             Sign Up
           </button>
+
           <div className='footDiv'>
             <p className='footer1'>
               By signing up, I agree to{' '}

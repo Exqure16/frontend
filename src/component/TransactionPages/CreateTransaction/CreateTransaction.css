@@ -45,6 +45,10 @@
 .role-buttons button:hover{
     background-color: #239ED9;
 }
+/* .active{
+    background-color: violet;
+    height: 100%;
+} */
 .transaction-form form{
     font-family: Futura PT;
     margin-top: 8%;
@@ -131,13 +135,20 @@ border: 1px solid #B2B2B3;
     font-family: Futura PT;
 }
 .shippingfee div{
+    background-color:hotpink ;
     font-family: Futura PT;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     width: 70px;
     text-align: center;
     font-size: 16px;
     font-weight: 400 !important;
+}
+
+.shippingfee div input{
+    outline: none;
+    box-shadow: none;
 }
 .drop, .inspection{
     display: flex;
