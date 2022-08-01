@@ -151,7 +151,7 @@ hr {
 .cards {
   display: inline-flex;
   float: right;
-  margin-left: 240px;
+  margin-left: 200px;
   margin-bottom: 5px;
   gap: 2px;
 }
@@ -174,4 +174,8 @@ hr {
 
 .small-moda {
   width: 200px;
+}
+
+.visacard {
+  width: 10px;
 }
