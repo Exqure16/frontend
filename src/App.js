@@ -2,25 +2,19 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './component/Header/Header';
-import Blog from './component/Blog/Blog'
+import Blog from './component/Blog/Blog';
 import Login from './component/LoginPage/Login';
 import HomePage from './component/HomePage/HomePage';
-// import Footer from './component/Footer';
-// import Signup from './component/Signup/Signup';
+import Footer from './component/Footer';
+import Signup from './component/Signup/Signup';
 import ForgotPassword from './component/LoginPage/ForgotPassword';
 import ResetPassword from './component/LoginPage/ResetPassword';
 
 import CreateTransaction from './component/TransactionPages/CreateTransaction/CreateTransaction';
 
-
 import TransBuyer from './component/TransactionPages/MyTransaction/MyTransaction_Buyer';
 import TransBuyerCrypto from './component/TransactionPages/MyTransaction/MyTransaction_Buyer-Crypto';
-<<<<<<< HEAD
 import GeneralSettings from './component/GeneralSettings/GeneralSettings';
-=======
-
-
->>>>>>> dbc7861f24459471e3c1a6f90b3b719683f52817
 import Personal from './component/Profile/Personal';
 import NoTransactions from './component/TransactionPages/NoTransaction';
 import WithTransaction from './component/TransactionPages/WithTransaction';
@@ -38,30 +32,15 @@ import PaymentMethod from './component/PaymentMethod/PaymentMethod';
 function App() {
   return (
     <div>
-<<<<<<< HEAD
       <Header />
       {/* <Blog />
       <TransactionSeller /> */}
       <Routes>
-=======
-
-      <Header />
-      {/* <GeneralSettings /> */}
-      {/* <TransactionSeller /> */}
-       <Routes>
->>>>>>> dbc7861f24459471e3c1a6f90b3b719683f52817
         <Route path='/frontend' element={<HomePage />} />
         <Route path='frontend/login' element={<Login />} />
         <Route path='frontend/forgot' element={<ForgotPassword />} />
         <Route path='frontend/reset' element={<ResetPassword />} />
-<<<<<<< HEAD
-        {/* <Route path='frontend/signup' element={<Signup />} /> */}
-=======
         <Route path='frontend/signup' element={<Signup />} />
-        <Route path='frontend/blog' element={<Blog/>} />
-
-
->>>>>>> dbc7861f24459471e3c1a6f90b3b719683f52817
         <Route path='frontend/create' element={<CreateTransaction />} />
         <Route
           path='frontend/acceptedterms'
@@ -79,7 +58,6 @@ function App() {
         <Route path='frontend/transSeller' element={<TransSeller />} />
         <Route path='frontend/notifications' element={<Notifications />} />
 
-<<<<<<< HEAD
         <Route path='frontend/accountsetting' element={<Accountsetting />}>
           <Route path='general' element={<GeneralSettings />} />
           <Route path='profile' element={<Personal />} />
@@ -90,18 +68,8 @@ function App() {
           path='frontend/mytransactions-crypto'
           element={<TransBuyerCrypto />}
         />
-=======
-        <Route
-          path='frontend/psWithTransaction'
-          element={<PsWithTransaction />}
-        />
-
-        <Route path='frontend/mytransactions' element={<TransBuyer />} />
-        <Route path='frontend/mytransactions-crypto' element={<TransBuyerCrypto />} />
-
->>>>>>> dbc7861f24459471e3c1a6f90b3b719683f52817
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
