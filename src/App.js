@@ -5,7 +5,7 @@ import Header from './component/Header/Header';
 import Blog from './component/Blog/Blog';
 import Login from './component/LoginPage/Login';
 import HomePage from './component/HomePage/HomePage';
-import Footer from './component/Footer';
+// import Footer from './component/Footer';
 import Signup from './component/Signup/Signup';
 import ForgotPassword from './component/LoginPage/ForgotPassword';
 import ResetPassword from './component/LoginPage/ResetPassword';
@@ -69,7 +69,7 @@ function App() {
           element={<TransBuyerCrypto />}
         />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
