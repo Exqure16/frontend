@@ -9,7 +9,7 @@ import HomePage from './component/HomePage/HomePage';
 import Signup from './component/Signup/Signup';
 import ForgotPassword from './component/LoginPage/ForgotPassword';
 import ResetPassword from './component/LoginPage/ResetPassword';
-
+import AcceptTerms from './component/TransactionDetails/AcceptTerms';
 import CreateTransaction from './component/TransactionPages/CreateTransaction/CreateTransaction';
 
 import TransBuyer from './component/TransactionPages/MyTransaction/MyTransaction_Buyer';
@@ -36,6 +36,7 @@ function App() {
       {/* <Blog />
       <TransactionSeller /> */}
       <Routes>
+        <Route path='frontend/acceptterms' element={<AcceptTerms />} />
         <Route path='/frontend' element={<HomePage />} />
         <Route path='frontend/login' element={<Login />} />
         <Route path='frontend/forgot' element={<ForgotPassword />} />
