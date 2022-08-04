@@ -1,3 +1,4 @@
+import React from 'react';
 import { GeneralStyles } from "./Styles/GeneralSettings.styled";
 import {FaArrowRight} from "react-icons/fa"
 
