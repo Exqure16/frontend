@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { React, useState } from "react";
 import './notificationStyles.css'
 import { Container } from "react-bootstrap";
 

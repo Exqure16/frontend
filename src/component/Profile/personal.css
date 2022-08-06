@@ -13,46 +13,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-h2{
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 30px;
-    line-height: 142%;
-    margin-left: 2rem;
-    margin-top: 3rem;
-}
-h3{
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 142%;
-    margin-left: 2rem;
-}
-.headDiv{
-    display: flex;
-    padding-left:4rem;
-    padding-right:4rem;
-    margin: auto;
-    width:80%;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    justify-content: space-between;
-}
-.headDiv div p{
-    font-family: 'Futura PT';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 140%;
-    letter-spacing: 0.03em;
-}
-.headDiv div{
-    display:flex;
-    flex-direction: column;
-    
-}
 .errorDiv span{
     font-family: 'Futura PT';
     font-style: normal;

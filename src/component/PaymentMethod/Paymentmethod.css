@@ -1,0 +1,142 @@
+@font-face {
+  font-family: Futura PT;
+  src: url('../../fonts/Futura\ Book\ font.ttf');
+}
+
+@font-face {
+  font-family: Montserrat Variable;
+  src: url('../../fonts/Montserrat-ExtraBold.ttf');
+}
+
+.methodcard {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+/*styles for card*/
+.cardcontainer {
+  background-color: #239ed9;
+  width: 282px;
+  height: 160px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.paycardbody {
+  padding-top: 54.08px;
+}
+
+.paycardtext {
+  margin-top: 24px;
+}
+
+.paycardtext p {
+  color: #fdfeff;
+  font-family: 'Futura PT';
+  font-weight: 450;
+  font-size: 16px;
+}
+
+.flutercontainer {
+  width: 282px;
+  height: 160px;
+  border: 1px solid #239ed9;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.flutercardbody {
+  padding-top: 54.08px;
+}
+
+.flutercardtext {
+  margin-top: 24px;
+}
+
+.flutercardtext p {
+  font-family: 'Futura PT';
+  font-weight: 450;
+  font-size: 16px;
+}
+
+.debitcardcontainer {
+  border: 1px solid #9fa2a5;
+  border-radius: 6px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  display: flex;
+  height: 170px;
+}
+
+.carddata {
+  margin-top: 50px;
+}
+
+.debitcard {
+  background-color: #96baff;
+  width: 236.76px;
+  height: 150.48px;
+  border-radius: 11.0443px;
+}
+
+.debitcard p {
+  font-family: 'Futura PT';
+  margin-bottom: 0px;
+  font-size: 14px;
+  font-weight: 700px;
+  padding-left: 20px;
+}
+
+.info h4 {
+  font-family: 'Futura PT';
+  margin-left: 20px;
+  font-size: 14px;
+  font-weight: 450;
+  margin-top: 10px;
+  line-height: 140%;
+}
+
+.paynow {
+  color: #239ed9;
+  font-family: 'Futura PT';
+  height: 40px;
+  width: 90px;
+  font-weight: 450;
+  text-align: center;
+  background: #ffffff;
+  border: 2px solid #239ed9;
+  margin-left: 600px;
+  margin-top: 50px;
+}
+
+.largebutton {
+  background-color: #239ed9;
+  width: 408px;
+  height: 46px;
+  border-radius: 4px;
+}
+
+.addcarddetails {
+  width: 570px;
+  height: 607px;
+  border: 5px solid #fdfeff;
+  border-radius: 16px;
+  padding: 80px;
+  margin-top: 10px;
+  background-color: #fdfeff;
+  box-shadow: 0px 0px 6px rgba(47, 73, 86, 0.2);
+  margin-bottom: 122.75px;
+}
+
+.addcardbutton {
+  width: 408px;
+  height: 40px;
+  border: none;
+  border-radius: 6px;
+  background-color: #239ed9;
+  color: #fdfeff;
+  margin-top: -10px;
+  margin-right: 20px;
+}

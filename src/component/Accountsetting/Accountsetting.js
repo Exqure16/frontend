@@ -6,6 +6,7 @@ import './Accountsetting.css';
 const Accountsetting = () => {
   let activeStyle = {
     borderBottom: '#239ed9 3px solid',
+    opacity: '1',
   };
 
   return (
@@ -21,14 +22,14 @@ const Accountsetting = () => {
         </NavLink>
         <NavLink
           style={({ isActive }) => (isActive ? activeStyle : undefined)}
-          to='paymentsettings'
+          to='paymentsetting'
           className='accountlink'
         >
           PAYMENT SETTINGS
         </NavLink>
         <NavLink
           style={({ isActive }) => (isActive ? activeStyle : undefined)}
-          to={'#'}
+          to={'general'}
           className='accountlink'
         >
           GENERAL SETTINGS
