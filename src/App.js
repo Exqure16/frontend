@@ -17,8 +17,6 @@ import TransBuyerCrypto from './component/TransactionPages/MyTransaction/MyTrans
 import Personal from './component/Profile/Personal';
 import NoTransactions from './component/TransactionPages/NoTransaction';
 import WithTransaction from './component/TransactionPages/WithTransaction';
-import TransSeller from './component/TransactionPages/Transaction/TransSeller';
-import TransBuyer from './component/TransactionPages/Transaction/TransBuyer';
 import Notifications from './component/notifications/Notifications';
 import TransactionAccepted from './component/TransactionPages/TransactionAccepted';
 import PsWithTransaction from './component/PaymentSettings/PsWithTransaction';
