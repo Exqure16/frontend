@@ -28,6 +28,7 @@ import TransactionAccepteditems from './component/TransactionPages/TransactionAc
 import TransactionDeclined from './component/TransactionPages/TransactionDeclined';
 import Accountsetting from './component/Accountsetting/Accountsetting';
 import PaymentMethod from './component/PaymentMethod/PaymentMethod';
+import AboutPage from './component/AboutPage/AboutPage';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
       {/* <Blog />
       <TransactionSeller /> */}
       <Routes>
+        <Route path='frontend/aboutUs' element={<AboutPage />} />
         <Route path='frontend/acceptterms' element={<AcceptTerms />} />
         <Route path='/frontend' element={<HomePage />} />
         <Route path='frontend/login' element={<Login />} />

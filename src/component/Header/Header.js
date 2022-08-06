@@ -37,7 +37,7 @@ const Header = () => {
                 }}
                 className='mx-lg-2'
                 as={Link}
-                to={'exqure-frontend/'}
+                to={'frontend/aboutUs'}
               >
                 About Us
               </Nav.Link>
