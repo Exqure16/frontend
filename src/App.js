@@ -18,8 +18,6 @@ import GeneralSettings from './component/GeneralSettings/GeneralSettings';
 import Personal from './component/Profile/Personal';
 import NoTransactions from './component/TransactionPages/NoTransaction';
 import WithTransaction from './component/TransactionPages/WithTransaction';
-import TransSeller from './component/TransactionPages/Transaction/TransSeller';
-// import TransBuyer from './component/TransactionPages/Transaction/TransBuyer';
 import Notifications from './component/notifications/Notifications';
 import TransactionAccepted from './component/TransactionPages/TransactionAccepted';
 // import PsWithTransaction from './component/PaymentSettings/PsWithTransaction';
@@ -56,10 +54,9 @@ function App() {
         <Route path='frontend/paymethod' element={<PaymentMethod />} />
         <Route path='frontend/transaction' element={<NoTransactions />} />
         <Route path='frontend/transactions' element={<WithTransaction />} />
-        {/* <Route path='frontend/transbuyer' element={<TransBuyer />} /> */}
-        <Route path='frontend/transSeller' element={<TransSeller />} />
+        {/* <Route path='frontend/transSeller' element={<TransSeller />} /> */}
+        <Route path='frontend/transbuyer' element={<TransBuyer />} />
         <Route path='frontend/notifications' element={<Notifications />} />
-
         <Route path='frontend/accountsetting' element={<Accountsetting />}>
           <Route path='general' element={<GeneralSettings />} />
           <Route path='profile' element={<Personal />} />
