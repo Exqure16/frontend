@@ -53,10 +53,9 @@ function App() {
         <Route path='frontend/paymethod' element={<PaymentMethod />} />
         <Route path='frontend/transaction' element={<NoTransactions />} />
         <Route path='frontend/transactions' element={<WithTransaction />} />
-        {/* <Route path='frontend/transbuyer' element={<TransBuyer />} /> */}
-        <Route path='frontend/transSeller' element={<TransSeller />} />
+        {/* <Route path='frontend/transSeller' element={<TransSeller />} /> */}
+        <Route path='frontend/transbuyer' element={<TransBuyer />} />
         <Route path='frontend/notifications' element={<Notifications />} />
-
         <Route path='frontend/accountsetting' element={<Accountsetting />}>
           <Route path='general' element={<GeneralSettings />} />
           <Route path='profile' element={<Personal />} />
