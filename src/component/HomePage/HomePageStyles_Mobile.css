@@ -238,8 +238,8 @@
         font-weight: 700;
     }
 
-    .single-cardbody > .text-container > .single-card-text{
-        width: 80%;
+    .single-card-text {
+        width: 100%;
     }
     
     .single-cardbody > .text-container > button:hover {
