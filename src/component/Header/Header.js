@@ -52,7 +52,7 @@ const Header = () => {
               <Nav.Link
                 style={{ color: 'black', fontSize: '20px' }}
                 as={Link}
-                to={'frontend/'}
+                to={'frontend/contactus'}
                 className='mx-lg-2'
               >
                 Contact Us

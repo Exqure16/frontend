@@ -28,6 +28,7 @@ import TransactionAccepteditems from './component/TransactionPages/TransactionAc
 import TransactionDeclined from './component/TransactionPages/TransactionDeclined';
 import Accountsetting from './component/Accountsetting/Accountsetting';
 import PaymentMethod from './component/PaymentMethod/PaymentMethod';
+import ContactUs from './component/ContactUsPage/ContactUs';
 
 function App() {
   return (
@@ -65,6 +66,7 @@ function App() {
           <Route path='paymentsetting' element={<PaymentSettings />} />
         </Route>
         <Route path='frontend/mytransactions' element={<TransBuyer />} />
+        <Route path='frontend/contactus' element={<ContactUs />} />
         <Route
           path='frontend/mytransactions-crypto'
           element={<TransBuyerCrypto />}
