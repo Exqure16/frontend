@@ -14,7 +14,7 @@ import RectangleStar from './images/RectangleStar.png'
 import './App.css';
 import Details from './Details';
 
-function App() {
+function AboutPage() {
   let settings ={
     dot: true,
     className: "center",
@@ -350,4 +350,4 @@ const About = styled.main`
   
 `
 
-export default App;
+export default AboutPage;
