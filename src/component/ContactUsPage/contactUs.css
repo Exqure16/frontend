@@ -1,0 +1,262 @@
+.contactDiv{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+.contactDiv h1{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 142%; 
+    text-align: center;
+    color: #1B1C1E;
+
+}
+.detailsDiv div{
+    height: max-content;
+    width: 36%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5.5rem 2rem;
+    gap:1rem;
+    background: #FDFEFF;
+    box-shadow: 0px 4px 15px rgba(76, 175, 227, 0.15);
+    border-radius: 8px;
+}
+.detailsDiv div img{
+    width:2rem;
+    height: 2rem;
+    margin: auto;
+}
+.detailsDiv div p{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 140%;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #1B1C1E;    
+
+    margin-bottom: 0.5rem;
+
+}
+.detailsDiv div h3{
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 142%;
+    text-align: center;
+    color: #1B1C1E;
+}
+.detailsDiv{
+    display: flex;
+    margin: auto;
+    width: 90%;
+    gap:10%;
+    margin-top: 3rem;
+}
+.socialDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem;
+}
+.socialDiv h2{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 142%;
+    text-align: center;
+    color: #1B1C1E;
+    margin-bottom: 3rem;
+}
+.inSocialDiv{
+    width: 90%;
+    height: max-content;
+    background: #E2F3FC;
+    box-shadow: 0px 4px 4px rgba(27, 28, 30, 0.05);
+    border-radius: 8px;
+    display:flex;
+    padding-top:1.5rem;
+    padding-left:0.5rem;
+    
+}
+.inSocialDiv div{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:0.5rem;
+    width:100%;
+
+}
+.inSocialDiv div img{
+    width:20px;
+    height:20px;
+}
+.inSocialDiv div p{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 140%;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #374754;
+}
+.feedBackDiv{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    
+}
+.feedBackDiv div h2{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 142%;
+    text-align: center;
+    color: #1B1C1E;
+}
+.feedBackDiv div p{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #1B1C1E;}
+.inFeedBackDiv{
+    display:flex;
+    width:90%;
+    gap:10%;
+    align-items:center;
+    margin-top: 2rem;
+}
+.inFeedBackDiv img{
+    width: 50%;
+    height:auto
+}
+.inputFeedBackDiv{
+    width: 40%;
+    height: max-content;
+}
+.inputFeedBackDiv{
+    display:flex;
+    flex-direction:column;
+}
+.inInputfDiv{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    gap:10%;
+}
+.inInputsDiv{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+.inInputsDiv textarea{
+    border: 1px solid rgb(202, 199, 199);
+    border-radius: 8px;
+    padding:0.5rem;
+    height:221px;
+}
+.inInputsDiv textarea:focus{
+    outline: none;
+    border:1px solid #8bb7cc;
+    box-shadow: 0 0 10px #8bb7cc;
+}
+.inInputsDiv input:focus{
+    outline: none;
+    border:1px solid #8bb7cc;
+    box-shadow: 0 0 10px #8bb7cc;
+}
+.inInputfDiv div{
+    width:45%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+.inInputfDiv div input:focus{
+    outline: none;
+    border:1px solid #8bb7cc;
+    box-shadow: 0 0 10px #8bb7cc;
+}
+.contactBtn{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    padding:0.5rem 1rem;
+    font-size: 1rem;
+    gap: 8px;
+    color: white;
+    width: 133px;
+    height: 46px;
+    background: #239ED9;
+    border-radius: 4px;
+    border-color: transparent;
+}
+.contactBtn:hover{
+    opacity: 0.6;
+}
+@media (max-width:767px) {
+    .detailsDiv{
+        flex-direction: column;
+        gap: 4rem;
+    }
+    .detailsDiv div{
+        width: 90%;
+        margin: auto;
+    }
+    .inSocialDiv{
+        width:100%;
+        align-items:center;
+    }
+    .inSocialDiv div p{
+        font-family: 'Futura PT';
+        font-style: normal;
+        font-weight: 450;
+        font-size: 13px;
+        line-height: 140%;
+        text-align: center;
+        color: #374754;
+    }
+    .inFeedBackDiv{
+        flex-direction:column-reverse;
+    }
+    .inFeedBackDiv img{
+        width: 90%;
+        height:auto;
+        margin-bottom:2rem;
+    }
+    .inputFeedBackDiv{
+        width:90%;
+    }
+    .inputFeedBackDiv div{
+        display:flex;
+        flex-direction:column;
+    }
+    .inInputfDiv div{
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+}
+
+
