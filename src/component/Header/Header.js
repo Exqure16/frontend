@@ -37,7 +37,7 @@ const Header = () => {
                 }}
                 className='mx-lg-2'
                 as={Link}
-                to={'exqure-frontend/'}
+                to={'frontend/aboutUs'}
               >
                 About Us
               </Nav.Link>
@@ -52,7 +52,7 @@ const Header = () => {
               <Nav.Link
                 style={{ color: 'black', fontSize: '20px' }}
                 as={Link}
-                to={'frontend/'}
+                to={'frontend/contactus'}
                 className='mx-lg-2'
               >
                 Contact Us

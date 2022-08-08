@@ -1,3 +1,4 @@
+import React from 'react';
 import { ThemeProvider } from "styled-components";
 import { BlogHeader } from "./BlogStyles/BlogHeader.styled";
 import { BlogHero } from "./BlogStyles/BlogHero.styled";

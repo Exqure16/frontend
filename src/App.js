@@ -9,7 +9,7 @@ import HomePage from './component/HomePage/HomePage';
 import Signup from './component/Signup/Signup';
 import ForgotPassword from './component/LoginPage/ForgotPassword';
 import ResetPassword from './component/LoginPage/ResetPassword';
-
+import AcceptTerms from './component/TransactionDetails/AcceptTerms';
 import CreateTransaction from './component/TransactionPages/CreateTransaction/CreateTransaction';
 
 import TransBuyer from './component/TransactionPages/MyTransaction/MyTransaction_Buyer';
@@ -18,8 +18,6 @@ import GeneralSettings from './component/GeneralSettings/GeneralSettings';
 import Personal from './component/Profile/Personal';
 import NoTransactions from './component/TransactionPages/NoTransaction';
 import WithTransaction from './component/TransactionPages/WithTransaction';
-import TransSeller from './component/TransactionPages/Transaction/TransSeller';
-// import TransBuyer from './component/TransactionPages/Transaction/TransBuyer';
 import Notifications from './component/notifications/Notifications';
 import TransactionAccepted from './component/TransactionPages/TransactionAccepted';
 import PaymentSettings from './component/PaymentSettings/PaymentSettings';
@@ -27,6 +25,9 @@ import TransactionAccepteditems from './component/TransactionPages/TransactionAc
 import TransactionDeclined from './component/TransactionPages/TransactionDeclined';
 import Accountsetting from './component/Accountsetting/Accountsetting';
 import PaymentMethod from './component/PaymentMethod/PaymentMethod';
+import AboutPage from './component/AboutPage/AboutPage';
+import ContactUs from './component/ContactUsPage/ContactUs';
+
 
 function App() {
   return (
@@ -35,6 +36,8 @@ function App() {
       {/* <Blog />
       <TransactionSeller /> */}
       <Routes>
+        <Route path='frontend/aboutUs' element={<AboutPage />} />
+        <Route path='frontend/acceptterms' element={<AcceptTerms />} />
         <Route path='/frontend' element={<HomePage />} />
         <Route path='frontend/login' element={<Login />} />
         <Route path='frontend/forgot' element={<ForgotPassword />} />
@@ -53,16 +56,16 @@ function App() {
         <Route path='frontend/paymethod' element={<PaymentMethod />} />
         <Route path='frontend/transaction' element={<NoTransactions />} />
         <Route path='frontend/transactions' element={<WithTransaction />} />
-        {/* <Route path='frontend/transbuyer' element={<TransBuyer />} /> */}
-        <Route path='frontend/transSeller' element={<TransSeller />} />
+        {/* <Route path='frontend/transSeller' element={<TransSeller />} /> */}
+        <Route path='frontend/transbuyer' element={<TransBuyer />} />
         <Route path='frontend/notifications' element={<Notifications />} />
-
         <Route path='frontend/accountsetting' element={<Accountsetting />}>
           <Route path='general' element={<GeneralSettings />} />
           <Route path='profile' element={<Personal />} />
           <Route path='paymentsetting' element={<PaymentSettings />} />
         </Route>
         <Route path='frontend/mytransactions' element={<TransBuyer />} />
+        <Route path='frontend/contactus' element={<ContactUs />} />
         <Route
           path='frontend/mytransactions-crypto'
           element={<TransBuyerCrypto />}
