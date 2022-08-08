@@ -20,7 +20,6 @@ import NoTransactions from './component/TransactionPages/NoTransaction';
 import WithTransaction from './component/TransactionPages/WithTransaction';
 import Notifications from './component/notifications/Notifications';
 import TransactionAccepted from './component/TransactionPages/TransactionAccepted';
-// import PsWithTransaction from './component/PaymentSettings/PsWithTransaction';
 import PaymentSettings from './component/PaymentSettings/PaymentSettings';
 import TransactionAccepteditems from './component/TransactionPages/TransactionAccepteditems';
 import TransactionDeclined from './component/TransactionPages/TransactionDeclined';
@@ -32,7 +31,7 @@ import ContactUs from './component/ContactUsPage/ContactUs';
 
 function App() {
   return (
-    <div>
+    <>
       <Header />
       {/* <Blog />
       <TransactionSeller /> */}
@@ -72,8 +71,7 @@ function App() {
           element={<TransBuyerCrypto />}
         />
       </Routes>
-      {/* <Footer /> */}
-    </div>
+    </>
   );
 }
 

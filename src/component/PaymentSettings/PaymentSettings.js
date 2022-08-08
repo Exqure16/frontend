@@ -2,16 +2,44 @@ import { Alert, Form, Container, Modal } from 'react-bootstrap';
 import { IoIosNotifications } from 'react-icons/io';
 import './PaymentSettings.css';
 import cuate from '../images/cuate.png';
-import Visa from '../images/Visa.png';
-import Mastercard from '../images/Mastercard.png';
 import { useState } from 'react';
 import React from 'react';
+// import Carddetails from '../PaymentMethod/Carddetails';
+import PsWithTransaction from './PsWithTransaction';
+import AddPayment from './AddPayment';
 
 const PaymentSettings = () => {
-  const [show, setShow] = useState(false);
+  const [cardDetails, setCardDetails] = useState([
+    {
+      id: 1,
+      cardNumber: '100000039930',
+      expiryDate: '23/23',
+      cvv: '123',
+      holdersName: 'Ejike Reginald',
+      saveCard: true,
+    },
+    {
+      id: 2,
+      cardNumber: '100000039950',
+      expiryDate: '23/21',
+      cvv: '123',
+      holdersName: 'Ejike Rufina',
+      saveCard: true,
+    },
+    {
+      id: 3,
+      cardNumber: '100000039940',
+      expiryDate: '23/22',
+      cvv: '123',
+      holdersName: 'Ejike Clinton',
+      saveCard: true,
+    },
+  ]);
 
+  const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
   return (
     <Container>
       <h3 className='mt-5'>Bank Details</h3>
@@ -64,18 +92,24 @@ const PaymentSettings = () => {
 
       <h3 className='mt-4'>Payment Methods</h3>
       <hr />
-      <div className='d-flex justify-content-center'>
-        <img src={cuate} alt='' />
-      </div>
-      <p className='d-flex justify-content-center mt-3'>
-        You have not added any payment detail. Click on the button below to add
-        one now
-      </p>
-      <div className='d-flex justify-content-center mb-5'>
-        <button className='addbtn' onClick={handleShow}>
-          Add Payment Detail
-        </button>
-      </div>
+      {cardDetails.length > 0 ? (
+        <>
+          <div className='d-flex justify-content-center'>
+            <img src={cuate} alt='' />
+          </div>
+          <p className='d-flex justify-content-center mt-3'>
+            You have not added any payment detail. Click on the button below to
+            add one now
+          </p>
+          <div className='d-flex justify-content-center mb-5'>
+            <button className='addbtn' onClick={handleShow}>
+              Add Payment Detail
+            </button>
+          </div>
+        </>
+      ) : (
+        <PsWithTransaction />
+      )}
       <h3>KYC Verification</h3>
       <hr />
       <form>
@@ -93,63 +127,7 @@ const PaymentSettings = () => {
         <button className='save'>Save Changes</button>
       </div>
       {/* modal */}
-      <Modal show={show} onHide={handleClose} className='rounded'>
-        <Container>
-          <Modal.Header closeButton className='border-0 px-5 py-3'>
-            <Modal.Title className=''>Add card details</Modal.Title>
-          </Modal.Header>
-          <Modal.Body className='px-5 py-0'>
-            <form action='' className='popup'>
-              <div className='formcontrol'>
-                <div className='d-flex'>
-                  <label htmlFor='' className='mb-2'>
-                    Card number
-                  </label>
-                  <div className='cards'>
-                    <img src={Visa} alt='' className='visacard' />
-                    <img src={Mastercard} alt='' className='mastercard' />
-                  </div>
-                </div>
-                <input
-                  type='text'
-                  placeholder='Enter Card number'
-                  className='cardinput'
-                />
-              </div>
-
-              <div className='formdiv'>
-                <div className='formcontrol'>
-                  <label htmlFor='' className='mb-2'>
-                    Expiry date
-                  </label>
-                  <input type='text' placeholder='MM/YY' className='expiry' />
-                </div>
-                <div className='formcontrol'>
-                  <label htmlFor='' className='mb-2'>
-                    CVV
-                  </label>
-                  <input type='text' placeholder='Security number' />
-                </div>
-              </div>
-              <div className='formcontrol'>
-                <label htmlFor='' className='mb-2'>
-                  Card Holder's Name
-                </label>
-
-                <input type='text' placeholder='Enter name' />
-              </div>
-            </form>
-          </Modal.Body>
-          <Modal.Footer className='border-0  d-grid mx-auto'>
-            <button onClick={handleClose} className='savebutton'>
-              Add card
-            </button>
-            <button onClick={handleClose} className='cancelbutton'>
-              Cancel
-            </button>
-          </Modal.Footer>
-        </Container>
-      </Modal>
+      <AddPayment handleClose={handleClose} show={show} />
     </Container>
   );
 };
