@@ -140,3 +140,40 @@
   margin-top: -10px;
   margin-right: 20px;
 }
+
+.paymentsuccess h3 {
+  font-family: 'Montserrat';
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 142%;
+}
+
+.paymentsuccess p {
+  font-family: 'Futura PT';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.03em;
+}
+
+.continuebutton {
+  width: 408px;
+  height: 40px;
+  border: none;
+  border-radius: 6px;
+  background-color: #fdfeff;
+  color: #239ed9;
+  margin-top: -10px;
+  margin-right: 20px;
+  padding-top: 5px;
+}
+
+.info h4 {
+  font-family: 'Futura PT';
+  font-weight: 400;
+  font-size: 13.81px;
+  line-height: 19.33px;
+  letter-spacing: 3%;
+  margin: none;
+  padding: none;
+}

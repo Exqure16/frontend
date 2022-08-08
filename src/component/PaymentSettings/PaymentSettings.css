@@ -69,10 +69,12 @@ hr {
   display: flex;
   height: 230px;
 }
+
 .carddata {
   display: flex;
   margin-top: 100px;
 }
+
 .carddata p {
   margin-left: 25px;
 }
@@ -80,12 +82,15 @@ hr {
 .removebtn {
   padding: 0px;
   border: none;
-  margin-left: 390px;
-  margin-top: 70px;
-  height: none;
-  background: none;
-  background-color: none;
   color: red;
+  font-family: 'Futura PT';
+  height: 40px;
+  width: 90px;
+  font-weight: 450;
+  text-align: center;
+  background: #ffffff;
+  margin-left: 600px;
+  margin-top: 50px;
 }
 
 .formcontrol {
@@ -112,7 +117,13 @@ hr {
 }
 
 .popup {
-  padding: auto;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.popup > label {
+  font-family: 'Futura PT';
+  font-weight: 450;
 }
 
 .formdiv {
@@ -174,8 +185,4 @@ hr {
 
 .small-moda {
   width: 200px;
-}
-
-.visacard {
-  width: 10px;
 }
