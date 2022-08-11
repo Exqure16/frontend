@@ -41,6 +41,20 @@ function Signup() {
     'https://flagcdn.com/ng.svg'
   );
   const [country, setCountry] = useState('');
+  const onPhoneClick =()=>(valu)=>{
+    setDialCode(valu?.target?.childNodes[1]?.innerText);
+    setPhoneFlagUrl2(valu?.target?.childNodes[0]?.currentSrc);
+    setOpenPhone('none');
+  }
+  const getPhoneDetails = Countries?.map(
+    (country,index)=><CountrySelect
+    key = {index}
+    onCountryClick = {onPhoneClick(country)}
+    countryCode = {country.code?.toLowerCase()}
+    countryName = {country.name}
+    countryDialCode = {country.dial_code}
+    />
+  );
   const handleChange1 = (value) => {
     let p,
       c = '';
@@ -57,6 +71,7 @@ function Signup() {
   const [phoneValue, setPhoneValue] = useState('');
   const [display, setDisplay] = useState('block');
   const [sdisplay, setSDisplay] = useState('none');
+  const [btnColor, setBtnColor] = useState('#239ED9');
 
   // const data = fetch('http://exqure.herokuapp.com/api/user/signup');
 
@@ -137,6 +152,8 @@ function Signup() {
     } else {
       setPasswordIsValid(false);
     }
+  
+
   };
 
   const handleChange = (e) => {
@@ -144,20 +161,6 @@ function Signup() {
       ...form,
       [e.target.name]: e.target.value,
     });
-  };
-
-  // const submitForm = (e) => {
-  //   e.preventDefault();
-
-
-    
-  // };
-
-  async function signup(e){
-    e.preventDefault();
-    // console.log(form);
-    
-    
 
     if (
       nameIsValid &&
@@ -170,14 +173,32 @@ function Signup() {
     } else {
       setFormIsValid(false);
     }
+  
+  };
 
-    if (formIsValid === true) {
-      setSDisplay('block');
-      setDisplay('none');
-      console.log(form);
+
+
+  async function signup(e){
+    e.preventDefault();
+    // console.log(form);
+    if (
+      nameIsValid &&
+      emailIsValid &&
+      passwordIsValid &&
+      confirmPasswordIsValid &&
+      phoneNumberIsValid
+    ) {
+      setFormIsValid(true);
+      // setBtnColor('yellow');
+    } else {
+      setFormIsValid(false);
+      // setBtnColor('blue');
     }
 
-    let result = await fetch('https://exqure.herokuapp.com/api/user/signup', {
+    
+    if(formIsValid){
+  
+   let result = await fetch('https://exqure.herokuapp.com/api/user/signup', {
        method: "POST",
        body:JSON.stringify(form),
        headers: {
@@ -187,9 +208,31 @@ function Signup() {
      })
      result= await result.json()
      console.log("result", result);
-    alert(result.msg);
+    //  setSDisplay('block');
+    // setDisplay('none');
+    
      localStorage.setItem("user-info", JSON.stringify(result));
+
+     if (result.status ==="Success") {
+      setSDisplay('block');
+      setDisplay('none');
+      console.log(form);
+    
+
+    }
+    else{
+    alert(result.msg); 
+    }
+ }
+ else{
+  alert('please fill all fields correctly');
+  
+ }
+   
    }
+
+
+ 
 
   return (
     <Container fluid>
@@ -393,11 +436,13 @@ function Signup() {
               ''
             )}
             <div className='openPhone' style={{ display: openPhone }}>
-              {/* {getPhoneDetails ? getPhoneDetails : ''} */}
+              {getPhoneDetails ? getPhoneDetails : ''}
             </div>
           </Form>
 
-          <button className='Signupbtn' onClick={signup}>
+          {form.phone}
+
+          <button className='Signupbtn' onClick={signup}  style={{ background: btnColor }}>
             Sign Up
           </button>
 
