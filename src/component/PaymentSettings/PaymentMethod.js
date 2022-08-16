@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Container, Form, Button, Modal } from 'react-bootstrap';
 import './Paymentmethod.css';
 import cardPos from '../images/card-pos.png';
@@ -167,7 +167,7 @@ const PaymentMethod = () => {
         </Container>
       </Modal>
       {/* modal */}
-      <Fragment>
+      <>
         <Modal show={pay} onHide={handleClosePay} className=''>
           <Container>
             <Modal.Body className='p-5 '>
@@ -195,7 +195,7 @@ const PaymentMethod = () => {
             </Modal.Footer>
           </Container>
         </Modal>
-      </Fragment>
+      </>
     </Container>
   );
 };
