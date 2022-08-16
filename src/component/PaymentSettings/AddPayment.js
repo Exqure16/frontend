@@ -1,8 +1,8 @@
 import React from 'react';
-import CreditCard from '../PaymentMethod/CreditCard';
+import CreditCard from './CreditCard';
 import { Modal, Container } from 'react-bootstrap';
 
-const AddPayment = ({ handleClose, show }) => {
+const AddPayment = ({ handleClose, show, addCard }) => {
   return (
     <Modal show={show} onHide={handleClose}>
       <Container>
@@ -10,7 +10,7 @@ const AddPayment = ({ handleClose, show }) => {
           <Modal.Title className=''>Add card details</Modal.Title>
         </Modal.Header>
         <Modal.Body className=''>
-          <CreditCard onClose={handleClose} />
+          <CreditCard onClose={handleClose} addCard={addCard} />
         </Modal.Body>
       </Container>
     </Modal>

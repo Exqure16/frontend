@@ -89,7 +89,7 @@ hr {
   font-weight: 450;
   text-align: center;
   background: #ffffff;
-  margin-left: 600px;
+  margin-left: 500px;
   margin-top: 50px;
 }
 
@@ -167,6 +167,13 @@ hr {
   gap: 2px;
 }
 
+.infoo h4 {
+  font-family: 'Futura PT';
+  font-size: 14px;
+  font-weight: 450;
+  margin-top: 10px;
+  line-height: 140%;
+}
 .small-card {
   margin-left: -12px;
   margin-top: 35px;

@@ -45,7 +45,7 @@ const Header = () => {
                 style={{ color: 'black', fontSize: '20px' }}
                 className='mx-lg-2'
                 as={Link}
-                to={'frontend/'}
+                to={'frontend/blog'}
               >
                 Blog
               </Nav.Link>

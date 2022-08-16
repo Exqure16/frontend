@@ -1,14 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useState } from 'react';
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
-import '../PaymentSettings/PaymentSettings.css';
+import './PaymentSettings.css';
 
-const CreditCard = ({ onClose }) => {
+const CreditCard = ({ onClose, cardDetails, setCardDetails, addCard }) => {
   const [number, setNumber] = useState('');
   const [name, setName] = useState('');
   const [expiry, setExpiry] = useState('');
   const [cvc, setCvc] = useState('');
   const [focus, setFocus] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!(number && name && expiry && cvc)) {
+      alert('Please enter card details ');
+      return;
+    }
+    addCard({ number, name, expiry, cvc });
+    setNumber('');
+    setName('');
+    setExpiry('');
+    setCvc('');
+  };
+
   return (
     <div>
       <Cards
@@ -18,7 +33,7 @@ const CreditCard = ({ onClose }) => {
         name={name}
         focused={focus}
       />
-      <form action='' className='popup'>
+      <form action='' className='popup' onSubmit={handleSubmit}>
         <div className='formcontrol'>
           <div className=''>
             <label htmlFor='cardnumber' className='mb-2 '>
@@ -83,7 +98,7 @@ const CreditCard = ({ onClose }) => {
             placeholder='Enter name'
           />
         </div>
-        <button onClick={onClose} className='savebutton mt-3 mb-3'>
+        <button type='submit' className='savebutton mt-3 mb-3'>
           Add card
         </button>
         <button onClick={onClose} className='cancelbutton mb-3 '>
