@@ -34,11 +34,43 @@ function Signup() {
   const [phoneFlagUrl2, setPhoneFlagUrl2] = useState(
     'https://flagcdn.com/ng.svg'
   );
+<<<<<<< HEAD
+=======
+  const [country, setCountry] = useState('');
+  const onPhoneClick =()=>(valu)=>{
+    setDialCode(valu?.target?.childNodes[1]?.innerText);
+    setPhoneFlagUrl2(valu?.target?.childNodes[0]?.currentSrc);
+    setOpenPhone('none');
+  }
+  const getPhoneDetails = Countries?.map(
+    (country,index)=><CountrySelect
+    key = {index}
+    onCountryClick = {onPhoneClick(country)}
+    countryCode = {country.code?.toLowerCase()}
+    countryName = {country.name}
+    countryDialCode = {country.dial_code}
+    />
+  );
+  const handleChange1 = (value) => {
+    let p,
+      c = '';
+    const parsedValue = parsePhoneNumber(value ? value : '', 'NG');
+    if (parsedValue) {
+      p = parsedValue.nationalNumber;
+      c = parsedValue.countryCallingCode;
+    }
+    setPhonee(p);
+    setCountry(c);
+    console.log(c + p);
+  };
+
+>>>>>>> 53e91cefc04ea8a3677f9fb7bbdfba4f05e1100e
   const [phoneValue, setPhoneValue] = useState('');
 
   //states for toggling display of the successful signup process. sDisplay for classname=signUpCol ; display for classname=formCol
   const [display, setDisplay] = useState('block');
   const [sdisplay, setSDisplay] = useState('none');
+  const [btnColor, setBtnColor] = useState('#239ED9');
 
   // states for form validation and form input validation
   const [formIsValid, setFormIsValid] = useState(false);
@@ -120,6 +152,8 @@ function Signup() {
     } else {
       setPasswordIsValid(false);
     }
+  
+
   };
 
   //handleChange - function that handles the updating of the form
@@ -128,11 +162,14 @@ function Signup() {
       ...form,
       [e.target.name]: e.target.value,
     });
+<<<<<<< HEAD
   };
 
 //signup- an asynchronous function that makes pushes the form data to the backend as soon as the requirements are made
   async function signup(e){
     e.preventDefault();
+=======
+>>>>>>> 53e91cefc04ea8a3677f9fb7bbdfba4f05e1100e
 
     if (
       nameIsValid &&
@@ -145,14 +182,39 @@ function Signup() {
     } else {
       setFormIsValid(false);
     }
+  
+  };
 
+<<<<<<< HEAD
     if (formIsValid === true) {
       setSDisplay('block');
       setDisplay('none');
 
+=======
+
+
+  async function signup(e){
+    e.preventDefault();
+    // console.log(form);
+    if (
+      nameIsValid &&
+      emailIsValid &&
+      passwordIsValid &&
+      confirmPasswordIsValid &&
+      phoneNumberIsValid
+    ) {
+      setFormIsValid(true);
+      // setBtnColor('yellow');
+    } else {
+      setFormIsValid(false);
+      // setBtnColor('blue');
+>>>>>>> 53e91cefc04ea8a3677f9fb7bbdfba4f05e1100e
     }
 
-    let result = await fetch('https://exqure.herokuapp.com/api/user/signup', {
+    
+    if(formIsValid){
+  
+   let result = await fetch('https://exqure.herokuapp.com/api/user/signup', {
        method: "POST",
        body:JSON.stringify(form),
        headers: {
@@ -162,9 +224,31 @@ function Signup() {
      })
      result= await result.json()
      console.log("result", result);
-    alert(result.msg);
+    //  setSDisplay('block');
+    // setDisplay('none');
+    
      localStorage.setItem("user-info", JSON.stringify(result));
+
+     if (result.status ==="Success") {
+      setSDisplay('block');
+      setDisplay('none');
+      console.log(form);
+    
+
+    }
+    else{
+    alert(result.msg); 
+    }
+ }
+ else{
+  alert('please fill all fields correctly');
+  
+ }
+   
    }
+
+
+ 
 
   return (
     <Container fluid>
@@ -363,12 +447,19 @@ function Signup() {
             ) : (
               ''
             )}
+<<<<<<< HEAD
             <div className='openPhone2' style={{ display: openPhone }}>
                {getPhoneDetails ? getPhoneDetails : ''} 
+=======
+            <div className='openPhone' style={{ display: openPhone }}>
+              {getPhoneDetails ? getPhoneDetails : ''}
+>>>>>>> 53e91cefc04ea8a3677f9fb7bbdfba4f05e1100e
             </div>
           </Form>
 
-          <button className='Signupbtn' onClick={signup}>
+          {form.phone}
+
+          <button className='Signupbtn' onClick={signup}  style={{ background: btnColor }}>
             Sign Up
           </button>
 
