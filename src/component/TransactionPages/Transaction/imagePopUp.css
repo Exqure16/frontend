@@ -1,0 +1,73 @@
+.mainImgDiv{
+    position:absolute;
+
+    display:flex;
+    flex-direction:column;
+    width: 840px;
+    margin: auto;
+    z-index: 1;
+}
+.imagePopUpDiv{
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width:792px;
+    height:max-content;
+    background-color: black;
+    padding:2rem;
+    border-radius: 8px;
+}
+.cancelBtn{
+    background-color:#239ED9;
+    color:black;
+    width:21.68px;
+    border: none;
+    border-radius: 3px;
+    align-self: flex-end;
+    margin: 1rem;
+}
+.mainImg{
+    width:588px;
+    height:350px;
+}
+.images{
+    display: flex;
+    gap:10px;
+}
+.images img{
+    width:180px;
+    height:95px;
+}
+.imagesDiv{
+    display: flex;
+    gap:20px;
+    align-items: center;
+}
+.backBtn:active{
+    border-color: #239ED9;
+    color: #239ED9;
+}
+.backBtn:hover{
+    border-color: #239ED9;
+    color: #239ED9;
+}
+.nextBtn:hover{
+    border-color: #239ED9;
+    color: #239ED9;
+}
+.nextBtn:active{
+    border-color: #239ED9;
+    color: #239ED9;
+}
+.backBtn, .nextBtn{
+    border:1px solid white;
+    background-color: transparent;
+    color: white;
+    width: 32px;
+    border-radius: 3px;
+    
+    text-align: center;
+}

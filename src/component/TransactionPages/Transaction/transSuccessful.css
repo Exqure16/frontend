@@ -67,9 +67,9 @@
 .footInput{
     padding-left:3rem;
     width: 430px;
-    background-color:rgb(230, 223, 223);
     border:none;
     color:black;
+    border: 1px solid #B2B2B3;
 }
 .footBtn{
     font-family: 'Futura PT';
@@ -84,4 +84,18 @@
     border-color:transparent;
     border-radius:4px;
     color: #FDFEFF;
+}
+.copyShareDiv{
+    display: flex;
+    gap:1rem;
+}
+.copyShareDiv p{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 16px;
+    line-height: 142%;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #1B1C1E;
 }

@@ -12,6 +12,7 @@ const CountrySelect = ({onCountryClick, countryName,countryDialCode,countryCode}
             <div className='countrySelectDiv'>
                 <img src= {`https://flagcdn.com/${countryCode?.toLowerCase()}.svg`} 
                     style={{width :'20px',
+                    height:'15px',
                     marginRight:'0.5rem'}}
                 />
                 <span style={{
