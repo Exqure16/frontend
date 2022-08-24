@@ -65,7 +65,7 @@
     font-size: 30px;
     line-height: 142%;
 }
-.Signupbtn :hover{
+.Signupbtn:hover{
     opacity:0.6;
 }
 .Signupbtn{
@@ -100,7 +100,7 @@
 }
 
 .container-fluid .row .formcol .input-group div .form-control:focus{   
-    outline: none !important;
+    outline: none;
     border:1px solid #8bb7cc;
     box-shadow: 0 0 10px #8bb7cc;
 }
@@ -113,6 +113,12 @@
     position: absolute;
     margin-left: 0rem;
     margin-top: -0.4rem;
+
+}
+.icon1{
+    position: absolute;
+    margin-left: 0rem;
+    margin-top: 0.5rem;
 
 }
 
@@ -173,7 +179,6 @@
 }
 .logoLink{
     width: 60%;
-    
     margin-top:2rem;
     margin:auto;
     align-items:center;
@@ -238,6 +243,17 @@
 footer{
     display: none;
 }
+.openPhone2{
+    overflow-y:scroll;
+    border: 1px solid #ced4da;
+    box-shadow: 0px 0px 3px 0px #239ED9;
+    height:15rem;
+    padding:0rem;
+    position: absolute;
+    margin-left: -1rem;
+    background-color:rgb(189, 207, 219);
+    z-index:1
+}
 @media (max-width:767px) {
     
     .container-fluid{
@@ -280,7 +296,7 @@ footer{
         margin-top: 1rem;
     }
     .footDiv{
-        margin-top: 23rem;
+        margin-top:425px;
         
     }
     .footer2{
@@ -303,13 +319,13 @@ footer{
     }
     .Signupbtn{
         position: absolute;
-        margin-top: 28rem;
+        margin-top: 480px;
         width: 90%;
 
     }
-    button:disabled{
-        cursor: not-allowed;
-        pointer-events: all !important;
+
+    .Signupbtn:hover{
+        opacity: 0.6;
     }
     .lastLogoDiv{
         display: none;
@@ -322,4 +338,11 @@ footer{
         margin-left: 0;
         width:90%;
     }
+    .icon1{
+        position: absolute;
+        margin-left: 0rem;
+        margin-top: 0rem;
+    
+    }
+    
 }

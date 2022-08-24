@@ -100,3 +100,18 @@
     flex-direction: column;
     
 }
+@media (max-width:767px) {
+    .errorDiv{
+        width:100%;
+        height:fit-content;
+    }
+    .formDiv{
+        width:100%;
+        padding:1rem;
+        padding-top: 3rem;
+    }
+    .countryDiv{
+        width:100%;
+        gap:15px;
+    }
+}

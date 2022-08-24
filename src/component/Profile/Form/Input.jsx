@@ -18,11 +18,13 @@ const Input =(props)=>{
         inputW, 
         inputPL,
         inputValue,
-        type, 
+        type,
+        name, 
         sV,
         sP,
         sML,
         sMT,
+        checkDisable,
         placeholder, fD } = props;
     return(
         <div style={{ display:'flex', flexDirection: fD?fD:'row' }}>
@@ -58,9 +60,10 @@ const Input =(props)=>{
                 onFocus={onFocus? onFocus : null}
                 onChange= {onChange? onChange : null}
                 type = {type? type: ''}
-                
+                name = {name? name : ''}
                 defaultValue = {inputValue ? inputValue :''}
                 placeholder={placeholder? placeholder :''} 
+                disabled = {checkDisable?checkDisable:''}
             ></input>
         </div>
         

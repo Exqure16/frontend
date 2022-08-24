@@ -3,26 +3,33 @@ import caution from '../images/caution.svg';
 import './personal.css';
 import FormInd from './Form/FormInd';
 import FormCo from './Form/FormCo';
+import { PropContext } from './Form/PropContxt';
 
 const Personal = () => {
     
     const[show, setShow] = useState(true);
-    
+    const [targetValue, setTargetValue] = useState('individual');
+    const [showError, setShowError] = useState(false);
+    //rememeber to update the sharing of data using context
     const toggleCheck= (e)=>{
         if (e.target.value === 'individual'){
+        setTargetValue('individual');
+
         setShow(true)
         }else if(e.target.value === 'company'){
-        setShow(false)
+        setShow(false);
+        setTargetValue('company')
         }
      }
     return(
         <>  
             <h3 className='mt-5'>Personal Details</h3>
             <hr/>
+            {showError?
             <div className='errorDiv'>
                 <img src={caution} alt ='error'/>
                 <span>Your account has not been verified, complete profile and payment details to verify account</span>
-            </div>
+            </div>: ''}
             <div className= 'formDiv'>
                 <div>
                     <p className ='selectCountry'>Select account type</p>
@@ -50,7 +57,9 @@ const Personal = () => {
                     </div>
                         
                 </div>
-                {show?<FormInd />:<FormCo /> }
+                <PropContext.Provider value={{showError, setShowError}}>
+                    {show?<FormInd accountType = {targetValue}/>:<FormCo accountType = {targetValue} /> }
+                </PropContext.Provider>
                 
             </div>
         </>
