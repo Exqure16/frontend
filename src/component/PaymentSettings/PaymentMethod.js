@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Form, Button, Modal } from 'react-bootstrap';
+import { Container, Form, Button, Modal, Row, Col } from 'react-bootstrap';
 import './Paymentmethod.css';
 import cardPos from '../images/card-pos.png';
 import fluter from '../images/money-send.png';
@@ -43,52 +43,61 @@ const PaymentMethod = () => {
       </div>
       <hr style={{ height: '3px', marginTop: '30px' }} />
       <h3 className='mt-5'>Pay with existing card</h3>
-      <div className='debitcardcontainer'>
-        <div className='debitcard'>
-          <h4
-            style={{
-              color: '#ffffff',
-              marginTop: '12.57px',
-              marginBottom: '9px',
-              marginLeft: '190.66px',
-              fontSize: '14px',
-              fontWeight: '450px',
-            }}
-          >
-            Debit
-          </h4>
-          <p>**** **** **** 0322</p>
-          <p>Venessa Anderson</p>
-          <p>VALID</p>
-          <p>
-            THUR{' '}
-            <span style={{ marginTop: '90.42px', marginLeft: '35.89px' }}>
-              03/04
-            </span>
-          </p>
-          <img
-            src={master}
-            alt=''
-            style={{ marginLeft: '190.66px', marginTop: '.58px' }}
-          />
-        </div>
-        <div>
-          <div className='carddata'>
-            <div className='info'>
-              <h4 style={{ color: '#9FA2A5' }}>debit card</h4>
-              <h4>Venessa Anderson</h4>
-              <h4>**** **** **** 0322</h4>
-            </div>
-
-            <input
-              type='button'
-              value='Pay Now'
-              onClick={handleShow}
-              className='paynow'
-            />
+      <Row>
+        <Col md={3}>
+          <div className='debitcard'>
+            <Row>
+              <Col md={8} style={{ marginTop: '50px' }}>
+                <div className='d-grid'>
+                  <p>00065657473672627</p>
+                  <p>Vanesa Anderson</p>
+                  <p>VALID</p>
+                  <p>
+                    THUR{' '}
+                    <span
+                      style={{ marginTop: '0.42px', marginLeft: '35.89px' }}
+                    >
+                      03/04
+                    </span>
+                  </p>
+                </div>
+              </Col>
+              <Col md={4} style={{}}>
+                <h4
+                  style={{
+                    color: '#ffffff',
+                    marginTop: '14px',
+                    fontSize: '14px',
+                    fontWeight: '450px',
+                  }}
+                >
+                  Debit
+                </h4>
+                <img src={master} alt='' style={{ marginTop: '80px' }} />
+              </Col>
+            </Row>
           </div>
-        </div>
-      </div>
+        </Col>
+        <Col md={9}>
+          <div>
+            <div className='carddata'>
+              <div className='info'>
+                <h4 style={{ color: '#9FA2A5' }}>debit card</h4>
+
+                <h4>235357684827287282</h4>
+                <h4>Vanasa Anderson</h4>
+              </div>
+
+              <input
+                type='button'
+                value='Pay now'
+                onClick={handleShow}
+                className='paynow'
+              />
+            </div>
+          </div>
+        </Col>
+      </Row>{' '}
       <h3 className='mt-5'>Pay with another card</h3>
       <div className='d-flex justify-content-center mt-4'>
         <Form className='addcarddetails'>

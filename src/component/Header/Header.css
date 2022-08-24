@@ -1,3 +1,20 @@
 .brand {
   width: 200px;
 }
+
+.circle-border {
+  border-radius: 50%;
+  background: #4cafe3;
+  width: 46px;
+  height: 46px;
+}
+
+.circle-border p {
+  color: #ffffff;
+  font-family: 'Futura PT';
+  font-style: normal;
+  font-weight: 450;
+  font-size: 16px;
+  text-align: center;
+  padding-top: 10px;
+}

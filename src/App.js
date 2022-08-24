@@ -25,11 +25,13 @@ import Accountsetting from './component/Accountsetting/Accountsetting';
 import PaymentMethod from './component/PaymentSettings/PaymentMethod';
 import AboutPage from './component/AboutPage/AboutPage';
 import ContactUs from './component/ContactUsPage/ContactUs';
+// import AccountHeader from './component/Header/AccountHeader';
 
 function App() {
   return (
     <>
       <Header />
+      {/* <AccountHeader />; */}
       <Routes>
         <Route path='frontend/blog' element={<Blog />} />
         <Route path='frontend/aboutUs' element={<AboutPage />} />
