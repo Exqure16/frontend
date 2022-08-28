@@ -10,22 +10,16 @@ import ForgotPassword from './component/LoginPage/ForgotPassword';
 import ResetPassword from './component/LoginPage/ResetPassword';
 import AcceptTerms from './component/TransactionDetails/AcceptTerms';
 import CreateTransaction from './component/TransactionPages/CreateTransaction/CreateTransaction';
-<<<<<<< HEAD
-
-import MyTransBuyer from './component/TransactionPages/MyTransaction/MyTransaction_Buyer';
-=======
 import TransBuyer from './component/TransactionPages/MyTransaction/MyTransaction_Buyer';
->>>>>>> 53e91cefc04ea8a3677f9fb7bbdfba4f05e1100e
+import ProvideWallet from './component/TransactionPages/MyTransaction/ProvideWallet';
 import TransBuyerCrypto from './component/TransactionPages/MyTransaction/MyTransaction_Buyer-Crypto';
 import GeneralSettings from './component/GeneralSettings/GeneralSettings';
 import Personal from './component/Profile/Personal';
 import NoTransactions from './component/TransactionPages/NoTransaction';
 import WithTransaction from './component/TransactionPages/WithTransaction';
-<<<<<<< HEAD
 import TransSeller from './component/TransactionPages/Transaction/TransSeller';
 import TransBuyer from './component/TransactionPages/Transaction/TransBuyer';
-=======
->>>>>>> 53e91cefc04ea8a3677f9fb7bbdfba4f05e1100e
+
 import Notifications from './component/notifications/Notifications';
 import TransactionAccepted from './component/TransactionPages/TransactionAccepted';
 import PaymentSettings from './component/PaymentSettings/PaymentSettings';
@@ -69,7 +63,8 @@ function App() {
           <Route path='profile' element={<Personal />} />
           <Route path='paymentsetting' element={<PaymentSettings />} />
         </Route>
-        <Route path='frontend/mytransactions' element={<MyTransBuyer />} />
+        <Route path='frontend/mytransactions' element={<TransBuyer />} />
+        <Route path='frontend/mytransactions/wallet' element={<ProvideWallet />} />
         <Route path='frontend/contactus' element={<ContactUs />} />
         <Route
           path='frontend/mytransactions-crypto'
