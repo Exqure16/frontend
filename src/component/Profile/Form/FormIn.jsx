@@ -8,7 +8,6 @@ import CountrySelect from './CountrySelect'
 import Input from './Input'
 import { PropContext } from './PropContxt'
 
-
 //BASE form for both company and individual profile creation
 export const FormIn= ({accountType1 ,children})=>{
     const [flagUrl, setFlagUrl] = useState('https://flagcdn.com/ng.svg');
@@ -89,14 +88,16 @@ export const FormIn= ({accountType1 ,children})=>{
         setCoAccountInfo({...coAccountInfo, [name]:value}) 
 
     };
-    /*
-    accountType1 ==='individual'?
-    console.log(inAccountInfo):
-    console.log(coAccountInfo);
+   
+    const {showError,setShowError} = useContext(PropContext);
+    const submitForm = (e)=>{
+        e.preventDefault();
+        setShowError(true);
+        accountType1 ==='individual'?
+        console.log(inAccountInfo):
+        console.log(coAccountInfo);
+    }
 
-    */
-    
-    
     const onCountryClick =(country)=>{
         accountType1 ==='individual'?
         setInAccountInfo({...inAccountInfo, country:country.name}):
@@ -145,6 +146,11 @@ export const FormIn= ({accountType1 ,children})=>{
         countryName ={country.name}
         countryDialCode = {country.dial_code}
         />);
+    const handleSubmit =()=>{
+        accountType1 ==='individual'?
+        console.log(inAccountInfo):
+        console.log(coAccountInfo);
+    }
     
     const toggleOpen =()=>{
         if(open =='none'){
@@ -156,32 +162,24 @@ export const FormIn= ({accountType1 ,children})=>{
         }
 
     };
-    const {showError,setShowError} = useContext(PropContext);
-    const handleSubmit = (e)=>{
-        e.preventDefault();
-        setShowError(true);
-        accountType1 ==='individual'?
-        console.log(inAccountInfo):
-        console.log(coAccountInfo);
-    }
-    console.log(showError);
+    
     return(
         <PropContext.Provider value = {{coAccountInfo, setCoAccountInfo,companyName,companyEmail}}>
             <form className='individualForm'>
                 <label>FullName</label>
                 <Input
                     type= 'text'
-                img1W= {'25px'}
-                img1P ={'absolute'}
-                img1= { personIcon}
-                img1ML ={'0.5rem'}
-                img1MT ={'0.5rem'}
-                inputW ={'100%'}
-                inputPL ={'2.5rem'}
-                placeholder= {'Enter Name'}
-                name ={accountType1 ==='individual'?'fullName':'coFullName'}
-                inputValue ={fullName && coFullName}
-                onChange = {handleChange}
+                    img1W= {'25px'}
+                    img1P ={'absolute'}
+                    img1= { personIcon}
+                    img1ML ={'0.5rem'}
+                    img1MT ={'0.5rem'}
+                    inputW ={'100%'}
+                    inputPL ={'2.5rem'}
+                    placeholder= {'Enter Name'}
+                    name={accountType1 ==='individual'?'fullName':'coFullName'}
+                    inputValue ={fullName && coFullName}
+                    onChange = {handleChange}
                 />
                 {children}
                 

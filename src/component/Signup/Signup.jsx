@@ -34,37 +34,6 @@ function Signup() {
   const [phoneFlagUrl2, setPhoneFlagUrl2] = useState(
     'https://flagcdn.com/ng.svg'
   );
-<<<<<<< HEAD
-=======
-  const [country, setCountry] = useState('');
-  const onPhoneClick =()=>(valu)=>{
-    setDialCode(valu?.target?.childNodes[1]?.innerText);
-    setPhoneFlagUrl2(valu?.target?.childNodes[0]?.currentSrc);
-    setOpenPhone('none');
-  }
-  const getPhoneDetails = Countries?.map(
-    (country,index)=><CountrySelect
-    key = {index}
-    onCountryClick = {onPhoneClick(country)}
-    countryCode = {country.code?.toLowerCase()}
-    countryName = {country.name}
-    countryDialCode = {country.dial_code}
-    />
-  );
-  const handleChange1 = (value) => {
-    let p,
-      c = '';
-    const parsedValue = parsePhoneNumber(value ? value : '', 'NG');
-    if (parsedValue) {
-      p = parsedValue.nationalNumber;
-      c = parsedValue.countryCallingCode;
-    }
-    setPhonee(p);
-    setCountry(c);
-    console.log(c + p);
-  };
-
->>>>>>> 53e91cefc04ea8a3677f9fb7bbdfba4f05e1100e
   const [phoneValue, setPhoneValue] = useState('');
 
   //states for toggling display of the successful signup process. sDisplay for classname=signUpCol ; display for classname=formCol
@@ -116,30 +85,36 @@ function Signup() {
       onCountryClick = {()=>handleClick(country)}
     />
   )
+  const uppercaseRegExp = /(?=.*[A-Z])/;
+  const lowercaseRegExp = /(?=.*[a-z])/;
+  const digitsRegExp = /(?=.*\d)/;
+  const specialCharRegExp = /(?=.*[#?!@$%^&*-.,])/;
 
-  //handleChange2 - function that handles the logics fro the validation for the different form inputs
-  const handleChange2 = (e) => {
-    const uppercaseRegExp = /(?=.*?[A-Z])/;
-    const lowercaseRegExp = /(?=.*?[a-z])/;
-    const digitsRegExp = /(?=.*[0-9])/;
-    const specialCharRegExp = /(?=.*?[#?!@$%^&*-.,])/;
-    const uppercasePassword = uppercaseRegExp.test(e.target.value.trim());
-    const lowercasePassword = lowercaseRegExp.test(e.target.value.trim());
-    const digitsPassword = digitsRegExp.test(e.target.value.trim());
+  const validatePassword = (e)=>{
+    const uppercasePassword = uppercaseRegExp.test(e.target.value);
+    const lowercasePassword = lowercaseRegExp.test(e.target.value);
+    const digitsPassword = digitsRegExp.test(e.target.value);
     const specialCharPassword = specialCharRegExp.test(e.target.value);
-    const minLengthPassword = form.password.length >= 8;
-    if (form.password.length === 0) {
+    const minLengthPassword = e.target.value.length >= 8;
+    const emptyPassword = e.target.value.length===0;
+    
+    if (!emptyPassword) {
+
+  
+      if (!uppercasePassword) {
+        setPasswordError('Password should have at least one Uppercase');
+      } else if (!lowercasePassword) {
+        setPasswordError('Password should have at least one Lowercase');
+      } else if (!digitsPassword) {
+        setPasswordError('Password should have at least one digit');
+      } else if (!specialCharPassword) {
+        setPasswordError('Password should have at least one special character');
+      } else if (!minLengthPassword) {
+        setPasswordError('Password should have at least 8 characters');
+      }
+
+    }else{
       setPasswordError('Password is empty');
-    } else if (!uppercasePassword) {
-      setPasswordError('Password should have at least one Uppercase');
-    } else if (!lowercasePassword) {
-      setPasswordError('Password should have at least one Lowercase');
-    } else if (!digitsPassword) {
-      setPasswordError('Password should have at least one digit');
-    } else if (!specialCharPassword) {
-      setPasswordError('Password should have at least one special character');
-    } else if (!minLengthPassword) {
-      setPasswordError('Password should have at least 8 characters');
     }
     if (
       uppercasePassword &&
@@ -155,22 +130,18 @@ function Signup() {
   
 
   };
-
   //handleChange - function that handles the updating of the form
   const handleChange = (e) => {
     setForm({
       ...form,
       [e.target.name]: e.target.value,
     });
-<<<<<<< HEAD
   };
 
-//signup- an asynchronous function that makes pushes the form data to the backend as soon as the requirements are made
-  async function signup(e){
-    e.preventDefault();
-=======
->>>>>>> 53e91cefc04ea8a3677f9fb7bbdfba4f05e1100e
 
+//signup- a function that makes pushes the form data to the backend as soon as the requirements are made
+  const signup= (e)=>{
+    e.preventDefault();
     if (
       nameIsValid &&
       emailIsValid &&
@@ -179,73 +150,47 @@ function Signup() {
       phoneNumberIsValid
     ) {
       setFormIsValid(true);
+
     } else {
       setFormIsValid(false);
     }
-  
-  };
 
-<<<<<<< HEAD
-    if (formIsValid === true) {
-      setSDisplay('block');
-      setDisplay('none');
-
-=======
-
-
-  async function signup(e){
-    e.preventDefault();
-    // console.log(form);
-    if (
-      nameIsValid &&
-      emailIsValid &&
-      passwordIsValid &&
-      confirmPasswordIsValid &&
-      phoneNumberIsValid
-    ) {
-      setFormIsValid(true);
-      // setBtnColor('yellow');
-    } else {
-      setFormIsValid(false);
-      // setBtnColor('blue');
->>>>>>> 53e91cefc04ea8a3677f9fb7bbdfba4f05e1100e
-    }
-
-    
     if(formIsValid){
-  
-   let result = await fetch('https://exqure.herokuapp.com/api/user/signup', {
-       method: "POST",
-       body:JSON.stringify(form),
-       headers: {
-         "Content-Type" : 'application/json' ,
-         "Accept" :'application/json'
-       }
-     })
-     result= await result.json()
-     console.log("result", result);
-    //  setSDisplay('block');
-    // setDisplay('none');
-    
-     localStorage.setItem("user-info", JSON.stringify(result));
-
-     if (result.status ==="Success") {
       setSDisplay('block');
       setDisplay('none');
-      console.log(form);
-    
-
-    }
-    else{
-    alert(result.msg); 
-    }
- }
- else{
-  alert('please fill all fields correctly');
   
- }
-   
+      const result = fetch('https://exqure.herokuapp.com/api/user/signup',{ 
+         method: "POST",
+         body:JSON.stringify(form),
+         headers: {
+           "Content-Type" : 'application/json' ,
+           "Accept" :'application/json'
+         }
+      }).then(response=>response.json());
+        setSDisplay('block');
+        setDisplay('none');
+      
+       localStorage.setItem("user-info", JSON.stringify(result));
+  
+       if (result.status ==="Success") {
+        setSDisplay('block');
+        setDisplay('none');
+  
+      }
+      else{
+      alert(result?.msg); 
+      }
+    }
+   else{
+    alert('please fill all fields correctly');
+    
    }
+     
+  
+  };
+    
+  
+
 
 
  
@@ -270,9 +215,8 @@ function Signup() {
                   type='username'
                   name='fullname'
                   onChange={(e)=>{handleChange(e);
-                    if(form.fullname.length >= 3 &&
-                      form.fullname !== '' && 
-
+                    if(e.target.value.length >= 3 &&
+                      e.target.value !== '' && 
                       e.target.value.trim().match(/[a-zA-Z][a-zA-Z ]+/)
                     ) {
                       setNameIsValid(true);
@@ -301,10 +245,10 @@ function Signup() {
                   onChange={(e) => {
                     handleChange(e);
                     if (
-                      form.email.match(
+                      e.target.value.match(
                         /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i
                       ) &&
-                      form.email !== ''
+                      e.target.value !== ''
                     ) {
                       setEmailIsValid(true);
                     } else {
@@ -331,7 +275,7 @@ function Signup() {
                   name='password'
                   onChange={(e) => {
                     handleChange(e);
-                    handleChange2(e);
+                    validatePassword(e);
                   }}
                   />
                   <span style={{position:'absolute', right:'2rem'}}>
@@ -351,20 +295,20 @@ function Signup() {
             <label className='label'>
               Confirm password
             </label>
-            <InputGroup className='mb-3'>
+            
+            <InputGroup className='mb-3 phoneInput'>
               <div>
                 <img src={lock} className='icon' color='#239ED9' />
                 <FormControl
                   placeholder='Re-enter password'
-
                   type={passwordType1}
                   name='confirmpassword'
                   onChange={(e) => {
                     handleChange(e);
-                    if (form.password === form.confirmpassword) {
+                    if (form.password === e.target.value) {
                       setConfirmPasswordIsValid(true);
                     } else {
-                      setPasswordIsValid(false);
+                      setConfirmPasswordIsValid(false);
                       setConfirmPasswordError(
                         'This input does not match password'
                       );
@@ -387,8 +331,8 @@ function Signup() {
             <label className='label' htmlFor='basic-url'>
               Phone
             </label>
-
             <Input
+              className=''
               type='text'
               img1W={'2rem'}
               img1={phoneFlagUrl2}
@@ -447,19 +391,11 @@ function Signup() {
             ) : (
               ''
             )}
-<<<<<<< HEAD
             <div className='openPhone2' style={{ display: openPhone }}>
                {getPhoneDetails ? getPhoneDetails : ''} 
-=======
-            <div className='openPhone' style={{ display: openPhone }}>
-              {getPhoneDetails ? getPhoneDetails : ''}
->>>>>>> 53e91cefc04ea8a3677f9fb7bbdfba4f05e1100e
             </div>
           </Form>
-
-          {form.phone}
-
-          <button className='Signupbtn' onClick={signup}  style={{ background: btnColor }}>
+          <button className='Signupbtn' onSubmit={signup} onClick={signup}  style={{ background: btnColor }}>
             Sign Up
           </button>
 
@@ -504,6 +440,6 @@ function Signup() {
       </Row>
     </Container>
   );
-}
- 
+
+} 
 export default Signup;
