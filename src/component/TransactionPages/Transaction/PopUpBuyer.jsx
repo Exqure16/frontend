@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
+import ImagePopUp from './ImagePopUp'
 import PopUp from './Popup'
 import './popUp.css'
 const PopUpBuyer= ()=>{
-
+    const [showImage,setShowImage] = useState(false);
     return(
         <PopUp
             transTitle = {'The transaction title is shown here'}
@@ -18,10 +19,11 @@ const PopUpBuyer= ()=>{
             <div>
                 <div className='popUpKey'> Description: </div>
                     <span className='popUpValue'> This item is not a new item but it has good enough quality to make it as good as new 
-                        <span style={{float:'right', marginRight:'1rem', color:'#239ED9', fontWeight:'bolder'}}>View Images</span>
+                        <span onClick={()=>setShowImage(true)} style={{float:'right', cursor:'pointer', marginRight:'1rem', color:'#239ED9', fontWeight:'bolder'}}>View Images</span>
                     </span>
                 
-            </div>       
+            </div>
+            {showImage?<ImagePopUp setShowImage={setShowImage}/>:''}       
             <div>
                 <div className='popUpKey'> Shipping fee: </div>
                     <span className='popUpValue' > 

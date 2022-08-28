@@ -18,8 +18,11 @@ const TransSuccesful = ({transTitle,
     messageAlt,
     message,
     messageImg,
+    message1,
+    message1Img,
     checkDisable,
     handleClick,
+    bgColor,
     children})=>{
 
 
@@ -66,16 +69,25 @@ const TransSuccesful = ({transTitle,
                 <p className='transHeader'> { footHeader? footHeader:'' } </p>
                 <p style={{fontWeight:'bolder'}}>{ footParagraph? footParagraph: '' }</p>
                 <div>
-                    <img style={{position:'absolute', margin:'0.5rem'}} src={footImg?footImg:''} alt= {footAlt? footAlt:''}/>
+                    <img onClick={()=>{navigator.clipboard.writeText('0x7F7B7F9380523100cDB38B4104b89654C63afdCc');
+                    alert('Copied!')
+                }} style={{position:'absolute', margin:'0.5rem'}} src={footImg?footImg:''} alt= {footAlt? footAlt:''}/>
                     <input 
                         className='footInput' 
                         placeholder = {inputPL?inputPL :''} 
                         disabled ={checkDisable?checkDisable:''} 
                         value = {inputV ? inputV :''}
                         onChange ={ handleChange}
+                        style={{backgroundColor: bgColor}}
                         ></input>
                 </div>
-                <p>{message? message:''} <img src={messageImg? messageImg:''} alt={messageAlt?messageAlt:''}/></p>
+                <div className='copyShareDiv'>
+                    <p onClick={()=>{navigator.clipboard.writeText('https://www.github.com/excel404');
+                    alert('Copied!')
+                }} style={{cursor:'pointer'}}>{message? message:''} <img src={messageImg? messageImg:''} alt={messageAlt?messageAlt:''}/></p>
+                    <p>{message1? message1:''} <img src={message1Img? message1Img:''} alt={messageAlt?messageAlt:''}/></p>
+
+                </div>
             </div>
             <button onClick={handleClick} className='footBtn'>Proceed</button>
         </div>

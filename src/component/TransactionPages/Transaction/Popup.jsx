@@ -42,7 +42,7 @@ const PopUp = ({
                 
                     </div>
                     <button className='popUpBtn1'>Confirm</button>       
-                    <button onClick={()=>{setShow('none');setShowPopUp(!showPopUp); console.log(showPopUp)}} className='popUpBtn2'>Cancel</button>       
+                    <button onClick={()=>{setShow('none');setShowPopUp(!showPopUp)}} className='popUpBtn2'>Cancel</button>       
                 </div>
         </>
     )
