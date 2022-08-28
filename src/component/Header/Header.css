@@ -18,3 +18,17 @@
   text-align: center;
   padding-top: 10px;
 }
+
+.botton {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  border: 1px solid #239ed9;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: 'Futura PT';
+}

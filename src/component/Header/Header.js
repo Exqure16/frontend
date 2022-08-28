@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../images/logo.png';
 import './Header.css';
+import Botton from './Botton';
 
 const Header = () => {
+  // const [user, setUser] = useState(
+  //   JSON.parse(localStorage.getItem('user-login-info'))
+  // );
   return (
     <Navbar bg='white' expand='lg' sticky='top'>
       <Container className='my-0'>
@@ -58,9 +62,11 @@ const Header = () => {
             </Nav.Link>
           </Nav>
           <Nav style={{ marginLeft: '50px' }}>
-            <Nav.Link as={Link} to={'frontend/login'}></Nav.Link>
+            <Nav.Link as={Link} to={'frontend/login'}>
+              <Botton text={'Login'} color={'#239ed9'} textColor />
+            </Nav.Link>
             <Nav.Link as={Link} to={'frontend/signup'}>
-              <Button variant='outline-primary'>Signup</Button>
+              <Botton text={'Signup'} color={'white'} textColor={'#239ed9'} />
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
