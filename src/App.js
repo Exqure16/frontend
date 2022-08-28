@@ -13,6 +13,7 @@ import AcceptTerms from './component/TransactionDetails/AcceptTerms';
 import CreateTransaction from './component/TransactionPages/CreateTransaction/CreateTransaction';
 
 import TransBuyer from './component/TransactionPages/MyTransaction/MyTransaction_Buyer';
+import ProvideWallet from './component/TransactionPages/MyTransaction/ProvideWallet';
 import TransBuyerCrypto from './component/TransactionPages/MyTransaction/MyTransaction_Buyer-Crypto';
 import GeneralSettings from './component/GeneralSettings/GeneralSettings';
 import Personal from './component/Profile/Personal';
@@ -62,6 +63,7 @@ function App() {
           <Route path='paymentsetting' element={<PaymentSettings />} />
         </Route>
         <Route path='frontend/mytransactions' element={<TransBuyer />} />
+        <Route path='frontend/mytransactions/wallet' element={<ProvideWallet />} />
         <Route
           path='frontend/mytransactions-crypto'
           element={<TransBuyerCrypto />}

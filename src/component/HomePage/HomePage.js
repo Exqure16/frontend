@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import Cards from './cards'
 import './HomePageStyles.css';
 import './HomePageStyles_Mobile.css';
@@ -15,24 +16,6 @@ import { faVideo } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faVideo)
 
-function reveal() {
-    var reveals = document.querySelectorAll(".reveal");
-  
-    for (var i = 0; i < reveals.length; i++) {
-      var windowHeight = window.innerHeight;
-      var elementTop = reveals[i].getBoundingClientRect().top;
-      var elementVisible = 150;
-  
-      if (elementTop < windowHeight - elementVisible) {
-        reveals[i].classList.add("active");
-      } else {
-        reveals[i].classList.remove("active");
-      }
-    }
-}
-  
-window.addEventListener("scroll", reveal);
-
 export default function HomePage() {
   return (
     <div className="homepage-main">
@@ -44,15 +27,17 @@ export default function HomePage() {
                     Exqure guarantees 100% security and protects users 
                     from scams in transactions with our escrow services.
                 </p>
-                <div className="writeup-buttons">
-                    <button>Get Started</button>
-                    <button>
+                <Link to="login">
+                    <button id="writeup-button">Get Started</button>
+                </Link>
+                <Link to="">
+                    <button id="writeup-button2">
                         <FontAwesomeIcon icon="fas fa-video"/>
                         <span>
                             Watch Video
                         </span>
                     </button>
-                </div>
+                </Link>
             </div>
             <div className="writeup-image"><img alt="side-pic" src={SideKick} /></div>
         </section>

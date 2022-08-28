@@ -1,0 +1,45 @@
+.container {
+    padding-left: 4rem;
+    padding-top: 2rem;
+    font-family: Futura PT, sans-serif;
+}
+
+.submit {
+    padding: .5rem 1rem;
+    background: #239ED9;
+    color: white;
+    margin-top: 1.5rem;
+    border-radius: 4px;
+    transition: background-color .5s ease
+}
+
+.submit:hover {
+    background:#1b7aa7;
+}
+
+.input {
+    margin-top: .5rem;
+    width: 300px;
+}
+
+.head {
+    font-size: 1.9rem;
+    font-family: Montserrat Variable, sans-serif;
+}
+
+.text {
+    margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 640px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0rem 1rem; 
+    }
+
+    .form {
+        margin-left: -1.5rem;
+    }
+}
