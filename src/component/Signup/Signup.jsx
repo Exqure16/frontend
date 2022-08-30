@@ -27,8 +27,9 @@ import CountrySelect from '../Profile/Form/CountrySelect';
 import { Countries } from '../Countries';
 import Input from '../Profile/Form/Input';
 
-const Signup = () => {
-  //sets initail states for the phone input
+
+function Signup() {
+    //sets initail states for the phone input
   const [dialCode, setDialCode] = useState('+234');
   const [openPhone, setOpenPhone] = useState('none');
   const [phoneFlagUrl2, setPhoneFlagUrl2] = useState(
@@ -61,6 +62,7 @@ const Signup = () => {
   //   setCountry(c);
   //   console.log(c + p);
   // };
+
 
   const [phoneValue, setPhoneValue] = useState('');
 
@@ -112,31 +114,39 @@ const Signup = () => {
       countryDialCode={country.dial_code}
       onCountryClick={() => handleClick(country)}
     />
-  ));
 
-  //handleChange2 - function that handles the logics fro the validation for the different form inputs
-  const handleChange2 = (e) => {
-    const uppercaseRegExp = /(?=.*?[A-Z])/;
-    const lowercaseRegExp = /(?=.*?[a-z])/;
-    const digitsRegExp = /(?=.*[0-9])/;
-    const specialCharRegExp = /(?=.*?[#?!@$%^&*-.,])/;
-    const uppercasePassword = uppercaseRegExp.test(e.target.value.trim());
-    const lowercasePassword = lowercaseRegExp.test(e.target.value.trim());
-    const digitsPassword = digitsRegExp.test(e.target.value.trim());
+  ));
+  
+  const uppercaseRegExp = /(?=.*[A-Z])/;
+  const lowercaseRegExp = /(?=.*[a-z])/;
+  const digitsRegExp = /(?=.*\d)/;
+  const specialCharRegExp = /(?=.*[#?!@$%^&*-.,])/;
+
+  const validatePassword = (e)=>{
+    const uppercasePassword = uppercaseRegExp.test(e.target.value);
+    const lowercasePassword = lowercaseRegExp.test(e.target.value);
+    const digitsPassword = digitsRegExp.test(e.target.value);
     const specialCharPassword = specialCharRegExp.test(e.target.value);
-    const minLengthPassword = form.password.length >= 8;
-    if (form.password.length === 0) {
+    const minLengthPassword = e.target.value.length >= 8;
+    const emptyPassword = e.target.value.length===0;
+    
+    if (!emptyPassword) {
+
+  
+      if (!uppercasePassword) {
+        setPasswordError('Password should have at least one Uppercase');
+      } else if (!lowercasePassword) {
+        setPasswordError('Password should have at least one Lowercase');
+      } else if (!digitsPassword) {
+        setPasswordError('Password should have at least one digit');
+      } else if (!specialCharPassword) {
+        setPasswordError('Password should have at least one special character');
+      } else if (!minLengthPassword) {
+        setPasswordError('Password should have at least 8 characters');
+      }
+
+    }else{
       setPasswordError('Password is empty');
-    } else if (!uppercasePassword) {
-      setPasswordError('Password should have at least one Uppercase');
-    } else if (!lowercasePassword) {
-      setPasswordError('Password should have at least one Lowercase');
-    } else if (!digitsPassword) {
-      setPasswordError('Password should have at least one digit');
-    } else if (!specialCharPassword) {
-      setPasswordError('Password should have at least one special character');
-    } else if (!minLengthPassword) {
-      setPasswordError('Password should have at least 8 characters');
     }
     if (
       uppercasePassword &&
@@ -150,7 +160,6 @@ const Signup = () => {
       setPasswordIsValid(false);
     }
   };
-
   //handleChange - function that handles the updating of the form
   const handleChange = (e) => {
     setForm({
@@ -171,9 +180,11 @@ const Signup = () => {
       phoneNumberIsValid
     ) {
       setFormIsValid(true);
+
     } else {
       setFormIsValid(false);
     }
+
   }
 
   if (formIsValid === true) {
@@ -228,40 +239,158 @@ const Signup = () => {
       }
     }
 
-    return (
-      <Container fluid>
-        <Row>
-          <Col className='logocol' md>
-            <img className='logo' src={logo} alt='exqure logo' />
-            <img className='hands' src={hands} alt='Shaking hands' />
-          </Col>
-          <Col className='formcol' style={{ display: display }} md>
-            <h1 className='header'> Sign Up </h1>
-            <p className='tagline'> Welcome! Register with Exqure here. </p>
-            <Form onSubmit={signup} className='form'>
-              <label className='label'>Name</label>
-              <InputGroup className='mb-3'>
-                <div>
-                  <img src={personIcon} className='icon' color='#239ED9' />
-                  <FormControl
-                    placeholder='Enter full name'
-                    type='username'
-                    name='fullname'
-                    onChange={(e) => {
-                      handleChange(e);
-                      if (
-                        form.fullname.length >= 3 &&
-                        form.fullname !== '' &&
-                        e.target.value.trim().match(/[a-zA-Z][a-zA-Z ]+/)
-                      ) {
-                        setNameIsValid(true);
-                      } else {
-                        setNameIsValid(false);
-                        setNameError(
-                          'name should contain only letters and must be greater than five letters'
-                        );
-                      }
-                    }}
+//     return (
+//       <Container fluid>
+//         <Row>
+//           <Col className='logocol' md>
+//             <img className='logo' src={logo} alt='exqure logo' />
+//             <img className='hands' src={hands} alt='Shaking hands' />
+//           </Col>
+//           <Col className='formcol' style={{ display: display }} md>
+//             <h1 className='header'> Sign Up </h1>
+//             <p className='tagline'> Welcome! Register with Exqure here. </p>
+//             <Form onSubmit={signup} className='form'>
+//               <label className='label'>Name</label>
+//               <InputGroup className='mb-3'>
+//                 <div>
+//                   <img src={personIcon} className='icon' color='#239ED9' />
+//                   <FormControl
+//                     placeholder='Enter full name'
+//                     type='username'
+//                     name='fullname'
+//                     onChange={(e) => {
+//                       handleChange(e);
+//                       if (
+//                         form.fullname.length >= 3 &&
+//                         form.fullname !== '' &&
+//                         e.target.value.trim().match(/[a-zA-Z][a-zA-Z ]+/)
+//                       ) {
+//                         setNameIsValid(true);
+//                       } else {
+//                         setNameIsValid(false);
+//                         setNameError(
+//                           'name should contain only letters and must be greater than five letters'
+//                         );
+//                       }
+//                     }}
+
+//     if(formIsValid){
+//       setSDisplay('block');
+//       setDisplay('none');  
+//     let result = await fetch('https://exqure.herokuapp.com/api/user/signup', {
+//        method: "POST",
+//        body:JSON.stringify(form),
+//        headers: {
+//          "Content-Type" : 'application/json' ,
+//          "Accept" :'application/json'
+//        }
+//      })
+//      result= await result.json()
+    
+//      localStorage.setItem("user-info", JSON.stringify(result));
+
+//      if (result.status ==="Success") {
+//       setSDisplay('block');
+//       setDisplay('none');
+//     }
+//     else{
+//     alert(result.msg); 
+//     }
+//  }
+//  else{
+//   alert('please fill all fields correctly');
+  
+//  }
+   
+//    }
+//   }
+
+
+ 
+
+  return (
+    
+    <Container fluid>
+      <Row>
+        <Col className='logocol' md>
+          <img className='logo' src={logo} alt='exqure logo' />
+          <img className='hands' src={hands} alt='Shaking hands' />
+        </Col>
+        <Col className='formcol' style={{ display: display }} md>
+          <h1 className='header'> Sign Up </h1>
+          <p className='tagline'> Welcome! Register with Exqure here. </p>
+          <Form onSubmit={signup} className='form'>
+            <label className='label'>Name</label>
+            <InputGroup className='mb-3'>
+              <div>
+                <img src={personIcon} className='icon' color='#239ED9' />
+                <FormControl
+                  placeholder='Enter full name'
+                  type='username'
+                  name='fullname'
+                  onChange={(e)=>{handleChange(e);
+                    if(e.target.value.length >= 3 &&
+                      e.target.value !== '' && 
+                      e.target.value.trim().match(/[a-zA-Z][a-zA-Z ]+/)
+                    ) {
+                      setNameIsValid(true);
+                    } else {
+                      setNameIsValid(false);
+                      setNameError(
+                        'name should contain only letters and must be greater than five letters'
+                      );
+                    }
+                  }}
+                />
+              </div>
+              {!nameIsValid ? <span className='error'>{nameError}</span> : ''}
+            </InputGroup>
+
+            <label className='label' htmlFor='basic-url'>
+              Email
+            </label>
+            <InputGroup className='mb-3'>
+              <div>
+                <img src={sms} className='icon' color='#239ED9' />
+                <FormControl
+                  placeholder='Enter email'
+                  type='email'
+                  name='email'
+                  onChange={(e) => {
+                    handleChange(e);
+                    if (
+                      e.target.value.match(
+                        /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i
+                      ) &&
+                      e.target.value !== ''
+                    ) {
+                      setEmailIsValid(true);
+                    } else {
+                      setEmailIsValid(false);
+                      setEmailError(
+                        'email should be similar to - example@gmail.com'
+                      );
+                    }
+                  }}
+                />
+              </div>
+              {!emailIsValid ? <span className='error'>{emailError}</span> : ''}
+            </InputGroup>
+
+            <label className='label' htmlFor='basic-url'>
+              Password
+            </label>
+            <InputGroup className='mb-3'>
+              <div>
+                <img src={lock} className='icon' color='#239ED9' />
+                <FormControl
+                  placeholder='Enter password'
+                  type={passwordType}
+                  name='password'
+                  onChange={(e) => {
+                    handleChange(e);
+                    validatePassword(e);
+                  }}
                   />
                 </div>
                 {!nameIsValid ? <span className='error'>{nameError}</span> : ''}
@@ -419,12 +548,82 @@ const Signup = () => {
                 onChange={(e) => {
                   let p = dialCode;
                   p += e.target.value;
+                }
+              }
+>
+            <label className='label'>
+              Confirm password
+            </label>
+            
+            <InputGroup className='mb-3 phoneInput'>
+              <div>
+                <img src={lock} className='icon' color='#239ED9' />
+                <FormControl
+                  placeholder='Re-enter password'
+                  type={passwordType1}
+                  name='confirmpassword'
+                  onChange={(e) => {
+                    handleChange(e);
+                    if (form.password === e.target.value) {
+                      setConfirmPasswordIsValid(true);
+                    } else {
+                      setConfirmPasswordIsValid(false);
+                      setConfirmPasswordError(
+                        'This input does not match password'
+                      );
+                    }
+                  }}
+                />
+                <span style={{position:'absolute',right:'2rem'}}>
+                  {passwordType1==='password'? 
+                  <img src={hideP} onClick ={()=>setPasswordType1('text')} className='icon1' color='#239ED9' />
+                  :<img src={showP} onClick ={()=>setPasswordType1('password')}className='icon1' color='#239ED9' />}
+                </span>
+              </div>
+              {!confirmPasswordIsValid ? (
+                <span className='error'>{confirmPasswordError}</span>
+              ) : (
+                ''
+              )}
+            </InputGroup>
+
+            <label className='label' htmlFor='basic-url'>
+              Phone
+            </label>
+            <Input
+              className=''
+              type='text'
+              img1W={'2rem'}
+              img1={phoneFlagUrl2}
+              img1ML={'1rem'}
+              img1MT={'0.7rem'}
+              onClick2={() => {
+                if (openPhone == 'none') {
+                  setOpenPhone('inline-block');
+                } else if (openPhone == 'inline-block') {
+                  setOpenPhone('none');
+                }
+              }}
+              sML={'3.5rem'}
+              sMT={'0.5rem'}
+              img2W={'1rem'}
+              img2ML={'6rem'}
+              img2MT={'0.7rem'}
+              img2={arrowDown}
+              sV={dialCode}
+              inputPL={'7.5rem'}
+              inputW={'100%'}
+              placeholder={'90 000 0000'}
+              inputValue ={phoneValue}
+                name= "phone"
+                onChange = {(e)=>{
+                  let p= dialCode;
+                  p+= e.target.value;
                   setPhoneValue(p);
                   setForm({
                     ...form,
                     phone: p,
                   });
-
                   if (!e.target.value.match(/(?=.*?[0-9])/)) {
                     setPhoneNumberError(
                       'This field should contain only numbers 0-9'
@@ -456,6 +655,7 @@ const Signup = () => {
               <div className='openPhone' style={{ display: openPhone }}>
                 {getPhoneDetails ? getPhoneDetails : ''}
               </div>
+            </Input>
             </Form>
 
             {form.phone}
@@ -491,6 +691,38 @@ const Signup = () => {
                 <img className='fb' src={facebook} alt='facebook icon'></img>
                 <img src={apple} alt='apple icon'></img>
               </div>
+            {!phoneNumberIsValid ? (
+              <span className='error'>{phoneNumberError}</span>
+            ) : (
+              ''
+            )}
+            <div className='openPhone2' style={{ display: openPhone }}>
+               {getPhoneDetails ? getPhoneDetails : ''} 
+            </div>
+          </div>
+          </Form>
+          <button className='Signupbtn' onSubmit={signup} onClick={signup}  style={{ background: btnColor }}>
+            Sign Up
+          </button>
+
+          <div className='footDiv'>
+            <p className='footer1'>
+              By signing up, I agree to{' '}
+              <a href='https://www.github.com'>Terms and Conditions</a> and{' '}
+              <a href='https://www.github.com'>Privacy Policy</a>
+            </p>
+            <p className='footer2'>
+              Have an account?{' '}
+              <Link style={{ textDecoration: 'none' }} to='/frontend/login'>
+                Login
+              </Link>
+            </p>
+          </div>
+          <div className='lastLogoDiv'>
+            <div className='orDiv'>
+              <img src={or} alt='or' className='orDivImg'></img>
+
+            </div>
             </div>
           </Col>
           <Col className='signupCol' style={{ display: sdisplay }}>
@@ -512,4 +744,23 @@ const Signup = () => {
   }
 };
 
+    //       </div>
+    //     </Col>
+    //     <Col className='signupCol' style={{ display: sdisplay }}>
+    //       <div className='successfulDiv'>
+    //         <img src={good} alt='successsful'></img>
+    //         <p>
+    //           Sign up successful. An activation mail has been sent to your email
+    //           address.
+    //         </p>
+    //       </div>
+    //       <div className='welcomeDiv'>
+    //         <h1>Welcome</h1>
+    //         <img src={welcome} alt='Welcome'></img>
+    //       </div>
+    //     </Col>
+    //   </Row>
+    // </Container>
+}
+ 
 export default Signup;
