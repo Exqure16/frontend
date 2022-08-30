@@ -1,14 +1,11 @@
-import React, { useState } from 'react';
-import { Navbar, Nav, Container, Button } from 'react-bootstrap';
+import React from 'react';
+import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../images/logo.png';
+import notification from '../images/notification.png';
 import './Header.css';
-import Botton from './Botton';
 
-const Header = () => {
-  // const [user, setUser] = useState(
-  //   JSON.parse(localStorage.getItem('user-login-info'))
-  // );
+const AccountHeader = () => {
   return (
     <Navbar bg='white' expand='lg' sticky='top'>
       <Container className='my-0'>
@@ -31,42 +28,44 @@ const Header = () => {
               as={Link}
               to={'frontend/'}
             >
-              Services
+              Transactions
             </Nav.Link>
-            <Nav.Link
-              style={{
-                color: 'black',
-                fontSize: '20px',
-              }}
-              className='mx-lg-2'
-              as={Link}
-              to={'frontend/aboutUs'}
+            <NavDropdown
+              title='Customer Support'
+              id='collasible-nav-dropdown '
+              style={{ color: 'black', fontSize: '20px' }}
             >
-              About Us
-            </Nav.Link>
+              <NavDropdown.Item href='#action/3.1'>Action</NavDropdown.Item>
+              <NavDropdown.Item href='#action/3.2'>
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href='#action/3.3'>Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href='#action/3.4'>
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+
             <Nav.Link
               style={{ color: 'black', fontSize: '20px' }}
               className='mx-lg-2'
               as={Link}
               to={'frontend/blog'}
             >
-              Blog
-            </Nav.Link>
-            <Nav.Link
-              style={{ color: 'black', fontSize: '20px' }}
-              as={Link}
-              to={'frontend/contactus'}
-              className='mx-lg-2'
-            >
-              Contact Us
+              Help
             </Nav.Link>
           </Nav>
           <Nav style={{ marginLeft: '50px' }}>
             <Nav.Link as={Link} to={'frontend/login'}>
-              <Botton text={'Login'} color={'#239ed9'} textColor />
+              <img src={notification} alt='' />
             </Nav.Link>
-            <Nav.Link as={Link} to={'frontend/signup'}>
-              <Botton text={'Signup'} color={'white'} textColor={'#239ed9'} />
+            <Nav.Link as={Link} to={'frontend/signup'} className='d-flex'>
+              <div className='circle-border'>
+                <p>VA</p>
+              </div>
+              <NavDropdown>
+                <NavDropdown.Item>Settings</NavDropdown.Item>
+              </NavDropdown>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
@@ -75,4 +74,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default AccountHeader;
