@@ -14,6 +14,9 @@ import CreateTransaction from './component/TransactionPages/CreateTransaction/Cr
 // import MyTransBuyer from './component/TransactionPages/MyTransaction/MyTransaction_Buyer';
 // import TransBuyer from './component/TransactionPages/MyTransaction/MyTransaction_Buyer';
 // import TransBuyer from './component/TransactionPages/MyTransaction/MyTransaction_Buyer';
+
+import MyTransBuyer from './component/TransactionPages/MyTransaction/MyTransaction_Buyer';
+
 import ProvideWallet from './component/TransactionPages/MyTransaction/ProvideWallet';
 import TransBuyerCrypto from './component/TransactionPages/MyTransaction/MyTransaction_Buyer-Crypto';
 import GeneralSettings from './component/GeneralSettings/GeneralSettings';
@@ -74,6 +77,8 @@ function App() {
           path='frontend/mytransactions/wallet'
           element={<ProvideWallet />}
         />
+        <Route path='frontend/mytransactions' element={<MyTransBuyer />} />
+        <Route path='frontend/mytransactions/wallet' element={<ProvideWallet />}
         <Route path='frontend/contactus' element={<ContactUs />} />
         <Route
           path='frontend/mytransactions-crypto'
