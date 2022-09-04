@@ -14,8 +14,16 @@ import sms from '../images/sms.svg';
 import { BrowserRouter, Link } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
 import ForgotPassword from './ForgotPassword';
+import Header from '../Header/Header';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (localStorage.getItem('user-info')) {
+      navigate('/transaction', { replace: true });
+    }
+  }, []);
   const [formValid, setFormValid] = useState(false);
 
   const [form, setForm] = useState({
@@ -38,40 +46,33 @@ const Login = () => {
     });
   };
 
-  async function signup(e){
-   e.preventDefault();
+  async function signup(e) {
+    e.preventDefault();
 
-   if(formValid === true){
-
-    let result = await fetch('https://exqure.herokuapp.com/api/user/signin', {
-      method: "POST",
-      body:JSON.stringify(form),
-      headers: {
-        "Content-Type" : 'application/json' ,
-        "Accept" :'application/json'
+    if (formValid === true) {
+      let result = await fetch('https://exqure.herokuapp.com/api/user/signin', {
+        method: 'POST',
+        body: JSON.stringify(form),
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+      });
+      result = await result.json();
+      console.log('result', result);
+      // alert(result.msg);
+      if (result.status === 'Success') {
+        alert(result.msg);
+        localStorage.setItem('user-login-info', JSON.stringify(result));
+        navigate('/transaction', { replace: true });
+        // window.location = '#/transaction';
+      } else {
+        alert('error');
+        alert(result.msg);
       }
-    })
-    result= await result.json()
-    console.log("result", result);
-    // alert(result.msg);
-    if(result.status === 'Success'){
-    alert(result.msg);
-      localStorage.setItem("user-login-info", JSON.stringify(result));
-       window.location='#/frontend/accountsetting/profile';
-
-        
+    } else {
+      alert('please fill in reqired fields');
     }
-    else{
-      alert('error');
-      alert(result.msg);
-    }
-   }
-   else{
-    alert("please fill in reqired fields");
-   }
-
-  
-    
   }
 
   // const submitForm = (e) => {
@@ -82,98 +83,99 @@ const Login = () => {
   //   }
   // };
 
-  
-
   return (
-    <div className='login-page'>
-      <section className='left-box'>
-        <div className='logo-div'>
-          <img src={logo} alt='logo' />
-        </div>
-        <img src={hands} className='hands' alt='shaking hands' />
-      </section>
-      <section className='right-box'>
-        <div className='login-box'>
-          <h2>Login </h2>
-          <p>Welcome back! please enter your login details</p>
-          <form onSubmit={signup}>
-            <label>Email</label>
-            <div className='input-box'>
-              {' '}
-              {/* <IoMailOutline className='icon' /> */}
-              <img src={sms} alt='logo' className='icon' />
-              <input
-                type='email'
-                name='email'
-                placeholder='Enter Email'
-                className='login-input'
-                onChange={handleChange}
-              ></input>
-            </div>
-            <label>Password</label>
-            <div className='input-box'>
-              {' '}
-              {/* <VscLock className='icon' />{' '} */}
-              <img src={lock} alt='logo' className='icon' />
-              <input
-                type='password'
-                name='password'
-                placeholder='Enter Password'
-                className='login-input'
-                onChange={handleChange}
-              ></input>
-            </div>
-
-            <div className='settings'>
-              <div className='check'>
-                <input type='checkbox' id='rememberMe'></input>
-                <p>Remember me</p>
+    <>
+      <Header />
+      <div className='login-page'>
+        <section className='left-box'>
+          <div className='logo-div'>
+            <img src={logo} alt='logo' />
+          </div>
+          <img src={hands} className='hands' alt='shaking hands' />
+        </section>
+        <section className='right-box'>
+          <div className='login-box'>
+            <h2>Login </h2>
+            <p>Welcome back! please enter your login details</p>
+            <form onSubmit={signup}>
+              <label>Email</label>
+              <div className='input-box'>
+                {' '}
+                {/* <IoMailOutline className='icon' /> */}
+                <img src={sms} alt='logo' className='icon' />
+                <input
+                  type='email'
+                  name='email'
+                  placeholder='Enter Email'
+                  className='login-input'
+                  onChange={handleChange}
+                ></input>
+              </div>
+              <label>Password</label>
+              <div className='input-box'>
+                {' '}
+                {/* <VscLock className='icon' />{' '} */}
+                <img src={lock} alt='logo' className='icon' />
+                <input
+                  type='password'
+                  name='password'
+                  placeholder='Enter Password'
+                  className='login-input'
+                  onChange={handleChange}
+                ></input>
               </div>
 
-              <Link style={{ textDecoration: 'none' }} to='/frontend/forgot'>
-                <div>
-                  <p id='forgotPassword'>Forgot Password?</p>{' '}
+              <div className='settings'>
+                <div className='check'>
+                  <input type='checkbox' id='rememberMe'></input>
+                  <p>Remember me</p>
                 </div>
-              </Link>
-            </div>
 
-            <button className='login-btn'>Login</button>
-            <p className='end'>
-              Not registered?
-              <Link style={{ textDecoration: 'none' }} to='/frontend/signup'>
-                <span id='signUp'>Sign Up</span>
-              </Link>
-            </p>
-          </form>
-          <div className='alternate-login'>
-            <p>
-              <span>OR</span>
-            </p>
-            <b>LOGIN WITH</b>
-            <div className='social-buttons'>
-              <button>
-                {' '}
-                <FcGoogle id='social-icon' />
-              </button>
-              <button>
-                {' '}
-                <FaFacebookF id='social-icon' color={'#395185'} />
-              </button>
-              <button>
-                {' '}
-                <BsApple id='social-icon' />
-              </button>
+                <Link style={{ textDecoration: 'none' }} to='/frontend/forgot'>
+                  <div>
+                    <p id='forgotPassword'>Forgot Password?</p>{' '}
+                  </div>
+                </Link>
+              </div>
+
+              <button className='login-btn'>Login</button>
+              <p className='end'>
+                Not registered?
+                <Link style={{ textDecoration: 'none' }} to='/frontend/signup'>
+                  <span id='signUp'>Sign Up</span>
+                </Link>
+              </p>
+            </form>
+            <div className='alternate-login'>
+              <p>
+                <span>OR</span>
+              </p>
+              <b>LOGIN WITH</b>
+              <div className='social-buttons'>
+                <button>
+                  {' '}
+                  <FcGoogle id='social-icon' />
+                </button>
+                <button>
+                  {' '}
+                  <FaFacebookF id='social-icon' color={'#395185'} />
+                </button>
+                <button>
+                  {' '}
+                  <BsApple id='social-icon' />
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-      {/* <Routes>
+        </section>
+        {/* <Routes>
       <Route path='frontend/forgot/*' element={<ForgotPassword />} />
         <Route path='frontend/forgot' element={<ForgotPassword />} />
 
 
       </Routes> */}
-    </div>
+      </div>
+    </>
   );
 };
 
