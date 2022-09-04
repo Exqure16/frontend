@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/frontend/static/css/main.0a38749e.css",
-    "main.js": "/frontend/static/js/main.3bb486bb.js",
+    "main.css": "/frontend/static/css/main.1e2b08b5.css",
+    "main.js": "/frontend/static/js/main.9481d837.js",
     "static/media/AboutBg.jpg": "/frontend/static/media/AboutBg.4215196ad80ee4150236.jpg",
     "static/media/img1.png": "/frontend/static/media/img1.9149020d2d66c93995d6.png",
     "static/media/AboutMall.jpg": "/frontend/static/media/AboutMall.6b9e861863c510a5ccc9.jpg",
@@ -13,6 +13,7 @@
     "static/media/crypto.svg": "/frontend/static/media/crypto.812669136a6efa37829a10fa1e690899.svg",
     "static/media/img6.png": "/frontend/static/media/img6.02e1c22a6e126cac8490.png",
     "static/media/Hands.png": "/frontend/static/media/Hands.a1bfbcfee5cec78affce.png",
+    "static/media/cushion1.svg": "/frontend/static/media/cushion1.642e2b9861a3d926494cdbcd69774adc.svg",
     "static/media/img7.png": "/frontend/static/media/img7.6de9261f843520ba34cc.png",
     "static/media/img3.png": "/frontend/static/media/img3.071715ba92b6a9fca9ef.png",
     "static/media/AboutCrypto.jpg": "/frontend/static/media/AboutCrypto.de40499f1679f1af59b5.jpg",
@@ -27,17 +28,22 @@
     "static/media/LogoExqure.png": "/frontend/static/media/LogoExqure.14488d70771874a74d09.png",
     "static/media/Futura Book font.ttf": "/frontend/static/media/Futura Book font.ed19af444f0976dbaf41.ttf",
     "static/media/rafiki.png": "/frontend/static/media/rafiki.731278a03e54b14a3852.png",
+    "static/media/cushion2.svg": "/frontend/static/media/cushion2.11aaa578c4bf5cedb56f510925f62909.svg",
+    "static/media/cushion3.svg": "/frontend/static/media/cushion3.8ed17496d11682f6f131433dc90f17c7.svg",
     "static/media/welcome.svg": "/frontend/static/media/welcome.088dc629f6c8d0a13df9c6fc2bfc150a.svg",
     "static/media/cuate.png": "/frontend/static/media/cuate.f40fbc605ddb65663d23.png",
     "static/media/accepted.png": "/frontend/static/media/accepted.8e802107f2082df0b8b1.png",
     "static/media/cuate2.png": "/frontend/static/media/cuate2.7495469d9e4474de85f7.png",
+    "static/media/cushion4.svg": "/frontend/static/media/cushion4.a6f5c5eab1ba5f3a52abb697bf2ea083.svg",
     "static/media/rafikibg.png": "/frontend/static/media/rafikibg.7fdd8be6283c8ea0dde1.png",
+    "static/media/share.svg": "/frontend/static/media/share.02cedf3e479a40449928365211d9d5ac.svg",
     "static/media/calendar.svg": "/frontend/static/media/calendar.d6a73791a50e3864b5ab948ac9c92a9d.svg",
     "static/media/logo2.svg": "/frontend/static/media/logo2.1eeb74882ff2d0a9884ff53661224f5b.svg",
     "static/media/location.svg": "/frontend/static/media/location.835ea848cc4652f276bddfcb70c4d0ec.svg",
     "static/media/call.svg": "/frontend/static/media/call.a9b27bcbd566a250f41a51a2e1531674.svg",
     "static/media/Ribbon.svg": "/frontend/static/media/Ribbon.a866cfd790381c7f14d11322a97faeca.svg",
-    "static/media/hi.svg": "/frontend/static/media/hi.3109b5ab6dffef6eb0cb156fe2deb45e.svg",
+    "static/media/hi.svg": "/frontend/static/media/hi.6d8d38d4c39b73c205f4b8f2d3b321c3.svg",
+    "static/media/copyIcon.svg": "/frontend/static/media/copyIcon.228a241e21967708b2d325fe14a41a24.svg",
     "static/media/instaBlack.svg": "/frontend/static/media/instaBlack.6058474920790fef5fd678983f0a886e.svg",
     "static/media/lock.svg": "/frontend/static/media/lock.e46f64238a14ea3a929a6b9e4fa31431.svg",
     "static/media/google.svg": "/frontend/static/media/google.ed6ec607984309e9e31e6222f5f9c1b1.svg",
@@ -51,7 +57,7 @@
     "static/media/caution.svg": "/frontend/static/media/caution.d812b51c9c689c5d50a9c020983db046.svg",
     "static/media/personicon.svg": "/frontend/static/media/personicon.c051467508a4f9a9b1a2917f4f89033a.svg",
     "static/media/slick.woff": "/frontend/static/media/slick.295183786cd8a1389865.woff",
-    "static/media/showP.svg": "/frontend/static/media/showP.e629696dcc48ff619ce60df5f8e05ea7.svg",
+    "static/media/showP.svg": "/frontend/static/media/showP.82e656ac69a4788e6fb6089294039b3b.svg",
     "index.html": "/frontend/index.html",
     "static/media/or.svg": "/frontend/static/media/or.07fa50e3cd609f83272f87dca241a978.svg",
     "static/media/sms.svg": "/frontend/static/media/sms.a5afb1be3dafc4af5f9a42a40075e992.svg",
@@ -60,11 +66,12 @@
     "static/media/good.svg": "/frontend/static/media/good.e4c266542fcf70cdd15aaaa4f2d6fe8c.svg",
     "static/media/Logo.svg": "/frontend/static/media/Logo.6e97450d28ab50dee6b4f28192d586f5.svg",
     "static/media/shortline.svg": "/frontend/static/media/shortline.ad16ad68cc11dbb3be59ac277c99d3e9.svg",
-    "main.0a38749e.css.map": "/frontend/static/css/main.0a38749e.css.map",
-    "main.3bb486bb.js.map": "/frontend/static/js/main.3bb486bb.js.map"
+    "static/media/line.svg": "/frontend/static/media/line.e6ec7e94737c3e133d42ada4a6b6bfe8.svg",
+    "main.1e2b08b5.css.map": "/frontend/static/css/main.1e2b08b5.css.map",
+    "main.9481d837.js.map": "/frontend/static/js/main.9481d837.js.map"
   },
   "entrypoints": [
-    "static/css/main.0a38749e.css",
-    "static/js/main.3bb486bb.js"
+    "static/css/main.1e2b08b5.css",
+    "static/js/main.9481d837.js"
   ]
 }
