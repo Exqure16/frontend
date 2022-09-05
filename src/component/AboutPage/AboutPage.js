@@ -12,6 +12,7 @@ import AboutMall from '../images/AboutMall.jpg';
 import LogoExqure from '../images/LogoExqure.png';
 import RectangleStar from '../images/RectangleStar.png';
 import Details from './Details';
+import Header from '../Header/Header';
 
 function AboutPage() {
   let settings = {
@@ -56,112 +57,115 @@ function AboutPage() {
     ],
   };
   return (
-    <About>
-      <section className='first'>
-        <h3>
-          <span>About</span> us
-        </h3>
-        <p>Break free from the troubles of online transactions.</p>
-        <div className='img'>
-          <div className='words'>
-            <h4>SHOP SMART</h4>
-            <h4>SHOP SECURE</h4>
+    <>
+      <Header />
+      <About>
+        <section className='first'>
+          <h3>
+            <span>About</span> us
+          </h3>
+          <p>Break free from the troubles of online transactions.</p>
+          <div className='img'>
+            <div className='words'>
+              <h4>SHOP SMART</h4>
+              <h4>SHOP SECURE</h4>
+            </div>
           </div>
-        </div>
-      </section>
-      <section className='second'>
-        <div className='part1'>
-          <div className='text'>
-            <h3>What is Exqure??</h3>
-            <p>
-              Exqure is an escroe service platform. We act as a third-pary by
-              offering escrow services to business parties. Our escrow servies
-              are smart, secure and trustworthy.Our respnsibilities are to
-              secure funds on behalf of the buyers and sellers until the terms
-              and conditions agreed by both paries are met.
-            </p>
+        </section>
+        <section className='second'>
+          <div className='part1'>
+            <div className='text'>
+              <h3>What is Exqure??</h3>
+              <p>
+                Exqure is an escroe service platform. We act as a third-pary by
+                offering escrow services to business parties. Our escrow servies
+                are smart, secure and trustworthy.Our respnsibilities are to
+                secure funds on behalf of the buyers and sellers until the terms
+                and conditions agreed by both paries are met.
+              </p>
+            </div>
+            <div className='exqure'>
+              <img src={LogoExqure} alt='ExqureWhite' />
+            </div>
           </div>
-          <div className='exqure'>
-            <img src={LogoExqure} alt='ExqureWhite' />
+          <div className='part2'>
+            <div className='text'>
+              <h3>Our Objectives</h3>
+              <ul>
+                <li>
+                  To ensure the reduction of transactional risk to the barest
+                  minimum.
+                </li>
+                <li>
+                  To simplify the escrow process for businesses while adding
+                  value to the process.
+                </li>
+                <li>
+                  Provide buyers with an assurance and protection from scammers
+                  and cyber fraud.
+                </li>
+                <li>
+                  To build and promote trust and confidence between the parties
+                  involved as well as minimize the risk of sales gone bad for
+                  both parties ( buyer and seller).
+                </li>
+              </ul>
+            </div>
+            <div className='recStar'>
+              <img src={RectangleStar} alt='RectangleStar' />
+            </div>
           </div>
-        </div>
-        <div className='part2'>
-          <div className='text'>
-            <h3>Our Objectives</h3>
-            <ul>
-              <li>
-                To ensure the reduction of transactional risk to the barest
-                minimum.
-              </li>
-              <li>
-                To simplify the escrow process for businesses while adding value
-                to the process.
-              </li>
-              <li>
-                Provide buyers with an assurance and protection from scammers
-                and cyber fraud.
-              </li>
-              <li>
-                To build and promote trust and confidence between the parties
-                involved as well as minimize the risk of sales gone bad for both
-                parties ( buyer and seller).
-              </li>
-            </ul>
-          </div>
-          <div className='recStar'>
-            <img src={RectangleStar} alt='RectangleStar' />
-          </div>
-        </div>
-      </section>
-      <section className='third'>
-        <h3>Zero worries when is Exqure involved transactions</h3>
-        <small>
-          Change the game on how you do your online transactions by including
-          our escrow services in every transaction{' '}
-        </small>
+        </section>
+        <section className='third'>
+          <h3>Zero worries when is Exqure involved transactions</h3>
+          <small>
+            Change the game on how you do your online transactions by including
+            our escrow services in every transaction{' '}
+          </small>
 
-        <div className='details'>
-          <Details
-            img={AboutCrypto}
-            title='Cryptocurrency'
-            details='Reduce risks of fraud when doing cyrpto transactions'
-            paragraph='Buy and sell good and quality electronics while using 
+          <div className='details'>
+            <Details
+              img={AboutCrypto}
+              title='Cryptocurrency'
+              details='Reduce risks of fraud when doing cyrpto transactions'
+              paragraph='Buy and sell good and quality electronics while using 
             Exqure for maximum transaction security'
-            btnText='Get Started'
-            styles={{ flexDirection: 'row' }}
-          />
-          <Details
-            img={AboutMall}
-            title='General Merchandise'
-            details='Sell and buy almost anything using our escrow services'
-            paragraph=' Transactions ranging from gadgets, furnitures, clothing & assessories, equipments and so much more can be done securely using Exqure’s escrow services. '
-            btnText='Get Started'
-            styles={{ flexDirection: 'row-reverse' }}
-          />
-        </div>
-      </section>
-      <section className='fourth'>
-        <h4>Meet the Team</h4>
-        <p>
-          Our team is full of passonate, energetic and creative individuals. We
-          learn more and more everyday to improve our skills.
-        </p>
-        <div className='slider-area'>
-          <Slider {...settings}>
-            {imageData.map((detail) => {
-              return (
-                <ImageCard
-                  key={detail.id}
-                  role={detail.role}
-                  name={detail.name}
-                  image={detail.image}
-                />
-              );
-            })}
-          </Slider>
-        </div>
-      </section>
-    </About>
+              btnText='Get Started'
+              styles={{ flexDirection: 'row' }}
+            />
+            <Details
+              img={AboutMall}
+              title='General Merchandise'
+              details='Sell and buy almost anything using our escrow services'
+              paragraph=' Transactions ranging from gadgets, furnitures, clothing & assessories, equipments and so much more can be done securely using Exqure’s escrow services. '
+              btnText='Get Started'
+              styles={{ flexDirection: 'row-reverse' }}
+            />
+          </div>
+        </section>
+        <section className='fourth'>
+          <h4>Meet the Team</h4>
+          <p>
+            Our team is full of passonate, energetic and creative individuals.
+            We learn more and more everyday to improve our skills.
+          </p>
+          <div className='slider-area'>
+            <Slider {...settings}>
+              {imageData.map((detail) => {
+                return (
+                  <ImageCard
+                    key={detail.id}
+                    role={detail.role}
+                    name={detail.name}
+                    image={detail.image}
+                  />
+                );
+              })}
+            </Slider>
+          </div>
+        </section>
+      </About>
+    </>
   );
 }
 

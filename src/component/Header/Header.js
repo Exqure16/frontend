@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../images/logo.png';
@@ -42,10 +42,11 @@ const Header = () => {
         <Navbar.Brand as={Link} to={'/'} onClick={hlogout}>
           <img className='brand' src={logo} alt='' />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls='navbarScroll' />
-        <Navbar.Collapse id='navbarScroll'>
-          {!localStorage.getItem('user-login-info') ? (
-            <>
+
+        {!localStorage.getItem('user-login-info') ? (
+          <>
+            <Navbar.Toggle aria-controls='navbarScroll' />
+            <Navbar.Collapse id='navbarScroll'>
               <Nav
                 className='me-auto my-2 my-lg-0'
                 style={{ maxHeight: '100px', marginLeft: '50px' }}
@@ -102,9 +103,12 @@ const Header = () => {
                   <Botton text={'Signup'} color={'#239ed9'} textColor />
                 </Nav.Link>
               </Nav>
-            </>
-          ) : (
-            <>
+            </Navbar.Collapse>
+          </>
+        ) : (
+          <>
+            <Navbar.Toggle aria-controls='navbarScroll' />
+            <Navbar.Collapse id='navbarScroll'>
               <Nav
                 className='me-auto my-2 my-lg-0'
                 style={{ maxHeight: '100px', marginLeft: '50px' }}
@@ -169,9 +173,9 @@ const Header = () => {
                   </NavDropdown>
                 </Nav>
               </Nav>
-            </>
-          )}
-        </Navbar.Collapse>
+            </Navbar.Collapse>
+          </>
+        )}
       </Container>
     </Navbar>
   );
