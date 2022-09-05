@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/frontend/static/css/main.1e2b08b5.css",
-    "main.js": "/frontend/static/js/main.9481d837.js",
+    "main.css": "/frontend/static/css/main.05c91e7d.css",
+    "main.js": "/frontend/static/js/main.22db6a45.js",
     "static/media/AboutBg.jpg": "/frontend/static/media/AboutBg.4215196ad80ee4150236.jpg",
     "static/media/img1.png": "/frontend/static/media/img1.9149020d2d66c93995d6.png",
     "static/media/AboutMall.jpg": "/frontend/static/media/AboutMall.6b9e861863c510a5ccc9.jpg",
@@ -67,11 +67,11 @@
     "static/media/Logo.svg": "/frontend/static/media/Logo.6e97450d28ab50dee6b4f28192d586f5.svg",
     "static/media/shortline.svg": "/frontend/static/media/shortline.ad16ad68cc11dbb3be59ac277c99d3e9.svg",
     "static/media/line.svg": "/frontend/static/media/line.e6ec7e94737c3e133d42ada4a6b6bfe8.svg",
-    "main.1e2b08b5.css.map": "/frontend/static/css/main.1e2b08b5.css.map",
-    "main.9481d837.js.map": "/frontend/static/js/main.9481d837.js.map"
+    "main.05c91e7d.css.map": "/frontend/static/css/main.05c91e7d.css.map",
+    "main.22db6a45.js.map": "/frontend/static/js/main.22db6a45.js.map"
   },
   "entrypoints": [
-    "static/css/main.1e2b08b5.css",
-    "static/js/main.9481d837.js"
+    "static/css/main.05c91e7d.css",
+    "static/js/main.22db6a45.js"
   ]
 }
