@@ -54,7 +54,10 @@ function App() {
         <Route path='/accepteditems' element={<TransactionAccepteditems />} />
         <Route path='/declined' element={<TransactionDeclined />} />
         <Route path='/paymethod' element={<PaymentMethod />} />
-        <Route path='/transaction' element={<NoTransactions />} />
+        <Route
+          path='/transaction'
+          element={<Protected Cmp={NoTransactions} />}
+        />
         <Route path='/transactions' element={<WithTransaction />} />
         <Route path='/transbuyer' element={<TransBuyer />} />
         <Route path='/notifications' element={<Notifications />} />
