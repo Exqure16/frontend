@@ -67,7 +67,6 @@ function App() {
           <Route path='paymentsetting' element={<PaymentSettings />} />
         </Route>
         <Route path='/mytransactions' element={<TransBuyer />} />
-        <Route path='/mytransactions/wallet' element={<ProvideWallet />} />
         <Route path='/mytransactions' element={<MyTransBuyer />} />
         <Route path='/mytransactions/wallet' element={<ProvideWallet />} />
         <Route path='/contactus' element={<ContactUs />} />
