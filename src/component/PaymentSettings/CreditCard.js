@@ -4,36 +4,30 @@ import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
 import './PaymentSettings.css';
 
-const CreditCard = ({ onClose, cardDetails, setCardDetails, addCard }) => {
-  const [number, setNumber] = useState('');
-  const [name, setName] = useState('');
-  const [expiry, setExpiry] = useState('');
-  const [cvc, setCvc] = useState('');
+const CreditCard = ({
+  onClose,
+  card_number,
+  card_holder_name,
+  cvv,
+  expiry_date,
+  setNumber,
+  setName,
+  setCvc,
+  setExpiry,
+  handleCard,
+}) => {
   const [focus, setFocus] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!(number && name && expiry && cvc)) {
-      alert('Please enter card details ');
-      return;
-    }
-    addCard({ number, name, expiry, cvc });
-    setNumber('');
-    setName('');
-    setExpiry('');
-    setCvc('');
-  };
 
   return (
     <div>
       <Cards
-        number={number}
-        expiry={expiry}
-        cvc={cvc}
-        name={name}
+        number={card_number}
+        expiry={expiry_date}
+        cvc={cvv}
+        name={card_holder_name}
         focused={focus}
       />
-      <form action='' className='popup' onSubmit={handleSubmit}>
+      <form action='' className='popup' onSubmit={handleCard}>
         <div className='formcontrol'>
           <div className=''>
             <label htmlFor='cardnumber' className='mb-2 '>
@@ -44,7 +38,7 @@ const CreditCard = ({ onClose, cardDetails, setCardDetails, addCard }) => {
             type='tel'
             id='cardnumber'
             name='number'
-            val={number}
+            value={card_number}
             placeholder='Enter Card number'
             onChange={(e) => setNumber(e.target.value)}
             onFocus={(e) => setFocus(e.target.name)}
@@ -61,7 +55,7 @@ const CreditCard = ({ onClose, cardDetails, setCardDetails, addCard }) => {
               type='tel'
               id='expirydate'
               name='expiry'
-              val={expiry}
+              value={expiry_date}
               placeholder='MM/YY'
               onChange={(e) => setExpiry(e.target.value)}
               onFocus={(e) => setFocus(e.target.name)}
@@ -76,7 +70,7 @@ const CreditCard = ({ onClose, cardDetails, setCardDetails, addCard }) => {
               type='tel'
               id='cvv'
               name='cvc'
-              val={cvc}
+              value={cvv}
               onChange={(e) => setCvc(e.target.value)}
               onFocus={(e) => setFocus(e.target.name)}
               placeholder='Security number'
@@ -92,7 +86,7 @@ const CreditCard = ({ onClose, cardDetails, setCardDetails, addCard }) => {
             type='tel'
             id='cardholder'
             name='name'
-            val={name}
+            value={card_holder_name}
             onChange={(e) => setName(e.target.value)}
             onFocus={(e) => setFocus(e.target.name)}
             placeholder='Enter name'

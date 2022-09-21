@@ -55,7 +55,7 @@ function NoTransaction() {
               justifyContent: 'center',
               cursor: 'pointer',
             }}
-            onClick={() => navigate('/frontend/create')}
+            onClick={() => navigate('/create')}
           />
         </div>
         <ViewBtn

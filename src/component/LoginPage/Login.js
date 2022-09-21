@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Login.css';
 import hands from '../images/Hands.png';
 import logo from '../images/logo.png';
@@ -16,72 +16,16 @@ import { Routes, Route } from 'react-router-dom';
 import ForgotPassword from './ForgotPassword';
 import Header from '../Header/Header';
 import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../Context/UserContext';
 
 const Login = () => {
+  const { handleChange, signin } = useContext(UserContext);
   const navigate = useNavigate();
   useEffect(() => {
     if (localStorage.getItem('user-info')) {
       navigate('/transaction', { replace: true });
     }
   }, []);
-  const [formValid, setFormValid] = useState(false);
-
-  const [form, setForm] = useState({
-    // email: '',
-    // password: '',
-  });
-
-  useEffect(() => {
-    if (form.email !== '' && form.password !== '') {
-      setFormValid(true);
-    } else {
-      setFormValid(false);
-    }
-  }, [form]);
-
-  const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  async function signup(e) {
-    e.preventDefault();
-
-    if (formValid === true) {
-      let result = await fetch('https://exqure.herokuapp.com/api/user/signin', {
-        method: 'POST',
-        body: JSON.stringify(form),
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-      });
-      result = await result.json();
-      console.log('result', result);
-      // alert(result.msg);
-      if (result.status === 'Success') {
-        alert(result.msg);
-        localStorage.setItem('user-login-info', JSON.stringify(result));
-        navigate('/transaction', { replace: true });
-        // window.location = '#/transaction';
-      } else {
-        alert('error');
-        alert(result.msg);
-      }
-    } else {
-      alert('please fill in reqired fields');
-    }
-  }
-
-  // const submitForm = (e) => {
-  //   e.preventDefault();
-  //   if (formValid === true) {
-  //     console.log(form);
-  //     // window.location = "" ;
-  //   }
-  // };
 
   return (
     <>
@@ -97,7 +41,7 @@ const Login = () => {
           <div className='login-box'>
             <h2>Login </h2>
             <p>Welcome back! please enter your login details</p>
-            <form onSubmit={signup}>
+            <form onSubmit={signin}>
               <label>Email</label>
               <div className='input-box'>
                 {' '}
@@ -131,7 +75,7 @@ const Login = () => {
                   <p>Remember me</p>
                 </div>
 
-                <Link style={{ textDecoration: 'none' }} to='/frontend/forgot'>
+                <Link style={{ textDecoration: 'none' }} to='/forgot'>
                   <div>
                     <p id='forgotPassword'>Forgot Password?</p>{' '}
                   </div>
@@ -141,7 +85,7 @@ const Login = () => {
               <button className='login-btn'>Login</button>
               <p className='end'>
                 Not registered?
-                <Link style={{ textDecoration: 'none' }} to='/frontend/signup'>
+                <Link style={{ textDecoration: 'none' }} to='/signup'>
                   <span id='signUp'>Sign Up</span>
                 </Link>
               </p>
