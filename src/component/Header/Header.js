@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../images/logo.png';
@@ -7,33 +7,21 @@ import candle from '../images/candle.png';
 import Logout from '../images/logout.png';
 import './Header.css';
 import Botton from './Botton';
+import { UserContext } from '../Context/UserContext';
 
 const Header = () => {
-  // const [users, setUsers] = useState([]);
-  // const user = JSON.parse(localStorage.getItem('user-login-info'));
-
-  // useEffect(() => {
-  //   const getUsers = async () => {
-  //     const taskFromServer = await fetchUsers();
-  //     setUsers(taskFromServer);
-  //   };
-  //   getUsers();
-  // }, []);
-
-  // const fetchUsers = async () => {
-  //   const res = await fetch('https://exqure.herokuapp.com/api/user/signup');
-  //   const data = await res.json();
-  //   return data;
-  // };
+  const { user, setUser } = useContext(UserContext);
 
   const navigate = useNavigate();
   const logout = () => {
     localStorage.clear();
+    setUser({ loggedIn: false });
     navigate('/login', { replace: true });
   };
 
   const hlogout = () => {
     localStorage.clear();
+    setUser({ loggedIn: false });
     navigate('/', { replace: true });
   };
   return (
@@ -43,7 +31,7 @@ const Header = () => {
           <img className='brand' src={logo} alt='' />
         </Navbar.Brand>
 
-        {!localStorage.getItem('user-login-info') ? (
+        {user?.loggedIn === false ? (
           <>
             <Navbar.Toggle aria-controls='navbarScroll' />
             <Navbar.Collapse id='navbarScroll'>

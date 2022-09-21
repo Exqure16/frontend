@@ -2,7 +2,7 @@ import { Alert, Container, Form } from 'react-bootstrap';
 import { IoIosNotifications } from 'react-icons/io';
 import './PaymentSettings.css';
 import cuate from '../images/cuate.png';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import React from 'react';
 import PsWithTransaction from './PsWithTransaction';
 import AddPayment from './AddPayment';
@@ -10,8 +10,10 @@ import AddPayment from './AddPayment';
 import apiRequest from './apiRequest';
 import Banks from './Banks';
 import Bank from './Bank';
+import { UserContext } from '../Context/UserContext';
 
 const PaymentSettings = () => {
+  // const msg = useContext(UserContext);
   const API_URL = 'https://exqure.herokuapp.com/api/account/CardDetails';
   const API_URL1 = 'https://exqure.herokuapp.com/api/account/paymentDetails';
   const [cardDetails, setCardDetails] = useState([]);
@@ -25,28 +27,34 @@ const PaymentSettings = () => {
   const [accountNumber, SetAccountNumber] = useState('');
   const [accountName, SetAccountName] = useState('');
   const [bankName, SetBank] = useState('');
+  const [card_number, setNumber] = useState('');
+  const [card_holder_name, setName] = useState('');
+  const [expiry_date, setExpiry] = useState('');
+  const [cvv, setCvc] = useState('');
+
+  // const newCard = JSON.parse(localStorage.getItem('card'))
 
   //card Details
   //fetch data
-  useEffect(() => {
-    const fetchCardDetails = async () => {
-      try {
-        const res = await fetch(API_URL);
-        if (!res.ok) throw Error('Did not recieve expected data');
-        const data = await res.json();
-        setCardDetails(data);
-        setFetchError(null);
-      } catch (err) {
-        console.log(err.message);
-        setFetchError(err.message);
-      } finally {
-        setIsloading(false);
-      }
-    };
-    setTimeout(() => {
-      (async () => await fetchCardDetails())();
-    }, 2000);
-  }, []);
+  // useEffect(() => {
+  //   const fetchCardDetails = async () => {
+  //     try {
+  //       const res = await fetch(API_URL);
+  //       if (!res.ok) throw Error('Did not recieve expected data');
+  //       const data = await res.json();
+  //       setCardDetails(data);
+  //       setFetchError(null);
+  //     } catch (err) {
+  //       console.log(err.message);
+  //       setFetchError(err.message);
+  //     } finally {
+  //       setIsloading(false);
+  //     }
+  //   };
+  //   setTimeout(() => {
+  //     (async () => await fetchCardDetails())();
+  //   }, 2000);
+  // }, []);
 
   const deleteCardDetail = async (id) => {
     const cards = cardDetails.filter((cardDetail) => cardDetail.id !== id);
@@ -57,24 +65,51 @@ const PaymentSettings = () => {
     // const result = await apiRequest(reqUrl, deleteOptions);
     // if (result) setFetchError(result);
   };
-
+  const handleCard = (e) => {
+    e.preventDefault();
+    // if (!(number && name && expiry && cvc)) {
+    //   alert('Please enter card details ');
+    //   return;
+    // }
+    addCard({ card_number, card_holder_name, expiry_date, cvv });
+    setNumber('');
+    setName('');
+    setExpiry('');
+    setCvc('');
+  };
+  //Post Card Details
   const addCard = async (cardDetail) => {
-    const id = cardDetails.length
-      ? cardDetails[cardDetails.length - 1].id + 1
-      : 1;
-    const newCardDetails = { id, ...cardDetail };
-    const listCardDetails = [...cardDetails, newCardDetails];
-    setCardDetails(listCardDetails);
+    // const id = cardDetails.length
+    //   ? cardDetails[cardDetails.length - 1].id + 1
+    //   : 1;
+    // const newCardDetails = { card_number, card_holder_name, expiry_date, cvv };
+    // const listCardDetails = [...cardDetails, newCardDetails];
+    // setCardDetails(listCardDetails);
+    // localStorage.setItem('card', JSON.stringify(listCardDetails));
 
-    const postOptions = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newCardDetails),
-    };
-    const result = await apiRequest(API_URL, postOptions);
-    if (result) setFetchError(result);
+    // const postOptions = {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     Accept: 'aplication/json',
+    //   },
+    //   body: JSON.stringify(newCardDetails),
+    // };
+    // const result = await apiRequest(API_URL, postOptions);
+    // if (result) setFetchError(result);
+    const res = await fetch(
+      'https://exqure.herokuapp.com/api/account/CardDetails',
+      {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify(cardDetail),
+      }
+    );
+    alert('card details added');
+    // const data = await res.json();
+    // setCardDetails([...cardDetails, data]);
   };
   //payment Details
   useEffect(() => {
@@ -93,10 +128,10 @@ const PaymentSettings = () => {
   }, []);
 
   const addPayment = async (paymentDetail) => {
-    const id = paymentDetails.length
-      ? paymentDetails[paymentDetails.length - 1].id + 1
-      : 1;
-    const newPaymentDetails = { id, ...paymentDetail };
+    // const id = paymentDetails.length
+    //   ? paymentDetails[paymentDetails.length - 1].id + 1
+    //   : 1;
+    const newPaymentDetails = { ...paymentDetail };
     const listPaymentDetail = [...paymentDetails, newPaymentDetails];
     setPaymentDetails(listPaymentDetail);
 
@@ -232,7 +267,19 @@ const PaymentSettings = () => {
         </button>
       </div>
       {/* modal */}
-      <AddPayment handleClose={handleClose} show={show} addCard={addCard} />
+      <AddPayment
+        handleClose={handleClose}
+        show={show}
+        card_number={card_number}
+        card_holder_name={card_holder_name}
+        cvv={cvv}
+        expiry_date={expiry_date}
+        setNumber={setNumber}
+        setName={setName}
+        setCvc={setCvc}
+        setExpiry={setExpiry}
+        handleCard={handleCard}
+      />
     </Container>
   );
 };
