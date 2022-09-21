@@ -4,7 +4,7 @@ export const UserContext = createContext({});
 
 const Context = ({ children }) => {
   const navigate = useNavigate();
-  const [user, setUser] = useState(() => ({ loggedIn: true }));
+  const [user, setUser] = useState(() => ({ loggedIn: false }));
   const [formValid, setFormValid] = useState(false);
   const [form, setForm] = useState({
     // email: '',
