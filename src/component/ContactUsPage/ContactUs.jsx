@@ -61,21 +61,21 @@ const ContactUs = () => {
         <div className='socialDiv'>
           <h2>Reach us via our social media</h2>
           <div className='inSocialDiv'>
-            <div onClick={()=>handleClick('https://www.facebook.com/Exqure.escrow')}>
-              <img src ={facebook} alt =' '/>
-              <p>Exqure escrow</p>
+            <div className='ininSocialDiv' onClick={()=>handleClick('https://www.facebook.com/profile.php?id=100082029624329')}>
+              <img style={{cursor:'pointer'}} src ={facebook} alt =' '/>
+              <p style={{cursor:'pointer'}}>Exqure escrow</p>
             </div>
-            <div onClick={()=>handleClick('https://www.twitter.com/exqureE')}>
-              <img src ={twitter} alt =' '/>
-              <p>exqureE</p>
+            <div className='ininSocialDiv' onClick={()=>handleClick('https://www.twitter.com/ExqureE?t=rLE_WMWGFiuRe5Rm_HqNIQ&s=09')}>
+              <img style={{cursor:'pointer'}} src ={twitter} alt =' '/>
+              <p style={{cursor:'pointer'}}>exqureE</p>
             </div>
-            <div onClick={()=>handleClick('https//www.instagram.com/exqureescrow')}>
-              <img src ={instagram} alt =' '/>
-              <p>exqureescrow</p>
+            <div className='ininSocialDiv' onClick={()=>handleClick('https://www.instagram.com/exqureescrow?igshid=YmMyMTA2M2Y=')}>
+              <img style={{cursor:'pointer'}} src ={instagram} alt =' '/>
+              <p style={{cursor:'pointer'}}>exqureescrow</p>
             </div>
-            <div onClick={()=>handleClick('https://www.linkedin.com/Exqure')}>
-              <img src ={linkedIn} alt =' '/>
-              <p>Exqure</p>
+            <div className='ininSocialDiv' onClick={()=>handleClick('https://www.linkedin.com/company/exqureescrow')}>
+              <img style={{cursor:'pointer'}} src ={linkedIn} alt =' '/>
+              <p style={{cursor:'pointer'}}>Exqure</p>
             </div>
           </div>
         </div>

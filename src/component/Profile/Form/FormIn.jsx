@@ -162,6 +162,56 @@ export const FormIn= ({accountType1 ,children})=>{
         }
 
     };
+
+    const validateInput=()=>{
+        if(e.target.name=='fullName'|| e.target.name =='coFullname'){
+            if(e.target.value.length >= 3 &&
+                e.target.value !== '' && 
+                e.target.value.trim().match(/[a-zA-Z][a-zA-Z ]+/)
+              ) {
+                setNameIsValid(true);
+              } else {
+                setNameIsValid(false);
+                setNameError(
+                  'name should contain only letters and must be greater than five letters'
+                );
+            }
+        }
+        if(e.target.name=='phoneNumber'|| e.target.name =='coPhoneNumber'){
+            if(e.target.value.length >= 3 &&
+                e.target.value !== '' && 
+                e.target.value.trim().match(/[a-zA-Z][a-zA-Z ]+/)
+              ) {
+                setNameIsValid(true);
+              } else {
+                setNameIsValid(false);
+                setNameError(
+                  'name should contain only letters and must be greater than five letters'
+                );
+            }
+        }
+        if(e.target.name=='altPhoneNumber'|| e.target.name =='coAltPhoneNumbe'){
+            
+        }
+        if(e.target.name=='country'|| e.target.name =='coCountry'){
+
+        }
+        if(e.target.name=='dateOfBirth'|| e.target.name =='coDateOfBirth'){
+
+        }
+        if(e.target.name=='billingAddress'|| e.target.name =='coBillingAddress'){
+
+        }
+        if(e.target.name=='city'|| e.target.name =='coCity'){
+
+        }
+        if(e.target.name=='state'|| e.target.name =='coState'){
+
+        }
+        if(e.target.name=='zipCode'|| e.target.name =='coZipCode'){
+
+        }
+    }
     
     return(
         <PropContext.Provider value = {{coAccountInfo, setCoAccountInfo,companyName,companyEmail}}>

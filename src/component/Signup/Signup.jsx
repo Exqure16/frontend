@@ -167,8 +167,6 @@ function Signup() {
            "Accept" :'application/json'
          }
       }).then(response=>response.json());
-        setSDisplay('block');
-        setDisplay('none');
       
        localStorage.setItem("user-info", JSON.stringify(result));
   

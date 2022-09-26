@@ -34,7 +34,7 @@ const TransBuyer = ()=>{
             itemAttr = {'General Merchandise'}
             itemCat = {'The selected category is shown here'}
             totalAmount = {'$0.00'}
-            footHeader = {'Payment details'}
+            footHeader = {'Transaction Invitation'}
             footParagraph = {"Invite via email addreess"}
             footImg = {sms}
             footAlt = {'Copy'}
@@ -49,41 +49,41 @@ const TransBuyer = ()=>{
             handleClick = {handleClick}
             bgColor = {'white'}
         >
-            <div>
-            <div className='transKey'> ITEM NAME: </div>
-            <span className='transValue'> The name is shown </span>
+            <div className='inTransDetDiv'>
+                <div className='transKey'> ITEM NAME: </div>
+                <p className='transValue'> The name is shown </p>
             </div>       
-            <div>
+            <div className='inTransDetDiv'>
                 <div className='transKey'> DESCRIPTION: </div>
-                    <span className='transValue'> This item isn't new but has good enough quality to make it as new 
+                    <p className='transValue'> This item isn't new but has good enough quality to make it as new 
                         <span onClick={handleClick1} style={{ marginLeft:'1rem',cursor:'pointer', color:'#239ED9', fontWeight:'bolder'}}>View Images</span>
-                    </span>
+                    </p>
                 
             </div>
             {showImage?<ImagePopUp setShowImage={setShowImage}/>:''}
-            <div>
+            <div className='inTransDetDiv'>
                 <div className='transKey'> SHIPPING FEE: </div>
-                    <span className='transValue' > 
+                    <p className='transValue' > 
                         <span style={{color:'red'}} > $0.00 </span> 
                         To be paid by buyer 
                         <span style ={{opacity:'0.7'}}>(If applied) </span>
-                    </span>
+                    </p>
             </div>       
-            <div>
+            <div className='inTransDetDiv'>
                 <div className='transKey'> SHIPPING METHOD: </div>
-                <span className='transValue' > Selected shipping method</span>
+                <p className='transValue' > Selected shipping method</p>
             </div>       
-            <div>
+            <div className='inTransDetDiv'>
                 <div className='transKey'> INSPECTION PERIOD: </div>
-                <span className='transValue'> 1day(s) left</span>
+                <p className='transValue'> 1day(s) left</p>
             </div>       
-            <div>
+            <div className='inTransDetDiv'>
                 <div className='transKey'> PRICE: </div>
-                <span className='transValue' style={{color:'red'}}> $0.00</span>
+                <p className='transValue' style={{color:'red'}}> $0.00</p>
             </div>       
-            <div>
+            <div className='inTransDetDiv'>
                 <div className='transKey'> EXQURE'S COMMISSION: </div>
-                <span className='transValue' style={{color:'red'}}> $1.00 </span>
+                <p className='transValue' style={{color:'red'}}> $1.00 </p>
             </div>       
             
         </TransSuccessful>
