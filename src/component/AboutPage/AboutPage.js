@@ -5,13 +5,12 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import ImageCard from './ImageCard';
 import imageData from './ImageData';
-import AboutBg from './images/AboutBg.jpg'
-import AboutCrypto from './images/AboutCrypto.jpg'
-import AboutMall from './images/AboutMall.jpg'
+import AboutBg from '../images/AboutBg.jpg'
+import AboutCrypto from '../images/AboutCrypto.jpg'
+import AboutMall from '../images/AboutMall.jpg'
 // import Vector from './images/arrowlogo.png'
-import LogoExqure from './images/LogoExqure.png'
-import RectangleStar from './images/RectangleStar.png'
-import './App.css';
+import LogoExqure from '../images/LogoExqure.png'
+import RectangleStar from '../images/RectangleStar.png'
 import Details from './Details';
 
 function AboutPage() {

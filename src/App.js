@@ -28,7 +28,7 @@ import Accountsetting from './component/Accountsetting/Accountsetting';
 import PaymentMethod from './component/PaymentMethod/PaymentMethod';
 import AboutPage from './component/AboutPage/AboutPage';
 import ContactUs from './component/ContactUsPage/ContactUs';
-
+import HelpDesk from './component/HelpDesk/HelpDesk'
 
 function App() {
   return (
@@ -42,6 +42,7 @@ function App() {
         <Route path='/frontend' element={<HomePage />} />
         <Route path='frontend/login' element={<Login />} />
         <Route path='frontend/forgot' element={<ForgotPassword />} />
+        <Route path='/help' element={<HelpDesk />} />
         <Route path='frontend/reset' element={<ResetPassword />} />
         <Route path='frontend/signup' element={<Signup />} />
         <Route path='frontend/create' element={<CreateTransaction />} />
