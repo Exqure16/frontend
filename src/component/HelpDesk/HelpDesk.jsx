@@ -72,28 +72,73 @@ const Help = styled.main`
   }
  }
 
- .faqs{
+ .faqs {
   margin: 30px 0;
-  h3{
+  h3 {
    font-size: 40px;
   }
 
-  .faqImage{
+  .faqImage {
    display: flex;
    flex-direction: row;
    align-items: center;
    justify-content: space-between;
    gap: 20px;
 
-
-   .faqarea{
+   .faqarea {
     width: 50%;
    }
 
-   .faqimage{
+   .faqimage {
     margin: auto;
-    img{
+    img {
      width: 600px;
+    }
+   }
+  }
+ }
+ @media (min-width: 1000px){
+  .faqs{
+   .faqImage{
+    .faqarea{
+     width: 60%;
+    }
+    .faqimage{
+     width: 40%;
+     img{
+      width: 100%;
+     }
+    }
+   }
+  }
+ }
+
+ @media (min-width: 280px) and (max-width: 926px) {
+  margin: 25px;
+
+  h3 {
+   font-size: 2.2rem;
+   padding: 15px 0;
+  }
+
+  .inputarea {
+   .icon {
+    height: 2rem;
+   }
+
+   input {
+    width: 95%;
+   }
+  }
+
+  .faqs {
+   .faqImage {
+    .faqarea {
+     width: 100%;
+    }
+
+    .faqimage {
+     display: none;
     }
    }
   }
