@@ -21,6 +21,7 @@
   height: 160px;
   border-radius: 4px;
   text-align: center;
+  cursor: pointer;
 }
 
 .paycardbody {
@@ -44,6 +45,7 @@
   border: 1px solid #239ed9;
   border-radius: 4px;
   text-align: center;
+  cursor: pointer;
 }
 
 .flutercardbody {

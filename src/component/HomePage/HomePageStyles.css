@@ -103,7 +103,7 @@
     font-family: Futura PT;
 }
 
-.writeup > .writeup-buttons > button {
+#writeup-button {
     padding: 0.75rem 2rem;
     background: #239ED9;
     border-radius: 4px;
@@ -117,7 +117,7 @@
     transition: all 1s;
 }
 
-.writeup > .writeup-buttons > button ~ button {
+#writeup-button2 {
     padding: 0.75rem 2rem;
     background: white;
     border-radius: 4px;
@@ -129,14 +129,14 @@
     font-size: 1rem;
 }
 
-.writeup > .writeup-buttons > button > span {
+#writeup-button2 > span {
     margin-left: 0.5rem;
 }
 
-.writeup > .writeup-buttons > button:hover {
+#writeup-button:hover {
     background: #1b7aa7;
 }
-.writeup > .writeup-buttons > button ~ button:hover {
+#writeup-button2:hover {
     background: #1b7aa7;
     border: 0.1rem solid #1b7aa7;
     color: white;
