@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import './contactUs.css';
 import phone from '../images/call.svg';
 import sms from '../images/sms.svg';
@@ -11,27 +11,38 @@ import linkedIn from '../images/linkedinBlack.svg';
 import contactUsImg from '../images/contactUsImg.svg';
 import Footer from '../../component/Footer';
 import Header from '../Header/Header';
-
+import * as yup from 'yup'
+import { useForm } from 'react-hook-form';
+import {yupResolver} from '@hookform/resolvers/yup'
+import emailjs from '@emailjs/browser'
 const ContactUs = () => {
   const handleClick = (url) => {
     window.open(url, '_blank');
   };
-  const [user, setUser] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    message: '',
+  const schema = yup.object().shape({
+    firstname: yup.string().required(),
+    lastname: yup.string().required(),
+    email: yup.string().email().required(),
+    message: yup.string().required(),
   });
-  const { firstName, lastName, email, message } = user;
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setUser({
-      ...user,
-      [name]: value,
-    });
-  };
+  const { register, 
+      handleSubmit,
+      formState: {errors},
+      reset
+    } = useForm({
+    resolver: yupResolver(schema),
+    reValidateMode: 'onChange',
+    mode:'onTouched'
+  })
+  const form = useRef();
   const submitForm = () => {
-    console.log(user);
+    emailjs.sendForm('service_4e7g8gp','template_c3g370v',form.current,'SuH82dPV7MnRfn7cd')
+      .then((result)=>{
+        alert('Your message has been sent to us. We will respond to you soon')
+      }, (error)=>{
+        alert('Your message has failed to send. Please check your network connection')
+      });
+    reset()
   };
   return (
     <>
@@ -62,7 +73,6 @@ const ContactUs = () => {
         <div className='socialDiv'>
           <h2>Reach us via our social media</h2>
           <div className='inSocialDiv'>
-<<<<<<< HEAD
             <div className='ininSocialDiv' onClick={()=>handleClick('https://www.facebook.com/profile.php?id=100082029624329')}>
               <img style={{cursor:'pointer'}} src ={facebook} alt =' '/>
               <p style={{cursor:'pointer'}}>Exqure escrow</p>
@@ -78,31 +88,6 @@ const ContactUs = () => {
             <div className='ininSocialDiv' onClick={()=>handleClick('https://www.linkedin.com/company/exqureescrow')}>
               <img style={{cursor:'pointer'}} src ={linkedIn} alt =' '/>
               <p style={{cursor:'pointer'}}>Exqure</p>
-=======
-            <div
-              onClick={() =>
-                handleClick('https://www.facebook.com/Exqure.escrow')
-              }
-            >
-              <img src={facebook} alt=' ' />
-              <p>Exqure escrow</p>
-            </div>
-            <div onClick={() => handleClick('https://www.twitter.com/exqureE')}>
-              <img src={twitter} alt=' ' />
-              <p>exqureE</p>
-            </div>
-            <div
-              onClick={() =>
-                handleClick('https//www.instagram.com/exqureescrow')
-              }
-            >
-              <img src={instagram} alt=' ' />
-              <p>exqureescrow</p>
-            </div>
-            <div onClick={() => handleClick('https://www.linkedin.com/Exqure')}>
-              <img src={linkedIn} alt=' ' />
-              <p>Exqure</p>
->>>>>>> 3fecdbf8db5bc9bbe42f85ee38d7e0c9de5ada85
             </div>
           </div>
         </div>
@@ -114,7 +99,7 @@ const ContactUs = () => {
             </p>
           </div>
           <div className='inFeedBackDiv'>
-            <div className='inputFeedBackDiv'>
+            <form ref={form} className='inputFeedBackDiv'>
               <div className='inInputfDiv'>
                 <div>
                   <label>First name</label>
@@ -122,11 +107,11 @@ const ContactUs = () => {
                     placeholder='Enter first name'
                     type={'text'}
                     name={'firstName'}
-                    value={firstName}
-                    onChange={(e) => {
-                      handleChange(e);
-                    }}
+                    {...register('firstname')}
                   />
+                  {errors?.firstname &&
+                    <p style={{color:'red', textAlign:'left', fontSize:'0.8rem'}}>{errors?.firstname.message}</p>
+                  }
                 </div>
                 <div>
                   <label>Last name</label>
@@ -134,11 +119,11 @@ const ContactUs = () => {
                     placeholder='Enter last name'
                     type={'text'}
                     name={'lastName'}
-                    value={lastName}
-                    onChange={(e) => {
-                      handleChange(e);
-                    }}
+                    {...register('lastname')}
                   />
+                  {errors?.lastname &&
+                    <p style={{color:'red', textAlign:'left', fontSize:'0.8rem'}}>{errors?.lastname.message}</p>
+                  }
                 </div>
               </div>
               <div className='inInputsDiv'>
@@ -147,11 +132,11 @@ const ContactUs = () => {
                   placeholder='Enter email'
                   type={'text'}
                   name={'email'}
-                  value={email}
-                  onChange={(e) => {
-                    handleChange(e);
-                  }}
+                  {...register('email')}
                 />
+                {errors?.email &&
+                    <p style={{color:'red', textAlign:'left', fontSize:'0.8rem'}}>{errors?.email.message}</p>
+                  }
               </div>
               <div className='inInputsDiv'>
                 <label>Message</label>
@@ -159,20 +144,20 @@ const ContactUs = () => {
                   placeholder='Your message'
                   type={'text'}
                   name={'message'}
-                  value={message}
-                  onChange={(e) => {
-                    handleChange(e);
-                  }}
+                  {...register('message')}
                 />
+                {errors?.message &&
+                    <p style={{color:'red', textAlign:'left', fontSize:'0.8rem'}}>{errors?.message.message}</p>
+                  }
               </div>
               <button
-                onClick={submitForm}
-                onSubmit={submitForm}
+                onClick={handleSubmit(submitForm)}
+                onSubmit={handleSubmit(submitForm)}
                 className='contactBtn'
               >
                 Get in Touch
               </button>
-            </div>
+            </form>
             <img src={contactUsImg} alt='' />
           </div>
         </div>
