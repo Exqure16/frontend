@@ -37,7 +37,7 @@ function Signup() {
     }
   }, []);
 
-  //sets initail states for the phone input
+  //sets initial states for the phone input
   const [dialCode, setDialCode] = useState('+234');
   const [openPhone, setOpenPhone] = useState('none');
   const [phoneFlagUrl2, setPhoneFlagUrl2] = useState(
@@ -207,18 +207,25 @@ function Signup() {
                     name='fullname'
                     onChange={(e) => {
                       handleChange(e);
-                      if (
-                        e.target.value.length >= 3 &&
-                        e.target.value !== '' &&
-                        e.target.value.trim().match(/[a-zA-Z][a-zA-Z ]+/)
-                      ) {
-                        setNameIsValid(true);
-                      } else {
-                        setNameIsValid(false);
-                        setNameError(
-                          'name should contain only letters and must be greater than five letters'
-                        );
+                      if(e.target.value.length ===0){
+                        setNameIsValid(false)
+                        setNameError('This field should not be empty');
                       }
+                      else if(e.target.value.length < 6){
+                          setNameIsValid(false)
+                          setNameError('name must be greater than 5 letters')
+                      }
+                      else if(!/^[a-zA-Z\s]+$/.test(e.target.value)){
+                          setNameIsValid(false)
+                          setNameError('name should be only letters')
+                      }
+                      if (
+                          e.target.value.length >5 &&
+                          e.target.value !== '' &&
+                          /^[a-zA-Z\s]+$/.test(e.target.value)
+                        ) {
+                          setNameIsValid(true);
+                        }
                     }}
                   />
                 </div>
@@ -237,19 +244,26 @@ function Signup() {
                     name='email'
                     onChange={(e) => {
                       handleChange(e);
-                      if (
-                        e.target.value.match(
-                          /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i
-                        ) &&
-                        e.target.value !== ''
-                      ) {
-                        setEmailIsValid(true);
-                      } else {
-                        setEmailIsValid(false);
-                        setEmailError(
-                          'email should be similar to - example@gmail.com'
-                        );
+                      if(e.target.value.length===0){
+                        setEmailError('This field should not be empty')
+                        setEmailIsValid(false)
                       }
+                      else if(!e.target.value.match(
+                          /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i
+                        )){
+                          setEmailIsValid(false);
+                          setEmailError(
+                            'email should be similar to - example@gmail.com'
+                          );
+                        }
+                      if (
+                          e.target.value.match(
+                            /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i
+                          ) &&
+                          e.target.value.length !== 0
+                        ) {
+                          setEmailIsValid(true);
+                        }
                     }}
                   />
                 </div>
@@ -384,22 +398,27 @@ function Signup() {
                     phone: p,
                   });
 
-                  if (!e.target.value.match(/(?=.*?[0-9])/)) {
-                    setPhoneNumberError(
+                  if(e.target.value.length ===0){
+                    setPhoneNumberError('This field should not be empty');
+                    setPhoneNumberIsValid(false)
+                  }
+                  else if (!(/^[0-9]+$/.test(e.target.value))
+                  ) {
+                      setPhoneNumberError(
                       'This field should contain only numbers 0-9'
-                    );
-                  } else if (!e.target.value >= 8) {
-                    setPhoneNumberError(
+                      );
+                      setPhoneNumberIsValid(false);
+                  } else if (!e.target.value.length >= 8) {
+                      setPhoneNumberError(
                       'This field should contain at least 8 numbers'
-                    );
+                      );
+                      setPhoneNumberIsValid(false);
                   }
                   if (
-                    e.target.value.match(/(?=.*?[0-9])/) &&
-                    e.target.value >= 8
+                      /^[0-9]+$/.test(e.target.value) &&
+                      e.target.value.length >= 8
                   ) {
-                    setPhoneNumberIsValid(true);
-                  } else {
-                    setPhoneNumberIsValid(false);
+                      setPhoneNumberIsValid(true);
                   }
                 }}
               />
