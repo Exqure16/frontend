@@ -27,7 +27,7 @@ export default function HomePage() {
                     Exqure guarantees 100% security and protects users 
                     from scams in transactions with our escrow services.
                 </p>
-                <Link to="login">
+                <Link to="signup">
                     <button id="writeup-button">Get Started</button>
                 </Link>
                 <Link to="">
