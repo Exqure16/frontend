@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Signup.css';
 import {
@@ -9,7 +9,6 @@ import {
   FormControl,
   Form,
 } from 'react-bootstrap';
-// import Footer from '../Footer';
 import logo from '../images/logo.png';
 import lock from '../images/lock.svg';
 import personIcon from '../images/personicon.svg';
@@ -27,20 +26,31 @@ import showP from '../images/showP.svg';
 import CountrySelect from '../Profile/Form/CountrySelect';
 import { Countries } from '../Countries';
 import Input from '../Profile/Form/Input';
-import { parsePhoneNumber } from 'react-phone-number-input';
+
 function Signup() {
-
-  
-  const [phonee, setPhonee] = useState('');
-
-  // const [phoneNumber, setPhoneNumber] = useState('');
-
+  //sets initail states for the phone input
   const [dialCode, setDialCode] = useState('+234');
   const [openPhone, setOpenPhone] = useState('none');
   const [phoneFlagUrl2, setPhoneFlagUrl2] = useState(
     'https://flagcdn.com/ng.svg'
   );
+<<<<<<< HEAD
+=======
   const [country, setCountry] = useState('');
+  const onPhoneClick =()=>(valu)=>{
+    setDialCode(valu?.target?.childNodes[1]?.innerText);
+    setPhoneFlagUrl2(valu?.target?.childNodes[0]?.currentSrc);
+    setOpenPhone('none');
+  }
+  const getPhoneDetails = Countries?.map(
+    (country,index)=><CountrySelect
+    key = {index}
+    onCountryClick = {onPhoneClick(country)}
+    countryCode = {country.code?.toLowerCase()}
+    countryName = {country.name}
+    countryDialCode = {country.dial_code}
+    />
+  );
   const handleChange1 = (value) => {
     let p,
       c = '';
@@ -54,55 +64,60 @@ function Signup() {
     console.log(c + p);
   };
 
+>>>>>>> 53e91cefc04ea8a3677f9fb7bbdfba4f05e1100e
   const [phoneValue, setPhoneValue] = useState('');
+
+  //states for toggling display of the successful signup process. sDisplay for classname=signUpCol ; display for classname=formCol
   const [display, setDisplay] = useState('block');
   const [sdisplay, setSDisplay] = useState('none');
+  const [btnColor, setBtnColor] = useState('#239ED9');
 
-  // const data = fetch('http://exqure.herokuapp.com/api/user/signup');
-
+  // states for form validation and form input validation
   const [formIsValid, setFormIsValid] = useState(false);
   const [nameIsValid, setNameIsValid] = useState(false);
-
   const [emailIsValid, setEmailIsValid] = useState(false); 
   const [passwordIsValid, setPasswordIsValid] = useState(false); 
   const [confirmPasswordIsValid, setConfirmPasswordIsValid] = useState(false); 
-  const [phoneNumberIsValid, setPhoneNumberIsValid] = useState(false); 
+  const [phoneNumberIsValid, setPhoneNumberIsValid] = useState(false);
+  
+  //states for toggling the "type" of the password and confirmpassword input 
   const [passwordType, setPasswordType] = useState('password'); 
   const [passwordType1, setPasswordType1] = useState('password'); 
-
+  
+  //states for errors of different form input
+  const [nameError, setNameError] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+  const [confirmPasswordError, setConfirmPasswordError] = useState('');
+  const [phoneNumberError, setPhoneNumberError] = useState('');
+  
+  //initial state of the sign up form
   const [form, setForm] = useState({
     fullname: '',
     email: '',
     password: '',
     confirmpassword: '',
     phone:''
-    
-
   });
 
-  /*
-  useEffect(()=>{
-    fetch('http://exqure.herokuapp.com/api/user/signup',{
-      method: 'POST',
-      body: JSON.stringify({
-        form
-      }),
-      headers:{
-        'Content-type' : 'application/json: charset =UTF-8'
-      }
-    })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(err => console.log(err));
+  // to handle the changes when each country is clicked
+  const handleClick = (country)=>{
+    setPhoneFlagUrl2(`https://flagcdn.com/${country.code?.toLowerCase()}.svg`);
+    setDialCode(country.dial_code);
+    setOpenPhone('none');
   }
-  
-  ,[formIsValid])*/
-  const [nameError, setNameError] = useState('');
-  const [emailError, setEmailError] = useState('');
-  const [passwordError, setPasswordError] = useState('');
-  const [confirmPasswordError, setConfirmPasswordError] = useState('');
-  const [phoneNumberError, setPhoneNumberError] = useState('');
+  // gets the details of each country and displays it
+  const getPhoneDetails = Countries.map((country)=> 
+    <CountrySelect 
+      key={country.name} 
+      countryName={country.name} 
+      countryCode ={country.code}
+      countryDialCode = {country.dial_code}
+      onCountryClick = {()=>handleClick(country)}
+    />
+  )
 
+  //handleChange2 - function that handles the logics fro the validation for the different form inputs
   const handleChange2 = (e) => {
     const uppercaseRegExp = /(?=.*?[A-Z])/;
     const lowercaseRegExp = /(?=.*?[a-z])/;
@@ -137,27 +152,24 @@ function Signup() {
     } else {
       setPasswordIsValid(false);
     }
+  
+
   };
 
+  //handleChange - function that handles the updating of the form
   const handleChange = (e) => {
     setForm({
       ...form,
       [e.target.name]: e.target.value,
     });
+<<<<<<< HEAD
   };
 
-  // const submitForm = (e) => {
-  //   e.preventDefault();
-
-
-    
-  // };
-
+//signup- an asynchronous function that makes pushes the form data to the backend as soon as the requirements are made
   async function signup(e){
     e.preventDefault();
-    // console.log(form);
-    
-    
+=======
+>>>>>>> 53e91cefc04ea8a3677f9fb7bbdfba4f05e1100e
 
     if (
       nameIsValid &&
@@ -170,14 +182,39 @@ function Signup() {
     } else {
       setFormIsValid(false);
     }
+  
+  };
 
+<<<<<<< HEAD
     if (formIsValid === true) {
       setSDisplay('block');
       setDisplay('none');
-      console.log(form);
+
+=======
+
+
+  async function signup(e){
+    e.preventDefault();
+    // console.log(form);
+    if (
+      nameIsValid &&
+      emailIsValid &&
+      passwordIsValid &&
+      confirmPasswordIsValid &&
+      phoneNumberIsValid
+    ) {
+      setFormIsValid(true);
+      // setBtnColor('yellow');
+    } else {
+      setFormIsValid(false);
+      // setBtnColor('blue');
+>>>>>>> 53e91cefc04ea8a3677f9fb7bbdfba4f05e1100e
     }
 
-    let result = await fetch('https://exqure.herokuapp.com/api/user/signup', {
+    
+    if(formIsValid){
+  
+   let result = await fetch('https://exqure.herokuapp.com/api/user/signup', {
        method: "POST",
        body:JSON.stringify(form),
        headers: {
@@ -187,9 +224,31 @@ function Signup() {
      })
      result= await result.json()
      console.log("result", result);
-    alert(result.msg);
+    //  setSDisplay('block');
+    // setDisplay('none');
+    
      localStorage.setItem("user-info", JSON.stringify(result));
+
+     if (result.status ==="Success") {
+      setSDisplay('block');
+      setDisplay('none');
+      console.log(form);
+    
+
+    }
+    else{
+    alert(result.msg); 
+    }
+ }
+ else{
+  alert('please fill all fields correctly');
+  
+ }
+   
    }
+
+
+ 
 
   return (
     <Container fluid>
@@ -210,8 +269,6 @@ function Signup() {
                   placeholder='Enter full name'
                   type='username'
                   name='fullname'
-                  //value = {value}
-
                   onChange={(e)=>{handleChange(e);
                     if(form.fullname.length >= 3 &&
                       form.fullname !== '' && 
@@ -280,8 +337,8 @@ function Signup() {
                   <span style={{position:'absolute', right:'2rem'}}>
                   
                     {passwordType==='password'? 
-                    <img src={hideP} onClick ={()=>setPasswordType('text')} className='icon' color='#239ED9' />
-                    :<img src={showP} onClick ={()=>setPasswordType('password')}className='icon' color='#239ED9' />}
+                    <img src={hideP} onClick ={()=>setPasswordType('text')} className='icon1' color='#239ED9' />
+                    :<img src={showP} onClick ={()=>setPasswordType('password')} className='icon1' color='#239ED9' />}
                   </ span>
               </div>
               {!passwordIsValid ? (
@@ -291,7 +348,7 @@ function Signup() {
               )}
             </InputGroup>
 
-            <label className='label' htmlFor='basic-url'>
+            <label className='label'>
               Confirm password
             </label>
             <InputGroup className='mb-3'>
@@ -316,8 +373,8 @@ function Signup() {
                 />
                 <span style={{position:'absolute',right:'2rem'}}>
                   {passwordType1==='password'? 
-                  <img src={hideP} onClick ={()=>setPasswordType1('text')} className='icon' color='#239ED9' />
-                  :<img src={showP} onClick ={()=>setPasswordType1('password')}className='icon' color='#239ED9' />}
+                  <img src={hideP} onClick ={()=>setPasswordType1('text')} className='icon1' color='#239ED9' />
+                  :<img src={showP} onClick ={()=>setPasswordType1('password')}className='icon1' color='#239ED9' />}
                 </span>
               </div>
               {!confirmPasswordIsValid ? (
@@ -354,18 +411,16 @@ function Signup() {
               inputPL={'7.5rem'}
               inputW={'100%'}
               placeholder={'90 000 0000'}
-              inputValue ={phonee}
-                    name= "phone"
-                    onChange = {(e)=>{
-                        let p= dialCode;
-                        // p+= e.nativeEvent.data;
-                        p+= e.target.value;
-                        // e.target.name = phone;
-                        setPhonee(p);
-                        setForm({
-                          ...form,
-                         phone: p,
-                        });
+              inputValue ={phoneValue}
+                name= "phone"
+                onChange = {(e)=>{
+                  let p= dialCode;
+                  p+= e.target.value;
+                  setPhoneValue(p);
+                  setForm({
+                    ...form,
+                     phone: p,
+                  });
                 
                 if (!e.target.value.match(/(?=.*?[0-9])/)) {
                   setPhoneNumberError(
@@ -392,12 +447,19 @@ function Signup() {
             ) : (
               ''
             )}
+<<<<<<< HEAD
+            <div className='openPhone2' style={{ display: openPhone }}>
+               {getPhoneDetails ? getPhoneDetails : ''} 
+=======
             <div className='openPhone' style={{ display: openPhone }}>
-              {/* {getPhoneDetails ? getPhoneDetails : ''} */}
+              {getPhoneDetails ? getPhoneDetails : ''}
+>>>>>>> 53e91cefc04ea8a3677f9fb7bbdfba4f05e1100e
             </div>
           </Form>
 
-          <button className='Signupbtn' onClick={signup}>
+          {form.phone}
+
+          <button className='Signupbtn' onClick={signup}  style={{ background: btnColor }}>
             Sign Up
           </button>
 
@@ -443,5 +505,5 @@ function Signup() {
     </Container>
   );
 }
-
+ 
 export default Signup;

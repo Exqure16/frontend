@@ -5,13 +5,11 @@ import Header from './component/Header/Header';
 import Blog from './component/Blog/Blog';
 import Login from './component/LoginPage/Login';
 import HomePage from './component/HomePage/HomePage';
-// import Footer from './component/Footer';
 import Signup from './component/Signup/Signup';
 import ForgotPassword from './component/LoginPage/ForgotPassword';
 import ResetPassword from './component/LoginPage/ResetPassword';
 import AcceptTerms from './component/TransactionDetails/AcceptTerms';
 import CreateTransaction from './component/TransactionPages/CreateTransaction/CreateTransaction';
-
 import TransBuyer from './component/TransactionPages/MyTransaction/MyTransaction_Buyer';
 import ProvideWallet from './component/TransactionPages/MyTransaction/ProvideWallet';
 import TransBuyerCrypto from './component/TransactionPages/MyTransaction/MyTransaction_Buyer-Crypto';
@@ -19,22 +17,26 @@ import GeneralSettings from './component/GeneralSettings/GeneralSettings';
 import Personal from './component/Profile/Personal';
 import NoTransactions from './component/TransactionPages/NoTransaction';
 import WithTransaction from './component/TransactionPages/WithTransaction';
+import TransSeller from './component/TransactionPages/Transaction/TransSeller';
+import TransBuyer from './component/TransactionPages/Transaction/TransBuyer';
+
 import Notifications from './component/notifications/Notifications';
 import TransactionAccepted from './component/TransactionPages/TransactionAccepted';
-// import PsWithTransaction from './component/PaymentSettings/PsWithTransaction';
 import PaymentSettings from './component/PaymentSettings/PaymentSettings';
 import TransactionAccepteditems from './component/TransactionPages/TransactionAccepteditems';
 import TransactionDeclined from './component/TransactionPages/TransactionDeclined';
 import Accountsetting from './component/Accountsetting/Accountsetting';
-import PaymentMethod from './component/PaymentMethod/PaymentMethod';
+import PaymentMethod from './component/PaymentSettings/PaymentMethod';
+import AboutPage from './component/AboutPage/AboutPage';
+import ContactUs from './component/ContactUsPage/ContactUs';
 
 function App() {
   return (
-    <div>
+    <>
       <Header />
-      {/* <Blog />
-      <TransactionSeller /> */}
       <Routes>
+        <Route path='frontend/blog' element={<Blog />} />
+        <Route path='frontend/aboutUs' element={<AboutPage />} />
         <Route path='frontend/acceptterms' element={<AcceptTerms />} />
         <Route path='/frontend' element={<HomePage />} />
         <Route path='frontend/login' element={<Login />} />
@@ -54,7 +56,6 @@ function App() {
         <Route path='frontend/paymethod' element={<PaymentMethod />} />
         <Route path='frontend/transaction' element={<NoTransactions />} />
         <Route path='frontend/transactions' element={<WithTransaction />} />
-        {/* <Route path='frontend/transSeller' element={<TransSeller />} /> */}
         <Route path='frontend/transbuyer' element={<TransBuyer />} />
         <Route path='frontend/notifications' element={<Notifications />} />
         <Route path='frontend/accountsetting' element={<Accountsetting />}>
@@ -64,13 +65,13 @@ function App() {
         </Route>
         <Route path='frontend/mytransactions' element={<TransBuyer />} />
         <Route path='frontend/mytransactions/wallet' element={<ProvideWallet />} />
+        <Route path='frontend/contactus' element={<ContactUs />} />
         <Route
           path='frontend/mytransactions-crypto'
           element={<TransBuyerCrypto />}
         />
       </Routes>
-      {/* <Footer /> */}
-    </div>
+    </>
   );
 }
 

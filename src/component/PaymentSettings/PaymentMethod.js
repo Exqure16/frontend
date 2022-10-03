@@ -4,17 +4,25 @@ import './Paymentmethod.css';
 import cardPos from '../images/card-pos.png';
 import fluter from '../images/money-send.png';
 import master from '../images/Logo.svg';
+import success from '../images/Ribbon.svg';
+import Visa from '../images/Visa.png';
+import Mastercard from '../images/Mastercard.png';
 import { useState } from 'react';
+// import Carddetails from './Carddetails';
 
 const PaymentMethod = () => {
   const [show, setShow] = useState(false);
+  const [pay, setPay] = useState(false);
 
   const handleClose = () => setShow(false);
+  const handleClosePay = () => setPay(false);
   const handleShow = () => setShow(true);
+  const handlePay = () => setPay(true);
+
   return (
     <Container>
-      <h3 className='mt-5'>Select payment method</h3>
-      <div className='methodcard'>
+      <h3 className='mt-5 mb-5'>Select payment method</h3>
+      <div className='methodcard mb-4'>
         <div className='cardcontainer'>
           <div className='paycardbody'>
             <img src={cardPos} alt='cardpos' />
@@ -85,6 +93,10 @@ const PaymentMethod = () => {
       <div className='d-flex justify-content-center mt-4'>
         <Form className='addcarddetails'>
           <h3 className='mb-3'>Add card details</h3>
+          <div className='cards'>
+            <img src={Visa} alt='' className='visacardd' />
+            <img src={Mastercard} alt='' className='mastercard' />
+          </div>
           <Form.Group className='mb-3' controlId='formBasicNumber'>
             <Form.Label>Card number</Form.Label>
             <Form.Control
@@ -145,7 +157,7 @@ const PaymentMethod = () => {
             </div>
           </Modal.Body>
           <Modal.Footer className='border-0  d-grid '>
-            <button onClick={handleClose} className='addcardbutton'>
+            <button onClick={handlePay} className='addcardbutton'>
               Pay now
             </button>
             <button onClick={handleClose} className='cancelbutton'>
@@ -154,6 +166,36 @@ const PaymentMethod = () => {
           </Modal.Footer>
         </Container>
       </Modal>
+      {/* modal */}
+      <>
+        <Modal show={pay} onHide={handleClosePay} className=''>
+          <Container>
+            <Modal.Body className='p-5 '>
+              <div className='paymentsuccess'>
+                <h3 className='mb-4 d-flex justify-content-center mx-auto'>
+                  Payment Successful
+                </h3>
+                <img
+                  src={success}
+                  alt=''
+                  className='d-flex justify-content-center mx-auto mb-4'
+                />
+                <p className='d-flex justify-content-center mx-auto mt-4 mb-0'>
+                  Payment reciept has been sent to your email
+                </p>
+              </div>
+            </Modal.Body>
+            <Modal.Footer className='border-0 py-3'>
+              <button
+                onClick={handleClosePay}
+                className='continuebutton d-flex justify-content-center mx-auto'
+              >
+                Continue
+              </button>
+            </Modal.Footer>
+          </Container>
+        </Modal>
+      </>
     </Container>
   );
 };

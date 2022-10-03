@@ -40,7 +40,10 @@ const Login = () => {
 
   async function signup(e){
    e.preventDefault();
-   let result = await fetch('https://exqure.herokuapp.com/api/user/signin', {
+
+   if(formValid === true){
+
+    let result = await fetch('https://exqure.herokuapp.com/api/user/signin', {
       method: "POST",
       body:JSON.stringify(form),
       headers: {
@@ -50,8 +53,24 @@ const Login = () => {
     })
     result= await result.json()
     console.log("result", result);
+    // alert(result.msg);
+    if(result.status === 'Success'){
     alert(result.msg);
-    localStorage.setItem("user-info", JSON.stringify(result));
+      localStorage.setItem("user-login-info", JSON.stringify(result));
+       window.location='#/frontend/accountsetting/profile';
+
+        
+    }
+    else{
+      alert('error');
+      alert(result.msg);
+    }
+   }
+   else{
+    alert("please fill in reqired fields");
+   }
+
+  
     
   }
 
