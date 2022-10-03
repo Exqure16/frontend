@@ -33,36 +33,36 @@ const TransSuccesful = ({transTitle,
             
             <p className='transHeader'>Transaction details</p>
             <div className='transDetDiv'>
-                <div>
+                <div className='inTransDetDiv'>
                     <div className='transKey'> TRANSACTION TITLE:</div>
-                    <span className='transValue'> { transTitle? transTitle:''}</span>
+                    <p className='transValue'> { transTitle? transTitle:''}</p>
                     
                 </div>
-                <div>
+                <div className='inTransDetDiv'>
                     <div className='transKey'> TRANSACTION ID: </div>
-                    <span className='transValue'> { transId? transId:'' } </span>
+                    <p className='transValue'> { transId? transId:'' } </p>
                 </div>
-                <div>
+                <div className='inTransDetDiv'>
                     <div className='transKey'> ROLE IN TRANSACTION: </div>
-                    <span className='transValue'> { roleInTrans? roleInTrans:'' } </span>
+                    <p className='transValue'> { roleInTrans? roleInTrans:'' } </p>
                 </div>
-                <div>
+                <div className='inTransDetDiv'>
                     <div className='transKey'> ITEM ATTRIBUTE: </div>
-                    <span className='transValue'> { itemAttr? itemAttr:''} </span>
+                    <p className='transValue'> { itemAttr? itemAttr:''} </p>
                 </div>
-                <div>
+                <div className='inTransDetDiv'>
                     <div className='transKey'> ITEM CATEGORY: </div>
-                    <span className='transValue'> { itemCat? itemCat:''} </span>
+                    <p className='transValue'> { itemCat? itemCat:''} </p>
                 </div>
                 {children}
         
             </div>
-            <img src={ sLine } alt='line'/>
-            <div style={{display:'flex'}}>
-                <div className='transKey' style={{marginTop:'1rem'}}>
+            <img className='sLine' src={ sLine } alt='line'/>
+            <div className='inTransDetDiv'>
+                <div className='transKey' >
                     TOTAL AMOUNT
                 </div> 
-                <span className='transValue' style={{fontWeight:'bolder'}}><span style={{color:'red'}}>{ totalAmount? totalAmount:'' }</span>  (-Exqure's commission) </span>
+                <p className='transValue' style={{fontWeight:'bolder'}}><span style={{color:'red'}}>{ totalAmount? totalAmount:'' }</span>  (-Exqure's commission) </p>
             
             </div>
             <div>

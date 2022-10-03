@@ -47,6 +47,9 @@
     order: 0;
     flex-grow: 0;
 }
+.individual, .company:hover{
+    cursor:pointer;
+}
 .formDiv{
     display: flex;
     flex-direction: column;
