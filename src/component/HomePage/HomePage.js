@@ -19,7 +19,7 @@ library.add(faVideo);
 export default function HomePage() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <div className='homepage-main'>
         <section className='section1 hero'>
           <div className='writeup'>

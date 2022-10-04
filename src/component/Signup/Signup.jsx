@@ -26,8 +26,9 @@ import showP from '../images/showP.svg';
 import CountrySelect from '../Profile/Form/CountrySelect';
 import { Countries } from '../Countries';
 import Input from '../Profile/Form/Input';
-import Header from '../Header/Header';
 import { useNavigate } from 'react-router-dom';
+import axios from '../Api/axios';
+const Register_Url = '/user/signup';
 
 function Signup() {
   const navigate = useNavigate();
@@ -160,32 +161,57 @@ function Signup() {
     if (formIsValid) {
       setSDisplay('block');
       setDisplay('none');
-      let result = await fetch('https://exqure.herokuapp.com/api/user/signup', {
-        method: 'POST',
-        body: JSON.stringify(form),
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-      });
-      result = await result.json();
 
-      localStorage.setItem('user-info', JSON.stringify(result));
-
-      if (result.status === 'Success') {
-        setSDisplay('block');
-        setDisplay('none');
-      } else {
-        alert(result.msg);
+      try {
+        const response = await axios.post(Register_Url, JSON.stringify(form), {
+          headers: { 'Content-Type': 'application/json' },
+          // withCredentials: true,
+        });
+        console.log(response.data);
+        console.log(JSON.stringify(response));
+        if (response.status === 'Success') {
+          alert('Success');
+          setSDisplay('block');
+          setDisplay('none');
+        } else {
+          alert(response.msg);
+        }
+      } catch (err) {
+        if (err.response) {
+          console.log(err.response.data);
+          console.log(err.response.status);
+          console.log(err.response.headers);
+        } else {
+          console.log(`Error: ${err.message}`);
+          alert('please fill all fields correctly');
+        }
       }
-    } else {
-      alert('please fill all fields correctly');
+      //   let result = await fetch('https://exqure.herokuapp.com/api/user/signup', {
+      //     method: 'POST',
+      //     body: JSON.stringify(form),
+      //     headers: {
+      //       'Content-Type': 'application/json',
+      //       Accept: 'application/json',
+      //     },
+      //   });
+      //   result = await result.json();
+
+      //   localStorage.setItem('user-info', JSON.stringify(result));
+
+      //   if (result.status === 'Success') {
+      //     setSDisplay('block');
+      //     setDisplay('none');
+      //   } else {
+      //     alert(result.msg);
+      //   }
+      // } else {
+      //   alert('please fill all fields correctly');
+      // }
     }
   }
 
   return (
     <>
-      <Header />
       <Container fluid>
         <Row>
           <Col className='logocol' md>
@@ -199,7 +225,12 @@ function Signup() {
               <label className='label'>Name</label>
               <InputGroup className='mb-3'>
                 <div>
-                  <img src={personIcon} className='icon' color='#239ED9' />
+                  <img
+                    src={personIcon}
+                    alt=''
+                    className='icon'
+                    color='#239ED9'
+                  />
                   <FormControl
                     placeholder='Enter full name'
                     type='username'
@@ -229,7 +260,7 @@ function Signup() {
               </label>
               <InputGroup className='mb-3'>
                 <div>
-                  <img src={sms} className='icon' color='#239ED9' />
+                  <img src={sms} alt='' className='icon' color='#239ED9' />
                   <FormControl
                     placeholder='Enter email'
                     type='email'
@@ -264,7 +295,7 @@ function Signup() {
               </label>
               <InputGroup className='mb-3'>
                 <div>
-                  <img src={lock} className='icon' color='#239ED9' />
+                  <img src={lock} alt='' className='icon' color='#239ED9' />
                   <FormControl
                     placeholder='Enter password'
                     type={passwordType}
@@ -278,6 +309,7 @@ function Signup() {
                     {passwordType === 'password' ? (
                       <img
                         src={hideP}
+                        alt=''
                         onClick={() => setPasswordType('text')}
                         className='icon1'
                         color='#239ED9'
@@ -285,6 +317,7 @@ function Signup() {
                     ) : (
                       <img
                         src={showP}
+                        alt=''
                         onClick={() => setPasswordType('password')}
                         className='icon1'
                         color='#239ED9'
@@ -303,7 +336,7 @@ function Signup() {
 
               <InputGroup className='mb-3 phoneInput'>
                 <div>
-                  <img src={lock} className='icon' color='#239ED9' />
+                  <img src={lock} alt='' className='icon' color='#239ED9' />
                   <FormControl
                     placeholder='Re-enter password'
                     type={passwordType1}
@@ -324,6 +357,7 @@ function Signup() {
                     {passwordType1 === 'password' ? (
                       <img
                         src={hideP}
+                        alt=''
                         onClick={() => setPasswordType1('text')}
                         className='icon1'
                         color='#239ED9'
@@ -331,6 +365,7 @@ function Signup() {
                     ) : (
                       <img
                         src={showP}
+                        alt=''
                         onClick={() => setPasswordType1('password')}
                         className='icon1'
                         color='#239ED9'
