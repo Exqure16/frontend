@@ -23,7 +23,7 @@ const TransSeller = () => {
             itemAttr = {'General Merchandise'}
             itemCat = {'Cryptocurrency'}
             totalAmount = {'$0.00'}
-            footHeader = {'Payment details'}
+            footHeader = {'Transaction Invitation'}
             footParagraph = {"Exqure's Crypto Wallet address"}
             footImg = {copyIcon}
             footAlt = {'Copy'}
@@ -31,21 +31,21 @@ const TransSeller = () => {
             checkDisable = {true}
             handleClick ={handleClick}
         >
-          <div>
+          <div className='inTransDetDiv'>
               <div className='transKey'> TRANSACTION COIN: </div>
-              <span className='transValue'> The name is shown </span>
+              <p className='transValue'> The name is shown </p>
           </div>       
-          <div>
+          <div className='inTransDetDiv'>
               <div className='transKey'> AMOUNT: </div>
-              <span className='transValue'> 5 </span>
+              <p className='transValue'> 5 </p>
           </div>       
-          <div>
+          <div className='inTransDetDiv'>
               <div className='transKey'> PRICE: </div>
-              <span className='transValue' style={{color:'red'}}> $0.00</span>
+              <p className='transValue' style={{color:'red'}}> $0.00</p>
           </div>       
-          <div>
+          <div className='inTransDetDiv'>
               <div className='transKey'> EXQURE'S COMMISSION: </div>
-              <span className='transValue' style={{color:'red'}}> $1.00 </span>
+              <p className='transValue' style={{color:'red'}}> $1.00 </p>
           </div>       
 
         </TransSuccessful>
