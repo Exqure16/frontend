@@ -31,7 +31,7 @@ export default function HomePage() {
               Exqure guarantees 100% security and protects users from scams in
               transactions with our escrow services.
             </p>
-            <Link to='login'>
+            <Link to='signup'>
               <button id='writeup-button'>Get Started</button>
             </Link>
             <Link to=''>
@@ -72,7 +72,9 @@ export default function HomePage() {
                 Buy and sell good and quality electronics while using Exqure for
                 maximum transaction security
               </div>
-              <button>Get Started</button>
+              <Link to='signup'>
+              <button id='writeup-button'>Get Started</button>
+            </Link>
             </div>
           </div>
 
@@ -86,7 +88,9 @@ export default function HomePage() {
                 Exqure provides an excellent platform for securely trading
                 cryptocurrencies
               </div>
-              <button>Get Started</button>
+              <Link to='signup'>
+              <button id='writeup-button'>Get Started</button>
+            </Link>
             </div>
             <div className='img-container'>
               <img
@@ -112,7 +116,9 @@ export default function HomePage() {
                 Get a wonderful experience doing your mega shopping with
                 Exqure’s escrow services
               </div>
-              <button>Get Started</button>
+              <Link to='signup'>
+                <button id='writeup-button'>Get Started</button>
+              </Link>
             </div>
           </div>
         </section>
