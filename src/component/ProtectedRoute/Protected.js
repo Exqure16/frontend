@@ -1,14 +1,19 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import { useLocation, Navigate, Outlet } from 'react-router-dom';
+import useAuth from '../hooks/useAuth';
+// import AuthContext from '../Context/AuthProvider';
+// import { useContext } from 'react';
 
-const Protected = ({ Cmp }) => {
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (!localStorage.getItem('user-info')) {
-      navigate('/login', { replace: true });
-    }
-  }, []);
-  return <Cmp />;
+const Protected = () => {
+  // const { auth } = useContext(AuthContext);
+  const { auth } = useAuth();
+  const location = useLocation();
+
+  return auth ? (
+    <Outlet />
+  ) : (
+    <Navigate to='/login' state={{ from: location }} replace />
+  );
 };
 
 export default Protected;

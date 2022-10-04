@@ -12,7 +12,6 @@ const Accountsetting = () => {
 
   return (
     <>
-      <Header />
       <Container>
         <h1 className='mt-5'>Account Setting</h1>
         <div className='accountsetting'>

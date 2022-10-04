@@ -11,10 +11,10 @@ import linkedIn from '../images/linkedinBlack.svg';
 import contactUsImg from '../images/contactUsImg.svg';
 import Footer from '../../component/Footer';
 import Header from '../Header/Header';
-import * as yup from 'yup'
+import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
-import {yupResolver} from '@hookform/resolvers/yup'
-import emailjs from '@emailjs/browser'
+import { yupResolver } from '@hookform/resolvers/yup';
+import emailjs from '@emailjs/browser';
 const ContactUs = () => {
   const handleClick = (url) => {
     window.open(url, '_blank');
@@ -25,28 +25,41 @@ const ContactUs = () => {
     email: yup.string().email().required(),
     message: yup.string().required(),
   });
-  const { register, 
-      handleSubmit,
-      formState: {errors},
-      reset
-    } = useForm({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
     resolver: yupResolver(schema),
     reValidateMode: 'onChange',
-    mode:'onTouched'
-  })
+    mode: 'onTouched',
+  });
   const form = useRef();
   const submitForm = () => {
-    emailjs.sendForm('service_4e7g8gp','template_c3g370v',form.current,'SuH82dPV7MnRfn7cd')
-      .then((result)=>{
-        alert('Your message has been sent to us. We will respond to you soon')
-      }, (error)=>{
-        alert('Your message has failed to send. Please check your network connection')
-      });
-    reset()
+    emailjs
+      .sendForm(
+        'service_4e7g8gp',
+        'template_c3g370v',
+        form.current,
+        'SuH82dPV7MnRfn7cd'
+      )
+      .then(
+        (result) => {
+          alert(
+            'Your message has been sent to us. We will respond to you soon'
+          );
+        },
+        (error) => {
+          alert(
+            'Your message has failed to send. Please check your network connection'
+          );
+        }
+      );
+    reset();
   };
   return (
     <>
-      <Header />
       <div>
         <div className='contactDiv'>
           <h1> Contact Us </h1>
@@ -73,21 +86,47 @@ const ContactUs = () => {
         <div className='socialDiv'>
           <h2>Reach us via our social media</h2>
           <div className='inSocialDiv'>
-            <div className='ininSocialDiv' onClick={()=>handleClick('https://www.facebook.com/profile.php?id=100082029624329')}>
-              <img style={{cursor:'pointer'}} src ={facebook} alt =' '/>
-              <p style={{cursor:'pointer'}}>Exqure escrow</p>
+            <div
+              className='ininSocialDiv'
+              onClick={() =>
+                handleClick(
+                  'https://www.facebook.com/profile.php?id=100082029624329'
+                )
+              }
+            >
+              <img style={{ cursor: 'pointer' }} src={facebook} alt=' ' />
+              <p style={{ cursor: 'pointer' }}>Exqure escrow</p>
             </div>
-            <div className='ininSocialDiv' onClick={()=>handleClick('https://www.twitter.com/ExqureE?t=rLE_WMWGFiuRe5Rm_HqNIQ&s=09')}>
-              <img style={{cursor:'pointer'}} src ={twitter} alt =' '/>
-              <p style={{cursor:'pointer'}}>exqureE</p>
+            <div
+              className='ininSocialDiv'
+              onClick={() =>
+                handleClick(
+                  'https://www.twitter.com/ExqureE?t=rLE_WMWGFiuRe5Rm_HqNIQ&s=09'
+                )
+              }
+            >
+              <img style={{ cursor: 'pointer' }} src={twitter} alt=' ' />
+              <p style={{ cursor: 'pointer' }}>exqureE</p>
             </div>
-            <div className='ininSocialDiv' onClick={()=>handleClick('https://www.instagram.com/exqureescrow?igshid=YmMyMTA2M2Y=')}>
-              <img style={{cursor:'pointer'}} src ={instagram} alt =' '/>
-              <p style={{cursor:'pointer'}}>exqureescrow</p>
+            <div
+              className='ininSocialDiv'
+              onClick={() =>
+                handleClick(
+                  'https://www.instagram.com/exqureescrow?igshid=YmMyMTA2M2Y='
+                )
+              }
+            >
+              <img style={{ cursor: 'pointer' }} src={instagram} alt=' ' />
+              <p style={{ cursor: 'pointer' }}>exqureescrow</p>
             </div>
-            <div className='ininSocialDiv' onClick={()=>handleClick('https://www.linkedin.com/company/exqureescrow')}>
-              <img style={{cursor:'pointer'}} src ={linkedIn} alt =' '/>
-              <p style={{cursor:'pointer'}}>Exqure</p>
+            <div
+              className='ininSocialDiv'
+              onClick={() =>
+                handleClick('https://www.linkedin.com/company/exqureescrow')
+              }
+            >
+              <img style={{ cursor: 'pointer' }} src={linkedIn} alt=' ' />
+              <p style={{ cursor: 'pointer' }}>Exqure</p>
             </div>
           </div>
         </div>
@@ -109,9 +148,17 @@ const ContactUs = () => {
                     name={'firstName'}
                     {...register('firstname')}
                   />
-                  {errors?.firstname &&
-                    <p style={{color:'red', textAlign:'left', fontSize:'0.8rem'}}>{errors?.firstname.message}</p>
-                  }
+                  {errors?.firstname && (
+                    <p
+                      style={{
+                        color: 'red',
+                        textAlign: 'left',
+                        fontSize: '0.8rem',
+                      }}
+                    >
+                      {errors?.firstname.message}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <label>Last name</label>
@@ -121,9 +168,17 @@ const ContactUs = () => {
                     name={'lastName'}
                     {...register('lastname')}
                   />
-                  {errors?.lastname &&
-                    <p style={{color:'red', textAlign:'left', fontSize:'0.8rem'}}>{errors?.lastname.message}</p>
-                  }
+                  {errors?.lastname && (
+                    <p
+                      style={{
+                        color: 'red',
+                        textAlign: 'left',
+                        fontSize: '0.8rem',
+                      }}
+                    >
+                      {errors?.lastname.message}
+                    </p>
+                  )}
                 </div>
               </div>
               <div className='inInputsDiv'>
@@ -134,9 +189,17 @@ const ContactUs = () => {
                   name={'email'}
                   {...register('email')}
                 />
-                {errors?.email &&
-                    <p style={{color:'red', textAlign:'left', fontSize:'0.8rem'}}>{errors?.email.message}</p>
-                  }
+                {errors?.email && (
+                  <p
+                    style={{
+                      color: 'red',
+                      textAlign: 'left',
+                      fontSize: '0.8rem',
+                    }}
+                  >
+                    {errors?.email.message}
+                  </p>
+                )}
               </div>
               <div className='inInputsDiv'>
                 <label>Message</label>
@@ -146,9 +209,17 @@ const ContactUs = () => {
                   name={'message'}
                   {...register('message')}
                 />
-                {errors?.message &&
-                    <p style={{color:'red', textAlign:'left', fontSize:'0.8rem'}}>{errors?.message.message}</p>
-                  }
+                {errors?.message && (
+                  <p
+                    style={{
+                      color: 'red',
+                      textAlign: 'left',
+                      fontSize: '0.8rem',
+                    }}
+                  >
+                    {errors?.message.message}
+                  </p>
+                )}
               </div>
               <button
                 onClick={handleSubmit(submitForm)}

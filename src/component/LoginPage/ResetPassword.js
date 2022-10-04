@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Login.css';
 import hands from '../images/Hands.png';
 import logo from '../images/logo.png';
@@ -11,8 +11,13 @@ import lock from '../images/lock.svg';
 import personIcon from '../images/personicon.svg';
 import sms from '../images/sms.svg';
 import { Link } from 'react-router-dom';
+import axios from '../Api/axios';
+import Cookies from 'universal-cookie';
+import { UserContext } from '../Context/UserContext';
+const cookies = new Cookies();
 
 const ResetPassword = () => {
+  const { user } = useContext(UserContext);
   const [formValid, setFormValid] = useState(false);
 
   const [form, setForm] = useState({
@@ -34,11 +39,31 @@ const ResetPassword = () => {
       [e.target.name]: e.target.value,
     });
   };
-
-  const submitForm = (e) => {
+  const resetToken = cookies.get('resetToken');
+  const submitForm = async (e) => {
     e.preventDefault();
     if (formValid === true) {
       if (form.password1 === form.password2) {
+        try {
+          const response = await axios.patch(
+            `/user/resetPassword/${user.id} /${resetToken}`,
+            JSON.stringify(form),
+            {
+              headers: { 'Content-Type': 'application/json' },
+            }
+          );
+          console.log(response.data);
+          console.log(JSON.stringify(response));
+        } catch (err) {
+          if (err.response) {
+            console.log(err.response.data);
+            console.log(err.response.status);
+            console.log(err.response.headers);
+            alert(err.message);
+          } else {
+            console.log(`Error: ${err.message}`);
+          }
+        }
         console.log(form);
         window.location = '/frontend/login';
       } else {
