@@ -75,17 +75,19 @@ const Header = () => {
                 </Nav.Link>
               </Nav>
               <Nav style={{ marginLeft: '50px' }}>
-                
-                  <Botton
-                    text={'Login'}
-                    color={'white'}
-                    textColor={'#239ed9'}
-                    url={'/login'}
-                  />
-                
-                
-                  <Botton text={'Signup'} color={'#239ed9'} textColor url={'/signup'} />
-                
+                <Botton
+                  text={'Login'}
+                  color={'white'}
+                  textColor={'#239ed9'}
+                  url={'/login'}
+                />
+
+                <Botton
+                  text={'Signup'}
+                  color={'#239ed9'}
+                  textColor
+                  url={'/signup'}
+                />
               </Nav>
             </Navbar.Collapse>
           </>
