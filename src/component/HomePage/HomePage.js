@@ -49,7 +49,9 @@ export default function HomePage() {
         <section className='section2'>
           <h3>How Exqure Works</h3>
           <Cards />
-          <button>Learn More</button>
+          <Link to='aboutUs'>
+            <button className="button">Learn More</button>
+          </Link>
         </section>
 
         <section className='section3'>
@@ -73,8 +75,8 @@ export default function HomePage() {
                 maximum transaction security
               </div>
               <Link to='signup'>
-              <button id='writeup-button'>Get Started</button>
-            </Link>
+                <button id='writeup-button'>Get Started</button>
+              </Link>
             </div>
           </div>
 
