@@ -35,58 +35,47 @@ import ContactUs from './component/ContactUsPage/ContactUs';
 function App() {
   return (
     <>
-      <Context>
-        <Header />
-        <Routes>
-          {/* Puliic Routes */}
-          <Route path='/' element={<HomePage />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/forgot' element={<ForgotPassword />} />
-          <Route path='/reset' element={<ResetPassword />} />
-          <Route path='/signup' element={<Signup />} />
-          <Route path='/contactus' element={<ContactUs />} />
-          <Route path='/aboutUs' element={<AboutPage />} />
-          <Route path='/blog' element={<Blog />} />
+      <Header />
+      <Routes>
+        {/* Puliic Routes */}
+        <Route path='/' element={<HomePage />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/forgot' element={<ForgotPassword />} />
+        <Route path='/reset' element={<ResetPassword />} />
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/contactus' element={<ContactUs />} />
+        <Route path='/aboutUs' element={<AboutPage />} />
+        <Route path='/blog' element={<Blog />} />
 
-          {/* Protected Routes */}
-          <Route element={<Protected />}>
-            <Route path='/create' element={<CreateTransaction />} />
-            <Route path='/transseller' element={<TransSeller />} />
-            <Route path='/mytransactions' element={<MyTransBuyer />} />
-            <Route path='/acceptedterms' element={<TransactionAccepted />} />
-            <Route
-              path='/accepteditems'
-              element={<TransactionAccepteditems />}
-            />
-            <Route path='/acceptedterms' element={<TransactionAccepted />} />
-            <Route
-              path='/accepteditems'
-              element={<TransactionAccepteditems />}
-            />
-            <Route path='/declined' element={<TransactionDeclined />} />
-            <Route path='/declined' element={<TransactionDeclined />} />
-            <Route path='/paymethod' element={<PaymentMethod />} />
-            <Route path='/transaction' element={<NoTransactions />} />
-            <Route path='/transactions' element={<WithTransaction />} />
-            <Route path='/transbuyer' element={<TransBuyer />} />
-            <Route path='/notifications' element={<Notifications />} />
-            <Route path='/accountsetting' element={<Accountsetting />}>
-              <Route path='general' element={<GeneralSettings />} />
-              <Route path='profile' element={<Personal />} />
-              <Route path='paymentsetting' element={<PaymentSettings />} />
-            </Route>
-            <Route path='/mytransactions' element={<TransBuyer />} />
-            <Route path='/mytransactions' element={<MyTransBuyer />} />
-            <Route path='/mytransactions/wallet' element={<ProvideWallet />} />
-            <Route path='/paymethod' element={<PaymentMethod />} />
-            <Route path='/transaction' element={<NoTransactions />} />
-            <Route
-              path='/mytransactions-crypto'
-              element={<TransBuyerCrypto />}
-            />
+        {/* Protected Routes */}
+        <Route element={<Protected />}>
+          <Route path='/create' element={<CreateTransaction />} />
+          <Route path='/transseller' element={<TransSeller />} />
+          <Route path='/mytransactions' element={<MyTransBuyer />} />
+          <Route path='/acceptedterms' element={<TransactionAccepted />} />
+          <Route path='/accepteditems' element={<TransactionAccepteditems />} />
+          <Route path='/acceptedterms' element={<TransactionAccepted />} />
+          <Route path='/accepteditems' element={<TransactionAccepteditems />} />
+          <Route path='/declined' element={<TransactionDeclined />} />
+          <Route path='/declined' element={<TransactionDeclined />} />
+          <Route path='/paymethod' element={<PaymentMethod />} />
+          <Route path='/transaction' element={<NoTransactions />} />
+          <Route path='/transactions' element={<WithTransaction />} />
+          <Route path='/transbuyer' element={<TransBuyer />} />
+          <Route path='/notifications' element={<Notifications />} />
+          <Route path='/accountsetting' element={<Accountsetting />}>
+            <Route path='general' element={<GeneralSettings />} />
+            <Route path='profile' element={<Personal />} />
+            <Route path='paymentsetting' element={<PaymentSettings />} />
           </Route>
-        </Routes>
-      </Context>
+          <Route path='/mytransactions' element={<TransBuyer />} />
+          <Route path='/mytransactions' element={<MyTransBuyer />} />
+          <Route path='/mytransactions/wallet' element={<ProvideWallet />} />
+          <Route path='/paymethod' element={<PaymentMethod />} />
+          <Route path='/transaction' element={<NoTransactions />} />
+          <Route path='/mytransactions-crypto' element={<TransBuyerCrypto />} />
+        </Route>
+      </Routes>
     </>
   );
 }

@@ -26,7 +26,7 @@ const Header = () => {
           <img className='brand' src={logo} alt='' />
         </Navbar.Brand>
 
-        {!auth ? (
+        {!auth?.accessToken ? (
           <>
             <Navbar.Toggle aria-controls='navbarScroll' />
             <Navbar.Collapse id='navbarScroll'>
