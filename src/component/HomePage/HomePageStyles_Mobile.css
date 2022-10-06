@@ -1,336 +1,334 @@
 @font-face {
-    font-family: Futura PT;
-    src: url('../../fonts/Futura\ Book\ font.ttf');
+  font-family: Futura PT;
+  src: url("../../fonts/Futura\ Book\ font.ttf");
 }
 
 @font-face {
-    font-family: Montserrat Variable;
-    src: url('../../fonts/Montserrat-ExtraBold.ttf');
+  font-family: Montserrat Variable;
+  src: url("../../fonts/Montserrat-ExtraBold.ttf");
 }
 @media screen and (max-width: 768px) {
-    *, *::after, *::before {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-    
-    .homepage-main {
-        font-family: Futura PT, sans-serif;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    /* Section One */
-    .section1 {
-        display: block;
-        width: auto;
-        height: auto;
-        padding: 1rem;
-    }
-    
-    .writeup {
-        position: relative;
-        top: 3rem;
-        width: auto;
-        margin-bottom: 3rem;
-        height: auto;
-        animation-duration: 5s;
-        animation-name: fade-bottom;
-    }
-    
-    .writeup > .first-p-tag {
-        font-family: Futura PT;
-        margin-bottom: 1rem;
-        font-size: 1.25rem;
-        letter-spacing: 0.3rem;
-        
-    }
-    
-    .writeup > .second-p-tag{
-        margin-bottom: 1rem;
-        margin-top: 1rem;
-        font-size: 1rem;
-        font-weight: 400;
-        letter-spacing: 0.03em;
-        font-family: Futura PT;
-    }
-    
-    .writeup-buttons{
-        display: flex;
-        flex-direction: row;
-    }
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-    .writeup > .writeup-buttons > button ~ button {
-        padding: 0.75rem 0.5rem;
-    }
-    .writeup-buttons > * {
-        width: 60%;
-        height: 40%;
-    }
+  .homepage-main {
+    font-family: Futura PT, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .writeup-image > img {
-        margin: 0;
-        display: block;
-        min-width: 100%;
-        max-width: 100%;
-        min-height: 100%;
-        max-height: 100%;
-    }
-    .writeup-image {
-        position: relative;
-        top: 4rem;
-        display: flex;
-        width: 100%;
-        height: 100%;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 8rem;
-    }
-    /* Section One End */
-    
-    
-    /* Section Two */
-    
-    .section2 {
-        width: auto;
-        background: #E2F3FC;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .section2 > h3 {
-        font-family: "Montserrat";
-        font-weight: 700;
-        font-size:  1.5rem;
-        width: 100vw;
-        text-align: center;
-    }
-    
-    .section2 > button {
-        font-family: Futura PT;
-        padding: 0.75rem 2rem;
-        background: none;
-        border-radius: 4px;
-        outline: none;
-        border: 1px solid #239ED9;
-        color: #239ED9;
-        transition: all 1s;
-        font-size: 1rem;
-        cursor: pointer;
-        width: fit-content;
-    }
-    
-    .section2 > button:hover {
-        background: #239ED9;
-        color: white;
-    }
-    
-    /* Card Styles */
-    
-    .card {
-        font-family: Futura PT;
-        display: flex;
-        flex-direction: column;
-        background: transparent;
-        border: none;
-        padding: 2rem 0;
-    }
-    
-    .cardbody {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        margin: 1rem 0;
-    }
+  /* Section One */
+  .section1 {
+    display: block;
+    width: auto;
+    height: auto;
+    padding: 1rem;
+  }
 
-    .card-img {
-        margin: 0;
-        display: block;
-        min-width: 100%;
-        max-width: 100%;
-        min-height: 100%;
-        max-height: 100%;
-    }
+  .writeup {
+    position: relative;
+    top: 3rem;
+    width: auto;
+    margin-bottom: 3rem;
+    height: auto;
+    animation-duration: 5s;
+    animation-name: fade-bottom;
+  }
 
-    .cardbody > .img-container {
-        width: 100%;
-        height: 100%;
-        margin-right: 2rem;
-    }
-    
-    .card-tag {
-        text-align: center;
-        font-weight: 700;
-    }
-    
-    .card-text {
-        width: 100%;
-        height: 100%;
-        font-size: 1rem;
-        text-align: left;
-    }
-    
-    /* Section Two End */
-    
-    /* Section 3 */
-    
-    .section3 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        font-size: 1rem;
-        padding: 2rem 0;
-    }
-    
-    .section3 > h3 {
-        font-size: 1.5rem;
-        font-weight: bold;
-        display: inline-block;
-        width: 75%;
-        position: relative;
-        text-align: center;
-    }
-    
-    .section3 > button {
-        padding: 0.75rem 2rem;
-        background: #239ED9;
-        border-radius: 4px;
-        outline: none;
-        border: none;
-        color: #fff;
-    }
-    
-    .section3 > button:hover {
-        background: #1b7aa7;
-    }
-    
-    .single-cardbody {
-        font-family: Futura PT, sans-serif;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 2rem;
-    }
-    
-    .single-cardbody > .text-container{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: left;
-        padding: 0 1.5rem;
-    }
-    
-    .single-cardbody > .text-container > *{
-        margin: 0.5rem 0;
-    }
-    
-    .single-cardbody > .text-container > .single-card-header{
-        font-family: Montserrat Variable, sans-serif;
-        font-weight: 700;
-    }
+  .writeup > .first-p-tag {
+    font-family: Futura PT;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    letter-spacing: 0.3rem;
+  }
 
-    .single-card-text {
-        width: 100%;
-    }
-    
-    .single-cardbody > .text-container > button:hover {
-        background: #1b7aa7;
-        border: 0.1rem solid #1b7aa7;
-    }
+  .writeup > .second-p-tag {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    font-family: Futura PT;
+  }
 
-    .single-cardbody > .img-container > img {
-        display: block;
-        height: 100%;
-        width: 100%;
-        object-fit: fill;  
-    }
+  .writeup-buttons {
+    display: flex;
+    flex-direction: row;
+  }
 
-    .single-cardbody > .img-container{
-        width:  350px;
-        height: 350px;
-    }
+  .writeup > .writeup-buttons > button ~ button {
+    padding: 0.75rem 0.5rem;
+  }
+  .writeup-buttons > * {
+    width: 60%;
+    height: 40%;
+  }
 
-    .reflow{
-        flex-flow:column-reverse;
-    }
+  .writeup-image > img {
+    margin: 0;
+    display: block;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+  }
+  .writeup-image {
+    position: relative;
+    top: 4rem;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8rem;
+  }
+  /* Section One End */
 
-    .single-card-tag {
-        border-radius: 1rem;
-        color: #239ED9;
-        background: #E2F3FC;
-        width: fit-content;
-    }
-    /* Section 3 End*/
-    
-    /* Section 4 */
-    
-    .section4 {
-        display: flex;
-        flex-direction: column;
-        font-size: 1rem;
-        width: 100vw;
-    }
-    
-    .section4 > h2 {
-        width: 350px;
-    }
-    
-    .section4 > .row-div {
-        width: 300px;
-        display: flex;
-        margin-top: 5rem;
-        flex-direction: column;
-        
-    }
+  /* Section Two */
 
-    .row-div > h3 {
-        font-weight: bold;
-    }
-    
-    .row-div > * {
-        margin-bottom: 1.5rem;
-    }
-   
-    .logodiv {
-        order: 4;
-    }
+  .section2 {
+    width: auto;
+    background: #e2f3fc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .logodiv > button {
-        width: 100%;
-        text-align: left;
-    }
+  .section2 > h3 {
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size: 1.5rem;
+    width: 100vw;
+    text-align: center;
+  }
 
-    .row-div > .exqureLogo {
-        margin-left: -7.5rem;
-    }
+  .button {
+    font-family: Futura PT;
+    padding: 0.75rem 2rem;
+    background: none;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid #239ed9;
+    color: #239ed9;
+    transition: all 1s;
+    font-size: 1rem;
+    cursor: pointer;
+    width: fit-content;
+  }
 
-    .socials {
-        margin-left: -3.5rem;
-    }
-    
+  .button:hover {
+    background: #239ed9;
+    color: white;
+  }
+
+  /* Card Styles */
+
+  .card {
+    font-family: Futura PT;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    padding: 2rem 0;
+  }
+
+  .cardbody {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0;
+  }
+
+  .card-img {
+    margin: 0;
+    display: block;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+  }
+
+  .cardbody > .img-container {
+    width: 100%;
+    height: 100%;
+    margin-right: 2rem;
+  }
+
+  .card-tag {
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .card-text {
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  /* Section Two End */
+
+  /* Section 3 */
+
+  .section3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 2rem 0;
+  }
+
+  .section3 > h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: inline-block;
+    width: 75%;
+    position: relative;
+    text-align: center;
+  }
+
+  .section3 > button {
+    padding: 0.75rem 2rem;
+    background: #239ed9;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    color: #fff;
+  }
+
+  .section3 > button:hover {
+    background: #1b7aa7;
+  }
+
+  .single-cardbody {
+    font-family: Futura PT, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .single-cardbody > .text-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding: 0 1.5rem;
+  }
+
+  .single-cardbody > .text-container > * {
+    margin: 0.5rem 0;
+  }
+
+  .single-cardbody > .text-container > .single-card-header {
+    font-family: Montserrat Variable, sans-serif;
+    font-weight: 700;
+  }
+
+  .single-card-text {
+    width: 100%;
+  }
+
+  .single-cardbody > .text-container > button:hover {
+    background: #1b7aa7;
+    border: 0.1rem solid #1b7aa7;
+  }
+
+  .single-cardbody > .img-container > img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+  }
+
+  .single-cardbody > .img-container {
+    width: 350px;
+    height: 350px;
+  }
+
+  .reflow {
+    flex-flow: column-reverse;
+  }
+
+  .single-card-tag {
+    border-radius: 1rem;
+    color: #239ed9;
+    background: #e2f3fc;
+    width: fit-content;
+  }
+  /* Section 3 End*/
+
+  /* Section 4 */
+
+  .section4 {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    width: 100vw;
+  }
+
+  .section4 > h2 {
+    width: 350px;
+  }
+
+  .section4 > .row-div {
+    width: 300px;
+    display: flex;
+    margin-top: 5rem;
+    flex-direction: column;
+  }
+
+  .row-div > h3 {
+    font-weight: bold;
+  }
+
+  .row-div > * {
+    margin-bottom: 1.5rem;
+  }
+
+  .logodiv {
+    order: 4;
+  }
+
+  .logodiv > button {
+    width: 100%;
+    text-align: left;
+  }
+
+  .row-div > .exqureLogo {
+    margin-left: -7.5rem;
+  }
+
+  .socials {
+    margin-left: -3.5rem;
+  }
 }
 
-@media screen and (min-width: 768px) and (max-width:1023px) {
-    .section1 {
-       padding: 1rem 0.5rem;
-       margin-bottom: 1.5rem;
-    }
-    .section2 {
-        padding: 1.5rem 0;
-    }
-    .card > * {
-        margin: 0;
-    }  
-    .single-cardbody {
-        padding: 0;
-        margin: -4rem 0;
-    }
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .section1 {
+    padding: 1rem 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .section2 {
+    padding: 1.5rem 0;
+  }
+  .card > * {
+    margin: 0;
+  }
+  .single-cardbody {
+    padding: 0;
+    margin: -4rem 0;
+  }
 }
