@@ -1,22 +1,16 @@
 import React, { useContext } from 'react';
 import './Login.css';
-import hands from '../images/Hands.png';
-import logo from '../images/logo.png';
-import { IoMailOutline } from 'react-icons/io5';
-import { VscLock } from 'react-icons/vsc';
 import { useState, useEffect } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { FaFacebookF } from 'react-icons/fa';
 import { BsApple } from 'react-icons/bs';
 import lock from '../images/lock.svg';
-import personIcon from '../images/personicon.svg';
 import sms from '../images/sms.svg';
-import { BrowserRouter, Link } from 'react-router-dom';
-import { Routes, Route } from 'react-router-dom';
-import ForgotPassword from './ForgotPassword';
+import {Link } from 'react-router-dom';
 import Header from '../Header/Header';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../Context/UserContext';
+import LeftBox from './LeftBox';
 
 const Login = () => {
   const { handleChange, signin } = useContext(UserContext);
@@ -31,12 +25,7 @@ const Login = () => {
     <>
       <Header />
       <div className='login-page'>
-        <section className='left-box'>
-          <div className='logo-div'>
-            <img src={logo} alt='logo' />
-          </div>
-          <img src={hands} className='hands' alt='shaking hands' />
-        </section>
+        <LeftBox/>
         <section className='right-box'>
           <div className='login-box'>
             <h2>Login </h2>
@@ -45,7 +34,6 @@ const Login = () => {
               <label>Email</label>
               <div className='input-box'>
                 {' '}
-                {/* <IoMailOutline className='icon' /> */}
                 <img src={sms} alt='logo' className='icon' />
                 <input
                   type='email'
@@ -58,7 +46,6 @@ const Login = () => {
               <label>Password</label>
               <div className='input-box'>
                 {' '}
-                {/* <VscLock className='icon' />{' '} */}
                 <img src={lock} alt='logo' className='icon' />
                 <input
                   type='password'
