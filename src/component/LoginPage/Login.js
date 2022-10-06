@@ -11,11 +11,8 @@ import { BsApple } from 'react-icons/bs';
 import lock from '../images/lock.svg';
 import personIcon from '../images/personicon.svg';
 import sms from '../images/sms.svg';
-import { BrowserRouter, Link } from 'react-router-dom';
-import { Routes, Route } from 'react-router-dom';
-import ForgotPassword from './ForgotPassword';
 import axios from '../Api/axios';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 // import AuthContext from '../Context/AuthProvider';
 const Login_Url = `/user/signin`;
@@ -25,15 +22,9 @@ const Login_Url = `/user/signin`;
 const Login = () => {
   // const { setAuth } = useContext(AuthContext);
   const navigate = useNavigate();
-
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/';
   const { setAuth } = useAuth();
-  // const { handleChange, signin } = useContext(UserContext);
-
-  // useEffect(() => {
-  //   if (localStorage.getItem('user-info')) {
-  //     navigate('/transaction', { replace: true });
-  //   }
-  // }, []);
 
   const [isLoggedIn, setisLoggedIn] = useState(null);
   const [formValid, setFormValid] = useState(false);
@@ -68,7 +59,9 @@ const Login = () => {
         console.log(JSON.stringify(response?.data));
         const accessToken = response?.data?.token;
         setAuth(response, accessToken);
+        setForm('');
         navigate('/transaction', { replace: true });
+        // navigate(from, { replace: true });
       } catch (err) {
         if (!err?.response) {
           console.log('Success');
