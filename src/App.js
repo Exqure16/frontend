@@ -31,6 +31,7 @@ import Accountsetting from './component/Accountsetting/Accountsetting';
 import PaymentMethod from './component/PaymentSettings/PaymentMethod';
 import AboutPage from './component/AboutPage/AboutPage';
 import ContactUs from './component/ContactUsPage/ContactUs';
+import HelpDesk from './component/HelpDesk/HelpDesk'
 import OTPPage from './component/OTPPage/OTPPage';
 
 function App() {
@@ -47,18 +48,17 @@ function App() {
         <Route path='/contactus' element={<ContactUs />} />
         <Route path='/aboutUs' element={<AboutPage />} />
         <Route path='/blog' element={<Blog />} />
+        <Route path='/' element={<HelpDesk />} />
 
-<<<<<<< HEAD
+
           <Route path='/' element={<HomePage />} />
           <Route path='/login' element={<Login />} />
           <Route path='/forgot' element={<ForgotPassword />} />
           <Route path='/reset' element={<ResetPassword />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/otp' element={<OTPPage />} />
-=======
         {/* Protected Routes */}
         <Route element={<Protected />}>
->>>>>>> b15911d0d2ebd4e6f3ead3822a31d581696e347d
           <Route path='/create' element={<CreateTransaction />} />
           <Route path='/transseller' element={<TransSeller />} />
           <Route path='/mytransactions' element={<MyTransBuyer />} />

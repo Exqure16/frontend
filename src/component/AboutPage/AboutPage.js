@@ -340,6 +340,7 @@ const About = styled.main`
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      gap: 1rem;
       align-self: center;
       border: 4px solid red;
       margin-bottom: 3rem !important;
