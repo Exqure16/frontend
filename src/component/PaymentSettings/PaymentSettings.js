@@ -13,7 +13,7 @@ import Bank from './Bank';
 import { UserContext } from '../Context/UserContext';
 
 const PaymentSettings = () => {
-  // const msg = useContext(UserContext);
+  const { isLoggedIn } = useContext(UserContext);
   const API_URL = 'https://exqure.herokuapp.com/api/account/CardDetails';
   const API_URL1 = 'https://exqure.herokuapp.com/api/account/paymentDetails';
   const [cardDetails, setCardDetails] = useState([]);
@@ -79,80 +79,70 @@ const PaymentSettings = () => {
   };
   //Post Card Details
   const addCard = async (cardDetail) => {
-    // const id = cardDetails.length
-    //   ? cardDetails[cardDetails.length - 1].id + 1
-    //   : 1;
-    // const newCardDetails = { card_number, card_holder_name, expiry_date, cvv };
-    // const listCardDetails = [...cardDetails, newCardDetails];
-    // setCardDetails(listCardDetails);
-    // localStorage.setItem('card', JSON.stringify(listCardDetails));
-
-    // const postOptions = {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     Accept: 'aplication/json',
-    //   },
-    //   body: JSON.stringify(newCardDetails),
-    // };
-    // const result = await apiRequest(API_URL, postOptions);
-    // if (result) setFetchError(result);
-    const res = await fetch(
-      'https://exqure.herokuapp.com/api/account/CardDetails',
-      {
-        method: 'POST',
-        headers: {
-          'Content-type': 'application/json',
-        },
-        body: JSON.stringify(cardDetail),
-      }
-    );
-    alert('card details added');
-    // const data = await res.json();
-    // setCardDetails([...cardDetails, data]);
-  };
-  //payment Details
-  useEffect(() => {
-    const fetchPaymentDetail = async () => {
-      try {
-        const res = await fetch(API_URL1);
-        if (!res.ok) throw Error('Wrong Infomation');
-        const data = await res.json();
-        setPaymentDetails(data);
-        setFetchError(null);
-      } catch (err) {
-        setFetchError(err.message);
-      }
-    };
-    fetchPaymentDetail();
-  }, []);
-
-  const addPayment = async (paymentDetail) => {
-    // const id = paymentDetails.length
-    //   ? paymentDetails[paymentDetails.length - 1].id + 1
-    //   : 1;
-    const newPaymentDetails = { ...paymentDetail };
-    const listPaymentDetail = [...paymentDetails, newPaymentDetails];
-    setPaymentDetails(listPaymentDetail);
+    const id = cardDetails.length
+      ? cardDetails[cardDetails.length - 1].id + 1
+      : 1;
+    const newCardDetails = { card_number, card_holder_name, expiry_date, cvv };
+    const listCardDetails = [...cardDetails, newCardDetails];
+    setCardDetails(listCardDetails);
+    localStorage.setItem('card', JSON.stringify(listCardDetails));
 
     const postOptions = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        Accept: 'aplication/json',
       },
-      body: JSON.stringify(newPaymentDetails),
+      body: JSON.stringify(newCardDetails),
     };
-    const result = await apiRequest(API_URL1, postOptions);
+    const result = await apiRequest(API_URL, postOptions);
     if (result) setFetchError(result);
+
+    // const data = await res.json();
+    // setCardDetails([...cardDetails, data]);
   };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!(bvnNumber && accountNumber && accountName && bankName)) {
-      alert('Please provide you bank details ');
-      return;
-    }
-    addPayment({ bvnNumber, bankName, accountNumber, accountName });
-  };
+  //payment Details
+  // useEffect(() => {
+  //   const fetchPaymentDetail = async () => {
+  //     try {
+  //       const res = await fetch(API_URL1);
+  //       if (!res.ok) throw Error('Wrong Infomation');
+  //       const data = await res.json();
+  //       setPaymentDetails(data);
+  //       setFetchError(null);
+  //     } catch (err) {
+  //       setFetchError(err.message);
+  //     }
+  //   };
+  //   fetchPaymentDetail();
+  // }, []);
+
+  // const addPayment = async (paymentDetail) => {
+  //   // const id = paymentDetails.length
+  //   //   ? paymentDetails[paymentDetails.length - 1].id + 1
+  //   //   : 1;
+  //   const newPaymentDetails = { ...paymentDetail };
+  //   const listPaymentDetail = [...paymentDetails, newPaymentDetails];
+  //   setPaymentDetails(listPaymentDetail);
+
+  //   const postOptions = {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify(newPaymentDetails),
+  //   };
+  //   const result = await apiRequest(API_URL1, postOptions);
+  //   if (result) setFetchError(result);
+  // };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   if (!(bvnNumber && accountNumber && accountName && bankName)) {
+  //     alert('Please provide you bank details ');
+  //     return;
+  //   }
+  //   addPayment({ bvnNumber, bankName, accountNumber, accountName });
+  // };
   return (
     <Container>
       <h3 className='mt-5'>Bank Details</h3>
@@ -262,7 +252,7 @@ const PaymentSettings = () => {
         </div>
       </form>
       <div className='d-flex justify-content-center mb-4'>
-        <button onClick={handleSubmit} className='save'>
+        <button onClick className='save'>
           Save Changes
         </button>
       </div>

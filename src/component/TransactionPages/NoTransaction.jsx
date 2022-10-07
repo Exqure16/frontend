@@ -7,13 +7,11 @@ import { BsFillBellFill } from 'react-icons/bs';
 import { BsPlusSquareFill } from 'react-icons/bs';
 import { CgSortAz } from 'react-icons/cg';
 import ViewBtn from './ViewBtn';
-import Header from '../Header/Header';
 
 function NoTransaction() {
   const navigate = useNavigate();
   return (
     <>
-      <Header />
       <Section>
         <div className='transaction-info'>
           <BsFillBellFill className='bell' />

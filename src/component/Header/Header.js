@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../images/logo.png';
@@ -7,31 +7,26 @@ import candle from '../images/candle.png';
 import Logout from '../images/logout.png';
 import './Header.css';
 import Botton from './Botton';
-import { UserContext } from '../Context/UserContext';
+// import { UserContext } from '../Context/UserContext';
+import useAuth from '../hooks/useAuth';
 
 const Header = () => {
-  const { user, setUser } = useContext(UserContext);
-
   const navigate = useNavigate();
+  const { auth, setAuth } = useAuth();
+
   const logout = () => {
-    localStorage.clear();
-    setUser({ loggedIn: false });
+    setAuth('');
     navigate('/login', { replace: true });
   };
 
-  const hlogout = () => {
-    localStorage.clear();
-    setUser({ loggedIn: false });
-    navigate('/', { replace: true });
-  };
   return (
     <Navbar bg='white' expand='lg' sticky='top'>
       <Container className='my-0'>
-        <Navbar.Brand as={Link} to={'/'} onClick={hlogout}>
+        <Navbar.Brand as={Link} to={'/'}>
           <img className='brand' src={logo} alt='' />
         </Navbar.Brand>
 
-        {user?.loggedIn === false ? (
+        {!auth?.accessToken ? (
           <>
             <Navbar.Toggle aria-controls='navbarScroll' />
             <Navbar.Collapse id='navbarScroll'>
@@ -80,17 +75,19 @@ const Header = () => {
                 </Nav.Link>
               </Nav>
               <Nav style={{ marginLeft: '50px' }}>
-                
-                  <Botton
-                    text={'Login'}
-                    color={'white'}
-                    textColor={'#239ed9'}
-                    url={'/login'}
-                  />
-                
-                
-                  <Botton text={'Signup'} color={'#239ed9'} textColor url={'/signup'} />
-                
+                <Botton
+                  text={'Login'}
+                  color={'white'}
+                  textColor={'#239ed9'}
+                  url={'/login'}
+                />
+
+                <Botton
+                  text={'Signup'}
+                  color={'#239ed9'}
+                  textColor
+                  url={'/signup'}
+                />
               </Nav>
             </Navbar.Collapse>
           </>

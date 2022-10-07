@@ -17,7 +17,6 @@ import showP from '../images/showP.svg';
 import CountrySelect from '../Profile/Form/CountrySelect';
 import { Countries } from '../Countries';
 import Input from '../Profile/Form/Input';
-import Header from '../Header/Header';
 import { useNavigate } from 'react-router-dom';
 import hands from '../images/Hands.png';
 
@@ -153,26 +152,52 @@ function Signup() {
     if (formIsValid) {
       setSDisplay('block');
       setDisplay('none');
-      let result = await fetch('https://exqure.herokuapp.com/api/user/signup', {
-        method: 'POST',
-        body: JSON.stringify(form),
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-      });
-      result = await result.json();
 
-      localStorage.setItem('user-info', JSON.stringify(result));
-
-      if (result.status === 'Success') {
-        setSDisplay('block');
-        setDisplay('none');
-      } else {
-        alert(result.msg);
+      try {
+        const response = await axios.post(Register_Url, JSON.stringify(form), {
+          headers: { 'Content-Type': 'application/json' },
+          // withCredentials: true,
+        });
+        console.log(response.data);
+        console.log(JSON.stringify(response));
+        if (response.status === 'Success') {
+          alert('Success');
+          setSDisplay('block');
+          setDisplay('none');
+        } else {
+          alert(response.msg);
+        }
+      } catch (err) {
+        if (err.response) {
+          console.log(err.response.data);
+          console.log(err.response.status);
+          console.log(err.response.headers);
+        } else {
+          console.log(`Error: ${err.message}`);
+          alert('please fill all fields correctly');
+        }
       }
-    } else {
-      alert('please fill all fields correctly');
+      //   let result = await fetch('https://exqure.herokuapp.com/api/user/signup', {
+      //     method: 'POST',
+      //     body: JSON.stringify(form),
+      //     headers: {
+      //       'Content-Type': 'application/json',
+      //       Accept: 'application/json',
+      //     },
+      //   });
+      //   result = await result.json();
+
+      //   localStorage.setItem('user-info', JSON.stringify(result));
+
+      //   if (result.status === 'Success') {
+      //     setSDisplay('block');
+      //     setDisplay('none');
+      //   } else {
+      //     alert(result.msg);
+      //   }
+      // } else {
+      //   alert('please fill all fields correctly');
+      // }
     }
   }
   /*
