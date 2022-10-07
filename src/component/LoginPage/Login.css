@@ -27,6 +27,9 @@
   flex-direction: column;
   justify-content: center;
 }
+.left-box .hands{
+  width:100%;
+}
 .logo-div {
   /* background-color: yellow; */
   text-align: center;
@@ -218,9 +221,6 @@
   width: 40px;
   height: 40px;
   border: none;
-}
-.forgot-password {
-  /* height: 80vh; */
 }
 
 /* media query */

@@ -32,6 +32,7 @@ import PaymentMethod from './component/PaymentSettings/PaymentMethod';
 import AboutPage from './component/AboutPage/AboutPage';
 import ContactUs from './component/ContactUsPage/ContactUs';
 import HelpDesk from './component/HelpDesk/HelpDesk'
+import OTPPage from './component/OTPPage/OTPPage';
 
 function App() {
   return (
@@ -48,6 +49,14 @@ function App() {
         <Route path='/aboutUs' element={<AboutPage />} />
         <Route path='/blog' element={<Blog />} />
         <Route path='/' element={<HelpDesk />} />
+
+
+          <Route path='/' element={<HomePage />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/forgot' element={<ForgotPassword />} />
+          <Route path='/reset' element={<ResetPassword />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/otp' element={<OTPPage />} />
         {/* Protected Routes */}
         <Route element={<Protected />}>
           <Route path='/create' element={<CreateTransaction />} />

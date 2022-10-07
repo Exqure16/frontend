@@ -1,16 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Signup.css';
-import {
-  Container,
-  Row,
-  Col,
-  InputGroup,
-  FormControl,
-  Form,
-} from 'react-bootstrap';
-import logo from '../images/logo.png';
 import lock from '../images/lock.svg';
+import logo from '../images/logo.png';
 import personIcon from '../images/personicon.svg';
 import sms from '../images/sms.svg';
 import or from '../images/or.svg';
@@ -20,15 +12,13 @@ import apple from '../images/apple.svg';
 import good from '../images/good.svg';
 import welcome from '../images/welcome.svg';
 import arrowDown from '../images/arrowDown.svg';
-import hands from '../images/Hands.png';
 import hideP from '../images/hi.svg';
 import showP from '../images/showP.svg';
 import CountrySelect from '../Profile/Form/CountrySelect';
 import { Countries } from '../Countries';
 import Input from '../Profile/Form/Input';
 import { useNavigate } from 'react-router-dom';
-import axios from '../Api/axios';
-const Register_Url = '/user/signup';
+import hands from '../images/Hands.png';
 
 function Signup() {
   const navigate = useNavigate();
@@ -210,298 +200,279 @@ function Signup() {
       // }
     }
   }
-
+  /*
+                                              
+  */
   return (
     <>
-      <Container fluid>
-        <Row>
-          <Col className='logocol' md>
+      <Header />
+      <div className='signupRow'>
+          <div className='logocol' md>
             <img className='logo' src={logo} alt='exqure logo' />
             <img className='hands' src={hands} alt='Shaking hands' />
-          </Col>
-          <Col className='formcol' style={{ display: display }} md>
-            <h1 className='header'> Sign Up </h1>
-            <p className='tagline'> Welcome! Register with Exqure here. </p>
-            <Form onSubmit={signup} className='form'>
-              <label className='label'>Name</label>
-              <InputGroup className='mb-3'>
-                <div>
-                  <img
-                    src={personIcon}
-                    alt=''
-                    className='icon'
-                    color='#239ED9'
-                  />
-                  <FormControl
-                    placeholder='Enter full name'
-                    type='username'
-                    name='fullname'
-                    onChange={(e) => {
-                      handleChange(e);
-                      if(e.target.value.length ===0){
-                        setNameIsValid(false)
-                        setNameError('This field should not be empty');
-                      }
-                      else if(e.target.value.length < 6){
-                          setNameIsValid(false)
-                          setNameError('name must be greater than 5 letters')
-                      }
-                      else if(!/^[a-zA-Z\s]+$/.test(e.target.value)){
-                          setNameIsValid(false)
-                          setNameError('name should be only letters')
-                      }
-                      if (
-                          e.target.value.length >5 &&
-                          e.target.value !== '' &&
-                          /^[a-zA-Z\s]+$/.test(e.target.value)
-                        ) {
-                          setNameIsValid(true);
-                        }
-                    }}
-                  />
-                </div>
-                {!nameIsValid ? <span className='error'>{nameError}</span> : ''}
-              </InputGroup>
+          </div>
+          <div className='formcol' style={{ display: display }} md>
+            <div className='signupBox'>
 
-              <label className='label' htmlFor='basic-url'>
-                Email
-              </label>
-              <InputGroup className='mb-3'>
-                <div>
-                  <img src={sms} alt='' className='icon' color='#239ED9' />
-                  <FormControl
-                    placeholder='Enter email'
-                    type='email'
-                    name='email'
-                    onChange={(e) => {
-                      handleChange(e);
-                      if(e.target.value.length===0){
-                        setEmailError('This field should not be empty')
-                        setEmailIsValid(false)
-                      }
-                      else if(!e.target.value.match(
-                          /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i
-                        )){
-                          setEmailIsValid(false);
-                          setEmailError(
-                            'email should be similar to - example@gmail.com'
+              <h1 className='header'> Sign Up </h1>
+              <p className='tagline'> Welcome! Register with Exqure here. </p>
+              <form onSubmit={signup} className='form'>
+                <label className='label'>Name</label>
+                  <div className='inFormDiv'>
+                  <img src={personIcon} className='signupIcon' color='#239ED9' />
+      
+                    <input
+                      className='input'
+                      placeholder='Enter full name'
+                      type='username'
+                      name='fullname'
+                      onChange={(e) => {
+                        handleChange(e);
+                        if(e.target.value.length ===0){
+                          setNameIsValid(false)
+                          setNameError('This field should not be empty');
+                        }
+                        else if(e.target.value.length < 6){
+                            setNameIsValid(false)
+                            setNameError('name must be greater than 5 letters')
+                        }
+                        else if(!/^[a-zA-Z\s]+$/.test(e.target.value)){
+                            setNameIsValid(false)
+                            setNameError('name should be only letters')
+                        }
+                        if (
+                            e.target.value.length >5 &&
+                            e.target.value !== '' &&
+                            /^[a-zA-Z\s]+$/.test(e.target.value)
+                          ) {
+                            setNameIsValid(true);
+                          }
+                      }}
+                    />
+                  </div>
+                  {!nameIsValid && <p className='error'>{nameError}</p>}
+            
+
+                <label className='label' htmlFor='basic-url'>
+                  Email
+                </label>
+                  <div className='inFormDiv'>
+                  <img src={sms} className='signupIcon' color='#239ED9' />
+                    <input
+                      className='input'
+                      placeholder='Enter email'
+                      type='email'
+                      name='email'
+                      onChange={(e) => {
+                        handleChange(e);
+                        if(e.target.value.length===0){
+                          setEmailError('This field should not be empty')
+                          setEmailIsValid(false)
+                        }
+                        else if(!e.target.value.match(
+                            /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i
+                          )){
+                            setEmailIsValid(false);
+                            setEmailError(
+                              'email should be similar to - example@gmail.com'
+                            );
+                          }
+                        if (
+                            e.target.value.match(
+                              /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i
+                            ) &&
+                            e.target.value.length !== 0
+                          ) {
+                            setEmailIsValid(true);
+                          }
+                      }}
+                    />
+                  </div>
+                  {!emailIsValid && <p className='error'>{emailError}</p>}
+                
+
+                <label className='label' htmlFor='basic-url'>
+                  Password
+                </label>
+                  <div className='inFormDiv'>
+                  <img src={lock} className='signupIcon' color='#239ED9' />
+                    <input
+                      className='input'
+                      placeholder='Enter password'
+                      type={passwordType}
+                      name='password'
+                      onChange={(e) => {
+                        handleChange(e);
+                        validatePassword(e);
+                      }}
+                    />
+                    {passwordType === 'password' ? (
+                        <img
+                          src={hideP}
+                          onClick={() => setPasswordType('text')}
+                          className='icon1'
+                          color='#239ED9'
+                        />
+                      ) : (
+                        <img
+                          src={showP}
+                          onClick={() => setPasswordType('password')}
+                          className='icon1'
+                          color='#239ED9'
+                        />
+                      )}
+                  </div>
+                  {!passwordIsValid && <p className='error'>{passwordError}</p>}
+                
+
+                <label className='label'>Confirm password</label>
+
+                <div className='inFormDiv'>
+                <img src={lock} className='signupIcon' color='#239ED9' />
+                    <input
+                      className='input'
+                      placeholder='Re-enter password'
+                      type={passwordType1}
+                      name='confirmpassword'
+                      onChange={(e) => {
+                        handleChange(e);
+                        if (form.password === e.target.value) {
+                          setConfirmPasswordIsValid(true);
+                        } else {
+                          setConfirmPasswordIsValid(false);
+                          setConfirmPasswordError(
+                            'This input does not match password'
                           );
                         }
-                      if (
-                          e.target.value.match(
-                            /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i
-                          ) &&
-                          e.target.value.length !== 0
-                        ) {
-                          setEmailIsValid(true);
-                        }
-                    }}
-                  />
-                </div>
-                {!emailIsValid ? (
-                  <span className='error'>{emailError}</span>
-                ) : (
-                  ''
-                )}
-              </InputGroup>
+                      }}
+                    />
+                      {passwordType1 === 'password' ? (
+                        <img
+                          src={hideP}
+                          onClick={() => setPasswordType1('text')}
+                          className='icon1'
+                          color='#239ED9'
+                        />
+                      ) : (
+                        <img
+                          src={showP}
+                          onClick={() => setPasswordType1('password')}
+                          className='icon1'
+                          color='#239ED9'
+                        />
+                      )}
+                  </div>
+                  {!confirmPasswordIsValid ? <p className='error'>{confirmPasswordError}</p>:''}
 
-              <label className='label' htmlFor='basic-url'>
-                Password
-              </label>
-              <InputGroup className='mb-3'>
-                <div>
-                  <img src={lock} alt='' className='icon' color='#239ED9' />
-                  <FormControl
-                    placeholder='Enter password'
-                    type={passwordType}
-                    name='password'
-                    onChange={(e) => {
-                      handleChange(e);
-                      validatePassword(e);
-                    }}
-                  />
-                  <span style={{ position: 'absolute', right: '2rem' }}>
-                    {passwordType === 'password' ? (
-                      <img
-                        src={hideP}
-                        alt=''
-                        onClick={() => setPasswordType('text')}
-                        className='icon1'
-                        color='#239ED9'
-                      />
-                    ) : (
-                      <img
-                        src={showP}
-                        alt=''
-                        onClick={() => setPasswordType('password')}
-                        className='icon1'
-                        color='#239ED9'
-                      />
-                    )}
-                  </span>
-                </div>
-                {!passwordIsValid ? (
-                  <span className='error'>{passwordError}</span>
-                ) : (
-                  ''
-                )}
-              </InputGroup>
+                <label className='label' htmlFor='basic-url'>
+                  Phone
+                </label>
+                <Input
+                  className=''
+                  type='text'
+                  img1W={'2rem'}
+                  img1={phoneFlagUrl2}
+                  img1ML={'1rem'}
+                  img1MT={'0.7rem'}
+                  onClick2={() => {
+                    if (openPhone == 'none') {
+                      setOpenPhone('inline-block');
+                    } else if (openPhone == 'inline-block') {
+                      setOpenPhone('none');
+                    }
+                  }}
+                  sML={'3.5rem'}
+                  sMT={'0.5rem'}
+                  img2W={'1rem'}
+                  img2ML={'6rem'}
+                  img2MT={'0.7rem'}
+                  img2={arrowDown}
+                  sV={dialCode}
+                  inputPL={'7.5rem'}
+                  inputW={'100%'}
+                  placeholder={'90 000 0000'}
+                  inputValue={phoneValue}
+                  name='phone'
+                  onChange={(e) => {
+                    let p = dialCode;
+                    p += e.target.value;
+                    setPhoneValue(p);
+                    setForm({
+                      ...form,
+                      phone: p,
+                    });
 
-              <label className='label'>Confirm password</label>
-
-              <InputGroup className='mb-3 phoneInput'>
-                <div>
-                  <img src={lock} alt='' className='icon' color='#239ED9' />
-                  <FormControl
-                    placeholder='Re-enter password'
-                    type={passwordType1}
-                    name='confirmpassword'
-                    onChange={(e) => {
-                      handleChange(e);
-                      if (form.password === e.target.value) {
-                        setConfirmPasswordIsValid(true);
-                      } else {
-                        setConfirmPasswordIsValid(false);
-                        setConfirmPasswordError(
-                          'This input does not match password'
+                    if(e.target.value.length ===0){
+                      setPhoneNumberError('This field should not be empty');
+                      setPhoneNumberIsValid(false)
+                    }
+                    else if (!(/^[0-9]+$/.test(e.target.value))
+                    ) {
+                        setPhoneNumberError(
+                        'This field should contain only numbers 0-9'
                         );
-                      }
-                    }}
-                  />
-                  <span style={{ position: 'absolute', right: '2rem' }}>
-                    {passwordType1 === 'password' ? (
-                      <img
-                        src={hideP}
-                        alt=''
-                        onClick={() => setPasswordType1('text')}
-                        className='icon1'
-                        color='#239ED9'
-                      />
-                    ) : (
-                      <img
-                        src={showP}
-                        alt=''
-                        onClick={() => setPasswordType1('password')}
-                        className='icon1'
-                        color='#239ED9'
-                      />
-                    )}
-                  </span>
-                </div>
-                {!confirmPasswordIsValid ? (
-                  <span className='error'>{confirmPasswordError}</span>
+                        setPhoneNumberIsValid(false);
+                    } else if (!e.target.value.length >= 8) {
+                        setPhoneNumberError(
+                        'This field should contain at least 8 numbers'
+                        );
+                        setPhoneNumberIsValid(false);
+                    }
+                    if (
+                        /^[0-9]+$/.test(e.target.value) &&
+                        e.target.value.length >= 8
+                    ) {
+                        setPhoneNumberIsValid(true);
+                    }
+                  }}
+                />
+
+                {!phoneNumberIsValid ? (
+                  <span className='error'>{phoneNumberError}</span>
                 ) : (
                   ''
                 )}
-              </InputGroup>
+                <div className='openPhone2' style={{ display: openPhone }}>
+                  {getPhoneDetails ? getPhoneDetails : ''}
+                </div>
+              </form>
+              <button
+                className='Signupbtn'
+                onSubmit={signup}
+                onClick={signup}
+                style={{ background: btnColor }}
+              >
+                Sign Up
+              </button>
 
-              <label className='label' htmlFor='basic-url'>
-                Phone
-              </label>
-              <Input
-                className=''
-                type='text'
-                img1W={'2rem'}
-                img1={phoneFlagUrl2}
-                img1ML={'1rem'}
-                img1MT={'0.7rem'}
-                onClick2={() => {
-                  if (openPhone == 'none') {
-                    setOpenPhone('inline-block');
-                  } else if (openPhone == 'inline-block') {
-                    setOpenPhone('none');
-                  }
-                }}
-                sML={'3.5rem'}
-                sMT={'0.5rem'}
-                img2W={'1rem'}
-                img2ML={'6rem'}
-                img2MT={'0.7rem'}
-                img2={arrowDown}
-                sV={dialCode}
-                inputPL={'7.5rem'}
-                inputW={'100%'}
-                placeholder={'90 000 0000'}
-                inputValue={phoneValue}
-                name='phone'
-                onChange={(e) => {
-                  let p = dialCode;
-                  p += e.target.value;
-                  setPhoneValue(p);
-                  setForm({
-                    ...form,
-                    phone: p,
-                  });
-
-                  if(e.target.value.length ===0){
-                    setPhoneNumberError('This field should not be empty');
-                    setPhoneNumberIsValid(false)
-                  }
-                  else if (!(/^[0-9]+$/.test(e.target.value))
-                  ) {
-                      setPhoneNumberError(
-                      'This field should contain only numbers 0-9'
-                      );
-                      setPhoneNumberIsValid(false);
-                  } else if (!e.target.value.length >= 8) {
-                      setPhoneNumberError(
-                      'This field should contain at least 8 numbers'
-                      );
-                      setPhoneNumberIsValid(false);
-                  }
-                  if (
-                      /^[0-9]+$/.test(e.target.value) &&
-                      e.target.value.length >= 8
-                  ) {
-                      setPhoneNumberIsValid(true);
-                  }
-                }}
-              />
-
-              {!phoneNumberIsValid ? (
-                <span className='error'>{phoneNumberError}</span>
-              ) : (
-                ''
-              )}
-              <div className='openPhone2' style={{ display: openPhone }}>
-                {getPhoneDetails ? getPhoneDetails : ''}
+              <div className='footDiv'>
+                <p className='footer1'>
+                  By signing up, I agree to{' '}
+                  <a href='https://www.github.com'>Terms and Conditions</a> and{' '}
+                  <a href='https://www.github.com'>Privacy Policy</a>
+                </p>
+                <p className='footer2'>
+                  Have an account?{' '}
+                  <Link style={{ textDecoration: 'none' }} to='/frontend/login'>
+                    Login
+                  </Link>
+                </p>
               </div>
-            </Form>
-            <button
-              className='Signupbtn'
-              onSubmit={signup}
-              onClick={signup}
-              style={{ background: btnColor }}
-            >
-              Sign Up
-            </button>
-
-            <div className='footDiv'>
-              <p className='footer1'>
-                By signing up, I agree to{' '}
-                <a href='https://www.github.com'>Terms and Conditions</a> and{' '}
-                <a href='https://www.github.com'>Privacy Policy</a>
-              </p>
-              <p className='footer2'>
-                Have an account?{' '}
-                <Link style={{ textDecoration: 'none' }} to='/frontend/login'>
-                  Login
-                </Link>
-              </p>
+              <div className='lastLogoDiv'>
+                <p>
+                  <span>OR</span>
+                </p>
+                <b>LOGIN WITH</b>
+                <div className='logoLink'>
+                  <img className='google' src={google} alt='google icon'></img>
+                  <img className='fb' src={facebook} alt='facebook icon'></img>
+                  
+                </div>
+              </div>
+              
             </div>
-            <div className='lastLogoDiv'>
-              <div className='orDiv'>
-                <img src={or} alt='or' className='orDivImg'></img>
-              </div>
-              <p>LOGIN WITH</p>
-              <div className='logoLink'>
-                <img className='google' src={google} alt='google icon'></img>
-                <img className='fb' src={facebook} alt='facebook icon'></img>
-                <img src={apple} alt='apple icon'></img>
-              </div>
-            </div>
-          </Col>
-          <Col className='signupCol' style={{ display: sdisplay }}>
+          </div>
+          <div className='signupCol' style={{ display: sdisplay }}>
             <div className='successfulDiv'>
               <img src={good} alt='successsful'></img>
               <p>
@@ -513,9 +484,9 @@ function Signup() {
               <h1>Welcome</h1>
               <img src={welcome} alt='Welcome'></img>
             </div>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+      </div>
+      
     </>
   );
 }
