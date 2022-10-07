@@ -1,20 +1,28 @@
 import React from 'react';
-import { Container, Form, Button, Modal } from 'react-bootstrap';
+import { Container, Form, Button, Modal, Row, Col } from 'react-bootstrap';
 import './Paymentmethod.css';
 import cardPos from '../images/card-pos.png';
 import fluter from '../images/money-send.png';
 import master from '../images/Logo.svg';
+import success from '../images/Ribbon.svg';
+import Visa from '../images/Visa.png';
+import Mastercard from '../images/Mastercard.png';
 import { useState } from 'react';
+// import Carddetails from './Carddetails';
 
 const PaymentMethod = () => {
   const [show, setShow] = useState(false);
+  const [pay, setPay] = useState(false);
 
   const handleClose = () => setShow(false);
+  const handleClosePay = () => setPay(false);
   const handleShow = () => setShow(true);
+  const handlePay = () => setPay(true);
+
   return (
     <Container>
-      <h3 className='mt-5'>Select payment method</h3>
-      <div className='methodcard'>
+      <h3 className='mt-5 mb-5'>Select payment method</h3>
+      <div className='methodcard mb-4'>
         <div className='cardcontainer'>
           <div className='paycardbody'>
             <img src={cardPos} alt='cardpos' />
@@ -35,56 +43,69 @@ const PaymentMethod = () => {
       </div>
       <hr style={{ height: '3px', marginTop: '30px' }} />
       <h3 className='mt-5'>Pay with existing card</h3>
-      <div className='debitcardcontainer'>
-        <div className='debitcard'>
-          <h4
-            style={{
-              color: '#ffffff',
-              marginTop: '12.57px',
-              marginBottom: '9px',
-              marginLeft: '190.66px',
-              fontSize: '14px',
-              fontWeight: '450px',
-            }}
-          >
-            Debit
-          </h4>
-          <p>**** **** **** 0322</p>
-          <p>Venessa Anderson</p>
-          <p>VALID</p>
-          <p>
-            THUR{' '}
-            <span style={{ marginTop: '90.42px', marginLeft: '35.89px' }}>
-              03/04
-            </span>
-          </p>
-          <img
-            src={master}
-            alt=''
-            style={{ marginLeft: '190.66px', marginTop: '.58px' }}
-          />
-        </div>
-        <div>
-          <div className='carddata'>
-            <div className='info'>
-              <h4 style={{ color: '#9FA2A5' }}>debit card</h4>
-              <h4>Venessa Anderson</h4>
-              <h4>**** **** **** 0322</h4>
-            </div>
-
-            <input
-              type='button'
-              value='Pay Now'
-              onClick={handleShow}
-              className='paynow'
-            />
+      <Row>
+        <Col md={3}>
+          <div className='debitcard'>
+            <Row>
+              <Col md={8} style={{ marginTop: '50px' }}>
+                <div className='d-grid'>
+                  <p>00065657473672627</p>
+                  <p>Vanesa Anderson</p>
+                  <p>VALID</p>
+                  <p>
+                    THUR{' '}
+                    <span
+                      style={{ marginTop: '0.42px', marginLeft: '35.89px' }}
+                    >
+                      03/04
+                    </span>
+                  </p>
+                </div>
+              </Col>
+              <Col md={4} style={{}}>
+                <h4
+                  style={{
+                    color: '#ffffff',
+                    marginTop: '14px',
+                    fontSize: '14px',
+                    fontWeight: '450px',
+                  }}
+                >
+                  Debit
+                </h4>
+                <img src={master} alt='' style={{ marginTop: '80px' }} />
+              </Col>
+            </Row>
           </div>
-        </div>
-      </div>
+        </Col>
+        <Col md={9}>
+          <div>
+            <div className='carddata'>
+              <div className='info'>
+                <h4 style={{ color: '#9FA2A5' }}>debit card</h4>
+
+                <h4>235357684827287282</h4>
+                <h4>Vanasa Anderson</h4>
+              </div>
+
+              <input
+                type='button'
+                value='Pay now'
+                onClick={handleShow}
+                className='paynow'
+              />
+            </div>
+          </div>
+        </Col>
+      </Row>{' '}
       <h3 className='mt-5'>Pay with another card</h3>
       <div className='d-flex justify-content-center mt-4'>
         <Form className='addcarddetails'>
           <h3 className='mb-3'>Add card details</h3>
+          <div className='cards'>
+            <img src={Visa} alt='' className='visacardd' />
+            <img src={Mastercard} alt='' className='mastercard' />
+          </div>
           <Form.Group className='mb-3' controlId='formBasicNumber'>
             <Form.Label>Card number</Form.Label>
             <Form.Control
@@ -145,7 +166,7 @@ const PaymentMethod = () => {
             </div>
           </Modal.Body>
           <Modal.Footer className='border-0  d-grid '>
-            <button onClick={handleClose} className='addcardbutton'>
+            <button onClick={handlePay} className='addcardbutton'>
               Pay now
             </button>
             <button onClick={handleClose} className='cancelbutton'>
@@ -154,6 +175,36 @@ const PaymentMethod = () => {
           </Modal.Footer>
         </Container>
       </Modal>
+      {/* modal */}
+      <>
+        <Modal show={pay} onHide={handleClosePay} className=''>
+          <Container>
+            <Modal.Body className='p-5 '>
+              <div className='paymentsuccess'>
+                <h3 className='mb-4 d-flex justify-content-center mx-auto'>
+                  Payment Successful
+                </h3>
+                <img
+                  src={success}
+                  alt=''
+                  className='d-flex justify-content-center mx-auto mb-4'
+                />
+                <p className='d-flex justify-content-center mx-auto mt-4 mb-0'>
+                  Payment reciept has been sent to your email
+                </p>
+              </div>
+            </Modal.Body>
+            <Modal.Footer className='border-0 py-3'>
+              <button
+                onClick={handleClosePay}
+                className='continuebutton d-flex justify-content-center mx-auto'
+              >
+                Continue
+              </button>
+            </Modal.Footer>
+          </Container>
+        </Modal>
+      </>
     </Container>
   );
 };

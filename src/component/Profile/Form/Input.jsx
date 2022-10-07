@@ -1,5 +1,4 @@
 import React from 'react'
-
 const Input =(props)=>{
     const{ 
         img1W,
@@ -18,14 +17,18 @@ const Input =(props)=>{
         inputW, 
         inputPL,
         inputValue,
-        type, 
+        type,
+        name, 
         sV,
+        bL,
         sP,
         sML,
         sMT,
+        inputMT,
+        checkDisable,
         placeholder, fD } = props;
     return(
-        <div style={{ display:'flex', flexDirection: fD?fD:'row' }}>
+        <div style={{ display:'flex', flexDirection: fD?fD:'row', marginTop: inputMT?inputMT:''}}>
             <img style={{
                 width:img1W ? img1W :'',
                 position:img1P ? img1P:'absolute',
@@ -52,18 +55,20 @@ const Input =(props)=>{
             />
             <input style={{
                 width:inputW? inputW: '80%',
-                paddingLeft:inputPL? inputPL :''
+                paddingLeft:inputPL? inputPL :'',
+                borderColor: bL?bL:'#8bb7cc',
                 
                 }}
                 onFocus={onFocus? onFocus : null}
                 onChange= {onChange? onChange : null}
                 type = {type? type: ''}
-                
+                name = {name? name : ''}
                 defaultValue = {inputValue ? inputValue :''}
                 placeholder={placeholder? placeholder :''} 
+                disabled = {checkDisable?checkDisable:''}
             ></input>
         </div>
         
     )
 }
-export default Input
+export default Input;

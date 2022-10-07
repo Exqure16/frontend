@@ -18,8 +18,11 @@ const TransSuccesful = ({transTitle,
     messageAlt,
     message,
     messageImg,
+    message1,
+    message1Img,
     checkDisable,
     handleClick,
+    bgColor,
     children})=>{
 
 
@@ -30,52 +33,61 @@ const TransSuccesful = ({transTitle,
             
             <p className='transHeader'>Transaction details</p>
             <div className='transDetDiv'>
-                <div>
+                <div className='inTransDetDiv'>
                     <div className='transKey'> TRANSACTION TITLE:</div>
-                    <span className='transValue'> { transTitle? transTitle:''}</span>
+                    <p className='transValue'> { transTitle? transTitle:''}</p>
                     
                 </div>
-                <div>
+                <div className='inTransDetDiv'>
                     <div className='transKey'> TRANSACTION ID: </div>
-                    <span className='transValue'> { transId? transId:'' } </span>
+                    <p className='transValue'> { transId? transId:'' } </p>
                 </div>
-                <div>
+                <div className='inTransDetDiv'>
                     <div className='transKey'> ROLE IN TRANSACTION: </div>
-                    <span className='transValue'> { roleInTrans? roleInTrans:'' } </span>
+                    <p className='transValue'> { roleInTrans? roleInTrans:'' } </p>
                 </div>
-                <div>
+                <div className='inTransDetDiv'>
                     <div className='transKey'> ITEM ATTRIBUTE: </div>
-                    <span className='transValue'> { itemAttr? itemAttr:''} </span>
+                    <p className='transValue'> { itemAttr? itemAttr:''} </p>
                 </div>
-                <div>
+                <div className='inTransDetDiv'>
                     <div className='transKey'> ITEM CATEGORY: </div>
-                    <span className='transValue'> { itemCat? itemCat:''} </span>
+                    <p className='transValue'> { itemCat? itemCat:''} </p>
                 </div>
                 {children}
         
             </div>
-            <img src={ sLine } alt='line'/>
-            <div style={{display:'flex'}}>
-                <div className='transKey' style={{marginTop:'1rem'}}>
+            <img className='sLine' src={ sLine } alt='line'/>
+            <div className='inTransDetDiv'>
+                <div className='transKey' >
                     TOTAL AMOUNT
                 </div> 
-                <span className='transValue' style={{fontWeight:'bolder'}}><span style={{color:'red'}}>{ totalAmount? totalAmount:'' }</span>  (-Exqure's commission) </span>
+                <p className='transValue' style={{fontWeight:'bolder'}}><span style={{color:'red'}}>{ totalAmount? totalAmount:'' }</span>  (-Exqure's commission) </p>
             
             </div>
             <div>
                 <p className='transHeader'> { footHeader? footHeader:'' } </p>
                 <p style={{fontWeight:'bolder'}}>{ footParagraph? footParagraph: '' }</p>
                 <div>
-                    <img style={{position:'absolute', margin:'0.5rem'}} src={footImg?footImg:''} alt= {footAlt? footAlt:''}/>
+                    <img onClick={()=>{navigator.clipboard.writeText('0x7F7B7F9380523100cDB38B4104b89654C63afdCc');
+                    alert('Copied!')
+                }} style={{position:'absolute', margin:'0.5rem'}} src={footImg?footImg:''} alt= {footAlt? footAlt:''}/>
                     <input 
                         className='footInput' 
                         placeholder = {inputPL?inputPL :''} 
                         disabled ={checkDisable?checkDisable:''} 
                         value = {inputV ? inputV :''}
                         onChange ={ handleChange}
+                        style={{backgroundColor: bgColor}}
                         ></input>
                 </div>
-                <p>{message? message:''} <img src={messageImg? messageImg:''} alt={messageAlt?messageAlt:''}/></p>
+                <div className='copyShareDiv'>
+                    <p onClick={()=>{navigator.clipboard.writeText('https://www.github.com/excel404');
+                    alert('Copied!')
+                }} style={{cursor:'pointer'}}>{message? message:''} <img src={messageImg? messageImg:''} alt={messageAlt?messageAlt:''}/></p>
+                    <p>{message1? message1:''} <img src={message1Img? message1Img:''} alt={messageAlt?messageAlt:''}/></p>
+
+                </div>
             </div>
             <button onClick={handleClick} className='footBtn'>Proceed</button>
         </div>

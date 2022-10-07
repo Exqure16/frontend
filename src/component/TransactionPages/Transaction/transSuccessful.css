@@ -20,7 +20,6 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 140%;
-    margin-top: 1rem;
 }
 .transContainer .transHeader{
     font-family: 'Montserrat';
@@ -34,17 +33,15 @@
 .transDetDiv{
     margin-bottom: 0;
 }
-.transDetDiv div{
+.inTransDetDiv{
     margin-top: 1rem;
     display: flex;
-    justify-content: space-between;
+    gap:30px;
 }
 
 .transKey{
-    text-align: left;
-    
-    width:25%;
-    
+    text-align: left;  
+    width:30%;
     font-family: 'Futura PT';
     font-style: normal;
     font-weight: 400;
@@ -54,22 +51,21 @@
 
 }
 .transValue{
-    margin-top: 1.2rem;
+    margin-top: 0rem;
     width: 75%;
     font-family: 'Futura PT';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 140%;
     letter-spacing: 0.03em;
     color: #1B1C1E;
 }
 .footInput{
     padding-left:3rem;
     width: 430px;
-    background-color:rgb(230, 223, 223);
     border:none;
     color:black;
+    border: 1px solid #B2B2B3;
 }
 .footBtn{
     font-family: 'Futura PT';
@@ -84,4 +80,48 @@
     border-color:transparent;
     border-radius:4px;
     color: #FDFEFF;
+}
+.sLine{
+    width: 100%;
+}
+.copyShareDiv{
+    display: flex;
+    gap:1rem;
+}
+.copyShareDiv p{
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 16px;
+    line-height: 142%;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #1B1C1E;
+}
+@media (max-width:767px) {
+    .transContainer{
+        margin-left: 1rem;
+        width: 90%;
+    }
+    .transContainer h1{
+        font-size: 2rem;
+        
+    }
+    .inTransDetDiv{
+        flex-direction: column;
+        gap:0px;
+    }
+    .transKey{
+        width:100%;
+    }
+    .sLine{
+        width:80%;
+        border:0.1px solid gray;
+        outline:none;
+        
+    }
+    .footInput{
+        width:90%
+    }
+
 }
