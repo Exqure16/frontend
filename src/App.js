@@ -31,6 +31,7 @@ import Accountsetting from './component/Accountsetting/Accountsetting';
 import PaymentMethod from './component/PaymentSettings/PaymentMethod';
 import AboutPage from './component/AboutPage/AboutPage';
 import ContactUs from './component/ContactUsPage/ContactUs';
+import HelpDesk from './component/HelpDesk/HelpDesk'
 import OTPPage from './component/OTPPage/OTPPage';
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
         <Route path='/contactus' element={<ContactUs />} />
         <Route path='/aboutUs' element={<AboutPage />} />
         <Route path='/blog' element={<Blog />} />
+        <Route path='/' element={<HelpDesk />} />
 
         {/* Protected Routes */}
         <Route element={<Protected />}>
