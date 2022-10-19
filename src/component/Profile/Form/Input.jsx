@@ -25,10 +25,12 @@ const Input =(props)=>{
         sML,
         sMT,
         inputMT,
+        inputMode,
+        inputDivW,
         checkDisable,
         placeholder, fD } = props;
     return(
-        <div style={{ display:'flex', flexDirection: fD?fD:'row', marginTop: inputMT?inputMT:''}}>
+        <div style={{ display:'flex', flexDirection: fD?fD:'row', marginTop: inputMT?inputMT:'', width:inputDivW?inputDivW:''}}>
             <img style={{
                 width:img1W ? img1W :'',
                 position:img1P ? img1P:'absolute',
@@ -63,6 +65,7 @@ const Input =(props)=>{
                 onChange= {onChange? onChange : null}
                 type = {type? type: ''}
                 name = {name? name : ''}
+                inputMode ={inputMode?inputMode:''}
                 defaultValue = {inputValue ? inputValue :''}
                 placeholder={placeholder? placeholder :''} 
                 disabled = {checkDisable?checkDisable:''}

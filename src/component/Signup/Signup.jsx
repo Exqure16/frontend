@@ -5,10 +5,8 @@ import lock from '../images/lock.svg';
 import logo from '../images/logo.png';
 import personIcon from '../images/personicon.svg';
 import sms from '../images/sms.svg';
-import or from '../images/or.svg';
 import google from '../images/google.svg';
 import facebook from '../images/facebook.svg';
-import apple from '../images/apple.svg';
 import good from '../images/good.svg';
 import welcome from '../images/welcome.svg';
 import arrowDown from '../images/arrowDown.svg';
@@ -19,6 +17,7 @@ import { Countries } from '../Countries';
 import Input from '../Profile/Form/Input';
 import { useNavigate } from 'react-router-dom';
 import hands from '../images/Hands.png';
+import axios from '../Api/axios';
 
 function Signup() {
   const navigate = useNavigate();
@@ -27,7 +26,7 @@ function Signup() {
       navigate('/transaction', { replace: true });
     }
   }, []);
-
+  const Register_Url = `/user/signup`
   //sets initial states for the phone input
   const [dialCode, setDialCode] = useState('+234');
   const [openPhone, setOpenPhone] = useState('none');
@@ -154,7 +153,7 @@ function Signup() {
       setDisplay('none');
 
       try {
-        const response = await axios.post(Register_Url, JSON.stringify(form), {
+        const response = await axios.post('https://exqure.herokuapp.com/api/user/signup', JSON.stringify(form), {
           headers: { 'Content-Type': 'application/json' },
           // withCredentials: true,
         });
@@ -177,35 +176,22 @@ function Signup() {
           alert('please fill all fields correctly');
         }
       }
-      //   let result = await fetch('https://exqure.herokuapp.com/api/user/signup', {
-      //     method: 'POST',
-      //     body: JSON.stringify(form),
-      //     headers: {
-      //       'Content-Type': 'application/json',
-      //       Accept: 'application/json',
-      //     },
-      //   });
-      //   result = await result.json();
 
-      //   localStorage.setItem('user-info', JSON.stringify(result));
-
-      //   if (result.status === 'Success') {
-      //     setSDisplay('block');
-      //     setDisplay('none');
-      //   } else {
-      //     alert(result.msg);
-      //   }
-      // } else {
-      //   alert('please fill all fields correctly');
-      // }
     }
   }
-  /*
-                                              
-  */
+  const googleSignup = ()=>{
+    axios.get('user/social/google')
+    .then((response)=>{
+      console.log(response)
+    }).catch((error)=>{
+      console.log(error)
+    })
+  }
+  const fbSignup = ()=>{
+    axios.get('user/social/facebook')
+  }
   return (
     <>
-      <Header />
       <div className='signupRow'>
           <div className='logocol' md>
             <img className='logo' src={logo} alt='exqure logo' />
@@ -219,7 +205,7 @@ function Signup() {
               <form onSubmit={signup} className='form'>
                 <label className='label'>Name</label>
                   <div className='inFormDiv'>
-                  <img src={personIcon} className='signupIcon' color='#239ED9' />
+                    <img src={personIcon} className='signupIcon' color='#239ED9' />
       
                     <input
                       className='input'
@@ -389,7 +375,9 @@ function Signup() {
                   img2={arrowDown}
                   sV={dialCode}
                   inputPL={'7.5rem'}
+                  inputDivW={'100%'}
                   inputW={'100%'}
+                  inputMode='numeric'
                   placeholder={'90 000 0000'}
                   inputValue={phoneValue}
                   name='phone'
@@ -464,8 +452,8 @@ function Signup() {
                 </p>
                 <b>LOGIN WITH</b>
                 <div className='logoLink'>
-                  <img className='google' src={google} alt='google icon'></img>
-                  <img className='fb' src={facebook} alt='facebook icon'></img>
+                  <img className='google' onClick={googleSignup} src={google} alt='google icon'></img>
+                  <img className='fb' onClick={fbSignup} src={facebook} alt='facebook icon'></img>
                   
                 </div>
               </div>
