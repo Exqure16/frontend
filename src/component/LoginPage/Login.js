@@ -12,10 +12,9 @@ import lock from '../images/lock.svg';
 import sms from '../images/sms.svg';
 import axios from '../Api/axios';
 import LeftBox from './LeftBox';
-// import AuthContext from '../Context/AuthProvider';
+import useAuth from '../hooks/useAuth';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 const Login_Url = `/user/signin`;
-
-// import { UserContext } from '../Context/UserContext';
 
 const Login = () => {
   // const { setAuth } = useContext(AuthContext);
