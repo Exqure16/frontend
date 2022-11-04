@@ -26,7 +26,7 @@ function Signup() {
       navigate('/transaction', { replace: true });
     }
   }, []);
-  const Register_Url = `/user/signup`
+  //const Register_Url = `/user/signup`
   //sets initial states for the phone input
   const [dialCode, setDialCode] = useState('+234');
   const [openPhone, setOpenPhone] = useState('none');
@@ -153,7 +153,7 @@ function Signup() {
       setDisplay('none');
 
       try {
-        const response = await axios.post('https://exqure.herokuapp.com/api/user/signup', JSON.stringify(form), {
+        const response = await axios.post('user/signup', JSON.stringify(form), {
           headers: { 'Content-Type': 'application/json' },
           // withCredentials: true,
         });
@@ -163,6 +163,7 @@ function Signup() {
           alert('Success');
           setSDisplay('block');
           setDisplay('none');
+          setTimeout(navigate('/otp'),5000);
         } else {
           alert(response.msg);
         }

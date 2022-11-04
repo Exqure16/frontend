@@ -10,6 +10,7 @@ const Personal = () => {
     const[show, setShow] = useState(true);
     const [targetValue, setTargetValue] = useState('individual');
     const [showError, setShowError] = useState(false);
+    const [errorMessage, setErrorMessage] = useState(null);
     //rememeber to update the sharing of data using context
     const toggleCheck= (e)=>{
         if (e.target.value === 'individual'){
@@ -28,7 +29,7 @@ const Personal = () => {
             {showError?
             <div className='errorDiv'>
                 <img src={caution} alt ='error'/>
-                <span>Your account has not been verified, complete profile and payment details to verify account</span>
+                <span>{errorMessage}</span>
             </div>: ''}
             <div className= 'formDiv'>
                 <div>
@@ -57,7 +58,7 @@ const Personal = () => {
                     </div>
                         
                 </div>
-                <PropContext.Provider value={{showError, setShowError}}>
+                <PropContext.Provider value={{showError, setShowError, setErrorMessage}}>
                     {show?<FormInd accountType = {targetValue}/>:<FormCo accountType = {targetValue} /> }
                 </PropContext.Provider>
                 

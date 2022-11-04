@@ -7,6 +7,7 @@ import { Countries} from '../../Countries'
 import CountrySelect from './CountrySelect'
 import Input from './Input'
 import { PropContext }  from './PropContxt'
+import axios from '../../Api/axios'
 
 //BASE form for both company and individual profile creation
 export const FormIn= ({accountType1 ,children})=>{
@@ -81,7 +82,7 @@ export const FormIn= ({accountType1 ,children})=>{
         setCoAccountInfo({...coAccountInfo, [name]:value});
     };
    
-    const {showError,setShowError} = useContext(PropContext);
+    const {setErrorMessage,setShowError} = useContext(PropContext);
     
 
     const onCountryClick =(country)=>{
@@ -151,7 +152,7 @@ export const FormIn= ({accountType1 ,children})=>{
     const [zipCodeError, setZipCodeError] = useState('');
     const [addressError, setAddressError] = useState('');
     const [stateError, setStateError] = useState('');
-   const [altPhoneNumberError, setAltPhoneNumberError] = useState('');
+    const [altPhoneNumberError, setAltPhoneNumberError] = useState('');
     const [phoneNumberError, setPhoneNumberError] = useState('');
     const [nameIsValid, setNameIsValid] = useState(false);
     const [phoneNumberIsValid, setPhoneNumberIsValid] = useState(false);
@@ -188,9 +189,25 @@ export const FormIn= ({accountType1 ,children})=>{
                 countryIsValid
                 ){
                     console.log(inAccountInfo);
-                    setShowError(false);
-                    alert('Your changes have been saved');
+                    axios.patch('account/personalDetails',
+                        inAccountInfo
+                    ).then((response)=>{
+                        if(response.status==='Success'){
+                            setShowError(false);
+                            alert('Your changes have been saved');
+                            console.log(response)
+                        }
+                    })
+                    .catch((err)=>{
+                        if(err){
+                            setErrorMessage('Your changes were not saved, check your network connection')
+                            setShowError(true);
+                            console.log(err.msg);
+                        }
+                    })
+                    
                 } else{
+                    setErrorMessage('Your account has not been verified, complete profile and payment details to verify account')
                     setShowError(true);
                 }
     
@@ -208,9 +225,26 @@ export const FormIn= ({accountType1 ,children})=>{
                 countryIsValid
                 ){
                     console.log(coAccountInfo);
-                    setShowError(false);
-                    alert('Your changes have been saved');
+                    axios.patch('account/companyDetails',
+                        coAccountInfo
+                    ).then((response)=>{
+                        if(response.status==='Success'){
+                            setShowError(false);
+                            alert('Your changes have been saved');
+                            console.log(response)
+                        }
+                    })
+                    .catch((err)=>{
+                        if(err){
+                            setErrorMessage('Your changes were not saved, check your network connection')
+                            setShowError(true);
+                            console.log(err.msg);
+                        }
+                    })
+                    
+
                 } else{
+                    setErrorMessage('Your account has not been verified, complete profile and payment details to verify account')
                     setShowError(true);
                 }
     
