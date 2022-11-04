@@ -6,20 +6,19 @@ import { FaFacebookF } from 'react-icons/fa';
 import { BsApple } from 'react-icons/bs';
 import lock from '../images/lock.svg';
 import sms from '../images/sms.svg';
-import {Link } from 'react-router-dom';
-import Header from '../Header/Header';
-import { useNavigate } from 'react-router-dom';
-import { UserContext } from '../Context/UserContext';
+import { Link } from 'react-router-dom';
+import axios from '../Api/axios';
+import { useNavigate, useLocation } from 'react-router-dom';
 import LeftBox from './LeftBox';
+import useAuth from '../hooks/useAuth';
+const Login_Url = `/user/signin`;
 
 const Login = () => {
   // const { setAuth } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname || '/';
   const { setAuth } = useAuth();
 
-  const [isLoggedIn, setisLoggedIn] = useState(null);
   const [formValid, setFormValid] = useState(false);
   const [form, setForm] = useState({
     // email: '',
@@ -50,8 +49,12 @@ const Login = () => {
           headers: { 'Content-Type': 'application/json' },
         });
         console.log(JSON.stringify(response?.data));
-        const accessToken = response?.data?.token;
-        setAuth(response, accessToken);
+        const accessToken = response?.data?.data?.token;
+        const fullName = response?.data?.data?.fullname;
+        console.log(accessToken);
+        console.log(fullName);
+
+        setAuth({ form, accessToken, fullName });
         setForm('');
         navigate('/transaction', { replace: true });
         // navigate(from, { replace: true });
@@ -61,7 +64,7 @@ const Login = () => {
           alert('Success');
         } else if (err.response?.status === 400) {
           console.log('Missing Username or password');
-          alert('Missing Username or Password');
+          alert('Bad Request');
         } else if (err.response?.status === 402) {
           console.log('Unauthorize');
           alert('Unauthorize');
@@ -70,40 +73,13 @@ const Login = () => {
           alert('Login Failed');
         }
       }
-      // let result = await fetch('https://exqure.herokuapp.com/api/user/signin', {
-      //   method: 'POST',
-      //   body: JSON.stringify(form),
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //     Accept: 'application/json',
-      //   },
-      // });
-      // result = await result.json();
-
-      // console.log('result', result);
-      // // alert(result.msg);
-      // if (result.status === 'Success') {
-      //   alert(result.msg);
-      //   setisLoggedIn(true);
-      //   localStorage.setItem('user-info', JSON.stringify(result));
-      //   setUser({ ...result });
-      //   cookies.set('TOKEN', result.data.token, {
-      //     path: '/',
-      //   });
-      //   navigate('/transaction', { replace: true });
-      // } else {
-      //   alert('error');
-      //   alert(result.msg);
-      // }
     }
-    // else {
-    //   alert('please fill in reqired fields');
   }
 
   return (
     <>
       <div className='login-page'>
-        <LeftBox/>
+        <LeftBox />
         <section className='right-box'>
           <div className='login-box'>
             <h2>Login </h2>
@@ -177,12 +153,6 @@ const Login = () => {
             </div>
           </div>
         </section>
-        {/* <Routes>
-      <Route path='frontend/forgot/*' element={<ForgotPassword />} />
-        <Route path='frontend/forgot' element={<ForgotPassword />} />
-
-
-      </Routes> */}
       </div>
     </>
   );

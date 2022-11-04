@@ -7,13 +7,15 @@ import candle from '../images/candle.png';
 import Logout from '../images/logout.png';
 import './Header.css';
 import Botton from './Botton';
-// import { UserContext } from '../Context/UserContext';
 import useAuth from '../hooks/useAuth';
 
 const Header = () => {
   const navigate = useNavigate();
   const { auth, setAuth } = useAuth();
-
+  const fullname = auth.fullName;
+  // const firstName = fullname[0];
+  const firstname = fullname?.split('')[0];
+  const lastname = fullname?.split('')[1];
   const logout = () => {
     setAuth('');
     navigate('/login', { replace: true });
@@ -133,7 +135,7 @@ const Header = () => {
                   style={{ color: 'black', fontSize: '20px' }}
                   className='mx-lg-2'
                   as={Link}
-                  to={''}
+                  to={'/helpdesk'}
                 >
                   Help
                 </Nav.Link>
@@ -144,7 +146,9 @@ const Header = () => {
                 </Nav.Link>
                 <Nav className='d-flex'>
                   <div className='circle-border'>
-                    <p>VA</p>
+                    <p>
+                      {firstname} {lastname}
+                    </p>
                   </div>
                   <NavDropdown>
                     <NavDropdown.Item as={Link} to={'/accountsetting/profile'}>
