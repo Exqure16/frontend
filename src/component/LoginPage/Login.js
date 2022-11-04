@@ -1,17 +1,21 @@
 import React from 'react';
 import './Login.css';
-import { useState, useEffect } from 'react';
+import hands from '../images/Hands.png';
+import logo from '../images/logo.png';
+import { IoMailOutline } from 'react-icons/io5';
+import { VscLock } from 'react-icons/vsc';
+import { useState, useEffect, useContext } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { FaFacebookF } from 'react-icons/fa';
 import { BsApple } from 'react-icons/bs';
 import lock from '../images/lock.svg';
 import sms from '../images/sms.svg';
-import { Link } from 'react-router-dom';
 import axios from '../Api/axios';
-import { useNavigate, useLocation } from 'react-router-dom';
 import LeftBox from './LeftBox';
-import useAuth from '../hooks/useAuth';
+// import AuthContext from '../Context/AuthProvider';
 const Login_Url = `/user/signin`;
+
+// import { UserContext } from '../Context/UserContext';
 
 const Login = () => {
   // const { setAuth } = useContext(AuthContext);

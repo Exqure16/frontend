@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import LeftBox from '../LoginPage/LeftBox';
+import OtpInput from './OtpInput';
 import './otppage.css';
 
 const OTPPage = () => {
-  const arrD = [1, 2, 3, 4, 5, 6];
+  const [otp, setOtp] = useState('');
+  const handleChange = (value) => setOtp(value);
 
   return (
     <>

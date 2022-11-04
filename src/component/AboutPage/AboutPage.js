@@ -58,7 +58,6 @@ function AboutPage() {
   };
   return (
     <>
-      <Header />
       <About>
         <section className='first'>
           <h3>

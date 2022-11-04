@@ -39,17 +39,23 @@ function App() {
     <>
       <Header />
       <Routes>
-        {/* Puliic Routes */}
+        {/* Pubiic Routes */}
         <Route path='/' element={<HomePage />} />
         <Route path='/login' element={<Login />} />
         <Route path='/forgot' element={<ForgotPassword />} />
         <Route path='/reset' element={<ResetPassword />} />
+        <Route path='/otp' element={<OTPPage />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/contactus' element={<ContactUs />} />
         <Route path='/aboutUs' element={<AboutPage />} />
         <Route path='/blog' element={<Blog />} />
+<<<<<<< HEAD
         <Route path='/helpdesk' element={<HelpDesk />} />
         <Route path='/otp' element={<OTPPage />} />
+=======
+        <Route path='/' element={<HelpDesk />} />
+
+>>>>>>> 905e75e548974282e191cacc01d8302a2c56be63
         {/* Protected Routes */}
         <Route element={<Protected />}>
           <Route path='/create' element={<CreateTransaction />} />
@@ -77,7 +83,7 @@ function App() {
           <Route path='/paymethod' element={<PaymentMethod />} />
           <Route path='/transaction' element={<NoTransactions />} />
           <Route path='/mytransactions-crypto' element={<TransBuyerCrypto />} />
-        </Route>
+          </Route>
       </Routes>
     </>
   );

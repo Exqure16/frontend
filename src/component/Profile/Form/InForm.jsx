@@ -6,7 +6,7 @@ import sms from '../../images/sms.svg'
 import { PropContext } from './PropContxt'
 
 const InForm = () => {
-    const {coAccountInfo, setCoAccountInfo,companyEmail,companyName,
+    const {coAccountInfo, setCoAccountInfo,company_email,company_name,
         coEmailError,coEmailIsValid,coNameError,coNameIsValid,
         setCoEmailError,setCoEmailIsValid,setCoNameError,setCoNameIsValid
     } = useContext(PropContext);
@@ -22,14 +22,14 @@ const InForm = () => {
             <Input
                 type= 'text'
                 img1W= {'25px'}
-                name= {'companyName'}
+                name= {'company_name'}
                 img1P ={'absolute'}
                 img1= { personIcon}
                 img1ML ={'0.5rem'}
                 img1MT ={'0.5rem'}
                 inputW ={'100%'}
                 inputPL ={'2.5rem'}
-                inputValue= {companyName}
+                inputValue= {company_name}
                 placeholder= {'Enter company name'}
                 onChange = {(e)=>{
                     handleChange(e);
@@ -68,9 +68,9 @@ const InForm = () => {
                 img1MT ={'0.5rem'}
                 inputW ={'100%'}
                 inputPL ={'2.5rem'}
-                name ={'companyEmail'}
+                name ={'company_email'}
                 placeholder= {'Enter company email'}
-                inputValue ={companyEmail}
+                inputValue ={company_email}
                 onChange = {(e)=>{
                     handleChange(e);
                     if(e.target.value.length===0){

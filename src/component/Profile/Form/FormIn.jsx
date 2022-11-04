@@ -19,67 +19,60 @@ export const FormIn= ({accountType1 ,children})=>{
     const [openPhone1, setOpenPhone1] = useState('none');
     //states for receiving data
     const[inAccountInfo, setInAccountInfo] = useState({
-        accountType:'individual',
-        fullName:'',
+        account_type:'individual',
+        fullname:'',
         phoneNumber:'',
         dialCode:'+234',
         dialCode1:'+234',
-        fullPhoneNumber:'',
+        phone:'',
         altPhoneNumber:'',
-        altFullPhoneNumber:'',
+        alt_phone:'',
         country:'',
-        dateOfBirth:'',
-        billingAddress:'',
+        dob:'',
+        billing_address:'',
         city:'',
         state:'',
-        zipCode:''
+        zipOrPostCode:''
     });
     const {
-            fullName,
+            fullname,
             phoneNumber,
             dialCode,
             dialCode1,
             altPhoneNumber,
             country,
-            dateOfBirth,
-            billingAddress,
+            dob,
+            billing_address,
             city,
             state,
-            zipCode
+            zipOrPostCode
         } = inAccountInfo;
     const[coAccountInfo, setCoAccountInfo] = useState({
         accountType:'company',
-        coFullName:'',
-        companyName:'',
-        companyEmail:'',
+        fullname:'',
+        company_name:'',
+        company_email:'',
         coDialCode:'+234',
         coDialCode1:'+234',
         coPhoneNumber:``,
-        coFullPhoneNumber:'',
+        phone:'',
         coAltPhoneNumber:'',
-        coAltFullPhoneNumber:'',
-        coCountry:'',
-        coDateOfBirth:'',
-        coBillingAddress:'',
-        coCity:'',
-        coState:'',
-        coZipCode:'',
+        alt_phone:'',
+        country:'',
+        dob:'',
+        billing_ddress:'',
+        city:'',
+        state:'',
+        zipOrPostCode:'',
     })
 
     const {
-        companyEmail,
-        companyName,
-        coFullName,
+        company_email,
+        company_name,
         coPhoneNumber,
         coDialCode,
         coDialCode1,
         coAltPhoneNumber,
-        coCountry,
-        coDateOfBirth,
-        coBillingAddress,
-        coCity,
-        coState,
-        coZipCode
     } = coAccountInfo;
     const handleChange = (e) => {
         const {name, value} =  e.target;
@@ -228,7 +221,7 @@ export const FormIn= ({accountType1 ,children})=>{
     };
 
     return(
-        <PropContext.Provider value = {{coAccountInfo, setCoAccountInfo,companyName,companyEmail,
+        <PropContext.Provider value = {{coAccountInfo, setCoAccountInfo,company_name,company_email,
             coNameError,coEmailIsValid,coNameIsValid,coEmailError,
             setCoNameError, setCoEmailError, setCoNameIsValid,setCoEmailIsValid
         }}>
@@ -244,13 +237,13 @@ export const FormIn= ({accountType1 ,children})=>{
                     inputW ={'100%'}
                     inputPL ={'2.5rem'}
                     placeholder= {'Enter Name'}
-                    name={accountType1 ==='individual'?'fullName':'coFullName'}
-                    inputValue ={fullName && coFullName}
+                    name={'fullname'}
+                    inputValue ={fullname}
                     onChange = {(e)=>{
                         handleChange(e);
                         
                         if(e.target.value.length ===0){
-                            setNameIsValid(false)
+                            setNameIsValid(false);
                             setNameError('This field should not be empty');
                         }
                         else if(e.target.value.length < 6){
@@ -309,8 +302,8 @@ export const FormIn= ({accountType1 ,children})=>{
                         onChange = {(e)=>{
                             handleChange(e);
                             accountType1==='individual'?
-                            setInAccountInfo({...inAccountInfo,phoneNumber:e.target.value, fullPhoneNumber:`${dialCode}${e.target.value}`}):
-                            setCoAccountInfo({...coAccountInfo,coPhoneNumber:e.target.value, coFullPhoneNumber:`${coDialCode}${e.target.value}`})
+                            setInAccountInfo({...inAccountInfo,phoneNumber:e.target.value, phone:`${dialCode}${e.target.value}`}):
+                            setCoAccountInfo({...coAccountInfo,coPhoneNumber:e.target.value, alt_phone:`${coDialCode}${e.target.value}`})
                             
                             if(e.target.value.length ===0){
                                 setPhoneNumberError('This field should not be empty');
@@ -375,8 +368,8 @@ export const FormIn= ({accountType1 ,children})=>{
                         onChange = {(e)=>{
                             handleChange(e);
                             accountType1 ==='individual'?
-                            setInAccountInfo({...inAccountInfo,altPhoneNumber:e.target.value, altFullPhoneNumber:`${dialCode1}${e.target.value}`}):
-                            setCoAccountInfo({...coAccountInfo, coAltPhoneNumber:e.target.value , CoAltFullPhoneNumber:`${coDialCode1}${e.target.value}`})                          
+                            setInAccountInfo({...inAccountInfo,altPhoneNumber:e.target.value, alt_phone:`${dialCode1}${e.target.value}`}):
+                            setCoAccountInfo({...coAccountInfo, coAltPhoneNumber:e.target.value , alt_phone:`${coDialCode1}${e.target.value}`})                          
                             if(e.target.value.length ===0){
                                 setAltPhoneNumberError('This field should not be empty');
                                 setAltPhoneNumberIsValid(false)
@@ -413,7 +406,7 @@ export const FormIn= ({accountType1 ,children})=>{
                         <label>Country</label>
                         <Input
                             type= 'text'
-                            name ={accountType1 ==='individual'?'country':'coCountry'}               
+                            name ={'country'}               
                             img1W= {'2rem'}
                             img1= { flagUrl}
                             img1ML ={'1rem'}
@@ -423,7 +416,7 @@ export const FormIn= ({accountType1 ,children})=>{
                             img2ML= {'3.5rem'}
                             img2MT= { '0.7rem'}
                             img2 ={arrowDown}
-                            inputValue ={accountType1 ==='individual'?country:coCountry}
+                            inputValue ={country}
                             inputPL ={'5rem'}
                             inputW= {'80%'}
                             placeholder= {'Nigeria'}
@@ -441,7 +434,7 @@ export const FormIn= ({accountType1 ,children})=>{
                         <label>Date of birth</label>
                         <Input     
                             type= 'text'
-                            name ={accountType1 ==='individual'?'dateOfBirth':'coDateOfBirth'}           
+                            name ={'dob'}           
                             img1W= {'25px'}
                             img1= { calendarIcon}
                             img1ML ={'-1rem'}
@@ -449,7 +442,7 @@ export const FormIn= ({accountType1 ,children})=>{
                             inputW ={'100%'}
                             placeholder= {'DD/MM/YYY'}
                             fD= {'row-reverse'}
-                            inputValue ={dateOfBirth && coDateOfBirth}
+                            inputValue ={dob}
                             onChange = {(e)=>{
                                 handleChange(e);
 
@@ -462,7 +455,7 @@ export const FormIn= ({accountType1 ,children})=>{
                     
                     inputW={'100%'}
                     type ={'text'}
-                    name={accountType1 ==='individual'?'billingAddress':'coBillingAddress'}
+                    name={'billing_address'}
                     placeholder ={'Enter address'}
                     onChange = {(e)=>{
                         handleChange(e);
@@ -473,7 +466,7 @@ export const FormIn= ({accountType1 ,children})=>{
                             setAddressIsValid(true);
                         }
                     }}
-                    inputValue ={billingAddress && coBillingAddress}
+                    inputValue ={billing_address}
                 />
                 {!addressIsValid && <p style={{color:'red', textAlign:'left', fontSize:'0.8rem'}}>{addressError}</p>}
                 <div style={{display:'flex',justifyContent:'space-between', marginTop:'2rem'}}>
@@ -482,8 +475,8 @@ export const FormIn= ({accountType1 ,children})=>{
                         <Input
                             inputW={'100%'}
                             type ={'text'}
-                            name ={accountType1 ==='individual'?'city':'coCity'}
-                            placeholder ={'Enter address'}
+                            name ={'city'}
+                            placeholder ={'Enter city'}
                             onChange = {(e)=>{
                                 handleChange(e);
                                 if(e.target.value.length===0){
@@ -500,7 +493,7 @@ export const FormIn= ({accountType1 ,children})=>{
                                     setCityIsValid(true);
                                   }
                             }}
-                            inputValue ={city && coCity}
+                            inputValue ={city}
                         />
                         {!cityIsValid && <p style={{color:'red', textAlign:'left', fontSize:'0.8rem'}}>{cityError}</p>}
                     </div>    
@@ -509,9 +502,9 @@ export const FormIn= ({accountType1 ,children})=>{
                         <Input
                             inputW={'100%'}
                             type ={'text'}
-                            name ={accountType1 ==='individual'?'state':'coState'}
-                            inputValue ={state && coState}
-                            placeholder ={'Enter address'}
+                            name ={'state'}
+                            inputValue ={state}
+                            placeholder ={'Enter state'}
                             onChange = {(e)=>{
                                 handleChange(e);
                                 if(e.target.value.length===0){
@@ -537,8 +530,8 @@ export const FormIn= ({accountType1 ,children})=>{
                 <Input
                     inputW={'100%'}
                     type ={'text'}
-                    name ={accountType1 ==='individual'?'zipCode':'coZipCode'}
-                    inputValue ={zipCode && coZipCode}
+                    name ={'zipOrPostCode'}
+                    inputValue ={zipOrPostCode}
                     placeholder ={'Enter ZIP Code'}
                     onChange = {(e)=>{
                         handleChange(e);
