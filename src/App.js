@@ -31,7 +31,7 @@ import Accountsetting from './component/Accountsetting/Accountsetting';
 import PaymentMethod from './component/PaymentSettings/PaymentMethod';
 import AboutPage from './component/AboutPage/AboutPage';
 import ContactUs from './component/ContactUsPage/ContactUs';
-import HelpDesk from './component/HelpDesk/HelpDesk'
+import HelpDesk from './component/HelpDesk/HelpDesk';
 import OTPPage from './component/OTPPage/OTPPage';
 
 function App() {
@@ -49,8 +49,13 @@ function App() {
         <Route path='/contactus' element={<ContactUs />} />
         <Route path='/aboutUs' element={<AboutPage />} />
         <Route path='/blog' element={<Blog />} />
+<<<<<<< HEAD
+        <Route path='/helpdesk' element={<HelpDesk />} />
+        <Route path='/otp' element={<OTPPage />} />
+=======
         <Route path='/' element={<HelpDesk />} />
 
+>>>>>>> 905e75e548974282e191cacc01d8302a2c56be63
         {/* Protected Routes */}
         <Route element={<Protected />}>
           <Route path='/create' element={<CreateTransaction />} />

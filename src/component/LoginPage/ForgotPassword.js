@@ -50,8 +50,8 @@ const ForgotPassword = () => {
         );
         alert('Check Your mail for reset ');
         cookies.set('resetToken', response.data, { path: '/reset' });
-        console.log(response.data);
-        console.log(JSON.stringify(response));
+        console.log(JSON.stringify(response?.data));
+        // console.log(JSON.stringify(response));
         navigate('/reset', { replace: true });
       } catch (err) {
         if (err.response) {
