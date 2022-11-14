@@ -8,9 +8,8 @@ import HomePage from './component/HomePage/HomePage';
 import Signup from './component/Signup/Signup';
 import ForgotPassword from './component/LoginPage/ForgotPassword';
 import ResetPassword from './component/LoginPage/ResetPassword';
-import AcceptTerms from './component/TransactionDetails/AcceptTerms';
+// import AcceptTerms from './component/TransactionDetails/AcceptTerms';
 import CreateTransaction from './component/TransactionPages/CreateTransaction/CreateTransaction';
-import Context, { UserContext } from './component/Context/UserContext';
 import Protected from './component/ProtectedRoute/Protected';
 import MyTransBuyer from './component/TransactionPages/MyTransaction/MyTransaction_Buyer';
 
@@ -32,7 +31,7 @@ import PaymentMethod from './component/PaymentSettings/PaymentMethod';
 import AboutPage from './component/AboutPage/AboutPage';
 import ContactUs from './component/ContactUsPage/ContactUs';
 import HelpDesk from './component/HelpDesk/HelpDesk';
-import OTPPage from './component/OTPPage/OTPPage';
+// import OTPPage from './component/OTPPage/OTPPage';
 
 function App() {
   return (
@@ -44,7 +43,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/forgot' element={<ForgotPassword />} />
         <Route path='/reset' element={<ResetPassword />} />
-        <Route path='/otp' element={<OTPPage />} />
+        {/* <Route path='/otp' element={<OTPPage />} /> */}
         <Route path='/signup' element={<Signup />} />
         <Route path='/contactus' element={<ContactUs />} />
         <Route path='/aboutUs' element={<AboutPage />} />
