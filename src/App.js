@@ -66,10 +66,10 @@ function App() {
           <Route path='/transactions' element={<WithTransaction />} />
           <Route path='/transbuyer' element={<TransBuyer />} />
           <Route path='/notifications' element={<Notifications />} />
-          <Route path='/account' element={<Accountsetting/>}>
-            <Route path ='/profile' element ={<Personal/>}/>
-            <Route path ='/payment' element ={<PaymentSettings/>}/>
-            <Route path ='/general' element ={<GeneralSettings/>}/>
+          <Route path='/accountsetting' element={<Accountsetting />}>
+            <Route path='profile' element={<Personal />} />
+            <Route path='paymentsetting' element={<PaymentSettings />} />
+            <Route path='general' element={<GeneralSettings />} />
           </Route>
           <Route path='/mytransactions' element={<TransBuyer />} />
           <Route path='/mytransactions' element={<MyTransBuyer />} />

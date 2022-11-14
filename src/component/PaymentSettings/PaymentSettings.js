@@ -10,13 +10,12 @@ import Banks from './Banks';
 import Bank from './Bank';
 import axios from '../Api/axios';
 import useAuth from '../hooks/useAuth';
+const card_Url = `/account/CardDetails`;
+const paymentDetails_Url = `/account/paymentDetails`;
 
 const PaymentSettings = () => {
   const { auth } = useAuth();
-  const token = auth?.accessToken;
-  const card_Url = `/account/CardDetails`;
-  // const API_URL = 'https://exqure.herokuapp.com/api/account/CardDetails';
-  // const API_URL1 = 'https://exqure.herokuapp.com/api/account/paymentDetails';
+  const token = auth.accessToken;
   const [cardDetails, setCardDetails] = useState([]);
   const [paymentDetails, setPaymentDetails] = useState([]);
   const [fetchError, setFetchError] = useState(null);
@@ -34,9 +33,8 @@ const PaymentSettings = () => {
   const [cvv, setCvc] = useState('');
 
   const deleteCardDetail = async (id) => {
-    const cards = cardDetails.filter((cardDetail) => cardDetail.id !== id);
-    setCardDetails(cards);
-
+    // const cards = cardDetails.filter((cardDetail) => cardDetail.id !== id);
+    // setCardDetails(cards);
     // const deleteOptions = { method: 'DELETE' };
     // const reqUrl = `https://exqure.herokuapp.com/api/account/removeCardDetail/${user.id}/${cardDetails.id}`;
     // const result = await apiRequest(reqUrl, deleteOptions);
@@ -48,7 +46,7 @@ const PaymentSettings = () => {
     //   alert('Please enter card details ');
     //   return;
     // }
-    addCard({ card_number, card_holder_name, expiry_date, cvv });
+    addCard();
     setNumber('');
     setName('');
     setExpiry('');
@@ -57,6 +55,25 @@ const PaymentSettings = () => {
 
   const handleSave = async (e) => {
     e.preventDefault();
+    // console.log(token);
+    try {
+      const response = await axios.post(
+        paymentDetails_Url,
+        JSON.stringify({ bvnNumber, bankName, accountNumber, accountName }),
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log(JSON.stringify(response?.data));
+    } catch (err) {
+      if (!err?.response) {
+        console.log('success');
+        alert('success');
+      }
+    }
   };
   //Post Card Details
   const addCard = async () => {

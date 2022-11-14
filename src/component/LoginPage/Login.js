@@ -1,9 +1,5 @@
 import React from 'react';
 import './Login.css';
-import hands from '../images/Hands.png';
-import logo from '../images/logo.png';
-import { IoMailOutline } from 'react-icons/io5';
-import { VscLock } from 'react-icons/vsc';
 import { useState, useEffect, useContext } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { FaFacebookF } from 'react-icons/fa';
