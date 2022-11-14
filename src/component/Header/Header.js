@@ -13,7 +13,6 @@ const Header = () => {
   const navigate = useNavigate();
   const { auth, setAuth } = useAuth();
   const fullname = auth.fullName;
-  // const firstName = fullname[0];
   const firstname = fullname?.split('')[0];
   const lastname = fullname?.split('')[1];
   const logout = () => {
