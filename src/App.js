@@ -10,7 +10,6 @@ import ForgotPassword from './component/LoginPage/ForgotPassword';
 import ResetPassword from './component/LoginPage/ResetPassword';
 // import AcceptTerms from './component/TransactionDetails/AcceptTerms';
 import CreateTransaction from './component/TransactionPages/CreateTransaction/CreateTransaction';
-// import Context, { UserContext } from './component/Context/UserContext';
 import Protected from './component/ProtectedRoute/Protected';
 import MyTransBuyer from './component/TransactionPages/MyTransaction/MyTransaction_Buyer';
 
