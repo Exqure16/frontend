@@ -11,11 +11,12 @@ import Bank from './Bank';
 import axios from '../Api/axios';
 import useAuth from '../hooks/useAuth';
 const card_Url = `/account/CardDetails`;
-const paymentDetails_Url = `/account/paymentDetails`;
+const paymentDetails_Url = `/account/paymentDetails/`;
 
 const PaymentSettings = () => {
   const { auth } = useAuth();
   const token = auth.accessToken;
+  // const paymentDetails_Url = `/account/paymentDetails/${token}`;
   const [cardDetails, setCardDetails] = useState([]);
   const [paymentDetails, setPaymentDetails] = useState([]);
   const [fetchError, setFetchError] = useState(null);
@@ -62,6 +63,8 @@ const PaymentSettings = () => {
         JSON.stringify({ bvnNumber, bankName, accountNumber, accountName }),
         {
           headers: {
+            'Access-Control-Allow-Origin':
+              'https://Exqure16.github.io/frontend',
             'Content-Type': 'application/json',
             Authorization: `${token}`,
           },
@@ -87,7 +90,7 @@ const PaymentSettings = () => {
         {
           headers: {
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
+            Authorization: ` ${token}`,
           },
         }
       );

@@ -11,7 +11,8 @@ const OTPPage = () => {
     <>
       <div className='otpDiv'>
         <LeftBox />
-        <div className='otpPage'>
+        <OtpInput />
+        {/* <div className='otpPage'>
           <h1>2-Factor Authorization</h1>
           <p>
             Please confirm your account by entering the 6-digit code sent to
@@ -36,7 +37,7 @@ const OTPPage = () => {
             </span>
           </p>
           <button>Verify</button>
-        </div>
+        </div> */}
       </div>
     </>
   );
