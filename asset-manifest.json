@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/frontend/static/css/main.29778fee.css",
-    "main.js": "/frontend/static/js/main.ea615bdb.js",
+    "main.css": "/frontend/static/css/main.4bf23949.css",
+    "main.js": "/frontend/static/js/main.9e3a96e7.js",
     "static/media/AboutBg.jpg": "/frontend/static/media/AboutBg.4215196ad80ee4150236.jpg",
     "static/media/img1.png": "/frontend/static/media/img1.9149020d2d66c93995d6.png",
     "static/media/AboutMall.jpg": "/frontend/static/media/AboutMall.6b9e861863c510a5ccc9.jpg",
@@ -26,6 +26,7 @@
     "static/media/contactUsImg.svg": "/frontend/static/media/contactUsImg.517b3be0e13982cb9bc7431d3267881e.svg",
     "static/media/computerlogin.svg": "/frontend/static/media/computerlogin.65183883cb96ee5ddfa4a2bc9c5df038.svg",
     "static/media/LogoExqure.png": "/frontend/static/media/LogoExqure.14488d70771874a74d09.png",
+    "static/media/consulting.png": "/frontend/static/media/consulting.9f5f0456e9417cccca89.png",
     "static/media/Futura Book font.ttf": "/frontend/static/media/Futura Book font.ed19af444f0976dbaf41.ttf",
     "static/media/rafiki.png": "/frontend/static/media/rafiki.731278a03e54b14a3852.png",
     "static/media/cushion2.svg": "/frontend/static/media/cushion2.11aaa578c4bf5cedb56f510925f62909.svg",
@@ -50,7 +51,6 @@
     "static/media/slick.svg": "/frontend/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/frontend/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/twitterBlack.svg": "/frontend/static/media/twitterBlack.608206268d182be0a90a6b81945766fa.svg",
-    "static/media/apple.svg": "/frontend/static/media/apple.84d809907702f98b6435b0dcb07c365b.svg",
     "static/media/slick.ttf": "/frontend/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/facebook.svg": "/frontend/static/media/facebook.9708f1aa1f4a5e65b0a9eb5b9ecf6722.svg",
     "static/media/linkedinBlack.svg": "/frontend/static/media/linkedinBlack.72d5a9ffd3fa9111fb4e25f974be8943.svg",
@@ -59,7 +59,6 @@
     "static/media/slick.woff": "/frontend/static/media/slick.295183786cd8a1389865.woff",
     "static/media/showP.svg": "/frontend/static/media/showP.82e656ac69a4788e6fb6089294039b3b.svg",
     "index.html": "/frontend/index.html",
-    "static/media/or.svg": "/frontend/static/media/or.07fa50e3cd609f83272f87dca241a978.svg",
     "static/media/sms.svg": "/frontend/static/media/sms.a5afb1be3dafc4af5f9a42a40075e992.svg",
     "static/media/fbBlack.svg": "/frontend/static/media/fbBlack.6f5c424e93bfcd14467fe55da0013b34.svg",
     "static/media/arrowDown.svg": "/frontend/static/media/arrowDown.a340109bcbd95e7e9a028b106098e192.svg",
@@ -67,11 +66,11 @@
     "static/media/Logo.svg": "/frontend/static/media/Logo.6e97450d28ab50dee6b4f28192d586f5.svg",
     "static/media/shortline.svg": "/frontend/static/media/shortline.ad16ad68cc11dbb3be59ac277c99d3e9.svg",
     "static/media/line.svg": "/frontend/static/media/line.e6ec7e94737c3e133d42ada4a6b6bfe8.svg",
-    "main.29778fee.css.map": "/frontend/static/css/main.29778fee.css.map",
-    "main.ea615bdb.js.map": "/frontend/static/js/main.ea615bdb.js.map"
+    "main.4bf23949.css.map": "/frontend/static/css/main.4bf23949.css.map",
+    "main.9e3a96e7.js.map": "/frontend/static/js/main.9e3a96e7.js.map"
   },
   "entrypoints": [
-    "static/css/main.29778fee.css",
-    "static/js/main.ea615bdb.js"
+    "static/css/main.4bf23949.css",
+    "static/js/main.9e3a96e7.js"
   ]
 }
